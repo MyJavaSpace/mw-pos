@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.paramvalueMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.paramvalue" >
+    <id column="fsParamId" property="fsparamid" jdbcType="VARCHAR" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsParamValue" property="fsparamvalue" jdbcType="VARCHAR" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fsStr1" property="fsstr1" jdbcType="VARCHAR" />
+    <result column="fsStr2" property="fsstr2" jdbcType="VARCHAR" />
+    <result column="fsStr3" property="fsstr3" jdbcType="VARCHAR" />
+    <result column="fsStr4" property="fsstr4" jdbcType="VARCHAR" />
+    <result column="fsStr5" property="fsstr5" jdbcType="VARCHAR" />
+    <result column="fiInt1" property="fiint1" jdbcType="INTEGER" />
+    <result column="fiInt2" property="fiint2" jdbcType="INTEGER" />
+    <result column="fiInt4" property="fiint4" jdbcType="INTEGER" />
+    <result column="fiInt5" property="fiint5" jdbcType="INTEGER" />
+    <result column="fiInt3" property="fiint3" jdbcType="INTEGER" />
+    <result column="lver" property="lver" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsParamId, fsShopGUID, fsParamValue, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
+    fsStr1, fsStr2, fsStr3, fsStr4, fsStr5, fiInt1, fiInt2, fiInt4, fiInt5, fiInt3, lver
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.paramvalueKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbparamvalue
+    where fsParamId = #{fsparamid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.paramvalueKey" >
+    delete from tbparamvalue
+    where fsParamId = #{fsparamid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.paramvalue" >
+    insert into tbparamvalue (fsParamId, fsShopGUID, fsParamValue, 
+      fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
+      fsStr1, fsStr2, fsStr3, 
+      fsStr4, fsStr5, fiInt1, 
+      fiInt2, fiInt4, fiInt5, 
+      fiInt3, lver)
+    values (#{fsparamid,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, #{fsparamvalue,jdbcType=VARCHAR}, 
+      #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
+      #{fsstr1,jdbcType=VARCHAR}, #{fsstr2,jdbcType=VARCHAR}, #{fsstr3,jdbcType=VARCHAR}, 
+      #{fsstr4,jdbcType=VARCHAR}, #{fsstr5,jdbcType=VARCHAR}, #{fiint1,jdbcType=INTEGER}, 
+      #{fiint2,jdbcType=INTEGER}, #{fiint4,jdbcType=INTEGER}, #{fiint5,jdbcType=INTEGER}, 
+      #{fiint3,jdbcType=INTEGER}, #{lver,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.paramvalue" >
+    insert into tbparamvalue
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fsparamid != null" >
+        fsParamId,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fsparamvalue != null" >
+        fsParamValue,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fsstr1 != null" >
+        fsStr1,
+      </if>
+      <if test="fsstr2 != null" >
+        fsStr2,
+      </if>
+      <if test="fsstr3 != null" >
+        fsStr3,
+      </if>
+      <if test="fsstr4 != null" >
+        fsStr4,
+      </if>
+      <if test="fsstr5 != null" >
+        fsStr5,
+      </if>
+      <if test="fiint1 != null" >
+        fiInt1,
+      </if>
+      <if test="fiint2 != null" >
+        fiInt2,
+      </if>
+      <if test="fiint4 != null" >
+        fiInt4,
+      </if>
+      <if test="fiint5 != null" >
+        fiInt5,
+      </if>
+      <if test="fiint3 != null" >
+        fiInt3,
+      </if>
+      <if test="lver != null" >
+        lver,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fsparamid != null" >
+        #{fsparamid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsparamvalue != null" >
+        #{fsparamvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsstr1 != null" >
+        #{fsstr1,jdbcType=VARCHAR},
+      </if>
+      <if test="fsstr2 != null" >
+        #{fsstr2,jdbcType=VARCHAR},
+      </if>
+      <if test="fsstr3 != null" >
+        #{fsstr3,jdbcType=VARCHAR},
+      </if>
+      <if test="fsstr4 != null" >
+        #{fsstr4,jdbcType=VARCHAR},
+      </if>
+      <if test="fsstr5 != null" >
+        #{fsstr5,jdbcType=VARCHAR},
+      </if>
+      <if test="fiint1 != null" >
+        #{fiint1,jdbcType=INTEGER},
+      </if>
+      <if test="fiint2 != null" >
+        #{fiint2,jdbcType=INTEGER},
+      </if>
+      <if test="fiint4 != null" >
+        #{fiint4,jdbcType=INTEGER},
+      </if>
+      <if test="fiint5 != null" >
+        #{fiint5,jdbcType=INTEGER},
+      </if>
+      <if test="fiint3 != null" >
+        #{fiint3,jdbcType=INTEGER},
+      </if>
+      <if test="lver != null" >
+        #{lver,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.paramvalue" >
+    update tbparamvalue
+    <set >
+      <if test="fsparamvalue != null" >
+        fsParamValue = #{fsparamvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsstr1 != null" >
+        fsStr1 = #{fsstr1,jdbcType=VARCHAR},
+      </if>
+      <if test="fsstr2 != null" >
+        fsStr2 = #{fsstr2,jdbcType=VARCHAR},
+      </if>
+      <if test="fsstr3 != null" >
+        fsStr3 = #{fsstr3,jdbcType=VARCHAR},
+      </if>
+      <if test="fsstr4 != null" >
+        fsStr4 = #{fsstr4,jdbcType=VARCHAR},
+      </if>
+      <if test="fsstr5 != null" >
+        fsStr5 = #{fsstr5,jdbcType=VARCHAR},
+      </if>
+      <if test="fiint1 != null" >
+        fiInt1 = #{fiint1,jdbcType=INTEGER},
+      </if>
+      <if test="fiint2 != null" >
+        fiInt2 = #{fiint2,jdbcType=INTEGER},
+      </if>
+      <if test="fiint4 != null" >
+        fiInt4 = #{fiint4,jdbcType=INTEGER},
+      </if>
+      <if test="fiint5 != null" >
+        fiInt5 = #{fiint5,jdbcType=INTEGER},
+      </if>
+      <if test="fiint3 != null" >
+        fiInt3 = #{fiint3,jdbcType=INTEGER},
+      </if>
+      <if test="lver != null" >
+        lver = #{lver,jdbcType=INTEGER},
+      </if>
+    </set>
+    where fsParamId = #{fsparamid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.paramvalue" >
+    update tbparamvalue
+    set fsParamValue = #{fsparamvalue,jdbcType=VARCHAR},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fsStr1 = #{fsstr1,jdbcType=VARCHAR},
+      fsStr2 = #{fsstr2,jdbcType=VARCHAR},
+      fsStr3 = #{fsstr3,jdbcType=VARCHAR},
+      fsStr4 = #{fsstr4,jdbcType=VARCHAR},
+      fsStr5 = #{fsstr5,jdbcType=VARCHAR},
+      fiInt1 = #{fiint1,jdbcType=INTEGER},
+      fiInt2 = #{fiint2,jdbcType=INTEGER},
+      fiInt4 = #{fiint4,jdbcType=INTEGER},
+      fiInt5 = #{fiint5,jdbcType=INTEGER},
+      fiInt3 = #{fiint3,jdbcType=INTEGER},
+      lver = #{lver,jdbcType=INTEGER}
+    where fsParamId = #{fsparamid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

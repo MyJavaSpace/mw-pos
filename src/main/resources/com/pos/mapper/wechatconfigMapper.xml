@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.wechatconfigMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.wechatconfig" >
+    <id column="fsId" property="fsid" jdbcType="VARCHAR" />
+    <result column="fdDeliverFee" property="fddeliverfee" jdbcType="DECIMAL" />
+    <result column="fdOrderMoney" property="fdordermoney" jdbcType="DECIMAL" />
+    <result column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsId, fdDeliverFee, fdOrderMoney, fsShopGUID, fiStatus, fsUpdateTime, fsUpdateUserId, 
+    fsUpdateUserName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbwechatconfig
+    where fsId = #{fsid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tbwechatconfig
+    where fsId = #{fsid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.wechatconfig" >
+    insert into tbwechatconfig (fsId, fdDeliverFee, fdOrderMoney, 
+      fsShopGUID, fiStatus, fsUpdateTime, 
+      fsUpdateUserId, fsUpdateUserName)
+    values (#{fsid,jdbcType=VARCHAR}, #{fddeliverfee,jdbcType=DECIMAL}, #{fdordermoney,jdbcType=DECIMAL}, 
+      #{fsshopguid,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, 
+      #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.wechatconfig" >
+    insert into tbwechatconfig
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fsid != null" >
+        fsId,
+      </if>
+      <if test="fddeliverfee != null" >
+        fdDeliverFee,
+      </if>
+      <if test="fdordermoney != null" >
+        fdOrderMoney,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fsid != null" >
+        #{fsid,jdbcType=VARCHAR},
+      </if>
+      <if test="fddeliverfee != null" >
+        #{fddeliverfee,jdbcType=DECIMAL},
+      </if>
+      <if test="fdordermoney != null" >
+        #{fdordermoney,jdbcType=DECIMAL},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.wechatconfig" >
+    update tbwechatconfig
+    <set >
+      <if test="fddeliverfee != null" >
+        fdDeliverFee = #{fddeliverfee,jdbcType=DECIMAL},
+      </if>
+      <if test="fdordermoney != null" >
+        fdOrderMoney = #{fdordermoney,jdbcType=DECIMAL},
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fsId = #{fsid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.wechatconfig" >
+    update tbwechatconfig
+    set fdDeliverFee = #{fddeliverfee,jdbcType=DECIMAL},
+      fdOrderMoney = #{fdordermoney,jdbcType=DECIMAL},
+      fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR}
+    where fsId = #{fsid,jdbcType=VARCHAR}
+  </update>
+</mapper>

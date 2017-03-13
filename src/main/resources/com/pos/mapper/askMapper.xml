@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.askMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.ask" >
+    <id column="fiId" property="fiid" jdbcType="INTEGER" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsAskGpId" property="fsaskgpid" jdbcType="VARCHAR" />
+    <result column="fsAskName" property="fsaskname" jdbcType="VARCHAR" />
+    <result column="fdAddPrice" property="fdaddprice" jdbcType="DECIMAL" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fiItemCd" property="fiitemcd" jdbcType="INTEGER" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fiId, fsShopGUID, fsAskGpId, fsAskName, fdAddPrice, fsUpdateTime, fsUpdateUserId, 
+    fsUpdateUserName, fiItemCd, fiStatus
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.askKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbask
+    where fiId = #{fiid,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.askKey" >
+    delete from tbask
+    where fiId = #{fiid,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.ask" >
+    insert into tbask (fiId, fsShopGUID, fsAskGpId, 
+      fsAskName, fdAddPrice, fsUpdateTime, 
+      fsUpdateUserId, fsUpdateUserName, fiItemCd, 
+      fiStatus)
+    values (#{fiid,jdbcType=INTEGER}, #{fsshopguid,jdbcType=VARCHAR}, #{fsaskgpid,jdbcType=VARCHAR}, 
+      #{fsaskname,jdbcType=VARCHAR}, #{fdaddprice,jdbcType=DECIMAL}, #{fsupdatetime,jdbcType=VARCHAR}, 
+      #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fiitemcd,jdbcType=INTEGER}, 
+      #{fistatus,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.ask" >
+    insert into tbask
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fiid != null" >
+        fiId,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fsaskgpid != null" >
+        fsAskGpId,
+      </if>
+      <if test="fsaskname != null" >
+        fsAskName,
+      </if>
+      <if test="fdaddprice != null" >
+        fdAddPrice,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fiitemcd != null" >
+        fiItemCd,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fiid != null" >
+        #{fiid,jdbcType=INTEGER},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsaskgpid != null" >
+        #{fsaskgpid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsaskname != null" >
+        #{fsaskname,jdbcType=VARCHAR},
+      </if>
+      <if test="fdaddprice != null" >
+        #{fdaddprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fiitemcd != null" >
+        #{fiitemcd,jdbcType=INTEGER},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.ask" >
+    update tbask
+    <set >
+      <if test="fsaskgpid != null" >
+        fsAskGpId = #{fsaskgpid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsaskname != null" >
+        fsAskName = #{fsaskname,jdbcType=VARCHAR},
+      </if>
+      <if test="fdaddprice != null" >
+        fdAddPrice = #{fdaddprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fiitemcd != null" >
+        fiItemCd = #{fiitemcd,jdbcType=INTEGER},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where fiId = #{fiid,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.ask" >
+    update tbask
+    set fsAskGpId = #{fsaskgpid,jdbcType=VARCHAR},
+      fsAskName = #{fsaskname,jdbcType=VARCHAR},
+      fdAddPrice = #{fdaddprice,jdbcType=DECIMAL},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fiItemCd = #{fiitemcd,jdbcType=INTEGER},
+      fiStatus = #{fistatus,jdbcType=INTEGER}
+    where fiId = #{fiid,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

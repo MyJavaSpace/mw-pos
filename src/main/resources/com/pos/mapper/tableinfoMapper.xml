@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.tableinfoMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.tableinfo" >
+    <id column="fsKind" property="fskind" jdbcType="VARCHAR" />
+    <id column="fsTableId" property="fstableid" jdbcType="VARCHAR" />
+    <id column="fsTableName" property="fstablename" jdbcType="VARCHAR" />
+    <result column="fiSortOrder" property="fisortorder" jdbcType="INTEGER" />
+    <result column="fsFoodTradeList" property="fsfoodtradelist" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsKind, fsTableId, fsTableName, fiSortOrder, fsFoodTradeList
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.tableinfoKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbtableinfo
+    where fsKind = #{fskind,jdbcType=VARCHAR}
+      and fsTableId = #{fstableid,jdbcType=VARCHAR}
+      and fsTableName = #{fstablename,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.tableinfoKey" >
+    delete from tbtableinfo
+    where fsKind = #{fskind,jdbcType=VARCHAR}
+      and fsTableId = #{fstableid,jdbcType=VARCHAR}
+      and fsTableName = #{fstablename,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.tableinfo" >
+    insert into tbtableinfo (fsKind, fsTableId, fsTableName, 
+      fiSortOrder, fsFoodTradeList)
+    values (#{fskind,jdbcType=VARCHAR}, #{fstableid,jdbcType=VARCHAR}, #{fstablename,jdbcType=VARCHAR}, 
+      #{fisortorder,jdbcType=INTEGER}, #{fsfoodtradelist,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.tableinfo" >
+    insert into tbtableinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fskind != null" >
+        fsKind,
+      </if>
+      <if test="fstableid != null" >
+        fsTableId,
+      </if>
+      <if test="fstablename != null" >
+        fsTableName,
+      </if>
+      <if test="fisortorder != null" >
+        fiSortOrder,
+      </if>
+      <if test="fsfoodtradelist != null" >
+        fsFoodTradeList,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fskind != null" >
+        #{fskind,jdbcType=VARCHAR},
+      </if>
+      <if test="fstableid != null" >
+        #{fstableid,jdbcType=VARCHAR},
+      </if>
+      <if test="fstablename != null" >
+        #{fstablename,jdbcType=VARCHAR},
+      </if>
+      <if test="fisortorder != null" >
+        #{fisortorder,jdbcType=INTEGER},
+      </if>
+      <if test="fsfoodtradelist != null" >
+        #{fsfoodtradelist,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.tableinfo" >
+    update tbtableinfo
+    <set >
+      <if test="fisortorder != null" >
+        fiSortOrder = #{fisortorder,jdbcType=INTEGER},
+      </if>
+      <if test="fsfoodtradelist != null" >
+        fsFoodTradeList = #{fsfoodtradelist,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fsKind = #{fskind,jdbcType=VARCHAR}
+      and fsTableId = #{fstableid,jdbcType=VARCHAR}
+      and fsTableName = #{fstablename,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.tableinfo" >
+    update tbtableinfo
+    set fiSortOrder = #{fisortorder,jdbcType=INTEGER},
+      fsFoodTradeList = #{fsfoodtradelist,jdbcType=VARCHAR}
+    where fsKind = #{fskind,jdbcType=VARCHAR}
+      and fsTableId = #{fstableid,jdbcType=VARCHAR}
+      and fsTableName = #{fstablename,jdbcType=VARCHAR}
+  </update>
+</mapper>

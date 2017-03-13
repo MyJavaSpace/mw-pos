@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.msgMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.msg" >
+    <id column="fiMsgNo" property="fimsgno" jdbcType="INTEGER" />
+    <result column="fiMsgKind" property="fimsgkind" jdbcType="INTEGER" />
+    <result column="fsMsg" property="fsmsg" jdbcType="VARCHAR" />
+    <result column="fsSender" property="fssender" jdbcType="VARCHAR" />
+    <result column="fsMTableId" property="fsmtableid" jdbcType="VARCHAR" />
+    <result column="fsMTableName" property="fsmtablename" jdbcType="VARCHAR" />
+    <result column="fsSellNo" property="fssellno" jdbcType="VARCHAR" />
+    <result column="fsReceiver" property="fsreceiver" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsReadTime" property="fsreadtime" jdbcType="VARCHAR" />
+    <result column="fsReadUserName" property="fsreadusername" jdbcType="VARCHAR" />
+    <result column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsCreateTime" property="fscreatetime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fiMsgNo, fiMsgKind, fsMsg, fsSender, fsMTableId, fsMTableName, fsSellNo, fsReceiver, 
+    fiStatus, fsReadTime, fsReadUserName, fsShopGUID, fsCreateTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbmsg
+    where fiMsgNo = #{fimsgno,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tbmsg
+    where fiMsgNo = #{fimsgno,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.msg" >
+    insert into tbmsg (fiMsgNo, fiMsgKind, fsMsg, 
+      fsSender, fsMTableId, fsMTableName, 
+      fsSellNo, fsReceiver, fiStatus, 
+      fsReadTime, fsReadUserName, fsShopGUID, 
+      fsCreateTime)
+    values (#{fimsgno,jdbcType=INTEGER}, #{fimsgkind,jdbcType=INTEGER}, #{fsmsg,jdbcType=VARCHAR}, 
+      #{fssender,jdbcType=VARCHAR}, #{fsmtableid,jdbcType=VARCHAR}, #{fsmtablename,jdbcType=VARCHAR}, 
+      #{fssellno,jdbcType=VARCHAR}, #{fsreceiver,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}, 
+      #{fsreadtime,jdbcType=VARCHAR}, #{fsreadusername,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, 
+      #{fscreatetime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.msg" >
+    insert into tbmsg
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fimsgno != null" >
+        fiMsgNo,
+      </if>
+      <if test="fimsgkind != null" >
+        fiMsgKind,
+      </if>
+      <if test="fsmsg != null" >
+        fsMsg,
+      </if>
+      <if test="fssender != null" >
+        fsSender,
+      </if>
+      <if test="fsmtableid != null" >
+        fsMTableId,
+      </if>
+      <if test="fsmtablename != null" >
+        fsMTableName,
+      </if>
+      <if test="fssellno != null" >
+        fsSellNo,
+      </if>
+      <if test="fsreceiver != null" >
+        fsReceiver,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fsreadtime != null" >
+        fsReadTime,
+      </if>
+      <if test="fsreadusername != null" >
+        fsReadUserName,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fimsgno != null" >
+        #{fimsgno,jdbcType=INTEGER},
+      </if>
+      <if test="fimsgkind != null" >
+        #{fimsgkind,jdbcType=INTEGER},
+      </if>
+      <if test="fsmsg != null" >
+        #{fsmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="fssender != null" >
+        #{fssender,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmtableid != null" >
+        #{fsmtableid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmtablename != null" >
+        #{fsmtablename,jdbcType=VARCHAR},
+      </if>
+      <if test="fssellno != null" >
+        #{fssellno,jdbcType=VARCHAR},
+      </if>
+      <if test="fsreceiver != null" >
+        #{fsreceiver,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsreadtime != null" >
+        #{fsreadtime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsreadusername != null" >
+        #{fsreadusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreatetime != null" >
+        #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.msg" >
+    update tbmsg
+    <set >
+      <if test="fimsgkind != null" >
+        fiMsgKind = #{fimsgkind,jdbcType=INTEGER},
+      </if>
+      <if test="fsmsg != null" >
+        fsMsg = #{fsmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="fssender != null" >
+        fsSender = #{fssender,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmtableid != null" >
+        fsMTableId = #{fsmtableid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmtablename != null" >
+        fsMTableName = #{fsmtablename,jdbcType=VARCHAR},
+      </if>
+      <if test="fssellno != null" >
+        fsSellNo = #{fssellno,jdbcType=VARCHAR},
+      </if>
+      <if test="fsreceiver != null" >
+        fsReceiver = #{fsreceiver,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsreadtime != null" >
+        fsReadTime = #{fsreadtime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsreadusername != null" >
+        fsReadUserName = #{fsreadusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fiMsgNo = #{fimsgno,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.msg" >
+    update tbmsg
+    set fiMsgKind = #{fimsgkind,jdbcType=INTEGER},
+      fsMsg = #{fsmsg,jdbcType=VARCHAR},
+      fsSender = #{fssender,jdbcType=VARCHAR},
+      fsMTableId = #{fsmtableid,jdbcType=VARCHAR},
+      fsMTableName = #{fsmtablename,jdbcType=VARCHAR},
+      fsSellNo = #{fssellno,jdbcType=VARCHAR},
+      fsReceiver = #{fsreceiver,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsReadTime = #{fsreadtime,jdbcType=VARCHAR},
+      fsReadUserName = #{fsreadusername,jdbcType=VARCHAR},
+      fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
+      fsCreateTime = #{fscreatetime,jdbcType=VARCHAR}
+    where fiMsgNo = #{fimsgno,jdbcType=INTEGER}
+  </update>
+</mapper>

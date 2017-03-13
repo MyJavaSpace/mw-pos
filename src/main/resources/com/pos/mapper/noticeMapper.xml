@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.noticeMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.notice" >
+    <id column="Id" property="id" jdbcType="INTEGER" />
+    <result column="fsTitle" property="fstitle" jdbcType="VARCHAR" />
+    <result column="fsContent" property="fscontent" jdbcType="VARCHAR" />
+    <result column="fiType" property="fitype" jdbcType="INTEGER" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsCreatUser" property="fscreatuser" jdbcType="VARCHAR" />
+    <result column="fsCreatTime" property="fscreattime" jdbcType="VARCHAR" />
+    <result column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, fsTitle, fsContent, fiType, fiStatus, fsCreatUser, fsCreatTime, fsShopGUID, fsUpdateTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbnotice
+    where Id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tbnotice
+    where Id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.notice" >
+    insert into tbnotice (Id, fsTitle, fsContent, 
+      fiType, fiStatus, fsCreatUser, 
+      fsCreatTime, fsShopGUID, fsUpdateTime
+      )
+    values (#{id,jdbcType=INTEGER}, #{fstitle,jdbcType=VARCHAR}, #{fscontent,jdbcType=VARCHAR}, 
+      #{fitype,jdbcType=INTEGER}, #{fistatus,jdbcType=INTEGER}, #{fscreatuser,jdbcType=VARCHAR}, 
+      #{fscreattime,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, #{fsupdatetime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.notice" >
+    insert into tbnotice
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="fstitle != null" >
+        fsTitle,
+      </if>
+      <if test="fscontent != null" >
+        fsContent,
+      </if>
+      <if test="fitype != null" >
+        fiType,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fscreatuser != null" >
+        fsCreatUser,
+      </if>
+      <if test="fscreattime != null" >
+        fsCreatTime,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fstitle != null" >
+        #{fstitle,jdbcType=VARCHAR},
+      </if>
+      <if test="fscontent != null" >
+        #{fscontent,jdbcType=VARCHAR},
+      </if>
+      <if test="fitype != null" >
+        #{fitype,jdbcType=INTEGER},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fscreatuser != null" >
+        #{fscreatuser,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreattime != null" >
+        #{fscreattime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.notice" >
+    update tbnotice
+    <set >
+      <if test="fstitle != null" >
+        fsTitle = #{fstitle,jdbcType=VARCHAR},
+      </if>
+      <if test="fscontent != null" >
+        fsContent = #{fscontent,jdbcType=VARCHAR},
+      </if>
+      <if test="fitype != null" >
+        fiType = #{fitype,jdbcType=INTEGER},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fscreatuser != null" >
+        fsCreatUser = #{fscreatuser,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreattime != null" >
+        fsCreatTime = #{fscreattime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.notice" >
+    update tbnotice
+    set fsTitle = #{fstitle,jdbcType=VARCHAR},
+      fsContent = #{fscontent,jdbcType=VARCHAR},
+      fiType = #{fitype,jdbcType=INTEGER},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsCreatUser = #{fscreatuser,jdbcType=VARCHAR},
+      fsCreatTime = #{fscreattime,jdbcType=VARCHAR},
+      fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR}
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

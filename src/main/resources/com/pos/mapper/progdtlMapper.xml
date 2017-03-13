@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.progdtlMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.progdtl" >
+    <id column="fsProgDtlId" property="fsprogdtlid" jdbcType="VARCHAR" />
+    <id column="fsProgId" property="fsprogid" jdbcType="VARCHAR" />
+    <result column="fsProglName" property="fsproglname" jdbcType="VARCHAR" />
+    <result column="fiSortOrder" property="fisortorder" jdbcType="INTEGER" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsProgDtlId, fsProgId, fsProglName, fiSortOrder, fsUpdateTime, fsUpdateUserId, fsUpdateUserName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.progdtlKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbprogdtl
+    where fsProgDtlId = #{fsprogdtlid,jdbcType=VARCHAR}
+      and fsProgId = #{fsprogid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.progdtlKey" >
+    delete from tbprogdtl
+    where fsProgDtlId = #{fsprogdtlid,jdbcType=VARCHAR}
+      and fsProgId = #{fsprogid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.progdtl" >
+    insert into tbprogdtl (fsProgDtlId, fsProgId, fsProglName, 
+      fiSortOrder, fsUpdateTime, fsUpdateUserId, 
+      fsUpdateUserName)
+    values (#{fsprogdtlid,jdbcType=VARCHAR}, #{fsprogid,jdbcType=VARCHAR}, #{fsproglname,jdbcType=VARCHAR}, 
+      #{fisortorder,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
+      #{fsupdateusername,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.progdtl" >
+    insert into tbprogdtl
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fsprogdtlid != null" >
+        fsProgDtlId,
+      </if>
+      <if test="fsprogid != null" >
+        fsProgId,
+      </if>
+      <if test="fsproglname != null" >
+        fsProglName,
+      </if>
+      <if test="fisortorder != null" >
+        fiSortOrder,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fsprogdtlid != null" >
+        #{fsprogdtlid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsprogid != null" >
+        #{fsprogid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsproglname != null" >
+        #{fsproglname,jdbcType=VARCHAR},
+      </if>
+      <if test="fisortorder != null" >
+        #{fisortorder,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.progdtl" >
+    update tbprogdtl
+    <set >
+      <if test="fsproglname != null" >
+        fsProglName = #{fsproglname,jdbcType=VARCHAR},
+      </if>
+      <if test="fisortorder != null" >
+        fiSortOrder = #{fisortorder,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fsProgDtlId = #{fsprogdtlid,jdbcType=VARCHAR}
+      and fsProgId = #{fsprogid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.progdtl" >
+    update tbprogdtl
+    set fsProglName = #{fsproglname,jdbcType=VARCHAR},
+      fiSortOrder = #{fisortorder,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR}
+    where fsProgDtlId = #{fsprogdtlid,jdbcType=VARCHAR}
+      and fsProgId = #{fsprogid,jdbcType=VARCHAR}
+  </update>
+</mapper>

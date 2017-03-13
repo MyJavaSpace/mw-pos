@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.userMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.user" >
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <id column="fsStaffId" property="fsstaffid" jdbcType="VARCHAR" />
+    <result column="fsUserName" property="fsusername" jdbcType="VARCHAR" />
+    <result column="fsDeptId" property="fsdeptid" jdbcType="VARCHAR" />
+    <result column="fsCellphone" property="fscellphone" jdbcType="VARCHAR" />
+    <result column="fsPID" property="fspid" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsUserId" property="fsuserid" jdbcType="VARCHAR" />
+    <result column="fsPwd" property="fspwd" jdbcType="VARCHAR" />
+    <result column="fsAuthCode" property="fsauthcode" jdbcType="VARCHAR" />
+    <result column="fiIsSales" property="fiissales" jdbcType="INTEGER" />
+    <result column="fsNote" property="fsnote" jdbcType="VARCHAR" />
+    <result column="fsCreateTime" property="fscreatetime" jdbcType="VARCHAR" />
+    <result column="fsCreateUserId" property="fscreateuserid" jdbcType="VARCHAR" />
+    <result column="fsCreateUserName" property="fscreateusername" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fsCompanyGUID" property="fscompanyguid" jdbcType="VARCHAR" />
+    <result column="fiIsDiscount" property="fiisdiscount" jdbcType="INTEGER" />
+    <result column="fiIsRetreatFood" property="fiisretreatfood" jdbcType="INTEGER" />
+    <result column="fiIsGift" property="fiisgift" jdbcType="INTEGER" />
+    <result column="fsICCardCode" property="fsiccardcode" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsShopGUID, fsStaffId, fsUserName, fsDeptId, fsCellphone, fsPID, fiStatus, fsUserId, 
+    fsPwd, fsAuthCode, fiIsSales, fsNote, fsCreateTime, fsCreateUserId, fsCreateUserName, 
+    fsUpdateUserId, fsUpdateTime, fsUpdateUserName, fsCompanyGUID, fiIsDiscount, fiIsRetreatFood, 
+    fiIsGift, fsICCardCode
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.userKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbuser
+    where fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+      and fsStaffId = #{fsstaffid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.userKey" >
+    delete from tbuser
+    where fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+      and fsStaffId = #{fsstaffid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.user" >
+    insert into tbuser (fsShopGUID, fsStaffId, fsUserName, 
+      fsDeptId, fsCellphone, fsPID, 
+      fiStatus, fsUserId, fsPwd, 
+      fsAuthCode, fiIsSales, fsNote, 
+      fsCreateTime, fsCreateUserId, fsCreateUserName, 
+      fsUpdateUserId, fsUpdateTime, fsUpdateUserName, 
+      fsCompanyGUID, fiIsDiscount, fiIsRetreatFood, 
+      fiIsGift, fsICCardCode)
+    values (#{fsshopguid,jdbcType=VARCHAR}, #{fsstaffid,jdbcType=VARCHAR}, #{fsusername,jdbcType=VARCHAR}, 
+      #{fsdeptid,jdbcType=VARCHAR}, #{fscellphone,jdbcType=VARCHAR}, #{fspid,jdbcType=VARCHAR}, 
+      #{fistatus,jdbcType=INTEGER}, #{fsuserid,jdbcType=VARCHAR}, #{fspwd,jdbcType=VARCHAR}, 
+      #{fsauthcode,jdbcType=VARCHAR}, #{fiissales,jdbcType=INTEGER}, #{fsnote,jdbcType=VARCHAR}, 
+      #{fscreatetime,jdbcType=VARCHAR}, #{fscreateuserid,jdbcType=VARCHAR}, #{fscreateusername,jdbcType=VARCHAR}, 
+      #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
+      #{fscompanyguid,jdbcType=VARCHAR}, #{fiisdiscount,jdbcType=INTEGER}, #{fiisretreatfood,jdbcType=INTEGER}, 
+      #{fiisgift,jdbcType=INTEGER}, #{fsiccardcode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.user" >
+    insert into tbuser
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fsstaffid != null" >
+        fsStaffId,
+      </if>
+      <if test="fsusername != null" >
+        fsUserName,
+      </if>
+      <if test="fsdeptid != null" >
+        fsDeptId,
+      </if>
+      <if test="fscellphone != null" >
+        fsCellphone,
+      </if>
+      <if test="fspid != null" >
+        fsPID,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fsuserid != null" >
+        fsUserId,
+      </if>
+      <if test="fspwd != null" >
+        fsPwd,
+      </if>
+      <if test="fsauthcode != null" >
+        fsAuthCode,
+      </if>
+      <if test="fiissales != null" >
+        fiIsSales,
+      </if>
+      <if test="fsnote != null" >
+        fsNote,
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime,
+      </if>
+      <if test="fscreateuserid != null" >
+        fsCreateUserId,
+      </if>
+      <if test="fscreateusername != null" >
+        fsCreateUserName,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fscompanyguid != null" >
+        fsCompanyGUID,
+      </if>
+      <if test="fiisdiscount != null" >
+        fiIsDiscount,
+      </if>
+      <if test="fiisretreatfood != null" >
+        fiIsRetreatFood,
+      </if>
+      <if test="fiisgift != null" >
+        fiIsGift,
+      </if>
+      <if test="fsiccardcode != null" >
+        fsICCardCode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsstaffid != null" >
+        #{fsstaffid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsusername != null" >
+        #{fsusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdeptid != null" >
+        #{fsdeptid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscellphone != null" >
+        #{fscellphone,jdbcType=VARCHAR},
+      </if>
+      <if test="fspid != null" >
+        #{fspid,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsuserid != null" >
+        #{fsuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fspwd != null" >
+        #{fspwd,jdbcType=VARCHAR},
+      </if>
+      <if test="fsauthcode != null" >
+        #{fsauthcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fiissales != null" >
+        #{fiissales,jdbcType=INTEGER},
+      </if>
+      <if test="fsnote != null" >
+        #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreatetime != null" >
+        #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateuserid != null" >
+        #{fscreateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateusername != null" >
+        #{fscreateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fscompanyguid != null" >
+        #{fscompanyguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fiisdiscount != null" >
+        #{fiisdiscount,jdbcType=INTEGER},
+      </if>
+      <if test="fiisretreatfood != null" >
+        #{fiisretreatfood,jdbcType=INTEGER},
+      </if>
+      <if test="fiisgift != null" >
+        #{fiisgift,jdbcType=INTEGER},
+      </if>
+      <if test="fsiccardcode != null" >
+        #{fsiccardcode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.user" >
+    update tbuser
+    <set >
+      <if test="fsusername != null" >
+        fsUserName = #{fsusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdeptid != null" >
+        fsDeptId = #{fsdeptid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscellphone != null" >
+        fsCellphone = #{fscellphone,jdbcType=VARCHAR},
+      </if>
+      <if test="fspid != null" >
+        fsPID = #{fspid,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsuserid != null" >
+        fsUserId = #{fsuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fspwd != null" >
+        fsPwd = #{fspwd,jdbcType=VARCHAR},
+      </if>
+      <if test="fsauthcode != null" >
+        fsAuthCode = #{fsauthcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fiissales != null" >
+        fiIsSales = #{fiissales,jdbcType=INTEGER},
+      </if>
+      <if test="fsnote != null" >
+        fsNote = #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateuserid != null" >
+        fsCreateUserId = #{fscreateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateusername != null" >
+        fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fscompanyguid != null" >
+        fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fiisdiscount != null" >
+        fiIsDiscount = #{fiisdiscount,jdbcType=INTEGER},
+      </if>
+      <if test="fiisretreatfood != null" >
+        fiIsRetreatFood = #{fiisretreatfood,jdbcType=INTEGER},
+      </if>
+      <if test="fiisgift != null" >
+        fiIsGift = #{fiisgift,jdbcType=INTEGER},
+      </if>
+      <if test="fsiccardcode != null" >
+        fsICCardCode = #{fsiccardcode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+      and fsStaffId = #{fsstaffid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.user" >
+    update tbuser
+    set fsUserName = #{fsusername,jdbcType=VARCHAR},
+      fsDeptId = #{fsdeptid,jdbcType=VARCHAR},
+      fsCellphone = #{fscellphone,jdbcType=VARCHAR},
+      fsPID = #{fspid,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsUserId = #{fsuserid,jdbcType=VARCHAR},
+      fsPwd = #{fspwd,jdbcType=VARCHAR},
+      fsAuthCode = #{fsauthcode,jdbcType=VARCHAR},
+      fiIsSales = #{fiissales,jdbcType=INTEGER},
+      fsNote = #{fsnote,jdbcType=VARCHAR},
+      fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
+      fsCreateUserId = #{fscreateuserid,jdbcType=VARCHAR},
+      fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR},
+      fiIsDiscount = #{fiisdiscount,jdbcType=INTEGER},
+      fiIsRetreatFood = #{fiisretreatfood,jdbcType=INTEGER},
+      fiIsGift = #{fiisgift,jdbcType=INTEGER},
+      fsICCardCode = #{fsiccardcode,jdbcType=VARCHAR}
+    where fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+      and fsStaffId = #{fsstaffid,jdbcType=VARCHAR}
+  </update>
+</mapper>

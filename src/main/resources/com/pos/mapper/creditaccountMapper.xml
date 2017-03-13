@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.creditaccountMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.creditaccount" >
+    <id column="fsCreditAccountId" property="fscreditaccountid" jdbcType="VARCHAR" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsCreditAccountName" property="fscreditaccountname" jdbcType="VARCHAR" />
+    <result column="fdCreditAmt" property="fdcreditamt" jdbcType="DECIMAL" />
+    <result column="fdDebtAmt" property="fddebtamt" jdbcType="DECIMAL" />
+    <result column="fsContact" property="fscontact" jdbcType="VARCHAR" />
+    <result column="fsCellphoneCt" property="fscellphonect" jdbcType="VARCHAR" />
+    <result column="fsTelCt" property="fstelct" jdbcType="VARCHAR" />
+    <result column="fiImgWidth" property="fiimgwidth" jdbcType="INTEGER" />
+    <result column="fiImgHeight" property="fiimgheight" jdbcType="INTEGER" />
+    <result column="fsImageURL" property="fsimageurl" jdbcType="VARCHAR" />
+    <result column="fsImagePath" property="fsimagepath" jdbcType="VARCHAR" />
+    <result column="fsNote" property="fsnote" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsCreditAccountId, fsShopGUID, fsCreditAccountName, fdCreditAmt, fdDebtAmt, fsContact, 
+    fsCellphoneCt, fsTelCt, fiImgWidth, fiImgHeight, fsImageURL, fsImagePath, fsNote, 
+    fiStatus, fsUpdateTime, fsUpdateUserId, fsUpdateUserName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.creditaccountKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbcreditaccount
+    where fsCreditAccountId = #{fscreditaccountid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.creditaccountKey" >
+    delete from tbcreditaccount
+    where fsCreditAccountId = #{fscreditaccountid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.creditaccount" >
+    insert into tbcreditaccount (fsCreditAccountId, fsShopGUID, fsCreditAccountName, 
+      fdCreditAmt, fdDebtAmt, fsContact, 
+      fsCellphoneCt, fsTelCt, fiImgWidth, 
+      fiImgHeight, fsImageURL, fsImagePath, 
+      fsNote, fiStatus, fsUpdateTime, 
+      fsUpdateUserId, fsUpdateUserName)
+    values (#{fscreditaccountid,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, #{fscreditaccountname,jdbcType=VARCHAR}, 
+      #{fdcreditamt,jdbcType=DECIMAL}, #{fddebtamt,jdbcType=DECIMAL}, #{fscontact,jdbcType=VARCHAR}, 
+      #{fscellphonect,jdbcType=VARCHAR}, #{fstelct,jdbcType=VARCHAR}, #{fiimgwidth,jdbcType=INTEGER}, 
+      #{fiimgheight,jdbcType=INTEGER}, #{fsimageurl,jdbcType=VARCHAR}, #{fsimagepath,jdbcType=VARCHAR}, 
+      #{fsnote,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, 
+      #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.creditaccount" >
+    insert into tbcreditaccount
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fscreditaccountid != null" >
+        fsCreditAccountId,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fscreditaccountname != null" >
+        fsCreditAccountName,
+      </if>
+      <if test="fdcreditamt != null" >
+        fdCreditAmt,
+      </if>
+      <if test="fddebtamt != null" >
+        fdDebtAmt,
+      </if>
+      <if test="fscontact != null" >
+        fsContact,
+      </if>
+      <if test="fscellphonect != null" >
+        fsCellphoneCt,
+      </if>
+      <if test="fstelct != null" >
+        fsTelCt,
+      </if>
+      <if test="fiimgwidth != null" >
+        fiImgWidth,
+      </if>
+      <if test="fiimgheight != null" >
+        fiImgHeight,
+      </if>
+      <if test="fsimageurl != null" >
+        fsImageURL,
+      </if>
+      <if test="fsimagepath != null" >
+        fsImagePath,
+      </if>
+      <if test="fsnote != null" >
+        fsNote,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fscreditaccountid != null" >
+        #{fscreditaccountid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreditaccountname != null" >
+        #{fscreditaccountname,jdbcType=VARCHAR},
+      </if>
+      <if test="fdcreditamt != null" >
+        #{fdcreditamt,jdbcType=DECIMAL},
+      </if>
+      <if test="fddebtamt != null" >
+        #{fddebtamt,jdbcType=DECIMAL},
+      </if>
+      <if test="fscontact != null" >
+        #{fscontact,jdbcType=VARCHAR},
+      </if>
+      <if test="fscellphonect != null" >
+        #{fscellphonect,jdbcType=VARCHAR},
+      </if>
+      <if test="fstelct != null" >
+        #{fstelct,jdbcType=VARCHAR},
+      </if>
+      <if test="fiimgwidth != null" >
+        #{fiimgwidth,jdbcType=INTEGER},
+      </if>
+      <if test="fiimgheight != null" >
+        #{fiimgheight,jdbcType=INTEGER},
+      </if>
+      <if test="fsimageurl != null" >
+        #{fsimageurl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsimagepath != null" >
+        #{fsimagepath,jdbcType=VARCHAR},
+      </if>
+      <if test="fsnote != null" >
+        #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.creditaccount" >
+    update tbcreditaccount
+    <set >
+      <if test="fscreditaccountname != null" >
+        fsCreditAccountName = #{fscreditaccountname,jdbcType=VARCHAR},
+      </if>
+      <if test="fdcreditamt != null" >
+        fdCreditAmt = #{fdcreditamt,jdbcType=DECIMAL},
+      </if>
+      <if test="fddebtamt != null" >
+        fdDebtAmt = #{fddebtamt,jdbcType=DECIMAL},
+      </if>
+      <if test="fscontact != null" >
+        fsContact = #{fscontact,jdbcType=VARCHAR},
+      </if>
+      <if test="fscellphonect != null" >
+        fsCellphoneCt = #{fscellphonect,jdbcType=VARCHAR},
+      </if>
+      <if test="fstelct != null" >
+        fsTelCt = #{fstelct,jdbcType=VARCHAR},
+      </if>
+      <if test="fiimgwidth != null" >
+        fiImgWidth = #{fiimgwidth,jdbcType=INTEGER},
+      </if>
+      <if test="fiimgheight != null" >
+        fiImgHeight = #{fiimgheight,jdbcType=INTEGER},
+      </if>
+      <if test="fsimageurl != null" >
+        fsImageURL = #{fsimageurl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsimagepath != null" >
+        fsImagePath = #{fsimagepath,jdbcType=VARCHAR},
+      </if>
+      <if test="fsnote != null" >
+        fsNote = #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fsCreditAccountId = #{fscreditaccountid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.creditaccount" >
+    update tbcreditaccount
+    set fsCreditAccountName = #{fscreditaccountname,jdbcType=VARCHAR},
+      fdCreditAmt = #{fdcreditamt,jdbcType=DECIMAL},
+      fdDebtAmt = #{fddebtamt,jdbcType=DECIMAL},
+      fsContact = #{fscontact,jdbcType=VARCHAR},
+      fsCellphoneCt = #{fscellphonect,jdbcType=VARCHAR},
+      fsTelCt = #{fstelct,jdbcType=VARCHAR},
+      fiImgWidth = #{fiimgwidth,jdbcType=INTEGER},
+      fiImgHeight = #{fiimgheight,jdbcType=INTEGER},
+      fsImageURL = #{fsimageurl,jdbcType=VARCHAR},
+      fsImagePath = #{fsimagepath,jdbcType=VARCHAR},
+      fsNote = #{fsnote,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR}
+    where fsCreditAccountId = #{fscreditaccountid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

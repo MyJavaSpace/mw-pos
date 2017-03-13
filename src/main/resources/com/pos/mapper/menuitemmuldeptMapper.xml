@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.menuitemmuldeptMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.menuitemmuldept" >
+    <id column="fiMulDeptCd" property="fimuldeptcd" jdbcType="INTEGER" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fiItemCd" property="fiitemcd" jdbcType="INTEGER" />
+    <result column="fsDeptId" property="fsdeptid" jdbcType="VARCHAR" />
+    <result column="fsMAreaId" property="fsmareaid" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fiMulDeptCd, fsShopGUID, fiItemCd, fsDeptId, fsMAreaId, fiStatus, fsUpdateTime, fsUpdateUserId, 
+    fsUpdateUserName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.menuitemmuldeptKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbmenuitemmuldept
+    where fiMulDeptCd = #{fimuldeptcd,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.menuitemmuldeptKey" >
+    delete from tbmenuitemmuldept
+    where fiMulDeptCd = #{fimuldeptcd,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.menuitemmuldept" >
+    insert into tbmenuitemmuldept (fiMulDeptCd, fsShopGUID, fiItemCd, 
+      fsDeptId, fsMAreaId, fiStatus, 
+      fsUpdateTime, fsUpdateUserId, fsUpdateUserName
+      )
+    values (#{fimuldeptcd,jdbcType=INTEGER}, #{fsshopguid,jdbcType=VARCHAR}, #{fiitemcd,jdbcType=INTEGER}, 
+      #{fsdeptid,jdbcType=VARCHAR}, #{fsmareaid,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}, 
+      #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.menuitemmuldept" >
+    insert into tbmenuitemmuldept
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fimuldeptcd != null" >
+        fiMulDeptCd,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fiitemcd != null" >
+        fiItemCd,
+      </if>
+      <if test="fsdeptid != null" >
+        fsDeptId,
+      </if>
+      <if test="fsmareaid != null" >
+        fsMAreaId,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fimuldeptcd != null" >
+        #{fimuldeptcd,jdbcType=INTEGER},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fiitemcd != null" >
+        #{fiitemcd,jdbcType=INTEGER},
+      </if>
+      <if test="fsdeptid != null" >
+        #{fsdeptid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmareaid != null" >
+        #{fsmareaid,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.menuitemmuldept" >
+    update tbmenuitemmuldept
+    <set >
+      <if test="fiitemcd != null" >
+        fiItemCd = #{fiitemcd,jdbcType=INTEGER},
+      </if>
+      <if test="fsdeptid != null" >
+        fsDeptId = #{fsdeptid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmareaid != null" >
+        fsMAreaId = #{fsmareaid,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fiMulDeptCd = #{fimuldeptcd,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.menuitemmuldept" >
+    update tbmenuitemmuldept
+    set fiItemCd = #{fiitemcd,jdbcType=INTEGER},
+      fsDeptId = #{fsdeptid,jdbcType=VARCHAR},
+      fsMAreaId = #{fsmareaid,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR}
+    where fiMulDeptCd = #{fimuldeptcd,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

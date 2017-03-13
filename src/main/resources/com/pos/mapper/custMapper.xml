@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.custMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.cust" >
+    <id column="fsCustGUID" property="fscustguid" jdbcType="VARCHAR" />
+    <result column="fsCustCls" property="fscustcls" jdbcType="VARCHAR" />
+    <result column="fsCustId" property="fscustid" jdbcType="VARCHAR" />
+    <result column="fsCustSurId" property="fscustsurid" jdbcType="VARCHAR" />
+    <result column="fsCustSteId" property="fscuststeid" jdbcType="VARCHAR" />
+    <result column="fsCustTypeId" property="fscusttypeid" jdbcType="VARCHAR" />
+    <result column="fsCustName" property="fscustname" jdbcType="VARCHAR" />
+    <result column="fsCustEngName" property="fscustengname" jdbcType="VARCHAR" />
+    <result column="fsPid" property="fspid" jdbcType="VARCHAR" />
+    <result column="fsBirthDate" property="fsbirthdate" jdbcType="VARCHAR" />
+    <result column="fsSex" property="fssex" jdbcType="VARCHAR" />
+    <result column="fsJobTitle" property="fsjobtitle" jdbcType="VARCHAR" />
+    <result column="fsCellphonePl" property="fscellphonepl" jdbcType="VARCHAR" />
+    <result column="fsTelPl" property="fstelpl" jdbcType="VARCHAR" />
+    <result column="fsEmailPl" property="fsemailpl" jdbcType="VARCHAR" />
+    <result column="fsProvinceId_Pl" property="fsprovinceidPl" jdbcType="VARCHAR" />
+    <result column="fsCityId_Pl" property="fscityidPl" jdbcType="VARCHAR" />
+    <result column="fsDistrictId_Pl" property="fsdistrictidPl" jdbcType="VARCHAR" />
+    <result column="fsAddrPl" property="fsaddrpl" jdbcType="VARCHAR" />
+    <result column="fsPostal_Pl" property="fspostalPl" jdbcType="VARCHAR" />
+    <result column="fsCompName" property="fscompname" jdbcType="VARCHAR" />
+    <result column="fsCompEngName" property="fscompengname" jdbcType="VARCHAR" />
+    <result column="fsTradeId" property="fstradeid" jdbcType="VARCHAR" />
+    <result column="fsTelCp" property="fstelcp" jdbcType="VARCHAR" />
+    <result column="fsTelCpExt" property="fstelcpext" jdbcType="VARCHAR" />
+    <result column="fsFaxCp" property="fsfaxcp" jdbcType="VARCHAR" />
+    <result column="fsEmailCp" property="fsemailcp" jdbcType="VARCHAR" />
+    <result column="fsProvinceId_Cp" property="fsprovinceidCp" jdbcType="VARCHAR" />
+    <result column="fsCityId_Cp" property="fscityidCp" jdbcType="VARCHAR" />
+    <result column="fsDistrictId_Cp" property="fsdistrictidCp" jdbcType="VARCHAR" />
+    <result column="fsAddrCp" property="fsaddrcp" jdbcType="VARCHAR" />
+    <result column="fsPostal_Cp" property="fspostalCp" jdbcType="VARCHAR" />
+    <result column="fsContact" property="fscontact" jdbcType="VARCHAR" />
+    <result column="fsJobTitleCt" property="fsjobtitlect" jdbcType="VARCHAR" />
+    <result column="fsTelCt" property="fstelct" jdbcType="VARCHAR" />
+    <result column="fsCellphoneCt" property="fscellphonect" jdbcType="VARCHAR" />
+    <result column="fsEmailCt" property="fsemailct" jdbcType="VARCHAR" />
+    <result column="fsBusiScope" property="fsbusiscope" jdbcType="VARCHAR" />
+    <result column="fsCelebrateDate" property="fscelebratedate" jdbcType="VARCHAR" />
+    <result column="fsCardNo" property="fscardno" jdbcType="VARCHAR" />
+    <result column="fiCardSte" property="ficardste" jdbcType="INTEGER" />
+    <result column="fsCardFreezeDesc" property="fscardfreezedesc" jdbcType="VARCHAR" />
+    <result column="fiIsVIP" property="fiisvip" jdbcType="INTEGER" />
+    <result column="fiPoint" property="fipoint" jdbcType="INTEGER" />
+    <result column="fiIsSms" property="fiissms" jdbcType="INTEGER" />
+    <result column="fsExpArea" property="fsexparea" jdbcType="VARCHAR" />
+    <result column="fsHobby" property="fshobby" jdbcType="VARCHAR" />
+    <result column="fsCareful" property="fscareful" jdbcType="VARCHAR" />
+    <result column="fsExecutive" property="fsexecutive" jdbcType="VARCHAR" />
+    <result column="fsExpendDate" property="fsexpenddate" jdbcType="VARCHAR" />
+    <result column="fsNote" property="fsnote" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsCreateTime" property="fscreatetime" jdbcType="VARCHAR" />
+    <result column="fsCreateUserName" property="fscreateusername" jdbcType="VARCHAR" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsCompanyGUID" property="fscompanyguid" jdbcType="VARCHAR" />
+    <result column="fsVIPLvlId" property="fsviplvlid" jdbcType="VARCHAR" />
+    <result column="fiExpTag" property="fiexptag" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsCustGUID, fsCustCls, fsCustId, fsCustSurId, fsCustSteId, fsCustTypeId, fsCustName, 
+    fsCustEngName, fsPid, fsBirthDate, fsSex, fsJobTitle, fsCellphonePl, fsTelPl, fsEmailPl, 
+    fsProvinceId_Pl, fsCityId_Pl, fsDistrictId_Pl, fsAddrPl, fsPostal_Pl, fsCompName, 
+    fsCompEngName, fsTradeId, fsTelCp, fsTelCpExt, fsFaxCp, fsEmailCp, fsProvinceId_Cp, 
+    fsCityId_Cp, fsDistrictId_Cp, fsAddrCp, fsPostal_Cp, fsContact, fsJobTitleCt, fsTelCt, 
+    fsCellphoneCt, fsEmailCt, fsBusiScope, fsCelebrateDate, fsCardNo, fiCardSte, fsCardFreezeDesc, 
+    fiIsVIP, fiPoint, fiIsSms, fsExpArea, fsHobby, fsCareful, fsExecutive, fsExpendDate, 
+    fsNote, fiStatus, fsCreateTime, fsCreateUserName, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
+    fsShopGUID, fsCompanyGUID, fsVIPLvlId, fiExpTag
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbcust
+    where fsCustGUID = #{fscustguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tbcust
+    where fsCustGUID = #{fscustguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.cust" >
+    insert into tbcust (fsCustGUID, fsCustCls, fsCustId, 
+      fsCustSurId, fsCustSteId, fsCustTypeId, 
+      fsCustName, fsCustEngName, fsPid, 
+      fsBirthDate, fsSex, fsJobTitle, 
+      fsCellphonePl, fsTelPl, fsEmailPl, 
+      fsProvinceId_Pl, fsCityId_Pl, fsDistrictId_Pl, 
+      fsAddrPl, fsPostal_Pl, fsCompName, 
+      fsCompEngName, fsTradeId, fsTelCp, 
+      fsTelCpExt, fsFaxCp, fsEmailCp, 
+      fsProvinceId_Cp, fsCityId_Cp, fsDistrictId_Cp, 
+      fsAddrCp, fsPostal_Cp, fsContact, 
+      fsJobTitleCt, fsTelCt, fsCellphoneCt, 
+      fsEmailCt, fsBusiScope, fsCelebrateDate, 
+      fsCardNo, fiCardSte, fsCardFreezeDesc, 
+      fiIsVIP, fiPoint, fiIsSms, 
+      fsExpArea, fsHobby, fsCareful, 
+      fsExecutive, fsExpendDate, fsNote, 
+      fiStatus, fsCreateTime, fsCreateUserName, 
+      fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
+      fsShopGUID, fsCompanyGUID, fsVIPLvlId, 
+      fiExpTag)
+    values (#{fscustguid,jdbcType=VARCHAR}, #{fscustcls,jdbcType=VARCHAR}, #{fscustid,jdbcType=VARCHAR}, 
+      #{fscustsurid,jdbcType=VARCHAR}, #{fscuststeid,jdbcType=VARCHAR}, #{fscusttypeid,jdbcType=VARCHAR}, 
+      #{fscustname,jdbcType=VARCHAR}, #{fscustengname,jdbcType=VARCHAR}, #{fspid,jdbcType=VARCHAR}, 
+      #{fsbirthdate,jdbcType=VARCHAR}, #{fssex,jdbcType=VARCHAR}, #{fsjobtitle,jdbcType=VARCHAR}, 
+      #{fscellphonepl,jdbcType=VARCHAR}, #{fstelpl,jdbcType=VARCHAR}, #{fsemailpl,jdbcType=VARCHAR}, 
+      #{fsprovinceidPl,jdbcType=VARCHAR}, #{fscityidPl,jdbcType=VARCHAR}, #{fsdistrictidPl,jdbcType=VARCHAR}, 
+      #{fsaddrpl,jdbcType=VARCHAR}, #{fspostalPl,jdbcType=VARCHAR}, #{fscompname,jdbcType=VARCHAR}, 
+      #{fscompengname,jdbcType=VARCHAR}, #{fstradeid,jdbcType=VARCHAR}, #{fstelcp,jdbcType=VARCHAR}, 
+      #{fstelcpext,jdbcType=VARCHAR}, #{fsfaxcp,jdbcType=VARCHAR}, #{fsemailcp,jdbcType=VARCHAR}, 
+      #{fsprovinceidCp,jdbcType=VARCHAR}, #{fscityidCp,jdbcType=VARCHAR}, #{fsdistrictidCp,jdbcType=VARCHAR}, 
+      #{fsaddrcp,jdbcType=VARCHAR}, #{fspostalCp,jdbcType=VARCHAR}, #{fscontact,jdbcType=VARCHAR}, 
+      #{fsjobtitlect,jdbcType=VARCHAR}, #{fstelct,jdbcType=VARCHAR}, #{fscellphonect,jdbcType=VARCHAR}, 
+      #{fsemailct,jdbcType=VARCHAR}, #{fsbusiscope,jdbcType=VARCHAR}, #{fscelebratedate,jdbcType=VARCHAR}, 
+      #{fscardno,jdbcType=VARCHAR}, #{ficardste,jdbcType=INTEGER}, #{fscardfreezedesc,jdbcType=VARCHAR}, 
+      #{fiisvip,jdbcType=INTEGER}, #{fipoint,jdbcType=INTEGER}, #{fiissms,jdbcType=INTEGER}, 
+      #{fsexparea,jdbcType=VARCHAR}, #{fshobby,jdbcType=VARCHAR}, #{fscareful,jdbcType=VARCHAR}, 
+      #{fsexecutive,jdbcType=VARCHAR}, #{fsexpenddate,jdbcType=VARCHAR}, #{fsnote,jdbcType=VARCHAR}, 
+      #{fistatus,jdbcType=INTEGER}, #{fscreatetime,jdbcType=VARCHAR}, #{fscreateusername,jdbcType=VARCHAR}, 
+      #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
+      #{fsshopguid,jdbcType=VARCHAR}, #{fscompanyguid,jdbcType=VARCHAR}, #{fsviplvlid,jdbcType=VARCHAR}, 
+      #{fiexptag,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.cust" >
+    insert into tbcust
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fscustguid != null" >
+        fsCustGUID,
+      </if>
+      <if test="fscustcls != null" >
+        fsCustCls,
+      </if>
+      <if test="fscustid != null" >
+        fsCustId,
+      </if>
+      <if test="fscustsurid != null" >
+        fsCustSurId,
+      </if>
+      <if test="fscuststeid != null" >
+        fsCustSteId,
+      </if>
+      <if test="fscusttypeid != null" >
+        fsCustTypeId,
+      </if>
+      <if test="fscustname != null" >
+        fsCustName,
+      </if>
+      <if test="fscustengname != null" >
+        fsCustEngName,
+      </if>
+      <if test="fspid != null" >
+        fsPid,
+      </if>
+      <if test="fsbirthdate != null" >
+        fsBirthDate,
+      </if>
+      <if test="fssex != null" >
+        fsSex,
+      </if>
+      <if test="fsjobtitle != null" >
+        fsJobTitle,
+      </if>
+      <if test="fscellphonepl != null" >
+        fsCellphonePl,
+      </if>
+      <if test="fstelpl != null" >
+        fsTelPl,
+      </if>
+      <if test="fsemailpl != null" >
+        fsEmailPl,
+      </if>
+      <if test="fsprovinceidPl != null" >
+        fsProvinceId_Pl,
+      </if>
+      <if test="fscityidPl != null" >
+        fsCityId_Pl,
+      </if>
+      <if test="fsdistrictidPl != null" >
+        fsDistrictId_Pl,
+      </if>
+      <if test="fsaddrpl != null" >
+        fsAddrPl,
+      </if>
+      <if test="fspostalPl != null" >
+        fsPostal_Pl,
+      </if>
+      <if test="fscompname != null" >
+        fsCompName,
+      </if>
+      <if test="fscompengname != null" >
+        fsCompEngName,
+      </if>
+      <if test="fstradeid != null" >
+        fsTradeId,
+      </if>
+      <if test="fstelcp != null" >
+        fsTelCp,
+      </if>
+      <if test="fstelcpext != null" >
+        fsTelCpExt,
+      </if>
+      <if test="fsfaxcp != null" >
+        fsFaxCp,
+      </if>
+      <if test="fsemailcp != null" >
+        fsEmailCp,
+      </if>
+      <if test="fsprovinceidCp != null" >
+        fsProvinceId_Cp,
+      </if>
+      <if test="fscityidCp != null" >
+        fsCityId_Cp,
+      </if>
+      <if test="fsdistrictidCp != null" >
+        fsDistrictId_Cp,
+      </if>
+      <if test="fsaddrcp != null" >
+        fsAddrCp,
+      </if>
+      <if test="fspostalCp != null" >
+        fsPostal_Cp,
+      </if>
+      <if test="fscontact != null" >
+        fsContact,
+      </if>
+      <if test="fsjobtitlect != null" >
+        fsJobTitleCt,
+      </if>
+      <if test="fstelct != null" >
+        fsTelCt,
+      </if>
+      <if test="fscellphonect != null" >
+        fsCellphoneCt,
+      </if>
+      <if test="fsemailct != null" >
+        fsEmailCt,
+      </if>
+      <if test="fsbusiscope != null" >
+        fsBusiScope,
+      </if>
+      <if test="fscelebratedate != null" >
+        fsCelebrateDate,
+      </if>
+      <if test="fscardno != null" >
+        fsCardNo,
+      </if>
+      <if test="ficardste != null" >
+        fiCardSte,
+      </if>
+      <if test="fscardfreezedesc != null" >
+        fsCardFreezeDesc,
+      </if>
+      <if test="fiisvip != null" >
+        fiIsVIP,
+      </if>
+      <if test="fipoint != null" >
+        fiPoint,
+      </if>
+      <if test="fiissms != null" >
+        fiIsSms,
+      </if>
+      <if test="fsexparea != null" >
+        fsExpArea,
+      </if>
+      <if test="fshobby != null" >
+        fsHobby,
+      </if>
+      <if test="fscareful != null" >
+        fsCareful,
+      </if>
+      <if test="fsexecutive != null" >
+        fsExecutive,
+      </if>
+      <if test="fsexpenddate != null" >
+        fsExpendDate,
+      </if>
+      <if test="fsnote != null" >
+        fsNote,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime,
+      </if>
+      <if test="fscreateusername != null" >
+        fsCreateUserName,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fscompanyguid != null" >
+        fsCompanyGUID,
+      </if>
+      <if test="fsviplvlid != null" >
+        fsVIPLvlId,
+      </if>
+      <if test="fiexptag != null" >
+        fiExpTag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fscustguid != null" >
+        #{fscustguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscustcls != null" >
+        #{fscustcls,jdbcType=VARCHAR},
+      </if>
+      <if test="fscustid != null" >
+        #{fscustid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscustsurid != null" >
+        #{fscustsurid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscuststeid != null" >
+        #{fscuststeid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscusttypeid != null" >
+        #{fscusttypeid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscustname != null" >
+        #{fscustname,jdbcType=VARCHAR},
+      </if>
+      <if test="fscustengname != null" >
+        #{fscustengname,jdbcType=VARCHAR},
+      </if>
+      <if test="fspid != null" >
+        #{fspid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsbirthdate != null" >
+        #{fsbirthdate,jdbcType=VARCHAR},
+      </if>
+      <if test="fssex != null" >
+        #{fssex,jdbcType=VARCHAR},
+      </if>
+      <if test="fsjobtitle != null" >
+        #{fsjobtitle,jdbcType=VARCHAR},
+      </if>
+      <if test="fscellphonepl != null" >
+        #{fscellphonepl,jdbcType=VARCHAR},
+      </if>
+      <if test="fstelpl != null" >
+        #{fstelpl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsemailpl != null" >
+        #{fsemailpl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsprovinceidPl != null" >
+        #{fsprovinceidPl,jdbcType=VARCHAR},
+      </if>
+      <if test="fscityidPl != null" >
+        #{fscityidPl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdistrictidPl != null" >
+        #{fsdistrictidPl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsaddrpl != null" >
+        #{fsaddrpl,jdbcType=VARCHAR},
+      </if>
+      <if test="fspostalPl != null" >
+        #{fspostalPl,jdbcType=VARCHAR},
+      </if>
+      <if test="fscompname != null" >
+        #{fscompname,jdbcType=VARCHAR},
+      </if>
+      <if test="fscompengname != null" >
+        #{fscompengname,jdbcType=VARCHAR},
+      </if>
+      <if test="fstradeid != null" >
+        #{fstradeid,jdbcType=VARCHAR},
+      </if>
+      <if test="fstelcp != null" >
+        #{fstelcp,jdbcType=VARCHAR},
+      </if>
+      <if test="fstelcpext != null" >
+        #{fstelcpext,jdbcType=VARCHAR},
+      </if>
+      <if test="fsfaxcp != null" >
+        #{fsfaxcp,jdbcType=VARCHAR},
+      </if>
+      <if test="fsemailcp != null" >
+        #{fsemailcp,jdbcType=VARCHAR},
+      </if>
+      <if test="fsprovinceidCp != null" >
+        #{fsprovinceidCp,jdbcType=VARCHAR},
+      </if>
+      <if test="fscityidCp != null" >
+        #{fscityidCp,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdistrictidCp != null" >
+        #{fsdistrictidCp,jdbcType=VARCHAR},
+      </if>
+      <if test="fsaddrcp != null" >
+        #{fsaddrcp,jdbcType=VARCHAR},
+      </if>
+      <if test="fspostalCp != null" >
+        #{fspostalCp,jdbcType=VARCHAR},
+      </if>
+      <if test="fscontact != null" >
+        #{fscontact,jdbcType=VARCHAR},
+      </if>
+      <if test="fsjobtitlect != null" >
+        #{fsjobtitlect,jdbcType=VARCHAR},
+      </if>
+      <if test="fstelct != null" >
+        #{fstelct,jdbcType=VARCHAR},
+      </if>
+      <if test="fscellphonect != null" >
+        #{fscellphonect,jdbcType=VARCHAR},
+      </if>
+      <if test="fsemailct != null" >
+        #{fsemailct,jdbcType=VARCHAR},
+      </if>
+      <if test="fsbusiscope != null" >
+        #{fsbusiscope,jdbcType=VARCHAR},
+      </if>
+      <if test="fscelebratedate != null" >
+        #{fscelebratedate,jdbcType=VARCHAR},
+      </if>
+      <if test="fscardno != null" >
+        #{fscardno,jdbcType=VARCHAR},
+      </if>
+      <if test="ficardste != null" >
+        #{ficardste,jdbcType=INTEGER},
+      </if>
+      <if test="fscardfreezedesc != null" >
+        #{fscardfreezedesc,jdbcType=VARCHAR},
+      </if>
+      <if test="fiisvip != null" >
+        #{fiisvip,jdbcType=INTEGER},
+      </if>
+      <if test="fipoint != null" >
+        #{fipoint,jdbcType=INTEGER},
+      </if>
+      <if test="fiissms != null" >
+        #{fiissms,jdbcType=INTEGER},
+      </if>
+      <if test="fsexparea != null" >
+        #{fsexparea,jdbcType=VARCHAR},
+      </if>
+      <if test="fshobby != null" >
+        #{fshobby,jdbcType=VARCHAR},
+      </if>
+      <if test="fscareful != null" >
+        #{fscareful,jdbcType=VARCHAR},
+      </if>
+      <if test="fsexecutive != null" >
+        #{fsexecutive,jdbcType=VARCHAR},
+      </if>
+      <if test="fsexpenddate != null" >
+        #{fsexpenddate,jdbcType=VARCHAR},
+      </if>
+      <if test="fsnote != null" >
+        #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fscreatetime != null" >
+        #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateusername != null" >
+        #{fscreateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscompanyguid != null" >
+        #{fscompanyguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsviplvlid != null" >
+        #{fsviplvlid,jdbcType=VARCHAR},
+      </if>
+      <if test="fiexptag != null" >
+        #{fiexptag,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.cust" >
+    update tbcust
+    <set >
+      <if test="fscustcls != null" >
+        fsCustCls = #{fscustcls,jdbcType=VARCHAR},
+      </if>
+      <if test="fscustid != null" >
+        fsCustId = #{fscustid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscustsurid != null" >
+        fsCustSurId = #{fscustsurid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscuststeid != null" >
+        fsCustSteId = #{fscuststeid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscusttypeid != null" >
+        fsCustTypeId = #{fscusttypeid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscustname != null" >
+        fsCustName = #{fscustname,jdbcType=VARCHAR},
+      </if>
+      <if test="fscustengname != null" >
+        fsCustEngName = #{fscustengname,jdbcType=VARCHAR},
+      </if>
+      <if test="fspid != null" >
+        fsPid = #{fspid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsbirthdate != null" >
+        fsBirthDate = #{fsbirthdate,jdbcType=VARCHAR},
+      </if>
+      <if test="fssex != null" >
+        fsSex = #{fssex,jdbcType=VARCHAR},
+      </if>
+      <if test="fsjobtitle != null" >
+        fsJobTitle = #{fsjobtitle,jdbcType=VARCHAR},
+      </if>
+      <if test="fscellphonepl != null" >
+        fsCellphonePl = #{fscellphonepl,jdbcType=VARCHAR},
+      </if>
+      <if test="fstelpl != null" >
+        fsTelPl = #{fstelpl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsemailpl != null" >
+        fsEmailPl = #{fsemailpl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsprovinceidPl != null" >
+        fsProvinceId_Pl = #{fsprovinceidPl,jdbcType=VARCHAR},
+      </if>
+      <if test="fscityidPl != null" >
+        fsCityId_Pl = #{fscityidPl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdistrictidPl != null" >
+        fsDistrictId_Pl = #{fsdistrictidPl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsaddrpl != null" >
+        fsAddrPl = #{fsaddrpl,jdbcType=VARCHAR},
+      </if>
+      <if test="fspostalPl != null" >
+        fsPostal_Pl = #{fspostalPl,jdbcType=VARCHAR},
+      </if>
+      <if test="fscompname != null" >
+        fsCompName = #{fscompname,jdbcType=VARCHAR},
+      </if>
+      <if test="fscompengname != null" >
+        fsCompEngName = #{fscompengname,jdbcType=VARCHAR},
+      </if>
+      <if test="fstradeid != null" >
+        fsTradeId = #{fstradeid,jdbcType=VARCHAR},
+      </if>
+      <if test="fstelcp != null" >
+        fsTelCp = #{fstelcp,jdbcType=VARCHAR},
+      </if>
+      <if test="fstelcpext != null" >
+        fsTelCpExt = #{fstelcpext,jdbcType=VARCHAR},
+      </if>
+      <if test="fsfaxcp != null" >
+        fsFaxCp = #{fsfaxcp,jdbcType=VARCHAR},
+      </if>
+      <if test="fsemailcp != null" >
+        fsEmailCp = #{fsemailcp,jdbcType=VARCHAR},
+      </if>
+      <if test="fsprovinceidCp != null" >
+        fsProvinceId_Cp = #{fsprovinceidCp,jdbcType=VARCHAR},
+      </if>
+      <if test="fscityidCp != null" >
+        fsCityId_Cp = #{fscityidCp,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdistrictidCp != null" >
+        fsDistrictId_Cp = #{fsdistrictidCp,jdbcType=VARCHAR},
+      </if>
+      <if test="fsaddrcp != null" >
+        fsAddrCp = #{fsaddrcp,jdbcType=VARCHAR},
+      </if>
+      <if test="fspostalCp != null" >
+        fsPostal_Cp = #{fspostalCp,jdbcType=VARCHAR},
+      </if>
+      <if test="fscontact != null" >
+        fsContact = #{fscontact,jdbcType=VARCHAR},
+      </if>
+      <if test="fsjobtitlect != null" >
+        fsJobTitleCt = #{fsjobtitlect,jdbcType=VARCHAR},
+      </if>
+      <if test="fstelct != null" >
+        fsTelCt = #{fstelct,jdbcType=VARCHAR},
+      </if>
+      <if test="fscellphonect != null" >
+        fsCellphoneCt = #{fscellphonect,jdbcType=VARCHAR},
+      </if>
+      <if test="fsemailct != null" >
+        fsEmailCt = #{fsemailct,jdbcType=VARCHAR},
+      </if>
+      <if test="fsbusiscope != null" >
+        fsBusiScope = #{fsbusiscope,jdbcType=VARCHAR},
+      </if>
+      <if test="fscelebratedate != null" >
+        fsCelebrateDate = #{fscelebratedate,jdbcType=VARCHAR},
+      </if>
+      <if test="fscardno != null" >
+        fsCardNo = #{fscardno,jdbcType=VARCHAR},
+      </if>
+      <if test="ficardste != null" >
+        fiCardSte = #{ficardste,jdbcType=INTEGER},
+      </if>
+      <if test="fscardfreezedesc != null" >
+        fsCardFreezeDesc = #{fscardfreezedesc,jdbcType=VARCHAR},
+      </if>
+      <if test="fiisvip != null" >
+        fiIsVIP = #{fiisvip,jdbcType=INTEGER},
+      </if>
+      <if test="fipoint != null" >
+        fiPoint = #{fipoint,jdbcType=INTEGER},
+      </if>
+      <if test="fiissms != null" >
+        fiIsSms = #{fiissms,jdbcType=INTEGER},
+      </if>
+      <if test="fsexparea != null" >
+        fsExpArea = #{fsexparea,jdbcType=VARCHAR},
+      </if>
+      <if test="fshobby != null" >
+        fsHobby = #{fshobby,jdbcType=VARCHAR},
+      </if>
+      <if test="fscareful != null" >
+        fsCareful = #{fscareful,jdbcType=VARCHAR},
+      </if>
+      <if test="fsexecutive != null" >
+        fsExecutive = #{fsexecutive,jdbcType=VARCHAR},
+      </if>
+      <if test="fsexpenddate != null" >
+        fsExpendDate = #{fsexpenddate,jdbcType=VARCHAR},
+      </if>
+      <if test="fsnote != null" >
+        fsNote = #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateusername != null" >
+        fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscompanyguid != null" >
+        fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsviplvlid != null" >
+        fsVIPLvlId = #{fsviplvlid,jdbcType=VARCHAR},
+      </if>
+      <if test="fiexptag != null" >
+        fiExpTag = #{fiexptag,jdbcType=INTEGER},
+      </if>
+    </set>
+    where fsCustGUID = #{fscustguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.cust" >
+    update tbcust
+    set fsCustCls = #{fscustcls,jdbcType=VARCHAR},
+      fsCustId = #{fscustid,jdbcType=VARCHAR},
+      fsCustSurId = #{fscustsurid,jdbcType=VARCHAR},
+      fsCustSteId = #{fscuststeid,jdbcType=VARCHAR},
+      fsCustTypeId = #{fscusttypeid,jdbcType=VARCHAR},
+      fsCustName = #{fscustname,jdbcType=VARCHAR},
+      fsCustEngName = #{fscustengname,jdbcType=VARCHAR},
+      fsPid = #{fspid,jdbcType=VARCHAR},
+      fsBirthDate = #{fsbirthdate,jdbcType=VARCHAR},
+      fsSex = #{fssex,jdbcType=VARCHAR},
+      fsJobTitle = #{fsjobtitle,jdbcType=VARCHAR},
+      fsCellphonePl = #{fscellphonepl,jdbcType=VARCHAR},
+      fsTelPl = #{fstelpl,jdbcType=VARCHAR},
+      fsEmailPl = #{fsemailpl,jdbcType=VARCHAR},
+      fsProvinceId_Pl = #{fsprovinceidPl,jdbcType=VARCHAR},
+      fsCityId_Pl = #{fscityidPl,jdbcType=VARCHAR},
+      fsDistrictId_Pl = #{fsdistrictidPl,jdbcType=VARCHAR},
+      fsAddrPl = #{fsaddrpl,jdbcType=VARCHAR},
+      fsPostal_Pl = #{fspostalPl,jdbcType=VARCHAR},
+      fsCompName = #{fscompname,jdbcType=VARCHAR},
+      fsCompEngName = #{fscompengname,jdbcType=VARCHAR},
+      fsTradeId = #{fstradeid,jdbcType=VARCHAR},
+      fsTelCp = #{fstelcp,jdbcType=VARCHAR},
+      fsTelCpExt = #{fstelcpext,jdbcType=VARCHAR},
+      fsFaxCp = #{fsfaxcp,jdbcType=VARCHAR},
+      fsEmailCp = #{fsemailcp,jdbcType=VARCHAR},
+      fsProvinceId_Cp = #{fsprovinceidCp,jdbcType=VARCHAR},
+      fsCityId_Cp = #{fscityidCp,jdbcType=VARCHAR},
+      fsDistrictId_Cp = #{fsdistrictidCp,jdbcType=VARCHAR},
+      fsAddrCp = #{fsaddrcp,jdbcType=VARCHAR},
+      fsPostal_Cp = #{fspostalCp,jdbcType=VARCHAR},
+      fsContact = #{fscontact,jdbcType=VARCHAR},
+      fsJobTitleCt = #{fsjobtitlect,jdbcType=VARCHAR},
+      fsTelCt = #{fstelct,jdbcType=VARCHAR},
+      fsCellphoneCt = #{fscellphonect,jdbcType=VARCHAR},
+      fsEmailCt = #{fsemailct,jdbcType=VARCHAR},
+      fsBusiScope = #{fsbusiscope,jdbcType=VARCHAR},
+      fsCelebrateDate = #{fscelebratedate,jdbcType=VARCHAR},
+      fsCardNo = #{fscardno,jdbcType=VARCHAR},
+      fiCardSte = #{ficardste,jdbcType=INTEGER},
+      fsCardFreezeDesc = #{fscardfreezedesc,jdbcType=VARCHAR},
+      fiIsVIP = #{fiisvip,jdbcType=INTEGER},
+      fiPoint = #{fipoint,jdbcType=INTEGER},
+      fiIsSms = #{fiissms,jdbcType=INTEGER},
+      fsExpArea = #{fsexparea,jdbcType=VARCHAR},
+      fsHobby = #{fshobby,jdbcType=VARCHAR},
+      fsCareful = #{fscareful,jdbcType=VARCHAR},
+      fsExecutive = #{fsexecutive,jdbcType=VARCHAR},
+      fsExpendDate = #{fsexpenddate,jdbcType=VARCHAR},
+      fsNote = #{fsnote,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
+      fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
+      fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR},
+      fsVIPLvlId = #{fsviplvlid,jdbcType=VARCHAR},
+      fiExpTag = #{fiexptag,jdbcType=INTEGER}
+    where fsCustGUID = #{fscustguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

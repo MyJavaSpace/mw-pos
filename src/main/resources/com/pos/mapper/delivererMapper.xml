@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.delivererMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.deliverer" >
+    <id column="fsDelivererId" property="fsdelivererid" jdbcType="VARCHAR" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsDelivererName" property="fsdeliverername" jdbcType="VARCHAR" />
+    <result column="fiDeliverertype" property="fideliverertype" jdbcType="INTEGER" />
+    <result column="fsDeliverer" property="fsdeliverer" jdbcType="VARCHAR" />
+    <result column="fsCellphone" property="fscellphone" jdbcType="VARCHAR" />
+    <result column="fdChange" property="fdchange" jdbcType="DECIMAL" />
+    <result column="fsNote" property="fsnote" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsDelivererId, fsShopGUID, fsDelivererName, fiDeliverertype, fsDeliverer, fsCellphone, 
+    fdChange, fsNote, fiStatus, fsUpdateTime, fsUpdateUserId, fsUpdateUserName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.delivererKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbdeliverer
+    where fsDelivererId = #{fsdelivererid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.delivererKey" >
+    delete from tbdeliverer
+    where fsDelivererId = #{fsdelivererid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.deliverer" >
+    insert into tbdeliverer (fsDelivererId, fsShopGUID, fsDelivererName, 
+      fiDeliverertype, fsDeliverer, fsCellphone, 
+      fdChange, fsNote, fiStatus, 
+      fsUpdateTime, fsUpdateUserId, fsUpdateUserName
+      )
+    values (#{fsdelivererid,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, #{fsdeliverername,jdbcType=VARCHAR}, 
+      #{fideliverertype,jdbcType=INTEGER}, #{fsdeliverer,jdbcType=VARCHAR}, #{fscellphone,jdbcType=VARCHAR}, 
+      #{fdchange,jdbcType=DECIMAL}, #{fsnote,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}, 
+      #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.deliverer" >
+    insert into tbdeliverer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fsdelivererid != null" >
+        fsDelivererId,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fsdeliverername != null" >
+        fsDelivererName,
+      </if>
+      <if test="fideliverertype != null" >
+        fiDeliverertype,
+      </if>
+      <if test="fsdeliverer != null" >
+        fsDeliverer,
+      </if>
+      <if test="fscellphone != null" >
+        fsCellphone,
+      </if>
+      <if test="fdchange != null" >
+        fdChange,
+      </if>
+      <if test="fsnote != null" >
+        fsNote,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fsdelivererid != null" >
+        #{fsdelivererid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdeliverername != null" >
+        #{fsdeliverername,jdbcType=VARCHAR},
+      </if>
+      <if test="fideliverertype != null" >
+        #{fideliverertype,jdbcType=INTEGER},
+      </if>
+      <if test="fsdeliverer != null" >
+        #{fsdeliverer,jdbcType=VARCHAR},
+      </if>
+      <if test="fscellphone != null" >
+        #{fscellphone,jdbcType=VARCHAR},
+      </if>
+      <if test="fdchange != null" >
+        #{fdchange,jdbcType=DECIMAL},
+      </if>
+      <if test="fsnote != null" >
+        #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.deliverer" >
+    update tbdeliverer
+    <set >
+      <if test="fsdeliverername != null" >
+        fsDelivererName = #{fsdeliverername,jdbcType=VARCHAR},
+      </if>
+      <if test="fideliverertype != null" >
+        fiDeliverertype = #{fideliverertype,jdbcType=INTEGER},
+      </if>
+      <if test="fsdeliverer != null" >
+        fsDeliverer = #{fsdeliverer,jdbcType=VARCHAR},
+      </if>
+      <if test="fscellphone != null" >
+        fsCellphone = #{fscellphone,jdbcType=VARCHAR},
+      </if>
+      <if test="fdchange != null" >
+        fdChange = #{fdchange,jdbcType=DECIMAL},
+      </if>
+      <if test="fsnote != null" >
+        fsNote = #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fsDelivererId = #{fsdelivererid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.deliverer" >
+    update tbdeliverer
+    set fsDelivererName = #{fsdeliverername,jdbcType=VARCHAR},
+      fiDeliverertype = #{fideliverertype,jdbcType=INTEGER},
+      fsDeliverer = #{fsdeliverer,jdbcType=VARCHAR},
+      fsCellphone = #{fscellphone,jdbcType=VARCHAR},
+      fdChange = #{fdchange,jdbcType=DECIMAL},
+      fsNote = #{fsnote,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR}
+    where fsDelivererId = #{fsdelivererid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

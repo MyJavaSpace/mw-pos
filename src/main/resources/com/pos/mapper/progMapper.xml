@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.progMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.prog" >
+    <id column="fsProgId" property="fsprogid" jdbcType="VARCHAR" />
+    <result column="fsProgName" property="fsprogname" jdbcType="VARCHAR" />
+    <result column="fiSortOrder" property="fisortorder" jdbcType="INTEGER" />
+    <result column="fsProgDesc" property="fsprogdesc" jdbcType="VARCHAR" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fsProgLvl" property="fsproglvl" jdbcType="VARCHAR" />
+    <result column="fsFoodTradeList" property="fsfoodtradelist" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsProgId, fsProgName, fiSortOrder, fsProgDesc, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
+    fsProgLvl, fsFoodTradeList
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbprog
+    where fsProgId = #{fsprogid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tbprog
+    where fsProgId = #{fsprogid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.prog" >
+    insert into tbprog (fsProgId, fsProgName, fiSortOrder, 
+      fsProgDesc, fsUpdateTime, fsUpdateUserId, 
+      fsUpdateUserName, fsProgLvl, fsFoodTradeList
+      )
+    values (#{fsprogid,jdbcType=VARCHAR}, #{fsprogname,jdbcType=VARCHAR}, #{fisortorder,jdbcType=INTEGER}, 
+      #{fsprogdesc,jdbcType=VARCHAR}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
+      #{fsupdateusername,jdbcType=VARCHAR}, #{fsproglvl,jdbcType=VARCHAR}, #{fsfoodtradelist,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.prog" >
+    insert into tbprog
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fsprogid != null" >
+        fsProgId,
+      </if>
+      <if test="fsprogname != null" >
+        fsProgName,
+      </if>
+      <if test="fisortorder != null" >
+        fiSortOrder,
+      </if>
+      <if test="fsprogdesc != null" >
+        fsProgDesc,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fsproglvl != null" >
+        fsProgLvl,
+      </if>
+      <if test="fsfoodtradelist != null" >
+        fsFoodTradeList,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fsprogid != null" >
+        #{fsprogid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsprogname != null" >
+        #{fsprogname,jdbcType=VARCHAR},
+      </if>
+      <if test="fisortorder != null" >
+        #{fisortorder,jdbcType=INTEGER},
+      </if>
+      <if test="fsprogdesc != null" >
+        #{fsprogdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsproglvl != null" >
+        #{fsproglvl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsfoodtradelist != null" >
+        #{fsfoodtradelist,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.prog" >
+    update tbprog
+    <set >
+      <if test="fsprogname != null" >
+        fsProgName = #{fsprogname,jdbcType=VARCHAR},
+      </if>
+      <if test="fisortorder != null" >
+        fiSortOrder = #{fisortorder,jdbcType=INTEGER},
+      </if>
+      <if test="fsprogdesc != null" >
+        fsProgDesc = #{fsprogdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsproglvl != null" >
+        fsProgLvl = #{fsproglvl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsfoodtradelist != null" >
+        fsFoodTradeList = #{fsfoodtradelist,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fsProgId = #{fsprogid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.prog" >
+    update tbprog
+    set fsProgName = #{fsprogname,jdbcType=VARCHAR},
+      fiSortOrder = #{fisortorder,jdbcType=INTEGER},
+      fsProgDesc = #{fsprogdesc,jdbcType=VARCHAR},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fsProgLvl = #{fsproglvl,jdbcType=VARCHAR},
+      fsFoodTradeList = #{fsfoodtradelist,jdbcType=VARCHAR}
+    where fsProgId = #{fsprogid,jdbcType=VARCHAR}
+  </update>
+</mapper>

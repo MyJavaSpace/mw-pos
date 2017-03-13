@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.webmenuMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.webmenu" >
+    <id column="fiMenuID" property="fimenuid" jdbcType="INTEGER" />
+    <result column="fsMenuName" property="fsmenuname" jdbcType="VARCHAR" />
+    <result column="fiParentId" property="fiparentid" jdbcType="INTEGER" />
+    <result column="fsMenuUrl" property="fsmenuurl" jdbcType="VARCHAR" />
+    <result column="fsMpath" property="fsmpath" jdbcType="VARCHAR" />
+    <result column="fiGroupID" property="figroupid" jdbcType="INTEGER" />
+    <result column="fiSort" property="fisort" jdbcType="INTEGER" />
+    <result column="fsFoodTradeId" property="fsfoodtradeid" jdbcType="VARCHAR" />
+    <result column="fiShopKind" property="fishopkind" jdbcType="INTEGER" />
+    <result column="fsMenuControlID" property="fsmenucontrolid" jdbcType="VARCHAR" />
+    <result column="fsOnclick" property="fsonclick" jdbcType="VARCHAR" />
+    <result column="fsiconCls" property="fsiconcls" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fiMenuID, fsMenuName, fiParentId, fsMenuUrl, fsMpath, fiGroupID, fiSort, fsFoodTradeId, 
+    fiShopKind, fsMenuControlID, fsOnclick, fsiconCls, fiStatus, fsUpdateTime, fsUpdateUserId, 
+    fsUpdateUserName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbwebmenu
+    where fiMenuID = #{fimenuid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tbwebmenu
+    where fiMenuID = #{fimenuid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.webmenu" >
+    insert into tbwebmenu (fiMenuID, fsMenuName, fiParentId, 
+      fsMenuUrl, fsMpath, fiGroupID, 
+      fiSort, fsFoodTradeId, fiShopKind, 
+      fsMenuControlID, fsOnclick, fsiconCls, 
+      fiStatus, fsUpdateTime, fsUpdateUserId, 
+      fsUpdateUserName)
+    values (#{fimenuid,jdbcType=INTEGER}, #{fsmenuname,jdbcType=VARCHAR}, #{fiparentid,jdbcType=INTEGER}, 
+      #{fsmenuurl,jdbcType=VARCHAR}, #{fsmpath,jdbcType=VARCHAR}, #{figroupid,jdbcType=INTEGER}, 
+      #{fisort,jdbcType=INTEGER}, #{fsfoodtradeid,jdbcType=VARCHAR}, #{fishopkind,jdbcType=INTEGER}, 
+      #{fsmenucontrolid,jdbcType=VARCHAR}, #{fsonclick,jdbcType=VARCHAR}, #{fsiconcls,jdbcType=VARCHAR}, 
+      #{fistatus,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
+      #{fsupdateusername,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.webmenu" >
+    insert into tbwebmenu
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fimenuid != null" >
+        fiMenuID,
+      </if>
+      <if test="fsmenuname != null" >
+        fsMenuName,
+      </if>
+      <if test="fiparentid != null" >
+        fiParentId,
+      </if>
+      <if test="fsmenuurl != null" >
+        fsMenuUrl,
+      </if>
+      <if test="fsmpath != null" >
+        fsMpath,
+      </if>
+      <if test="figroupid != null" >
+        fiGroupID,
+      </if>
+      <if test="fisort != null" >
+        fiSort,
+      </if>
+      <if test="fsfoodtradeid != null" >
+        fsFoodTradeId,
+      </if>
+      <if test="fishopkind != null" >
+        fiShopKind,
+      </if>
+      <if test="fsmenucontrolid != null" >
+        fsMenuControlID,
+      </if>
+      <if test="fsonclick != null" >
+        fsOnclick,
+      </if>
+      <if test="fsiconcls != null" >
+        fsiconCls,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fimenuid != null" >
+        #{fimenuid,jdbcType=INTEGER},
+      </if>
+      <if test="fsmenuname != null" >
+        #{fsmenuname,jdbcType=VARCHAR},
+      </if>
+      <if test="fiparentid != null" >
+        #{fiparentid,jdbcType=INTEGER},
+      </if>
+      <if test="fsmenuurl != null" >
+        #{fsmenuurl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmpath != null" >
+        #{fsmpath,jdbcType=VARCHAR},
+      </if>
+      <if test="figroupid != null" >
+        #{figroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fisort != null" >
+        #{fisort,jdbcType=INTEGER},
+      </if>
+      <if test="fsfoodtradeid != null" >
+        #{fsfoodtradeid,jdbcType=VARCHAR},
+      </if>
+      <if test="fishopkind != null" >
+        #{fishopkind,jdbcType=INTEGER},
+      </if>
+      <if test="fsmenucontrolid != null" >
+        #{fsmenucontrolid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsonclick != null" >
+        #{fsonclick,jdbcType=VARCHAR},
+      </if>
+      <if test="fsiconcls != null" >
+        #{fsiconcls,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.webmenu" >
+    update tbwebmenu
+    <set >
+      <if test="fsmenuname != null" >
+        fsMenuName = #{fsmenuname,jdbcType=VARCHAR},
+      </if>
+      <if test="fiparentid != null" >
+        fiParentId = #{fiparentid,jdbcType=INTEGER},
+      </if>
+      <if test="fsmenuurl != null" >
+        fsMenuUrl = #{fsmenuurl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmpath != null" >
+        fsMpath = #{fsmpath,jdbcType=VARCHAR},
+      </if>
+      <if test="figroupid != null" >
+        fiGroupID = #{figroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fisort != null" >
+        fiSort = #{fisort,jdbcType=INTEGER},
+      </if>
+      <if test="fsfoodtradeid != null" >
+        fsFoodTradeId = #{fsfoodtradeid,jdbcType=VARCHAR},
+      </if>
+      <if test="fishopkind != null" >
+        fiShopKind = #{fishopkind,jdbcType=INTEGER},
+      </if>
+      <if test="fsmenucontrolid != null" >
+        fsMenuControlID = #{fsmenucontrolid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsonclick != null" >
+        fsOnclick = #{fsonclick,jdbcType=VARCHAR},
+      </if>
+      <if test="fsiconcls != null" >
+        fsiconCls = #{fsiconcls,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fiMenuID = #{fimenuid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.webmenu" >
+    update tbwebmenu
+    set fsMenuName = #{fsmenuname,jdbcType=VARCHAR},
+      fiParentId = #{fiparentid,jdbcType=INTEGER},
+      fsMenuUrl = #{fsmenuurl,jdbcType=VARCHAR},
+      fsMpath = #{fsmpath,jdbcType=VARCHAR},
+      fiGroupID = #{figroupid,jdbcType=INTEGER},
+      fiSort = #{fisort,jdbcType=INTEGER},
+      fsFoodTradeId = #{fsfoodtradeid,jdbcType=VARCHAR},
+      fiShopKind = #{fishopkind,jdbcType=INTEGER},
+      fsMenuControlID = #{fsmenucontrolid,jdbcType=VARCHAR},
+      fsOnclick = #{fsonclick,jdbcType=VARCHAR},
+      fsiconCls = #{fsiconcls,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR}
+    where fiMenuID = #{fimenuid,jdbcType=INTEGER}
+  </update>
+</mapper>

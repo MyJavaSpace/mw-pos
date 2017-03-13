@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.reportMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.report" >
+    <id column="fsReportId" property="fsreportid" jdbcType="VARCHAR" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsReportName" property="fsreportname" jdbcType="VARCHAR" />
+    <result column="fsReportTempletId" property="fsreporttempletid" jdbcType="VARCHAR" />
+    <result column="fsNote" property="fsnote" jdbcType="VARCHAR" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fiReportCls" property="fireportcls" jdbcType="INTEGER" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsFoodTradeList" property="fsfoodtradelist" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsReportId, fsShopGUID, fsReportName, fsReportTempletId, fsNote, fsUpdateTime, fsUpdateUserId, 
+    fsUpdateUserName, fiReportCls, fiStatus, fsFoodTradeList
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.reportKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbreport
+    where fsReportId = #{fsreportid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.reportKey" >
+    delete from tbreport
+    where fsReportId = #{fsreportid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.report" >
+    insert into tbreport (fsReportId, fsShopGUID, fsReportName, 
+      fsReportTempletId, fsNote, fsUpdateTime, 
+      fsUpdateUserId, fsUpdateUserName, fiReportCls, 
+      fiStatus, fsFoodTradeList)
+    values (#{fsreportid,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, #{fsreportname,jdbcType=VARCHAR}, 
+      #{fsreporttempletid,jdbcType=VARCHAR}, #{fsnote,jdbcType=VARCHAR}, #{fsupdatetime,jdbcType=VARCHAR}, 
+      #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fireportcls,jdbcType=INTEGER}, 
+      #{fistatus,jdbcType=INTEGER}, #{fsfoodtradelist,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.report" >
+    insert into tbreport
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fsreportid != null" >
+        fsReportId,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fsreportname != null" >
+        fsReportName,
+      </if>
+      <if test="fsreporttempletid != null" >
+        fsReportTempletId,
+      </if>
+      <if test="fsnote != null" >
+        fsNote,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fireportcls != null" >
+        fiReportCls,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fsfoodtradelist != null" >
+        fsFoodTradeList,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fsreportid != null" >
+        #{fsreportid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsreportname != null" >
+        #{fsreportname,jdbcType=VARCHAR},
+      </if>
+      <if test="fsreporttempletid != null" >
+        #{fsreporttempletid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsnote != null" >
+        #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fireportcls != null" >
+        #{fireportcls,jdbcType=INTEGER},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsfoodtradelist != null" >
+        #{fsfoodtradelist,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.report" >
+    update tbreport
+    <set >
+      <if test="fsreportname != null" >
+        fsReportName = #{fsreportname,jdbcType=VARCHAR},
+      </if>
+      <if test="fsreporttempletid != null" >
+        fsReportTempletId = #{fsreporttempletid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsnote != null" >
+        fsNote = #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fireportcls != null" >
+        fiReportCls = #{fireportcls,jdbcType=INTEGER},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsfoodtradelist != null" >
+        fsFoodTradeList = #{fsfoodtradelist,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fsReportId = #{fsreportid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.report" >
+    update tbreport
+    set fsReportName = #{fsreportname,jdbcType=VARCHAR},
+      fsReportTempletId = #{fsreporttempletid,jdbcType=VARCHAR},
+      fsNote = #{fsnote,jdbcType=VARCHAR},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fiReportCls = #{fireportcls,jdbcType=INTEGER},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsFoodTradeList = #{fsfoodtradelist,jdbcType=VARCHAR}
+    where fsReportId = #{fsreportid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

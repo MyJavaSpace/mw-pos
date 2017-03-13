@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.askgpMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.askgp" >
+    <id column="fsAskGpId" property="fsaskgpid" jdbcType="VARCHAR" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsAskGpName" property="fsaskgpname" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fiSortOrder" property="fisortorder" jdbcType="INTEGER" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fiDataKind" property="fidatakind" jdbcType="INTEGER" />
+    <result column="fiIsSelect" property="fiisselect" jdbcType="INTEGER" />
+    <result column="fiChooseType" property="fichoosetype" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsAskGpId, fsShopGUID, fsAskGpName, fiStatus, fiSortOrder, fsUpdateTime, fsUpdateUserId, 
+    fsUpdateUserName, fiDataKind, fiIsSelect, fiChooseType
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.askgpKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbaskgp
+    where fsAskGpId = #{fsaskgpid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.askgpKey" >
+    delete from tbaskgp
+    where fsAskGpId = #{fsaskgpid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.askgp" >
+    insert into tbaskgp (fsAskGpId, fsShopGUID, fsAskGpName, 
+      fiStatus, fiSortOrder, fsUpdateTime, 
+      fsUpdateUserId, fsUpdateUserName, fiDataKind, 
+      fiIsSelect, fiChooseType)
+    values (#{fsaskgpid,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, #{fsaskgpname,jdbcType=VARCHAR}, 
+      #{fistatus,jdbcType=INTEGER}, #{fisortorder,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, 
+      #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fidatakind,jdbcType=INTEGER}, 
+      #{fiisselect,jdbcType=INTEGER}, #{fichoosetype,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.askgp" >
+    insert into tbaskgp
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fsaskgpid != null" >
+        fsAskGpId,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fsaskgpname != null" >
+        fsAskGpName,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fisortorder != null" >
+        fiSortOrder,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fidatakind != null" >
+        fiDataKind,
+      </if>
+      <if test="fiisselect != null" >
+        fiIsSelect,
+      </if>
+      <if test="fichoosetype != null" >
+        fiChooseType,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fsaskgpid != null" >
+        #{fsaskgpid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsaskgpname != null" >
+        #{fsaskgpname,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fisortorder != null" >
+        #{fisortorder,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fidatakind != null" >
+        #{fidatakind,jdbcType=INTEGER},
+      </if>
+      <if test="fiisselect != null" >
+        #{fiisselect,jdbcType=INTEGER},
+      </if>
+      <if test="fichoosetype != null" >
+        #{fichoosetype,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.askgp" >
+    update tbaskgp
+    <set >
+      <if test="fsaskgpname != null" >
+        fsAskGpName = #{fsaskgpname,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fisortorder != null" >
+        fiSortOrder = #{fisortorder,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fidatakind != null" >
+        fiDataKind = #{fidatakind,jdbcType=INTEGER},
+      </if>
+      <if test="fiisselect != null" >
+        fiIsSelect = #{fiisselect,jdbcType=INTEGER},
+      </if>
+      <if test="fichoosetype != null" >
+        fiChooseType = #{fichoosetype,jdbcType=INTEGER},
+      </if>
+    </set>
+    where fsAskGpId = #{fsaskgpid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.askgp" >
+    update tbaskgp
+    set fsAskGpName = #{fsaskgpname,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fiSortOrder = #{fisortorder,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fiDataKind = #{fidatakind,jdbcType=INTEGER},
+      fiIsSelect = #{fiisselect,jdbcType=INTEGER},
+      fiChooseType = #{fichoosetype,jdbcType=INTEGER}
+    where fsAskGpId = #{fsaskgpid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

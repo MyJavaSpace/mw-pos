@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.menuitemaskgpMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.menuitemaskgp" >
+    <id column="fiItemCd" property="fiitemcd" jdbcType="INTEGER" />
+    <id column="fsAskGpId" property="fsaskgpid" jdbcType="VARCHAR" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fiItemCd, fsAskGpId, fsShopGUID, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
+    fiStatus
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.menuitemaskgpKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbmenuitemaskgp
+    where fiItemCd = #{fiitemcd,jdbcType=INTEGER}
+      and fsAskGpId = #{fsaskgpid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.menuitemaskgpKey" >
+    delete from tbmenuitemaskgp
+    where fiItemCd = #{fiitemcd,jdbcType=INTEGER}
+      and fsAskGpId = #{fsaskgpid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.menuitemaskgp" >
+    insert into tbmenuitemaskgp (fiItemCd, fsAskGpId, fsShopGUID, 
+      fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
+      fiStatus)
+    values (#{fiitemcd,jdbcType=INTEGER}, #{fsaskgpid,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, 
+      #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
+      #{fistatus,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.menuitemaskgp" >
+    insert into tbmenuitemaskgp
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fiitemcd != null" >
+        fiItemCd,
+      </if>
+      <if test="fsaskgpid != null" >
+        fsAskGpId,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fiitemcd != null" >
+        #{fiitemcd,jdbcType=INTEGER},
+      </if>
+      <if test="fsaskgpid != null" >
+        #{fsaskgpid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.menuitemaskgp" >
+    update tbmenuitemaskgp
+    <set >
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where fiItemCd = #{fiitemcd,jdbcType=INTEGER}
+      and fsAskGpId = #{fsaskgpid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.menuitemaskgp" >
+    update tbmenuitemaskgp
+    set fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER}
+    where fiItemCd = #{fiitemcd,jdbcType=INTEGER}
+      and fsAskGpId = #{fsaskgpid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

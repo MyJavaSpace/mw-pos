@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.publishMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.publish" >
+    <id column="fiId" property="fiid" jdbcType="BIGINT" />
+    <id column="fiSoftId" property="fisoftid" jdbcType="BIGINT" />
+    <id column="fsVersion" property="fsversion" jdbcType="VARCHAR" />
+    <result column="fsUpContent" property="fsupcontent" jdbcType="VARCHAR" />
+    <result column="fiPublishChannel" property="fipublishchannel" jdbcType="INTEGER" />
+    <result column="fsFileName" property="fsfilename" jdbcType="VARCHAR" />
+    <result column="fsFileUrl" property="fsfileurl" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsCheckCode" property="fscheckcode" jdbcType="VARCHAR" />
+    <result column="fsNote" property="fsnote" jdbcType="VARCHAR" />
+    <result column="fiPublishType" property="fipublishtype" jdbcType="INTEGER" />
+    <result column="fsShopJosn" property="fsshopjosn" jdbcType="VARCHAR" />
+    <result column="fsCreateUserId" property="fscreateuserid" jdbcType="VARCHAR" />
+    <result column="fsCreateUserName" property="fscreateusername" jdbcType="VARCHAR" />
+    <result column="fsCreateTime" property="fscreatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fiUpdateType" property="fiupdatetype" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fiId, fiSoftId, fsVersion, fsUpContent, fiPublishChannel, fsFileName, fsFileUrl, 
+    fiStatus, fsCheckCode, fsNote, fiPublishType, fsShopJosn, fsCreateUserId, fsCreateUserName, 
+    fsCreateTime, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, fiUpdateType
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.publishKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbpublish
+    where fiId = #{fiid,jdbcType=BIGINT}
+      and fiSoftId = #{fisoftid,jdbcType=BIGINT}
+      and fsVersion = #{fsversion,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.publishKey" >
+    delete from tbpublish
+    where fiId = #{fiid,jdbcType=BIGINT}
+      and fiSoftId = #{fisoftid,jdbcType=BIGINT}
+      and fsVersion = #{fsversion,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.publish" >
+    insert into tbpublish (fiId, fiSoftId, fsVersion, 
+      fsUpContent, fiPublishChannel, fsFileName, 
+      fsFileUrl, fiStatus, fsCheckCode, 
+      fsNote, fiPublishType, fsShopJosn, 
+      fsCreateUserId, fsCreateUserName, fsCreateTime, 
+      fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
+      fiUpdateType)
+    values (#{fiid,jdbcType=BIGINT}, #{fisoftid,jdbcType=BIGINT}, #{fsversion,jdbcType=VARCHAR}, 
+      #{fsupcontent,jdbcType=VARCHAR}, #{fipublishchannel,jdbcType=INTEGER}, #{fsfilename,jdbcType=VARCHAR}, 
+      #{fsfileurl,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}, #{fscheckcode,jdbcType=VARCHAR}, 
+      #{fsnote,jdbcType=VARCHAR}, #{fipublishtype,jdbcType=INTEGER}, #{fsshopjosn,jdbcType=VARCHAR}, 
+      #{fscreateuserid,jdbcType=VARCHAR}, #{fscreateusername,jdbcType=VARCHAR}, #{fscreatetime,jdbcType=VARCHAR}, 
+      #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
+      #{fiupdatetype,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.publish" >
+    insert into tbpublish
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fiid != null" >
+        fiId,
+      </if>
+      <if test="fisoftid != null" >
+        fiSoftId,
+      </if>
+      <if test="fsversion != null" >
+        fsVersion,
+      </if>
+      <if test="fsupcontent != null" >
+        fsUpContent,
+      </if>
+      <if test="fipublishchannel != null" >
+        fiPublishChannel,
+      </if>
+      <if test="fsfilename != null" >
+        fsFileName,
+      </if>
+      <if test="fsfileurl != null" >
+        fsFileUrl,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fscheckcode != null" >
+        fsCheckCode,
+      </if>
+      <if test="fsnote != null" >
+        fsNote,
+      </if>
+      <if test="fipublishtype != null" >
+        fiPublishType,
+      </if>
+      <if test="fsshopjosn != null" >
+        fsShopJosn,
+      </if>
+      <if test="fscreateuserid != null" >
+        fsCreateUserId,
+      </if>
+      <if test="fscreateusername != null" >
+        fsCreateUserName,
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fiupdatetype != null" >
+        fiUpdateType,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fiid != null" >
+        #{fiid,jdbcType=BIGINT},
+      </if>
+      <if test="fisoftid != null" >
+        #{fisoftid,jdbcType=BIGINT},
+      </if>
+      <if test="fsversion != null" >
+        #{fsversion,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupcontent != null" >
+        #{fsupcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="fipublishchannel != null" >
+        #{fipublishchannel,jdbcType=INTEGER},
+      </if>
+      <if test="fsfilename != null" >
+        #{fsfilename,jdbcType=VARCHAR},
+      </if>
+      <if test="fsfileurl != null" >
+        #{fsfileurl,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fscheckcode != null" >
+        #{fscheckcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fsnote != null" >
+        #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fipublishtype != null" >
+        #{fipublishtype,jdbcType=INTEGER},
+      </if>
+      <if test="fsshopjosn != null" >
+        #{fsshopjosn,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateuserid != null" >
+        #{fscreateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateusername != null" >
+        #{fscreateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreatetime != null" >
+        #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fiupdatetype != null" >
+        #{fiupdatetype,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.publish" >
+    update tbpublish
+    <set >
+      <if test="fsupcontent != null" >
+        fsUpContent = #{fsupcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="fipublishchannel != null" >
+        fiPublishChannel = #{fipublishchannel,jdbcType=INTEGER},
+      </if>
+      <if test="fsfilename != null" >
+        fsFileName = #{fsfilename,jdbcType=VARCHAR},
+      </if>
+      <if test="fsfileurl != null" >
+        fsFileUrl = #{fsfileurl,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fscheckcode != null" >
+        fsCheckCode = #{fscheckcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fsnote != null" >
+        fsNote = #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fipublishtype != null" >
+        fiPublishType = #{fipublishtype,jdbcType=INTEGER},
+      </if>
+      <if test="fsshopjosn != null" >
+        fsShopJosn = #{fsshopjosn,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateuserid != null" >
+        fsCreateUserId = #{fscreateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateusername != null" >
+        fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fiupdatetype != null" >
+        fiUpdateType = #{fiupdatetype,jdbcType=INTEGER},
+      </if>
+    </set>
+    where fiId = #{fiid,jdbcType=BIGINT}
+      and fiSoftId = #{fisoftid,jdbcType=BIGINT}
+      and fsVersion = #{fsversion,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.publish" >
+    update tbpublish
+    set fsUpContent = #{fsupcontent,jdbcType=VARCHAR},
+      fiPublishChannel = #{fipublishchannel,jdbcType=INTEGER},
+      fsFileName = #{fsfilename,jdbcType=VARCHAR},
+      fsFileUrl = #{fsfileurl,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsCheckCode = #{fscheckcode,jdbcType=VARCHAR},
+      fsNote = #{fsnote,jdbcType=VARCHAR},
+      fiPublishType = #{fipublishtype,jdbcType=INTEGER},
+      fsShopJosn = #{fsshopjosn,jdbcType=VARCHAR},
+      fsCreateUserId = #{fscreateuserid,jdbcType=VARCHAR},
+      fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR},
+      fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fiUpdateType = #{fiupdatetype,jdbcType=INTEGER}
+    where fiId = #{fiid,jdbcType=BIGINT}
+      and fiSoftId = #{fisoftid,jdbcType=BIGINT}
+      and fsVersion = #{fsversion,jdbcType=VARCHAR}
+  </update>
+</mapper>

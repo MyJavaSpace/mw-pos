@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.cookbookmenuMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.cookbookmenu" >
+    <id column="fiOrderUintCd" property="fiorderuintcd" jdbcType="INTEGER" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <id column="fscookid" property="fscookid" jdbcType="VARCHAR" />
+    <result column="fistatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fiOrderUintCd, fsShopGUID, fscookid, fistatus, fsUpdateTime, fsUpdateUserId, fsUpdateUserName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.cookbookmenuKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbcookbookmenu
+    where fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+      and fscookid = #{fscookid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.cookbookmenuKey" >
+    delete from tbcookbookmenu
+    where fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+      and fscookid = #{fscookid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.cookbookmenu" >
+    insert into tbcookbookmenu (fiOrderUintCd, fsShopGUID, fscookid, 
+      fistatus, fsUpdateTime, fsUpdateUserId, 
+      fsUpdateUserName)
+    values (#{fiorderuintcd,jdbcType=INTEGER}, #{fsshopguid,jdbcType=VARCHAR}, #{fscookid,jdbcType=VARCHAR}, 
+      #{fistatus,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
+      #{fsupdateusername,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.cookbookmenu" >
+    insert into tbcookbookmenu
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fiorderuintcd != null" >
+        fiOrderUintCd,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fscookid != null" >
+        fscookid,
+      </if>
+      <if test="fistatus != null" >
+        fistatus,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fiorderuintcd != null" >
+        #{fiorderuintcd,jdbcType=INTEGER},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscookid != null" >
+        #{fscookid,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.cookbookmenu" >
+    update tbcookbookmenu
+    <set >
+      <if test="fistatus != null" >
+        fistatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+      and fscookid = #{fscookid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.cookbookmenu" >
+    update tbcookbookmenu
+    set fistatus = #{fistatus,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR}
+    where fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+      and fscookid = #{fscookid,jdbcType=VARCHAR}
+  </update>
+</mapper>

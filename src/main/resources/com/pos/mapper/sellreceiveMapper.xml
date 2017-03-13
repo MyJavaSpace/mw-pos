@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.sellreceiveMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.sellreceive" >
+    <id column="fiPaymentType" property="fipaymenttype" jdbcType="INTEGER" />
+    <id column="fiSeq" property="fiseq" jdbcType="INTEGER" />
+    <id column="fsCheckBillNo" property="fscheckbillno" jdbcType="VARCHAR" />
+    <id column="fsSellNo" property="fssellno" jdbcType="VARCHAR" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsPaymentId" property="fspaymentid" jdbcType="VARCHAR" />
+    <result column="fdForeignMoney" property="fdforeignmoney" jdbcType="DECIMAL" />
+    <result column="fdExchangeRate" property="fdexchangerate" jdbcType="DECIMAL" />
+    <result column="fdPayMoney" property="fdpaymoney" jdbcType="DECIMAL" />
+    <result column="fdReceMoney" property="fdrecemoney" jdbcType="DECIMAL" />
+    <result column="fiIsCalcPaid" property="fiiscalcpaid" jdbcType="INTEGER" />
+    <result column="fiIsCalcInvoice" property="fiiscalcinvoice" jdbcType="INTEGER" />
+    <result column="fsNote" property="fsnote" jdbcType="VARCHAR" />
+    <result column="fsHostId" property="fshostid" jdbcType="VARCHAR" />
+    <result column="fsCreateTime" property="fscreatetime" jdbcType="VARCHAR" />
+    <result column="fsCreateUserId" property="fscreateuserid" jdbcType="VARCHAR" />
+    <result column="fsCreateUserName" property="fscreateusername" jdbcType="VARCHAR" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsDataSrckind" property="fsdatasrckind" jdbcType="VARCHAR" />
+    <result column="fsSrcVerno" property="fssrcverno" jdbcType="VARCHAR" />
+    <result column="fspaymentname" property="fspaymentname" jdbcType="VARCHAR" />
+    <result column="fsbackup0" property="fsbackup0" jdbcType="VARCHAR" />
+    <result column="fsbackup1" property="fsbackup1" jdbcType="VARCHAR" />
+    <result column="fsbackup2" property="fsbackup2" jdbcType="VARCHAR" />
+    <result column="lver" property="lver" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.pos.entity.sellreceive" extends="BaseResultMap" >
+    <result column="fsMiscno" property="fsmiscno" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fiPaymentType, fiSeq, fsCheckBillNo, fsSellNo, fsShopGUID, fsPaymentId, fdForeignMoney, 
+    fdExchangeRate, fdPayMoney, fdReceMoney, fiIsCalcPaid, fiIsCalcInvoice, fsNote, fsHostId, 
+    fsCreateTime, fsCreateUserId, fsCreateUserName, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
+    fiStatus, fsDataSrckind, fsSrcVerno, fspaymentname, fsbackup0, fsbackup1, fsbackup2, 
+    lver
+  </sql>
+  <sql id="Blob_Column_List" >
+    fsMiscno
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="com.pos.entity.sellreceiveKey" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tbsellreceive
+    where fiPaymentType = #{fipaymenttype,jdbcType=INTEGER}
+      and fiSeq = #{fiseq,jdbcType=INTEGER}
+      and fsCheckBillNo = #{fscheckbillno,jdbcType=VARCHAR}
+      and fsSellNo = #{fssellno,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.sellreceiveKey" >
+    delete from tbsellreceive
+    where fiPaymentType = #{fipaymenttype,jdbcType=INTEGER}
+      and fiSeq = #{fiseq,jdbcType=INTEGER}
+      and fsCheckBillNo = #{fscheckbillno,jdbcType=VARCHAR}
+      and fsSellNo = #{fssellno,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.sellreceive" >
+    insert into tbsellreceive (fiPaymentType, fiSeq, fsCheckBillNo, 
+      fsSellNo, fsShopGUID, fsPaymentId, 
+      fdForeignMoney, fdExchangeRate, fdPayMoney, 
+      fdReceMoney, fiIsCalcPaid, fiIsCalcInvoice, 
+      fsNote, fsHostId, fsCreateTime, 
+      fsCreateUserId, fsCreateUserName, fsUpdateTime, 
+      fsUpdateUserId, fsUpdateUserName, fiStatus, 
+      fsDataSrckind, fsSrcVerno, fspaymentname, 
+      fsbackup0, fsbackup1, fsbackup2, 
+      lver, fsMiscno)
+    values (#{fipaymenttype,jdbcType=INTEGER}, #{fiseq,jdbcType=INTEGER}, #{fscheckbillno,jdbcType=VARCHAR}, 
+      #{fssellno,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, #{fspaymentid,jdbcType=VARCHAR}, 
+      #{fdforeignmoney,jdbcType=DECIMAL}, #{fdexchangerate,jdbcType=DECIMAL}, #{fdpaymoney,jdbcType=DECIMAL}, 
+      #{fdrecemoney,jdbcType=DECIMAL}, #{fiiscalcpaid,jdbcType=INTEGER}, #{fiiscalcinvoice,jdbcType=INTEGER}, 
+      #{fsnote,jdbcType=VARCHAR}, #{fshostid,jdbcType=VARCHAR}, #{fscreatetime,jdbcType=VARCHAR}, 
+      #{fscreateuserid,jdbcType=VARCHAR}, #{fscreateusername,jdbcType=VARCHAR}, #{fsupdatetime,jdbcType=VARCHAR}, 
+      #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}, 
+      #{fsdatasrckind,jdbcType=VARCHAR}, #{fssrcverno,jdbcType=VARCHAR}, #{fspaymentname,jdbcType=VARCHAR}, 
+      #{fsbackup0,jdbcType=VARCHAR}, #{fsbackup1,jdbcType=VARCHAR}, #{fsbackup2,jdbcType=VARCHAR}, 
+      #{lver,jdbcType=INTEGER}, #{fsmiscno,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.sellreceive" >
+    insert into tbsellreceive
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fipaymenttype != null" >
+        fiPaymentType,
+      </if>
+      <if test="fiseq != null" >
+        fiSeq,
+      </if>
+      <if test="fscheckbillno != null" >
+        fsCheckBillNo,
+      </if>
+      <if test="fssellno != null" >
+        fsSellNo,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fspaymentid != null" >
+        fsPaymentId,
+      </if>
+      <if test="fdforeignmoney != null" >
+        fdForeignMoney,
+      </if>
+      <if test="fdexchangerate != null" >
+        fdExchangeRate,
+      </if>
+      <if test="fdpaymoney != null" >
+        fdPayMoney,
+      </if>
+      <if test="fdrecemoney != null" >
+        fdReceMoney,
+      </if>
+      <if test="fiiscalcpaid != null" >
+        fiIsCalcPaid,
+      </if>
+      <if test="fiiscalcinvoice != null" >
+        fiIsCalcInvoice,
+      </if>
+      <if test="fsnote != null" >
+        fsNote,
+      </if>
+      <if test="fshostid != null" >
+        fsHostId,
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime,
+      </if>
+      <if test="fscreateuserid != null" >
+        fsCreateUserId,
+      </if>
+      <if test="fscreateusername != null" >
+        fsCreateUserName,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fsdatasrckind != null" >
+        fsDataSrckind,
+      </if>
+      <if test="fssrcverno != null" >
+        fsSrcVerno,
+      </if>
+      <if test="fspaymentname != null" >
+        fspaymentname,
+      </if>
+      <if test="fsbackup0 != null" >
+        fsbackup0,
+      </if>
+      <if test="fsbackup1 != null" >
+        fsbackup1,
+      </if>
+      <if test="fsbackup2 != null" >
+        fsbackup2,
+      </if>
+      <if test="lver != null" >
+        lver,
+      </if>
+      <if test="fsmiscno != null" >
+        fsMiscno,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fipaymenttype != null" >
+        #{fipaymenttype,jdbcType=INTEGER},
+      </if>
+      <if test="fiseq != null" >
+        #{fiseq,jdbcType=INTEGER},
+      </if>
+      <if test="fscheckbillno != null" >
+        #{fscheckbillno,jdbcType=VARCHAR},
+      </if>
+      <if test="fssellno != null" >
+        #{fssellno,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fspaymentid != null" >
+        #{fspaymentid,jdbcType=VARCHAR},
+      </if>
+      <if test="fdforeignmoney != null" >
+        #{fdforeignmoney,jdbcType=DECIMAL},
+      </if>
+      <if test="fdexchangerate != null" >
+        #{fdexchangerate,jdbcType=DECIMAL},
+      </if>
+      <if test="fdpaymoney != null" >
+        #{fdpaymoney,jdbcType=DECIMAL},
+      </if>
+      <if test="fdrecemoney != null" >
+        #{fdrecemoney,jdbcType=DECIMAL},
+      </if>
+      <if test="fiiscalcpaid != null" >
+        #{fiiscalcpaid,jdbcType=INTEGER},
+      </if>
+      <if test="fiiscalcinvoice != null" >
+        #{fiiscalcinvoice,jdbcType=INTEGER},
+      </if>
+      <if test="fsnote != null" >
+        #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fshostid != null" >
+        #{fshostid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreatetime != null" >
+        #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateuserid != null" >
+        #{fscreateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateusername != null" >
+        #{fscreateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsdatasrckind != null" >
+        #{fsdatasrckind,jdbcType=VARCHAR},
+      </if>
+      <if test="fssrcverno != null" >
+        #{fssrcverno,jdbcType=VARCHAR},
+      </if>
+      <if test="fspaymentname != null" >
+        #{fspaymentname,jdbcType=VARCHAR},
+      </if>
+      <if test="fsbackup0 != null" >
+        #{fsbackup0,jdbcType=VARCHAR},
+      </if>
+      <if test="fsbackup1 != null" >
+        #{fsbackup1,jdbcType=VARCHAR},
+      </if>
+      <if test="fsbackup2 != null" >
+        #{fsbackup2,jdbcType=VARCHAR},
+      </if>
+      <if test="lver != null" >
+        #{lver,jdbcType=INTEGER},
+      </if>
+      <if test="fsmiscno != null" >
+        #{fsmiscno,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.sellreceive" >
+    update tbsellreceive
+    <set >
+      <if test="fspaymentid != null" >
+        fsPaymentId = #{fspaymentid,jdbcType=VARCHAR},
+      </if>
+      <if test="fdforeignmoney != null" >
+        fdForeignMoney = #{fdforeignmoney,jdbcType=DECIMAL},
+      </if>
+      <if test="fdexchangerate != null" >
+        fdExchangeRate = #{fdexchangerate,jdbcType=DECIMAL},
+      </if>
+      <if test="fdpaymoney != null" >
+        fdPayMoney = #{fdpaymoney,jdbcType=DECIMAL},
+      </if>
+      <if test="fdrecemoney != null" >
+        fdReceMoney = #{fdrecemoney,jdbcType=DECIMAL},
+      </if>
+      <if test="fiiscalcpaid != null" >
+        fiIsCalcPaid = #{fiiscalcpaid,jdbcType=INTEGER},
+      </if>
+      <if test="fiiscalcinvoice != null" >
+        fiIsCalcInvoice = #{fiiscalcinvoice,jdbcType=INTEGER},
+      </if>
+      <if test="fsnote != null" >
+        fsNote = #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fshostid != null" >
+        fsHostId = #{fshostid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateuserid != null" >
+        fsCreateUserId = #{fscreateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateusername != null" >
+        fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsdatasrckind != null" >
+        fsDataSrckind = #{fsdatasrckind,jdbcType=VARCHAR},
+      </if>
+      <if test="fssrcverno != null" >
+        fsSrcVerno = #{fssrcverno,jdbcType=VARCHAR},
+      </if>
+      <if test="fspaymentname != null" >
+        fspaymentname = #{fspaymentname,jdbcType=VARCHAR},
+      </if>
+      <if test="fsbackup0 != null" >
+        fsbackup0 = #{fsbackup0,jdbcType=VARCHAR},
+      </if>
+      <if test="fsbackup1 != null" >
+        fsbackup1 = #{fsbackup1,jdbcType=VARCHAR},
+      </if>
+      <if test="fsbackup2 != null" >
+        fsbackup2 = #{fsbackup2,jdbcType=VARCHAR},
+      </if>
+      <if test="lver != null" >
+        lver = #{lver,jdbcType=INTEGER},
+      </if>
+      <if test="fsmiscno != null" >
+        fsMiscno = #{fsmiscno,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where fiPaymentType = #{fipaymenttype,jdbcType=INTEGER}
+      and fiSeq = #{fiseq,jdbcType=INTEGER}
+      and fsCheckBillNo = #{fscheckbillno,jdbcType=VARCHAR}
+      and fsSellNo = #{fssellno,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pos.entity.sellreceive" >
+    update tbsellreceive
+    set fsPaymentId = #{fspaymentid,jdbcType=VARCHAR},
+      fdForeignMoney = #{fdforeignmoney,jdbcType=DECIMAL},
+      fdExchangeRate = #{fdexchangerate,jdbcType=DECIMAL},
+      fdPayMoney = #{fdpaymoney,jdbcType=DECIMAL},
+      fdReceMoney = #{fdrecemoney,jdbcType=DECIMAL},
+      fiIsCalcPaid = #{fiiscalcpaid,jdbcType=INTEGER},
+      fiIsCalcInvoice = #{fiiscalcinvoice,jdbcType=INTEGER},
+      fsNote = #{fsnote,jdbcType=VARCHAR},
+      fsHostId = #{fshostid,jdbcType=VARCHAR},
+      fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
+      fsCreateUserId = #{fscreateuserid,jdbcType=VARCHAR},
+      fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsDataSrckind = #{fsdatasrckind,jdbcType=VARCHAR},
+      fsSrcVerno = #{fssrcverno,jdbcType=VARCHAR},
+      fspaymentname = #{fspaymentname,jdbcType=VARCHAR},
+      fsbackup0 = #{fsbackup0,jdbcType=VARCHAR},
+      fsbackup1 = #{fsbackup1,jdbcType=VARCHAR},
+      fsbackup2 = #{fsbackup2,jdbcType=VARCHAR},
+      lver = #{lver,jdbcType=INTEGER},
+      fsMiscno = #{fsmiscno,jdbcType=LONGVARCHAR}
+    where fiPaymentType = #{fipaymenttype,jdbcType=INTEGER}
+      and fiSeq = #{fiseq,jdbcType=INTEGER}
+      and fsCheckBillNo = #{fscheckbillno,jdbcType=VARCHAR}
+      and fsSellNo = #{fssellno,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.sellreceive" >
+    update tbsellreceive
+    set fsPaymentId = #{fspaymentid,jdbcType=VARCHAR},
+      fdForeignMoney = #{fdforeignmoney,jdbcType=DECIMAL},
+      fdExchangeRate = #{fdexchangerate,jdbcType=DECIMAL},
+      fdPayMoney = #{fdpaymoney,jdbcType=DECIMAL},
+      fdReceMoney = #{fdrecemoney,jdbcType=DECIMAL},
+      fiIsCalcPaid = #{fiiscalcpaid,jdbcType=INTEGER},
+      fiIsCalcInvoice = #{fiiscalcinvoice,jdbcType=INTEGER},
+      fsNote = #{fsnote,jdbcType=VARCHAR},
+      fsHostId = #{fshostid,jdbcType=VARCHAR},
+      fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
+      fsCreateUserId = #{fscreateuserid,jdbcType=VARCHAR},
+      fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsDataSrckind = #{fsdatasrckind,jdbcType=VARCHAR},
+      fsSrcVerno = #{fssrcverno,jdbcType=VARCHAR},
+      fspaymentname = #{fspaymentname,jdbcType=VARCHAR},
+      fsbackup0 = #{fsbackup0,jdbcType=VARCHAR},
+      fsbackup1 = #{fsbackup1,jdbcType=VARCHAR},
+      fsbackup2 = #{fsbackup2,jdbcType=VARCHAR},
+      lver = #{lver,jdbcType=INTEGER}
+    where fiPaymentType = #{fipaymenttype,jdbcType=INTEGER}
+      and fiSeq = #{fiseq,jdbcType=INTEGER}
+      and fsCheckBillNo = #{fscheckbillno,jdbcType=VARCHAR}
+      and fsSellNo = #{fssellno,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.mtableMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.mtable" >
+    <id column="fsMTableId" property="fsmtableid" jdbcType="VARCHAR" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsMTableName" property="fsmtablename" jdbcType="VARCHAR" />
+    <result column="fsMTableClsId" property="fsmtableclsid" jdbcType="VARCHAR" />
+    <result column="fdMTablePrice" property="fdmtableprice" jdbcType="DECIMAL" />
+    <result column="fsMAreaId" property="fsmareaid" jdbcType="VARCHAR" />
+    <result column="fiSeats" property="fiseats" jdbcType="INTEGER" />
+    <result column="fsSellNo" property="fssellno" jdbcType="VARCHAR" />
+    <result column="fsMTableSteId" property="fsmtablesteid" jdbcType="VARCHAR" />
+    <result column="fiOccupyFlag" property="fioccupyflag" jdbcType="INTEGER" />
+    <result column="fiWxMsgFlag" property="fiwxmsgflag" jdbcType="INTEGER" />
+    <result column="fsQRCode" property="fsqrcode" jdbcType="VARCHAR" />
+    <result column="fsHint" property="fshint" jdbcType="VARCHAR" />
+    <result column="fiShareBills" property="fisharebills" jdbcType="INTEGER" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsCustGUID" property="fscustguid" jdbcType="VARCHAR" />
+    <result column="fsCustName" property="fscustname" jdbcType="VARCHAR" />
+    <result column="fsCustMobile" property="fscustmobile" jdbcType="VARCHAR" />
+    <result column="fsBookingTime" property="fsbookingtime" jdbcType="VARCHAR" />
+    <result column="fiOpenJob" property="fiopenjob" jdbcType="INTEGER" />
+    <result column="fsOpenUserName" property="fsopenusername" jdbcType="VARCHAR" />
+    <result column="fsOpenHsTime" property="fsopenhstime" jdbcType="VARCHAR" />
+    <result column="fsOrderJob" property="fsorderjob" jdbcType="INTEGER" />
+    <result column="fsOrderUserName" property="fsorderusername" jdbcType="VARCHAR" />
+    <result column="fsOrderHsTime" property="fsorderhstime" jdbcType="VARCHAR" />
+    <result column="fiCheckJob" property="ficheckjob" jdbcType="INTEGER" />
+    <result column="fsCheckUserName" property="fscheckusername" jdbcType="VARCHAR" />
+    <result column="fsCheckHsTime" property="fscheckhstime" jdbcType="VARCHAR" />
+    <result column="fiChangeJob" property="fichangejob" jdbcType="INTEGER" />
+    <result column="fsChangeUserName" property="fschangeusername" jdbcType="VARCHAR" />
+    <result column="fsChangeHsTime" property="fschangehstime" jdbcType="VARCHAR" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fiSortOrder" property="fisortorder" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsMTableId, fsShopGUID, fsMTableName, fsMTableClsId, fdMTablePrice, fsMAreaId, fiSeats, 
+    fsSellNo, fsMTableSteId, fiOccupyFlag, fiWxMsgFlag, fsQRCode, fsHint, fiShareBills, 
+    fiStatus, fsCustGUID, fsCustName, fsCustMobile, fsBookingTime, fiOpenJob, fsOpenUserName, 
+    fsOpenHsTime, fsOrderJob, fsOrderUserName, fsOrderHsTime, fiCheckJob, fsCheckUserName, 
+    fsCheckHsTime, fiChangeJob, fsChangeUserName, fsChangeHsTime, fsUpdateTime, fsUpdateUserId, 
+    fsUpdateUserName, fiSortOrder
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.mtableKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbmtable
+    where fsMTableId = #{fsmtableid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.mtableKey" >
+    delete from tbmtable
+    where fsMTableId = #{fsmtableid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.mtable" >
+    insert into tbmtable (fsMTableId, fsShopGUID, fsMTableName, 
+      fsMTableClsId, fdMTablePrice, fsMAreaId, 
+      fiSeats, fsSellNo, fsMTableSteId, 
+      fiOccupyFlag, fiWxMsgFlag, fsQRCode, 
+      fsHint, fiShareBills, fiStatus, 
+      fsCustGUID, fsCustName, fsCustMobile, 
+      fsBookingTime, fiOpenJob, fsOpenUserName, 
+      fsOpenHsTime, fsOrderJob, fsOrderUserName, 
+      fsOrderHsTime, fiCheckJob, fsCheckUserName, 
+      fsCheckHsTime, fiChangeJob, fsChangeUserName, 
+      fsChangeHsTime, fsUpdateTime, fsUpdateUserId, 
+      fsUpdateUserName, fiSortOrder)
+    values (#{fsmtableid,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, #{fsmtablename,jdbcType=VARCHAR}, 
+      #{fsmtableclsid,jdbcType=VARCHAR}, #{fdmtableprice,jdbcType=DECIMAL}, #{fsmareaid,jdbcType=VARCHAR}, 
+      #{fiseats,jdbcType=INTEGER}, #{fssellno,jdbcType=VARCHAR}, #{fsmtablesteid,jdbcType=VARCHAR}, 
+      #{fioccupyflag,jdbcType=INTEGER}, #{fiwxmsgflag,jdbcType=INTEGER}, #{fsqrcode,jdbcType=VARCHAR}, 
+      #{fshint,jdbcType=VARCHAR}, #{fisharebills,jdbcType=INTEGER}, #{fistatus,jdbcType=INTEGER}, 
+      #{fscustguid,jdbcType=VARCHAR}, #{fscustname,jdbcType=VARCHAR}, #{fscustmobile,jdbcType=VARCHAR}, 
+      #{fsbookingtime,jdbcType=VARCHAR}, #{fiopenjob,jdbcType=INTEGER}, #{fsopenusername,jdbcType=VARCHAR}, 
+      #{fsopenhstime,jdbcType=VARCHAR}, #{fsorderjob,jdbcType=INTEGER}, #{fsorderusername,jdbcType=VARCHAR}, 
+      #{fsorderhstime,jdbcType=VARCHAR}, #{ficheckjob,jdbcType=INTEGER}, #{fscheckusername,jdbcType=VARCHAR}, 
+      #{fscheckhstime,jdbcType=VARCHAR}, #{fichangejob,jdbcType=INTEGER}, #{fschangeusername,jdbcType=VARCHAR}, 
+      #{fschangehstime,jdbcType=VARCHAR}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
+      #{fsupdateusername,jdbcType=VARCHAR}, #{fisortorder,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.mtable" >
+    insert into tbmtable
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fsmtableid != null" >
+        fsMTableId,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fsmtablename != null" >
+        fsMTableName,
+      </if>
+      <if test="fsmtableclsid != null" >
+        fsMTableClsId,
+      </if>
+      <if test="fdmtableprice != null" >
+        fdMTablePrice,
+      </if>
+      <if test="fsmareaid != null" >
+        fsMAreaId,
+      </if>
+      <if test="fiseats != null" >
+        fiSeats,
+      </if>
+      <if test="fssellno != null" >
+        fsSellNo,
+      </if>
+      <if test="fsmtablesteid != null" >
+        fsMTableSteId,
+      </if>
+      <if test="fioccupyflag != null" >
+        fiOccupyFlag,
+      </if>
+      <if test="fiwxmsgflag != null" >
+        fiWxMsgFlag,
+      </if>
+      <if test="fsqrcode != null" >
+        fsQRCode,
+      </if>
+      <if test="fshint != null" >
+        fsHint,
+      </if>
+      <if test="fisharebills != null" >
+        fiShareBills,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fscustguid != null" >
+        fsCustGUID,
+      </if>
+      <if test="fscustname != null" >
+        fsCustName,
+      </if>
+      <if test="fscustmobile != null" >
+        fsCustMobile,
+      </if>
+      <if test="fsbookingtime != null" >
+        fsBookingTime,
+      </if>
+      <if test="fiopenjob != null" >
+        fiOpenJob,
+      </if>
+      <if test="fsopenusername != null" >
+        fsOpenUserName,
+      </if>
+      <if test="fsopenhstime != null" >
+        fsOpenHsTime,
+      </if>
+      <if test="fsorderjob != null" >
+        fsOrderJob,
+      </if>
+      <if test="fsorderusername != null" >
+        fsOrderUserName,
+      </if>
+      <if test="fsorderhstime != null" >
+        fsOrderHsTime,
+      </if>
+      <if test="ficheckjob != null" >
+        fiCheckJob,
+      </if>
+      <if test="fscheckusername != null" >
+        fsCheckUserName,
+      </if>
+      <if test="fscheckhstime != null" >
+        fsCheckHsTime,
+      </if>
+      <if test="fichangejob != null" >
+        fiChangeJob,
+      </if>
+      <if test="fschangeusername != null" >
+        fsChangeUserName,
+      </if>
+      <if test="fschangehstime != null" >
+        fsChangeHsTime,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fisortorder != null" >
+        fiSortOrder,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fsmtableid != null" >
+        #{fsmtableid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmtablename != null" >
+        #{fsmtablename,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmtableclsid != null" >
+        #{fsmtableclsid,jdbcType=VARCHAR},
+      </if>
+      <if test="fdmtableprice != null" >
+        #{fdmtableprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fsmareaid != null" >
+        #{fsmareaid,jdbcType=VARCHAR},
+      </if>
+      <if test="fiseats != null" >
+        #{fiseats,jdbcType=INTEGER},
+      </if>
+      <if test="fssellno != null" >
+        #{fssellno,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmtablesteid != null" >
+        #{fsmtablesteid,jdbcType=VARCHAR},
+      </if>
+      <if test="fioccupyflag != null" >
+        #{fioccupyflag,jdbcType=INTEGER},
+      </if>
+      <if test="fiwxmsgflag != null" >
+        #{fiwxmsgflag,jdbcType=INTEGER},
+      </if>
+      <if test="fsqrcode != null" >
+        #{fsqrcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fshint != null" >
+        #{fshint,jdbcType=VARCHAR},
+      </if>
+      <if test="fisharebills != null" >
+        #{fisharebills,jdbcType=INTEGER},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fscustguid != null" >
+        #{fscustguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscustname != null" >
+        #{fscustname,jdbcType=VARCHAR},
+      </if>
+      <if test="fscustmobile != null" >
+        #{fscustmobile,jdbcType=VARCHAR},
+      </if>
+      <if test="fsbookingtime != null" >
+        #{fsbookingtime,jdbcType=VARCHAR},
+      </if>
+      <if test="fiopenjob != null" >
+        #{fiopenjob,jdbcType=INTEGER},
+      </if>
+      <if test="fsopenusername != null" >
+        #{fsopenusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsopenhstime != null" >
+        #{fsopenhstime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsorderjob != null" >
+        #{fsorderjob,jdbcType=INTEGER},
+      </if>
+      <if test="fsorderusername != null" >
+        #{fsorderusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsorderhstime != null" >
+        #{fsorderhstime,jdbcType=VARCHAR},
+      </if>
+      <if test="ficheckjob != null" >
+        #{ficheckjob,jdbcType=INTEGER},
+      </if>
+      <if test="fscheckusername != null" >
+        #{fscheckusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fscheckhstime != null" >
+        #{fscheckhstime,jdbcType=VARCHAR},
+      </if>
+      <if test="fichangejob != null" >
+        #{fichangejob,jdbcType=INTEGER},
+      </if>
+      <if test="fschangeusername != null" >
+        #{fschangeusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fschangehstime != null" >
+        #{fschangehstime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fisortorder != null" >
+        #{fisortorder,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.mtable" >
+    update tbmtable
+    <set >
+      <if test="fsmtablename != null" >
+        fsMTableName = #{fsmtablename,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmtableclsid != null" >
+        fsMTableClsId = #{fsmtableclsid,jdbcType=VARCHAR},
+      </if>
+      <if test="fdmtableprice != null" >
+        fdMTablePrice = #{fdmtableprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fsmareaid != null" >
+        fsMAreaId = #{fsmareaid,jdbcType=VARCHAR},
+      </if>
+      <if test="fiseats != null" >
+        fiSeats = #{fiseats,jdbcType=INTEGER},
+      </if>
+      <if test="fssellno != null" >
+        fsSellNo = #{fssellno,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmtablesteid != null" >
+        fsMTableSteId = #{fsmtablesteid,jdbcType=VARCHAR},
+      </if>
+      <if test="fioccupyflag != null" >
+        fiOccupyFlag = #{fioccupyflag,jdbcType=INTEGER},
+      </if>
+      <if test="fiwxmsgflag != null" >
+        fiWxMsgFlag = #{fiwxmsgflag,jdbcType=INTEGER},
+      </if>
+      <if test="fsqrcode != null" >
+        fsQRCode = #{fsqrcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fshint != null" >
+        fsHint = #{fshint,jdbcType=VARCHAR},
+      </if>
+      <if test="fisharebills != null" >
+        fiShareBills = #{fisharebills,jdbcType=INTEGER},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fscustguid != null" >
+        fsCustGUID = #{fscustguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscustname != null" >
+        fsCustName = #{fscustname,jdbcType=VARCHAR},
+      </if>
+      <if test="fscustmobile != null" >
+        fsCustMobile = #{fscustmobile,jdbcType=VARCHAR},
+      </if>
+      <if test="fsbookingtime != null" >
+        fsBookingTime = #{fsbookingtime,jdbcType=VARCHAR},
+      </if>
+      <if test="fiopenjob != null" >
+        fiOpenJob = #{fiopenjob,jdbcType=INTEGER},
+      </if>
+      <if test="fsopenusername != null" >
+        fsOpenUserName = #{fsopenusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsopenhstime != null" >
+        fsOpenHsTime = #{fsopenhstime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsorderjob != null" >
+        fsOrderJob = #{fsorderjob,jdbcType=INTEGER},
+      </if>
+      <if test="fsorderusername != null" >
+        fsOrderUserName = #{fsorderusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsorderhstime != null" >
+        fsOrderHsTime = #{fsorderhstime,jdbcType=VARCHAR},
+      </if>
+      <if test="ficheckjob != null" >
+        fiCheckJob = #{ficheckjob,jdbcType=INTEGER},
+      </if>
+      <if test="fscheckusername != null" >
+        fsCheckUserName = #{fscheckusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fscheckhstime != null" >
+        fsCheckHsTime = #{fscheckhstime,jdbcType=VARCHAR},
+      </if>
+      <if test="fichangejob != null" >
+        fiChangeJob = #{fichangejob,jdbcType=INTEGER},
+      </if>
+      <if test="fschangeusername != null" >
+        fsChangeUserName = #{fschangeusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fschangehstime != null" >
+        fsChangeHsTime = #{fschangehstime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fisortorder != null" >
+        fiSortOrder = #{fisortorder,jdbcType=INTEGER},
+      </if>
+    </set>
+    where fsMTableId = #{fsmtableid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.mtable" >
+    update tbmtable
+    set fsMTableName = #{fsmtablename,jdbcType=VARCHAR},
+      fsMTableClsId = #{fsmtableclsid,jdbcType=VARCHAR},
+      fdMTablePrice = #{fdmtableprice,jdbcType=DECIMAL},
+      fsMAreaId = #{fsmareaid,jdbcType=VARCHAR},
+      fiSeats = #{fiseats,jdbcType=INTEGER},
+      fsSellNo = #{fssellno,jdbcType=VARCHAR},
+      fsMTableSteId = #{fsmtablesteid,jdbcType=VARCHAR},
+      fiOccupyFlag = #{fioccupyflag,jdbcType=INTEGER},
+      fiWxMsgFlag = #{fiwxmsgflag,jdbcType=INTEGER},
+      fsQRCode = #{fsqrcode,jdbcType=VARCHAR},
+      fsHint = #{fshint,jdbcType=VARCHAR},
+      fiShareBills = #{fisharebills,jdbcType=INTEGER},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsCustGUID = #{fscustguid,jdbcType=VARCHAR},
+      fsCustName = #{fscustname,jdbcType=VARCHAR},
+      fsCustMobile = #{fscustmobile,jdbcType=VARCHAR},
+      fsBookingTime = #{fsbookingtime,jdbcType=VARCHAR},
+      fiOpenJob = #{fiopenjob,jdbcType=INTEGER},
+      fsOpenUserName = #{fsopenusername,jdbcType=VARCHAR},
+      fsOpenHsTime = #{fsopenhstime,jdbcType=VARCHAR},
+      fsOrderJob = #{fsorderjob,jdbcType=INTEGER},
+      fsOrderUserName = #{fsorderusername,jdbcType=VARCHAR},
+      fsOrderHsTime = #{fsorderhstime,jdbcType=VARCHAR},
+      fiCheckJob = #{ficheckjob,jdbcType=INTEGER},
+      fsCheckUserName = #{fscheckusername,jdbcType=VARCHAR},
+      fsCheckHsTime = #{fscheckhstime,jdbcType=VARCHAR},
+      fiChangeJob = #{fichangejob,jdbcType=INTEGER},
+      fsChangeUserName = #{fschangeusername,jdbcType=VARCHAR},
+      fsChangeHsTime = #{fschangehstime,jdbcType=VARCHAR},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fiSortOrder = #{fisortorder,jdbcType=INTEGER}
+    where fsMTableId = #{fsmtableid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

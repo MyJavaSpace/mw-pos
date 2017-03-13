@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.menuitemMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.menuitem" >
+    <id column="fiItemCd" property="fiitemcd" jdbcType="INTEGER" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsItemId" property="fsitemid" jdbcType="VARCHAR" />
+    <result column="fsItemName" property="fsitemname" jdbcType="VARCHAR" />
+    <result column="fsHelpCode" property="fshelpcode" jdbcType="VARCHAR" />
+    <result column="fsItemName2" property="fsitemname2" jdbcType="VARCHAR" />
+    <result column="fsMenuClsId" property="fsmenuclsid" jdbcType="VARCHAR" />
+    <result column="fiIsEditPrice" property="fiiseditprice" jdbcType="INTEGER" />
+    <result column="fiIsEditQty" property="fiiseditqty" jdbcType="INTEGER" />
+    <result column="fiIsDiscount" property="fiisdiscount" jdbcType="INTEGER" />
+    <result column="fiIsServiceFee" property="fiisservicefee" jdbcType="INTEGER" />
+    <result column="fiIsGift" property="fiisgift" jdbcType="INTEGER" />
+    <result column="fiIsPrn" property="fiisprn" jdbcType="INTEGER" />
+    <result column="fsDeptId" property="fsdeptid" jdbcType="VARCHAR" />
+    <result column="fiIsOut" property="fiisout" jdbcType="INTEGER" />
+    <result column="fiIsNew" property="fiisnew" jdbcType="INTEGER" />
+    <result column="fiIsSpecialty" property="fiisspecialty" jdbcType="INTEGER" />
+    <result column="fiItemKind" property="fiitemkind" jdbcType="INTEGER" />
+    <result column="fsItemDesc" property="fsitemdesc" jdbcType="VARCHAR" />
+    <result column="fiImgWidth" property="fiimgwidth" jdbcType="INTEGER" />
+    <result column="fiImgHeight" property="fiimgheight" jdbcType="INTEGER" />
+    <result column="fsImageURL" property="fsimageurl" jdbcType="VARCHAR" />
+    <result column="fsImagePath" property="fsimagepath" jdbcType="VARCHAR" />
+    <result column="fsNote" property="fsnote" jdbcType="VARCHAR" />
+    <result column="fiSortOrder" property="fisortorder" jdbcType="INTEGER" />
+    <result column="fsColor" property="fscolor" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsCreateTime" property="fscreatetime" jdbcType="VARCHAR" />
+    <result column="fsCreateUserId" property="fscreateuserid" jdbcType="VARCHAR" />
+    <result column="fsCreateUserName" property="fscreateusername" jdbcType="VARCHAR" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fiIsSetDtlPrn" property="fiissetdtlprn" jdbcType="INTEGER" />
+    <result column="fiIsCuisine" property="fiiscuisine" jdbcType="INTEGER" />
+    <result column="fiIsBonus" property="fiisbonus" jdbcType="INTEGER" />
+    <result column="fiIsTakeAway" property="fiistakeaway" jdbcType="INTEGER" />
+    <result column="fiIsWeChatOrder" property="fiiswechatorder" jdbcType="INTEGER" />
+    <result column="fiIsMulDept" property="fiismuldept" jdbcType="INTEGER" />
+    <result column="fiIsHot" property="fiishot" jdbcType="INTEGER" />
+    <result column="fiIsSet" property="fiisset" jdbcType="INTEGER" />
+    <result column="fiIsEveryone" property="fiiseveryone" jdbcType="INTEGER" />
+    <result column="fiisEffectiveDate" property="fiiseffectivedate" jdbcType="INTEGER" />
+    <result column="fsStarDate" property="fsstardate" jdbcType="VARCHAR" />
+    <result column="fsEndDate" property="fsenddate" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fiItemCd, fsShopGUID, fsItemId, fsItemName, fsHelpCode, fsItemName2, fsMenuClsId, 
+    fiIsEditPrice, fiIsEditQty, fiIsDiscount, fiIsServiceFee, fiIsGift, fiIsPrn, fsDeptId, 
+    fiIsOut, fiIsNew, fiIsSpecialty, fiItemKind, fsItemDesc, fiImgWidth, fiImgHeight, 
+    fsImageURL, fsImagePath, fsNote, fiSortOrder, fsColor, fiStatus, fsCreateTime, fsCreateUserId, 
+    fsCreateUserName, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, fiIsSetDtlPrn, 
+    fiIsCuisine, fiIsBonus, fiIsTakeAway, fiIsWeChatOrder, fiIsMulDept, fiIsHot, fiIsSet, 
+    fiIsEveryone, fiisEffectiveDate, fsStarDate, fsEndDate
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.menuitemKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbmenuitem
+    where fiItemCd = #{fiitemcd,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.menuitemKey" >
+    delete from tbmenuitem
+    where fiItemCd = #{fiitemcd,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.menuitem" >
+    insert into tbmenuitem (fiItemCd, fsShopGUID, fsItemId, 
+      fsItemName, fsHelpCode, fsItemName2, 
+      fsMenuClsId, fiIsEditPrice, fiIsEditQty, 
+      fiIsDiscount, fiIsServiceFee, fiIsGift, 
+      fiIsPrn, fsDeptId, fiIsOut, 
+      fiIsNew, fiIsSpecialty, fiItemKind, 
+      fsItemDesc, fiImgWidth, fiImgHeight, 
+      fsImageURL, fsImagePath, fsNote, 
+      fiSortOrder, fsColor, fiStatus, 
+      fsCreateTime, fsCreateUserId, fsCreateUserName, 
+      fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
+      fiIsSetDtlPrn, fiIsCuisine, fiIsBonus, 
+      fiIsTakeAway, fiIsWeChatOrder, fiIsMulDept, 
+      fiIsHot, fiIsSet, fiIsEveryone, 
+      fiisEffectiveDate, fsStarDate, fsEndDate
+      )
+    values (#{fiitemcd,jdbcType=INTEGER}, #{fsshopguid,jdbcType=VARCHAR}, #{fsitemid,jdbcType=VARCHAR}, 
+      #{fsitemname,jdbcType=VARCHAR}, #{fshelpcode,jdbcType=VARCHAR}, #{fsitemname2,jdbcType=VARCHAR}, 
+      #{fsmenuclsid,jdbcType=VARCHAR}, #{fiiseditprice,jdbcType=INTEGER}, #{fiiseditqty,jdbcType=INTEGER}, 
+      #{fiisdiscount,jdbcType=INTEGER}, #{fiisservicefee,jdbcType=INTEGER}, #{fiisgift,jdbcType=INTEGER}, 
+      #{fiisprn,jdbcType=INTEGER}, #{fsdeptid,jdbcType=VARCHAR}, #{fiisout,jdbcType=INTEGER}, 
+      #{fiisnew,jdbcType=INTEGER}, #{fiisspecialty,jdbcType=INTEGER}, #{fiitemkind,jdbcType=INTEGER}, 
+      #{fsitemdesc,jdbcType=VARCHAR}, #{fiimgwidth,jdbcType=INTEGER}, #{fiimgheight,jdbcType=INTEGER}, 
+      #{fsimageurl,jdbcType=VARCHAR}, #{fsimagepath,jdbcType=VARCHAR}, #{fsnote,jdbcType=VARCHAR}, 
+      #{fisortorder,jdbcType=INTEGER}, #{fscolor,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}, 
+      #{fscreatetime,jdbcType=VARCHAR}, #{fscreateuserid,jdbcType=VARCHAR}, #{fscreateusername,jdbcType=VARCHAR}, 
+      #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
+      #{fiissetdtlprn,jdbcType=INTEGER}, #{fiiscuisine,jdbcType=INTEGER}, #{fiisbonus,jdbcType=INTEGER}, 
+      #{fiistakeaway,jdbcType=INTEGER}, #{fiiswechatorder,jdbcType=INTEGER}, #{fiismuldept,jdbcType=INTEGER}, 
+      #{fiishot,jdbcType=INTEGER}, #{fiisset,jdbcType=INTEGER}, #{fiiseveryone,jdbcType=INTEGER}, 
+      #{fiiseffectivedate,jdbcType=INTEGER}, #{fsstardate,jdbcType=VARCHAR}, #{fsenddate,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.menuitem" >
+    insert into tbmenuitem
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fiitemcd != null" >
+        fiItemCd,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fsitemid != null" >
+        fsItemId,
+      </if>
+      <if test="fsitemname != null" >
+        fsItemName,
+      </if>
+      <if test="fshelpcode != null" >
+        fsHelpCode,
+      </if>
+      <if test="fsitemname2 != null" >
+        fsItemName2,
+      </if>
+      <if test="fsmenuclsid != null" >
+        fsMenuClsId,
+      </if>
+      <if test="fiiseditprice != null" >
+        fiIsEditPrice,
+      </if>
+      <if test="fiiseditqty != null" >
+        fiIsEditQty,
+      </if>
+      <if test="fiisdiscount != null" >
+        fiIsDiscount,
+      </if>
+      <if test="fiisservicefee != null" >
+        fiIsServiceFee,
+      </if>
+      <if test="fiisgift != null" >
+        fiIsGift,
+      </if>
+      <if test="fiisprn != null" >
+        fiIsPrn,
+      </if>
+      <if test="fsdeptid != null" >
+        fsDeptId,
+      </if>
+      <if test="fiisout != null" >
+        fiIsOut,
+      </if>
+      <if test="fiisnew != null" >
+        fiIsNew,
+      </if>
+      <if test="fiisspecialty != null" >
+        fiIsSpecialty,
+      </if>
+      <if test="fiitemkind != null" >
+        fiItemKind,
+      </if>
+      <if test="fsitemdesc != null" >
+        fsItemDesc,
+      </if>
+      <if test="fiimgwidth != null" >
+        fiImgWidth,
+      </if>
+      <if test="fiimgheight != null" >
+        fiImgHeight,
+      </if>
+      <if test="fsimageurl != null" >
+        fsImageURL,
+      </if>
+      <if test="fsimagepath != null" >
+        fsImagePath,
+      </if>
+      <if test="fsnote != null" >
+        fsNote,
+      </if>
+      <if test="fisortorder != null" >
+        fiSortOrder,
+      </if>
+      <if test="fscolor != null" >
+        fsColor,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime,
+      </if>
+      <if test="fscreateuserid != null" >
+        fsCreateUserId,
+      </if>
+      <if test="fscreateusername != null" >
+        fsCreateUserName,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fiissetdtlprn != null" >
+        fiIsSetDtlPrn,
+      </if>
+      <if test="fiiscuisine != null" >
+        fiIsCuisine,
+      </if>
+      <if test="fiisbonus != null" >
+        fiIsBonus,
+      </if>
+      <if test="fiistakeaway != null" >
+        fiIsTakeAway,
+      </if>
+      <if test="fiiswechatorder != null" >
+        fiIsWeChatOrder,
+      </if>
+      <if test="fiismuldept != null" >
+        fiIsMulDept,
+      </if>
+      <if test="fiishot != null" >
+        fiIsHot,
+      </if>
+      <if test="fiisset != null" >
+        fiIsSet,
+      </if>
+      <if test="fiiseveryone != null" >
+        fiIsEveryone,
+      </if>
+      <if test="fiiseffectivedate != null" >
+        fiisEffectiveDate,
+      </if>
+      <if test="fsstardate != null" >
+        fsStarDate,
+      </if>
+      <if test="fsenddate != null" >
+        fsEndDate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fiitemcd != null" >
+        #{fiitemcd,jdbcType=INTEGER},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsitemid != null" >
+        #{fsitemid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsitemname != null" >
+        #{fsitemname,jdbcType=VARCHAR},
+      </if>
+      <if test="fshelpcode != null" >
+        #{fshelpcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fsitemname2 != null" >
+        #{fsitemname2,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmenuclsid != null" >
+        #{fsmenuclsid,jdbcType=VARCHAR},
+      </if>
+      <if test="fiiseditprice != null" >
+        #{fiiseditprice,jdbcType=INTEGER},
+      </if>
+      <if test="fiiseditqty != null" >
+        #{fiiseditqty,jdbcType=INTEGER},
+      </if>
+      <if test="fiisdiscount != null" >
+        #{fiisdiscount,jdbcType=INTEGER},
+      </if>
+      <if test="fiisservicefee != null" >
+        #{fiisservicefee,jdbcType=INTEGER},
+      </if>
+      <if test="fiisgift != null" >
+        #{fiisgift,jdbcType=INTEGER},
+      </if>
+      <if test="fiisprn != null" >
+        #{fiisprn,jdbcType=INTEGER},
+      </if>
+      <if test="fsdeptid != null" >
+        #{fsdeptid,jdbcType=VARCHAR},
+      </if>
+      <if test="fiisout != null" >
+        #{fiisout,jdbcType=INTEGER},
+      </if>
+      <if test="fiisnew != null" >
+        #{fiisnew,jdbcType=INTEGER},
+      </if>
+      <if test="fiisspecialty != null" >
+        #{fiisspecialty,jdbcType=INTEGER},
+      </if>
+      <if test="fiitemkind != null" >
+        #{fiitemkind,jdbcType=INTEGER},
+      </if>
+      <if test="fsitemdesc != null" >
+        #{fsitemdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="fiimgwidth != null" >
+        #{fiimgwidth,jdbcType=INTEGER},
+      </if>
+      <if test="fiimgheight != null" >
+        #{fiimgheight,jdbcType=INTEGER},
+      </if>
+      <if test="fsimageurl != null" >
+        #{fsimageurl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsimagepath != null" >
+        #{fsimagepath,jdbcType=VARCHAR},
+      </if>
+      <if test="fsnote != null" >
+        #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fisortorder != null" >
+        #{fisortorder,jdbcType=INTEGER},
+      </if>
+      <if test="fscolor != null" >
+        #{fscolor,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fscreatetime != null" >
+        #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateuserid != null" >
+        #{fscreateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateusername != null" >
+        #{fscreateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fiissetdtlprn != null" >
+        #{fiissetdtlprn,jdbcType=INTEGER},
+      </if>
+      <if test="fiiscuisine != null" >
+        #{fiiscuisine,jdbcType=INTEGER},
+      </if>
+      <if test="fiisbonus != null" >
+        #{fiisbonus,jdbcType=INTEGER},
+      </if>
+      <if test="fiistakeaway != null" >
+        #{fiistakeaway,jdbcType=INTEGER},
+      </if>
+      <if test="fiiswechatorder != null" >
+        #{fiiswechatorder,jdbcType=INTEGER},
+      </if>
+      <if test="fiismuldept != null" >
+        #{fiismuldept,jdbcType=INTEGER},
+      </if>
+      <if test="fiishot != null" >
+        #{fiishot,jdbcType=INTEGER},
+      </if>
+      <if test="fiisset != null" >
+        #{fiisset,jdbcType=INTEGER},
+      </if>
+      <if test="fiiseveryone != null" >
+        #{fiiseveryone,jdbcType=INTEGER},
+      </if>
+      <if test="fiiseffectivedate != null" >
+        #{fiiseffectivedate,jdbcType=INTEGER},
+      </if>
+      <if test="fsstardate != null" >
+        #{fsstardate,jdbcType=VARCHAR},
+      </if>
+      <if test="fsenddate != null" >
+        #{fsenddate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.menuitem" >
+    update tbmenuitem
+    <set >
+      <if test="fsitemid != null" >
+        fsItemId = #{fsitemid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsitemname != null" >
+        fsItemName = #{fsitemname,jdbcType=VARCHAR},
+      </if>
+      <if test="fshelpcode != null" >
+        fsHelpCode = #{fshelpcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fsitemname2 != null" >
+        fsItemName2 = #{fsitemname2,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmenuclsid != null" >
+        fsMenuClsId = #{fsmenuclsid,jdbcType=VARCHAR},
+      </if>
+      <if test="fiiseditprice != null" >
+        fiIsEditPrice = #{fiiseditprice,jdbcType=INTEGER},
+      </if>
+      <if test="fiiseditqty != null" >
+        fiIsEditQty = #{fiiseditqty,jdbcType=INTEGER},
+      </if>
+      <if test="fiisdiscount != null" >
+        fiIsDiscount = #{fiisdiscount,jdbcType=INTEGER},
+      </if>
+      <if test="fiisservicefee != null" >
+        fiIsServiceFee = #{fiisservicefee,jdbcType=INTEGER},
+      </if>
+      <if test="fiisgift != null" >
+        fiIsGift = #{fiisgift,jdbcType=INTEGER},
+      </if>
+      <if test="fiisprn != null" >
+        fiIsPrn = #{fiisprn,jdbcType=INTEGER},
+      </if>
+      <if test="fsdeptid != null" >
+        fsDeptId = #{fsdeptid,jdbcType=VARCHAR},
+      </if>
+      <if test="fiisout != null" >
+        fiIsOut = #{fiisout,jdbcType=INTEGER},
+      </if>
+      <if test="fiisnew != null" >
+        fiIsNew = #{fiisnew,jdbcType=INTEGER},
+      </if>
+      <if test="fiisspecialty != null" >
+        fiIsSpecialty = #{fiisspecialty,jdbcType=INTEGER},
+      </if>
+      <if test="fiitemkind != null" >
+        fiItemKind = #{fiitemkind,jdbcType=INTEGER},
+      </if>
+      <if test="fsitemdesc != null" >
+        fsItemDesc = #{fsitemdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="fiimgwidth != null" >
+        fiImgWidth = #{fiimgwidth,jdbcType=INTEGER},
+      </if>
+      <if test="fiimgheight != null" >
+        fiImgHeight = #{fiimgheight,jdbcType=INTEGER},
+      </if>
+      <if test="fsimageurl != null" >
+        fsImageURL = #{fsimageurl,jdbcType=VARCHAR},
+      </if>
+      <if test="fsimagepath != null" >
+        fsImagePath = #{fsimagepath,jdbcType=VARCHAR},
+      </if>
+      <if test="fsnote != null" >
+        fsNote = #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fisortorder != null" >
+        fiSortOrder = #{fisortorder,jdbcType=INTEGER},
+      </if>
+      <if test="fscolor != null" >
+        fsColor = #{fscolor,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateuserid != null" >
+        fsCreateUserId = #{fscreateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateusername != null" >
+        fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fiissetdtlprn != null" >
+        fiIsSetDtlPrn = #{fiissetdtlprn,jdbcType=INTEGER},
+      </if>
+      <if test="fiiscuisine != null" >
+        fiIsCuisine = #{fiiscuisine,jdbcType=INTEGER},
+      </if>
+      <if test="fiisbonus != null" >
+        fiIsBonus = #{fiisbonus,jdbcType=INTEGER},
+      </if>
+      <if test="fiistakeaway != null" >
+        fiIsTakeAway = #{fiistakeaway,jdbcType=INTEGER},
+      </if>
+      <if test="fiiswechatorder != null" >
+        fiIsWeChatOrder = #{fiiswechatorder,jdbcType=INTEGER},
+      </if>
+      <if test="fiismuldept != null" >
+        fiIsMulDept = #{fiismuldept,jdbcType=INTEGER},
+      </if>
+      <if test="fiishot != null" >
+        fiIsHot = #{fiishot,jdbcType=INTEGER},
+      </if>
+      <if test="fiisset != null" >
+        fiIsSet = #{fiisset,jdbcType=INTEGER},
+      </if>
+      <if test="fiiseveryone != null" >
+        fiIsEveryone = #{fiiseveryone,jdbcType=INTEGER},
+      </if>
+      <if test="fiiseffectivedate != null" >
+        fiisEffectiveDate = #{fiiseffectivedate,jdbcType=INTEGER},
+      </if>
+      <if test="fsstardate != null" >
+        fsStarDate = #{fsstardate,jdbcType=VARCHAR},
+      </if>
+      <if test="fsenddate != null" >
+        fsEndDate = #{fsenddate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fiItemCd = #{fiitemcd,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.menuitem" >
+    update tbmenuitem
+    set fsItemId = #{fsitemid,jdbcType=VARCHAR},
+      fsItemName = #{fsitemname,jdbcType=VARCHAR},
+      fsHelpCode = #{fshelpcode,jdbcType=VARCHAR},
+      fsItemName2 = #{fsitemname2,jdbcType=VARCHAR},
+      fsMenuClsId = #{fsmenuclsid,jdbcType=VARCHAR},
+      fiIsEditPrice = #{fiiseditprice,jdbcType=INTEGER},
+      fiIsEditQty = #{fiiseditqty,jdbcType=INTEGER},
+      fiIsDiscount = #{fiisdiscount,jdbcType=INTEGER},
+      fiIsServiceFee = #{fiisservicefee,jdbcType=INTEGER},
+      fiIsGift = #{fiisgift,jdbcType=INTEGER},
+      fiIsPrn = #{fiisprn,jdbcType=INTEGER},
+      fsDeptId = #{fsdeptid,jdbcType=VARCHAR},
+      fiIsOut = #{fiisout,jdbcType=INTEGER},
+      fiIsNew = #{fiisnew,jdbcType=INTEGER},
+      fiIsSpecialty = #{fiisspecialty,jdbcType=INTEGER},
+      fiItemKind = #{fiitemkind,jdbcType=INTEGER},
+      fsItemDesc = #{fsitemdesc,jdbcType=VARCHAR},
+      fiImgWidth = #{fiimgwidth,jdbcType=INTEGER},
+      fiImgHeight = #{fiimgheight,jdbcType=INTEGER},
+      fsImageURL = #{fsimageurl,jdbcType=VARCHAR},
+      fsImagePath = #{fsimagepath,jdbcType=VARCHAR},
+      fsNote = #{fsnote,jdbcType=VARCHAR},
+      fiSortOrder = #{fisortorder,jdbcType=INTEGER},
+      fsColor = #{fscolor,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
+      fsCreateUserId = #{fscreateuserid,jdbcType=VARCHAR},
+      fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fiIsSetDtlPrn = #{fiissetdtlprn,jdbcType=INTEGER},
+      fiIsCuisine = #{fiiscuisine,jdbcType=INTEGER},
+      fiIsBonus = #{fiisbonus,jdbcType=INTEGER},
+      fiIsTakeAway = #{fiistakeaway,jdbcType=INTEGER},
+      fiIsWeChatOrder = #{fiiswechatorder,jdbcType=INTEGER},
+      fiIsMulDept = #{fiismuldept,jdbcType=INTEGER},
+      fiIsHot = #{fiishot,jdbcType=INTEGER},
+      fiIsSet = #{fiisset,jdbcType=INTEGER},
+      fiIsEveryone = #{fiiseveryone,jdbcType=INTEGER},
+      fiisEffectiveDate = #{fiiseffectivedate,jdbcType=INTEGER},
+      fsStarDate = #{fsstardate,jdbcType=VARCHAR},
+      fsEndDate = #{fsenddate,jdbcType=VARCHAR}
+    where fiItemCd = #{fiitemcd,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.mtablesteMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.mtableste" >
+    <id column="fsMTableSteId" property="fsmtablesteid" jdbcType="VARCHAR" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsMTableSteName" property="fsmtablestename" jdbcType="VARCHAR" />
+    <result column="fsColor" property="fscolor" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsMTableSteId, fsShopGUID, fsMTableSteName, fsColor, fiStatus, fsUpdateTime, fsUpdateUserId, 
+    fsUpdateUserName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.mtablesteKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbmtableste
+    where fsMTableSteId = #{fsmtablesteid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.mtablesteKey" >
+    delete from tbmtableste
+    where fsMTableSteId = #{fsmtablesteid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.mtableste" >
+    insert into tbmtableste (fsMTableSteId, fsShopGUID, fsMTableSteName, 
+      fsColor, fiStatus, fsUpdateTime, 
+      fsUpdateUserId, fsUpdateUserName)
+    values (#{fsmtablesteid,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, #{fsmtablestename,jdbcType=VARCHAR}, 
+      #{fscolor,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, 
+      #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.mtableste" >
+    insert into tbmtableste
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fsmtablesteid != null" >
+        fsMTableSteId,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fsmtablestename != null" >
+        fsMTableSteName,
+      </if>
+      <if test="fscolor != null" >
+        fsColor,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fsmtablesteid != null" >
+        #{fsmtablesteid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmtablestename != null" >
+        #{fsmtablestename,jdbcType=VARCHAR},
+      </if>
+      <if test="fscolor != null" >
+        #{fscolor,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.mtableste" >
+    update tbmtableste
+    <set >
+      <if test="fsmtablestename != null" >
+        fsMTableSteName = #{fsmtablestename,jdbcType=VARCHAR},
+      </if>
+      <if test="fscolor != null" >
+        fsColor = #{fscolor,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fsMTableSteId = #{fsmtablesteid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.mtableste" >
+    update tbmtableste
+    set fsMTableSteName = #{fsmtablestename,jdbcType=VARCHAR},
+      fsColor = #{fscolor,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR}
+    where fsMTableSteId = #{fsmtablesteid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

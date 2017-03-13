@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.sellcheckMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.sellcheck" >
+    <id column="fsCheckBillNo" property="fscheckbillno" jdbcType="VARCHAR" />
+    <id column="fsSellNo" property="fssellno" jdbcType="VARCHAR" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsCheckTime" property="fschecktime" jdbcType="VARCHAR" />
+    <result column="fsShiftId" property="fsshiftid" jdbcType="VARCHAR" />
+    <result column="fdReceAmt" property="fdreceamt" jdbcType="DECIMAL" />
+    <result column="fdRealAmt" property="fdrealamt" jdbcType="DECIMAL" />
+    <result column="fdInvoiceAmt" property="fdinvoiceamt" jdbcType="DECIMAL" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsNote" property="fsnote" jdbcType="VARCHAR" />
+    <result column="fiCheckTimes" property="fichecktimes" jdbcType="INTEGER" />
+    <result column="fiPrintTimes" property="fiprinttimes" jdbcType="INTEGER" />
+    <result column="fsVerifyUserId" property="fsverifyuserid" jdbcType="VARCHAR" />
+    <result column="fsVerifyTime" property="fsverifytime" jdbcType="VARCHAR" />
+    <result column="fsHostId" property="fshostid" jdbcType="VARCHAR" />
+    <result column="fsCreateTime" property="fscreatetime" jdbcType="VARCHAR" />
+    <result column="fsCreateUserId" property="fscreateuserid" jdbcType="VARCHAR" />
+    <result column="fsCreateUserName" property="fscreateusername" jdbcType="VARCHAR" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fsVerifyUserName" property="fsverifyusername" jdbcType="VARCHAR" />
+    <result column="fsDataSrckind" property="fsdatasrckind" jdbcType="VARCHAR" />
+    <result column="fsSrcVerno" property="fssrcverno" jdbcType="VARCHAR" />
+    <result column="fsshiftname" property="fsshiftname" jdbcType="VARCHAR" />
+    <result column="lver" property="lver" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsCheckBillNo, fsSellNo, fsShopGUID, fsCheckTime, fsShiftId, fdReceAmt, fdRealAmt, 
+    fdInvoiceAmt, fiStatus, fsNote, fiCheckTimes, fiPrintTimes, fsVerifyUserId, fsVerifyTime, 
+    fsHostId, fsCreateTime, fsCreateUserId, fsCreateUserName, fsUpdateTime, fsUpdateUserId, 
+    fsUpdateUserName, fsVerifyUserName, fsDataSrckind, fsSrcVerno, fsshiftname, lver
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.sellcheckKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbsellcheck
+    where fsCheckBillNo = #{fscheckbillno,jdbcType=VARCHAR}
+      and fsSellNo = #{fssellno,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.sellcheckKey" >
+    delete from tbsellcheck
+    where fsCheckBillNo = #{fscheckbillno,jdbcType=VARCHAR}
+      and fsSellNo = #{fssellno,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.sellcheck" >
+    insert into tbsellcheck (fsCheckBillNo, fsSellNo, fsShopGUID, 
+      fsCheckTime, fsShiftId, fdReceAmt, 
+      fdRealAmt, fdInvoiceAmt, fiStatus, 
+      fsNote, fiCheckTimes, fiPrintTimes, 
+      fsVerifyUserId, fsVerifyTime, fsHostId, 
+      fsCreateTime, fsCreateUserId, fsCreateUserName, 
+      fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
+      fsVerifyUserName, fsDataSrckind, fsSrcVerno, 
+      fsshiftname, lver)
+    values (#{fscheckbillno,jdbcType=VARCHAR}, #{fssellno,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, 
+      #{fschecktime,jdbcType=VARCHAR}, #{fsshiftid,jdbcType=VARCHAR}, #{fdreceamt,jdbcType=DECIMAL}, 
+      #{fdrealamt,jdbcType=DECIMAL}, #{fdinvoiceamt,jdbcType=DECIMAL}, #{fistatus,jdbcType=INTEGER}, 
+      #{fsnote,jdbcType=VARCHAR}, #{fichecktimes,jdbcType=INTEGER}, #{fiprinttimes,jdbcType=INTEGER}, 
+      #{fsverifyuserid,jdbcType=VARCHAR}, #{fsverifytime,jdbcType=VARCHAR}, #{fshostid,jdbcType=VARCHAR}, 
+      #{fscreatetime,jdbcType=VARCHAR}, #{fscreateuserid,jdbcType=VARCHAR}, #{fscreateusername,jdbcType=VARCHAR}, 
+      #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
+      #{fsverifyusername,jdbcType=VARCHAR}, #{fsdatasrckind,jdbcType=VARCHAR}, #{fssrcverno,jdbcType=VARCHAR}, 
+      #{fsshiftname,jdbcType=VARCHAR}, #{lver,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.sellcheck" >
+    insert into tbsellcheck
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fscheckbillno != null" >
+        fsCheckBillNo,
+      </if>
+      <if test="fssellno != null" >
+        fsSellNo,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fschecktime != null" >
+        fsCheckTime,
+      </if>
+      <if test="fsshiftid != null" >
+        fsShiftId,
+      </if>
+      <if test="fdreceamt != null" >
+        fdReceAmt,
+      </if>
+      <if test="fdrealamt != null" >
+        fdRealAmt,
+      </if>
+      <if test="fdinvoiceamt != null" >
+        fdInvoiceAmt,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fsnote != null" >
+        fsNote,
+      </if>
+      <if test="fichecktimes != null" >
+        fiCheckTimes,
+      </if>
+      <if test="fiprinttimes != null" >
+        fiPrintTimes,
+      </if>
+      <if test="fsverifyuserid != null" >
+        fsVerifyUserId,
+      </if>
+      <if test="fsverifytime != null" >
+        fsVerifyTime,
+      </if>
+      <if test="fshostid != null" >
+        fsHostId,
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime,
+      </if>
+      <if test="fscreateuserid != null" >
+        fsCreateUserId,
+      </if>
+      <if test="fscreateusername != null" >
+        fsCreateUserName,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fsverifyusername != null" >
+        fsVerifyUserName,
+      </if>
+      <if test="fsdatasrckind != null" >
+        fsDataSrckind,
+      </if>
+      <if test="fssrcverno != null" >
+        fsSrcVerno,
+      </if>
+      <if test="fsshiftname != null" >
+        fsshiftname,
+      </if>
+      <if test="lver != null" >
+        lver,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fscheckbillno != null" >
+        #{fscheckbillno,jdbcType=VARCHAR},
+      </if>
+      <if test="fssellno != null" >
+        #{fssellno,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fschecktime != null" >
+        #{fschecktime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshiftid != null" >
+        #{fsshiftid,jdbcType=VARCHAR},
+      </if>
+      <if test="fdreceamt != null" >
+        #{fdreceamt,jdbcType=DECIMAL},
+      </if>
+      <if test="fdrealamt != null" >
+        #{fdrealamt,jdbcType=DECIMAL},
+      </if>
+      <if test="fdinvoiceamt != null" >
+        #{fdinvoiceamt,jdbcType=DECIMAL},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsnote != null" >
+        #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fichecktimes != null" >
+        #{fichecktimes,jdbcType=INTEGER},
+      </if>
+      <if test="fiprinttimes != null" >
+        #{fiprinttimes,jdbcType=INTEGER},
+      </if>
+      <if test="fsverifyuserid != null" >
+        #{fsverifyuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsverifytime != null" >
+        #{fsverifytime,jdbcType=VARCHAR},
+      </if>
+      <if test="fshostid != null" >
+        #{fshostid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreatetime != null" >
+        #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateuserid != null" >
+        #{fscreateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateusername != null" >
+        #{fscreateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsverifyusername != null" >
+        #{fsverifyusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdatasrckind != null" >
+        #{fsdatasrckind,jdbcType=VARCHAR},
+      </if>
+      <if test="fssrcverno != null" >
+        #{fssrcverno,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshiftname != null" >
+        #{fsshiftname,jdbcType=VARCHAR},
+      </if>
+      <if test="lver != null" >
+        #{lver,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.sellcheck" >
+    update tbsellcheck
+    <set >
+      <if test="fschecktime != null" >
+        fsCheckTime = #{fschecktime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshiftid != null" >
+        fsShiftId = #{fsshiftid,jdbcType=VARCHAR},
+      </if>
+      <if test="fdreceamt != null" >
+        fdReceAmt = #{fdreceamt,jdbcType=DECIMAL},
+      </if>
+      <if test="fdrealamt != null" >
+        fdRealAmt = #{fdrealamt,jdbcType=DECIMAL},
+      </if>
+      <if test="fdinvoiceamt != null" >
+        fdInvoiceAmt = #{fdinvoiceamt,jdbcType=DECIMAL},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsnote != null" >
+        fsNote = #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fichecktimes != null" >
+        fiCheckTimes = #{fichecktimes,jdbcType=INTEGER},
+      </if>
+      <if test="fiprinttimes != null" >
+        fiPrintTimes = #{fiprinttimes,jdbcType=INTEGER},
+      </if>
+      <if test="fsverifyuserid != null" >
+        fsVerifyUserId = #{fsverifyuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsverifytime != null" >
+        fsVerifyTime = #{fsverifytime,jdbcType=VARCHAR},
+      </if>
+      <if test="fshostid != null" >
+        fsHostId = #{fshostid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateuserid != null" >
+        fsCreateUserId = #{fscreateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateusername != null" >
+        fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsverifyusername != null" >
+        fsVerifyUserName = #{fsverifyusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdatasrckind != null" >
+        fsDataSrckind = #{fsdatasrckind,jdbcType=VARCHAR},
+      </if>
+      <if test="fssrcverno != null" >
+        fsSrcVerno = #{fssrcverno,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshiftname != null" >
+        fsshiftname = #{fsshiftname,jdbcType=VARCHAR},
+      </if>
+      <if test="lver != null" >
+        lver = #{lver,jdbcType=INTEGER},
+      </if>
+    </set>
+    where fsCheckBillNo = #{fscheckbillno,jdbcType=VARCHAR}
+      and fsSellNo = #{fssellno,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.sellcheck" >
+    update tbsellcheck
+    set fsCheckTime = #{fschecktime,jdbcType=VARCHAR},
+      fsShiftId = #{fsshiftid,jdbcType=VARCHAR},
+      fdReceAmt = #{fdreceamt,jdbcType=DECIMAL},
+      fdRealAmt = #{fdrealamt,jdbcType=DECIMAL},
+      fdInvoiceAmt = #{fdinvoiceamt,jdbcType=DECIMAL},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsNote = #{fsnote,jdbcType=VARCHAR},
+      fiCheckTimes = #{fichecktimes,jdbcType=INTEGER},
+      fiPrintTimes = #{fiprinttimes,jdbcType=INTEGER},
+      fsVerifyUserId = #{fsverifyuserid,jdbcType=VARCHAR},
+      fsVerifyTime = #{fsverifytime,jdbcType=VARCHAR},
+      fsHostId = #{fshostid,jdbcType=VARCHAR},
+      fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
+      fsCreateUserId = #{fscreateuserid,jdbcType=VARCHAR},
+      fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fsVerifyUserName = #{fsverifyusername,jdbcType=VARCHAR},
+      fsDataSrckind = #{fsdatasrckind,jdbcType=VARCHAR},
+      fsSrcVerno = #{fssrcverno,jdbcType=VARCHAR},
+      fsshiftname = #{fsshiftname,jdbcType=VARCHAR},
+      lver = #{lver,jdbcType=INTEGER}
+    where fsCheckBillNo = #{fscheckbillno,jdbcType=VARCHAR}
+      and fsSellNo = #{fssellno,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

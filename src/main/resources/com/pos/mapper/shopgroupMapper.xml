@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.shopgroupMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.shopgroup" >
+    <id column="fiShopGroupId" property="fishopgroupid" jdbcType="INTEGER" />
+    <result column="fsShopGroupName" property="fsshopgroupname" jdbcType="VARCHAR" />
+    <result column="fsShopGroupKind" property="fsshopgroupkind" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fiSortOrder" property="fisortorder" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.pos.entity.shopgroupWithBLOBs" extends="BaseResultMap" >
+    <result column="fsNote" property="fsnote" jdbcType="LONGVARCHAR" />
+    <result column="fsCompanyGUID" property="fscompanyguid" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fiShopGroupId, fsShopGroupName, fsShopGroupKind, fiStatus, fsUpdateTime, fsUpdateUserId, 
+    fsUpdateUserName, fiSortOrder
+  </sql>
+  <sql id="Blob_Column_List" >
+    fsNote, fsCompanyGUID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tbshopgroup
+    where fiShopGroupId = #{fishopgroupid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tbshopgroup
+    where fiShopGroupId = #{fishopgroupid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.shopgroupWithBLOBs" >
+    insert into tbshopgroup (fiShopGroupId, fsShopGroupName, fsShopGroupKind, 
+      fiStatus, fsUpdateTime, fsUpdateUserId, 
+      fsUpdateUserName, fiSortOrder, fsNote, 
+      fsCompanyGUID)
+    values (#{fishopgroupid,jdbcType=INTEGER}, #{fsshopgroupname,jdbcType=VARCHAR}, #{fsshopgroupkind,jdbcType=VARCHAR}, 
+      #{fistatus,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
+      #{fsupdateusername,jdbcType=VARCHAR}, #{fisortorder,jdbcType=INTEGER}, #{fsnote,jdbcType=LONGVARCHAR}, 
+      #{fscompanyguid,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.shopgroupWithBLOBs" >
+    insert into tbshopgroup
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fishopgroupid != null" >
+        fiShopGroupId,
+      </if>
+      <if test="fsshopgroupname != null" >
+        fsShopGroupName,
+      </if>
+      <if test="fsshopgroupkind != null" >
+        fsShopGroupKind,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fisortorder != null" >
+        fiSortOrder,
+      </if>
+      <if test="fsnote != null" >
+        fsNote,
+      </if>
+      <if test="fscompanyguid != null" >
+        fsCompanyGUID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fishopgroupid != null" >
+        #{fishopgroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fsshopgroupname != null" >
+        #{fsshopgroupname,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopgroupkind != null" >
+        #{fsshopgroupkind,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fisortorder != null" >
+        #{fisortorder,jdbcType=INTEGER},
+      </if>
+      <if test="fsnote != null" >
+        #{fsnote,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="fscompanyguid != null" >
+        #{fscompanyguid,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.shopgroupWithBLOBs" >
+    update tbshopgroup
+    <set >
+      <if test="fsshopgroupname != null" >
+        fsShopGroupName = #{fsshopgroupname,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopgroupkind != null" >
+        fsShopGroupKind = #{fsshopgroupkind,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fisortorder != null" >
+        fiSortOrder = #{fisortorder,jdbcType=INTEGER},
+      </if>
+      <if test="fsnote != null" >
+        fsNote = #{fsnote,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="fscompanyguid != null" >
+        fsCompanyGUID = #{fscompanyguid,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where fiShopGroupId = #{fishopgroupid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pos.entity.shopgroupWithBLOBs" >
+    update tbshopgroup
+    set fsShopGroupName = #{fsshopgroupname,jdbcType=VARCHAR},
+      fsShopGroupKind = #{fsshopgroupkind,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fiSortOrder = #{fisortorder,jdbcType=INTEGER},
+      fsNote = #{fsnote,jdbcType=LONGVARCHAR},
+      fsCompanyGUID = #{fscompanyguid,jdbcType=LONGVARCHAR}
+    where fiShopGroupId = #{fishopgroupid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.shopgroup" >
+    update tbshopgroup
+    set fsShopGroupName = #{fsshopgroupname,jdbcType=VARCHAR},
+      fsShopGroupKind = #{fsshopgroupkind,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fiSortOrder = #{fisortorder,jdbcType=INTEGER}
+    where fiShopGroupId = #{fishopgroupid,jdbcType=INTEGER}
+  </update>
+</mapper>

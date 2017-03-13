@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.menuitemuintMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.menuitemuint" >
+    <id column="fiOrderUintCd" property="fiorderuintcd" jdbcType="INTEGER" />
+    <result column="fiItemCd" property="fiitemcd" jdbcType="INTEGER" />
+    <result column="fsOrderUint" property="fsorderuint" jdbcType="VARCHAR" />
+    <result column="fdSalePrice" property="fdsaleprice" jdbcType="DECIMAL" />
+    <result column="fdVIPPrice" property="fdvipprice" jdbcType="DECIMAL" />
+    <result column="fdInvQty" property="fdinvqty" jdbcType="DECIMAL" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fiDefault" property="fidefault" jdbcType="INTEGER" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fdCostPrice" property="fdcostprice" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fiOrderUintCd, fiItemCd, fsOrderUint, fdSalePrice, fdVIPPrice, fdInvQty, fiStatus, 
+    fiDefault, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, fsShopGUID, fdCostPrice
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbmenuitemuint
+    where fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tbmenuitemuint
+    where fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.menuitemuint" >
+    insert into tbmenuitemuint (fiOrderUintCd, fiItemCd, fsOrderUint, 
+      fdSalePrice, fdVIPPrice, fdInvQty, 
+      fiStatus, fiDefault, fsUpdateTime, 
+      fsUpdateUserId, fsUpdateUserName, fsShopGUID, 
+      fdCostPrice)
+    values (#{fiorderuintcd,jdbcType=INTEGER}, #{fiitemcd,jdbcType=INTEGER}, #{fsorderuint,jdbcType=VARCHAR}, 
+      #{fdsaleprice,jdbcType=DECIMAL}, #{fdvipprice,jdbcType=DECIMAL}, #{fdinvqty,jdbcType=DECIMAL}, 
+      #{fistatus,jdbcType=INTEGER}, #{fidefault,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, 
+      #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, 
+      #{fdcostprice,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.menuitemuint" >
+    insert into tbmenuitemuint
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fiorderuintcd != null" >
+        fiOrderUintCd,
+      </if>
+      <if test="fiitemcd != null" >
+        fiItemCd,
+      </if>
+      <if test="fsorderuint != null" >
+        fsOrderUint,
+      </if>
+      <if test="fdsaleprice != null" >
+        fdSalePrice,
+      </if>
+      <if test="fdvipprice != null" >
+        fdVIPPrice,
+      </if>
+      <if test="fdinvqty != null" >
+        fdInvQty,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fidefault != null" >
+        fiDefault,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fdcostprice != null" >
+        fdCostPrice,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fiorderuintcd != null" >
+        #{fiorderuintcd,jdbcType=INTEGER},
+      </if>
+      <if test="fiitemcd != null" >
+        #{fiitemcd,jdbcType=INTEGER},
+      </if>
+      <if test="fsorderuint != null" >
+        #{fsorderuint,jdbcType=VARCHAR},
+      </if>
+      <if test="fdsaleprice != null" >
+        #{fdsaleprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fdvipprice != null" >
+        #{fdvipprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fdinvqty != null" >
+        #{fdinvqty,jdbcType=DECIMAL},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fidefault != null" >
+        #{fidefault,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fdcostprice != null" >
+        #{fdcostprice,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.menuitemuint" >
+    update tbmenuitemuint
+    <set >
+      <if test="fiitemcd != null" >
+        fiItemCd = #{fiitemcd,jdbcType=INTEGER},
+      </if>
+      <if test="fsorderuint != null" >
+        fsOrderUint = #{fsorderuint,jdbcType=VARCHAR},
+      </if>
+      <if test="fdsaleprice != null" >
+        fdSalePrice = #{fdsaleprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fdvipprice != null" >
+        fdVIPPrice = #{fdvipprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fdinvqty != null" >
+        fdInvQty = #{fdinvqty,jdbcType=DECIMAL},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fidefault != null" >
+        fiDefault = #{fidefault,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fdcostprice != null" >
+        fdCostPrice = #{fdcostprice,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.menuitemuint" >
+    update tbmenuitemuint
+    set fiItemCd = #{fiitemcd,jdbcType=INTEGER},
+      fsOrderUint = #{fsorderuint,jdbcType=VARCHAR},
+      fdSalePrice = #{fdsaleprice,jdbcType=DECIMAL},
+      fdVIPPrice = #{fdvipprice,jdbcType=DECIMAL},
+      fdInvQty = #{fdinvqty,jdbcType=DECIMAL},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fiDefault = #{fidefault,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
+      fdCostPrice = #{fdcostprice,jdbcType=DECIMAL}
+    where fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
+  </update>
+</mapper>

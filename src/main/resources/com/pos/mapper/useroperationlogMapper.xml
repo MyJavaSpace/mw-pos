@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.useroperationlogMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.useroperationlog" >
+    <id column="Id" property="id" jdbcType="VARCHAR" />
+    <result column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsTargetType" property="fstargettype" jdbcType="VARCHAR" />
+    <result column="fsTargetName" property="fstargetname" jdbcType="VARCHAR" />
+    <result column="fsType" property="fstype" jdbcType="VARCHAR" />
+    <result column="fsContent" property="fscontent" jdbcType="VARCHAR" />
+    <result column="fsCreateUser" property="fscreateuser" jdbcType="VARCHAR" />
+    <result column="fsCreateTime" property="fscreatetime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, fsShopGUID, fsTargetType, fsTargetName, fsType, fsContent, fsCreateUser, fsCreateTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbuseroperationlog
+    where Id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tbuseroperationlog
+    where Id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.useroperationlog" >
+    insert into tbuseroperationlog (Id, fsShopGUID, fsTargetType, 
+      fsTargetName, fsType, fsContent, 
+      fsCreateUser, fsCreateTime)
+    values (#{id,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, #{fstargettype,jdbcType=VARCHAR}, 
+      #{fstargetname,jdbcType=VARCHAR}, #{fstype,jdbcType=VARCHAR}, #{fscontent,jdbcType=VARCHAR}, 
+      #{fscreateuser,jdbcType=VARCHAR}, #{fscreatetime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.useroperationlog" >
+    insert into tbuseroperationlog
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fstargettype != null" >
+        fsTargetType,
+      </if>
+      <if test="fstargetname != null" >
+        fsTargetName,
+      </if>
+      <if test="fstype != null" >
+        fsType,
+      </if>
+      <if test="fscontent != null" >
+        fsContent,
+      </if>
+      <if test="fscreateuser != null" >
+        fsCreateUser,
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fstargettype != null" >
+        #{fstargettype,jdbcType=VARCHAR},
+      </if>
+      <if test="fstargetname != null" >
+        #{fstargetname,jdbcType=VARCHAR},
+      </if>
+      <if test="fstype != null" >
+        #{fstype,jdbcType=VARCHAR},
+      </if>
+      <if test="fscontent != null" >
+        #{fscontent,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateuser != null" >
+        #{fscreateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreatetime != null" >
+        #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.useroperationlog" >
+    update tbuseroperationlog
+    <set >
+      <if test="fsshopguid != null" >
+        fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fstargettype != null" >
+        fsTargetType = #{fstargettype,jdbcType=VARCHAR},
+      </if>
+      <if test="fstargetname != null" >
+        fsTargetName = #{fstargetname,jdbcType=VARCHAR},
+      </if>
+      <if test="fstype != null" >
+        fsType = #{fstype,jdbcType=VARCHAR},
+      </if>
+      <if test="fscontent != null" >
+        fsContent = #{fscontent,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreateuser != null" >
+        fsCreateUser = #{fscreateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="fscreatetime != null" >
+        fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.useroperationlog" >
+    update tbuseroperationlog
+    set fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
+      fsTargetType = #{fstargettype,jdbcType=VARCHAR},
+      fsTargetName = #{fstargetname,jdbcType=VARCHAR},
+      fsType = #{fstype,jdbcType=VARCHAR},
+      fsContent = #{fscontent,jdbcType=VARCHAR},
+      fsCreateUser = #{fscreateuser,jdbcType=VARCHAR},
+      fsCreateTime = #{fscreatetime,jdbcType=VARCHAR}
+    where Id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

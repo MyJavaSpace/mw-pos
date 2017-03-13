@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.custtypeMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.custtype" >
+    <id column="fsCompanyGUID" property="fscompanyguid" jdbcType="VARCHAR" />
+    <id column="fsCustTypeId" property="fscusttypeid" jdbcType="VARCHAR" />
+    <result column="fsCustTypeName" property="fscusttypename" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsCompanyGUID, fsCustTypeId, fsCustTypeName, fiStatus, fsUpdateTime, fsUpdateUserId, 
+    fsUpdateUserName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.custtypeKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbcusttype
+    where fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR}
+      and fsCustTypeId = #{fscusttypeid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.custtypeKey" >
+    delete from tbcusttype
+    where fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR}
+      and fsCustTypeId = #{fscusttypeid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.custtype" >
+    insert into tbcusttype (fsCompanyGUID, fsCustTypeId, fsCustTypeName, 
+      fiStatus, fsUpdateTime, fsUpdateUserId, 
+      fsUpdateUserName)
+    values (#{fscompanyguid,jdbcType=VARCHAR}, #{fscusttypeid,jdbcType=VARCHAR}, #{fscusttypename,jdbcType=VARCHAR}, 
+      #{fistatus,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
+      #{fsupdateusername,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.custtype" >
+    insert into tbcusttype
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fscompanyguid != null" >
+        fsCompanyGUID,
+      </if>
+      <if test="fscusttypeid != null" >
+        fsCustTypeId,
+      </if>
+      <if test="fscusttypename != null" >
+        fsCustTypeName,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fscompanyguid != null" >
+        #{fscompanyguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscusttypeid != null" >
+        #{fscusttypeid,jdbcType=VARCHAR},
+      </if>
+      <if test="fscusttypename != null" >
+        #{fscusttypename,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.custtype" >
+    update tbcusttype
+    <set >
+      <if test="fscusttypename != null" >
+        fsCustTypeName = #{fscusttypename,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR}
+      and fsCustTypeId = #{fscusttypeid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.custtype" >
+    update tbcusttype
+    set fsCustTypeName = #{fscusttypename,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR}
+    where fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR}
+      and fsCustTypeId = #{fscusttypeid,jdbcType=VARCHAR}
+  </update>
+</mapper>

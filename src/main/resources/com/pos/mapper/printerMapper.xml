@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.printerMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.printer" >
+    <id column="fiID" property="fiid" jdbcType="INTEGER" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsPrinterName" property="fsprintername" jdbcType="VARCHAR" />
+    <result column="fsIP" property="fsip" jdbcType="VARCHAR" />
+    <result column="fiIsMakePrn" property="fiismakeprn" jdbcType="INTEGER" />
+    <result column="fiTimeOut" property="fitimeout" jdbcType="INTEGER" />
+    <result column="fiRetry" property="firetry" jdbcType="INTEGER" />
+    <result column="fiTaskCount" property="fitaskcount" jdbcType="INTEGER" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fsCommandType" property="fscommandtype" jdbcType="VARCHAR" />
+    <result column="fiPrinterCls" property="fiprintercls" jdbcType="INTEGER" />
+    <result column="fsStr1" property="fsstr1" jdbcType="VARCHAR" />
+    <result column="fiInt1" property="fiint1" jdbcType="INTEGER" />
+    <result column="fiPaperSize" property="fipapersize" jdbcType="INTEGER" />
+    <result column="fiPrinterStatus" property="fiprinterstatus" jdbcType="INTEGER" />
+    <result column="fsBakPrinterName" property="fsbakprintername" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fiID, fsShopGUID, fsPrinterName, fsIP, fiIsMakePrn, fiTimeOut, fiRetry, fiTaskCount, 
+    fiStatus, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, fsCommandType, fiPrinterCls, 
+    fsStr1, fiInt1, fiPaperSize, fiPrinterStatus, fsBakPrinterName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.printerKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbprinter
+    where fiID = #{fiid,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.printerKey" >
+    delete from tbprinter
+    where fiID = #{fiid,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.printer" >
+    insert into tbprinter (fiID, fsShopGUID, fsPrinterName, 
+      fsIP, fiIsMakePrn, fiTimeOut, 
+      fiRetry, fiTaskCount, fiStatus, 
+      fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
+      fsCommandType, fiPrinterCls, fsStr1, 
+      fiInt1, fiPaperSize, fiPrinterStatus, 
+      fsBakPrinterName)
+    values (#{fiid,jdbcType=INTEGER}, #{fsshopguid,jdbcType=VARCHAR}, #{fsprintername,jdbcType=VARCHAR}, 
+      #{fsip,jdbcType=VARCHAR}, #{fiismakeprn,jdbcType=INTEGER}, #{fitimeout,jdbcType=INTEGER}, 
+      #{firetry,jdbcType=INTEGER}, #{fitaskcount,jdbcType=INTEGER}, #{fistatus,jdbcType=INTEGER}, 
+      #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
+      #{fscommandtype,jdbcType=VARCHAR}, #{fiprintercls,jdbcType=INTEGER}, #{fsstr1,jdbcType=VARCHAR}, 
+      #{fiint1,jdbcType=INTEGER}, #{fipapersize,jdbcType=INTEGER}, #{fiprinterstatus,jdbcType=INTEGER}, 
+      #{fsbakprintername,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.printer" >
+    insert into tbprinter
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fiid != null" >
+        fiID,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fsprintername != null" >
+        fsPrinterName,
+      </if>
+      <if test="fsip != null" >
+        fsIP,
+      </if>
+      <if test="fiismakeprn != null" >
+        fiIsMakePrn,
+      </if>
+      <if test="fitimeout != null" >
+        fiTimeOut,
+      </if>
+      <if test="firetry != null" >
+        fiRetry,
+      </if>
+      <if test="fitaskcount != null" >
+        fiTaskCount,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fscommandtype != null" >
+        fsCommandType,
+      </if>
+      <if test="fiprintercls != null" >
+        fiPrinterCls,
+      </if>
+      <if test="fsstr1 != null" >
+        fsStr1,
+      </if>
+      <if test="fiint1 != null" >
+        fiInt1,
+      </if>
+      <if test="fipapersize != null" >
+        fiPaperSize,
+      </if>
+      <if test="fiprinterstatus != null" >
+        fiPrinterStatus,
+      </if>
+      <if test="fsbakprintername != null" >
+        fsBakPrinterName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fiid != null" >
+        #{fiid,jdbcType=INTEGER},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsprintername != null" >
+        #{fsprintername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsip != null" >
+        #{fsip,jdbcType=VARCHAR},
+      </if>
+      <if test="fiismakeprn != null" >
+        #{fiismakeprn,jdbcType=INTEGER},
+      </if>
+      <if test="fitimeout != null" >
+        #{fitimeout,jdbcType=INTEGER},
+      </if>
+      <if test="firetry != null" >
+        #{firetry,jdbcType=INTEGER},
+      </if>
+      <if test="fitaskcount != null" >
+        #{fitaskcount,jdbcType=INTEGER},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fscommandtype != null" >
+        #{fscommandtype,jdbcType=VARCHAR},
+      </if>
+      <if test="fiprintercls != null" >
+        #{fiprintercls,jdbcType=INTEGER},
+      </if>
+      <if test="fsstr1 != null" >
+        #{fsstr1,jdbcType=VARCHAR},
+      </if>
+      <if test="fiint1 != null" >
+        #{fiint1,jdbcType=INTEGER},
+      </if>
+      <if test="fipapersize != null" >
+        #{fipapersize,jdbcType=INTEGER},
+      </if>
+      <if test="fiprinterstatus != null" >
+        #{fiprinterstatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsbakprintername != null" >
+        #{fsbakprintername,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.printer" >
+    update tbprinter
+    <set >
+      <if test="fsprintername != null" >
+        fsPrinterName = #{fsprintername,jdbcType=VARCHAR},
+      </if>
+      <if test="fsip != null" >
+        fsIP = #{fsip,jdbcType=VARCHAR},
+      </if>
+      <if test="fiismakeprn != null" >
+        fiIsMakePrn = #{fiismakeprn,jdbcType=INTEGER},
+      </if>
+      <if test="fitimeout != null" >
+        fiTimeOut = #{fitimeout,jdbcType=INTEGER},
+      </if>
+      <if test="firetry != null" >
+        fiRetry = #{firetry,jdbcType=INTEGER},
+      </if>
+      <if test="fitaskcount != null" >
+        fiTaskCount = #{fitaskcount,jdbcType=INTEGER},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fscommandtype != null" >
+        fsCommandType = #{fscommandtype,jdbcType=VARCHAR},
+      </if>
+      <if test="fiprintercls != null" >
+        fiPrinterCls = #{fiprintercls,jdbcType=INTEGER},
+      </if>
+      <if test="fsstr1 != null" >
+        fsStr1 = #{fsstr1,jdbcType=VARCHAR},
+      </if>
+      <if test="fiint1 != null" >
+        fiInt1 = #{fiint1,jdbcType=INTEGER},
+      </if>
+      <if test="fipapersize != null" >
+        fiPaperSize = #{fipapersize,jdbcType=INTEGER},
+      </if>
+      <if test="fiprinterstatus != null" >
+        fiPrinterStatus = #{fiprinterstatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsbakprintername != null" >
+        fsBakPrinterName = #{fsbakprintername,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fiID = #{fiid,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.printer" >
+    update tbprinter
+    set fsPrinterName = #{fsprintername,jdbcType=VARCHAR},
+      fsIP = #{fsip,jdbcType=VARCHAR},
+      fiIsMakePrn = #{fiismakeprn,jdbcType=INTEGER},
+      fiTimeOut = #{fitimeout,jdbcType=INTEGER},
+      fiRetry = #{firetry,jdbcType=INTEGER},
+      fiTaskCount = #{fitaskcount,jdbcType=INTEGER},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fsCommandType = #{fscommandtype,jdbcType=VARCHAR},
+      fiPrinterCls = #{fiprintercls,jdbcType=INTEGER},
+      fsStr1 = #{fsstr1,jdbcType=VARCHAR},
+      fiInt1 = #{fiint1,jdbcType=INTEGER},
+      fiPaperSize = #{fipapersize,jdbcType=INTEGER},
+      fiPrinterStatus = #{fiprinterstatus,jdbcType=INTEGER},
+      fsBakPrinterName = #{fsbakprintername,jdbcType=VARCHAR}
+    where fiID = #{fiid,jdbcType=INTEGER}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

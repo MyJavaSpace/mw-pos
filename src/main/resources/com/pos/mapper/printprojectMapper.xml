@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.printprojectMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.printproject" >
+    <id column="fiId" property="fiid" jdbcType="INTEGER" />
+    <result column="figroupId" property="figroupid" jdbcType="INTEGER" />
+    <result column="fsDeptId" property="fsdeptid" jdbcType="VARCHAR" />
+    <result column="fsMAreaId" property="fsmareaid" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fiId, figroupId, fsDeptId, fsMAreaId, fiStatus, fsShopGUID, fsUpdateTime, fsUpdateUserId, 
+    fsUpdateUserName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbprintproject
+    where fiId = #{fiid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tbprintproject
+    where fiId = #{fiid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.printproject" >
+    insert into tbprintproject (fiId, figroupId, fsDeptId, 
+      fsMAreaId, fiStatus, fsShopGUID, 
+      fsUpdateTime, fsUpdateUserId, fsUpdateUserName
+      )
+    values (#{fiid,jdbcType=INTEGER}, #{figroupid,jdbcType=INTEGER}, #{fsdeptid,jdbcType=VARCHAR}, 
+      #{fsmareaid,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}, #{fsshopguid,jdbcType=VARCHAR}, 
+      #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.printproject" >
+    insert into tbprintproject
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fiid != null" >
+        fiId,
+      </if>
+      <if test="figroupid != null" >
+        figroupId,
+      </if>
+      <if test="fsdeptid != null" >
+        fsDeptId,
+      </if>
+      <if test="fsmareaid != null" >
+        fsMAreaId,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fiid != null" >
+        #{fiid,jdbcType=INTEGER},
+      </if>
+      <if test="figroupid != null" >
+        #{figroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fsdeptid != null" >
+        #{fsdeptid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmareaid != null" >
+        #{fsmareaid,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.printproject" >
+    update tbprintproject
+    <set >
+      <if test="figroupid != null" >
+        figroupId = #{figroupid,jdbcType=INTEGER},
+      </if>
+      <if test="fsdeptid != null" >
+        fsDeptId = #{fsdeptid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsmareaid != null" >
+        fsMAreaId = #{fsmareaid,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fiId = #{fiid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.printproject" >
+    update tbprintproject
+    set figroupId = #{figroupid,jdbcType=INTEGER},
+      fsDeptId = #{fsdeptid,jdbcType=VARCHAR},
+      fsMAreaId = #{fsmareaid,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR}
+    where fiId = #{fiid,jdbcType=INTEGER}
+  </update>
+</mapper>

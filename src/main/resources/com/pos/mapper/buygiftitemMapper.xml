@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.buygiftitemMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.buygiftitem" >
+    <id column="fiItemCd" property="fiitemcd" jdbcType="INTEGER" />
+    <id column="fiOrderUintCd" property="fiorderuintcd" jdbcType="INTEGER" />
+    <id column="fsBargainId" property="fsbargainid" jdbcType="VARCHAR" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fdBargainPrice" property="fdbargainprice" jdbcType="DECIMAL" />
+    <result column="fdSaleQty" property="fdsaleqty" jdbcType="DECIMAL" />
+    <result column="fdSaleQty_gift" property="fdsaleqtyGift" jdbcType="DECIMAL" />
+    <result column="fiDiscountRate" property="fidiscountrate" jdbcType="INTEGER" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fiItemCd, fiOrderUintCd, fsBargainId, fsShopGUID, fdBargainPrice, fdSaleQty, fdSaleQty_gift, 
+    fiDiscountRate, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, fiStatus
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.buygiftitemKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbbuygiftitem
+    where fiItemCd = #{fiitemcd,jdbcType=INTEGER}
+      and fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
+      and fsBargainId = #{fsbargainid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.buygiftitemKey" >
+    delete from tbbuygiftitem
+    where fiItemCd = #{fiitemcd,jdbcType=INTEGER}
+      and fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
+      and fsBargainId = #{fsbargainid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.buygiftitem" >
+    insert into tbbuygiftitem (fiItemCd, fiOrderUintCd, fsBargainId, 
+      fsShopGUID, fdBargainPrice, fdSaleQty, 
+      fdSaleQty_gift, fiDiscountRate, fsUpdateTime, 
+      fsUpdateUserId, fsUpdateUserName, fiStatus
+      )
+    values (#{fiitemcd,jdbcType=INTEGER}, #{fiorderuintcd,jdbcType=INTEGER}, #{fsbargainid,jdbcType=VARCHAR}, 
+      #{fsshopguid,jdbcType=VARCHAR}, #{fdbargainprice,jdbcType=DECIMAL}, #{fdsaleqty,jdbcType=DECIMAL}, 
+      #{fdsaleqtyGift,jdbcType=DECIMAL}, #{fidiscountrate,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, 
+      #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.buygiftitem" >
+    insert into tbbuygiftitem
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fiitemcd != null" >
+        fiItemCd,
+      </if>
+      <if test="fiorderuintcd != null" >
+        fiOrderUintCd,
+      </if>
+      <if test="fsbargainid != null" >
+        fsBargainId,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fdbargainprice != null" >
+        fdBargainPrice,
+      </if>
+      <if test="fdsaleqty != null" >
+        fdSaleQty,
+      </if>
+      <if test="fdsaleqtyGift != null" >
+        fdSaleQty_gift,
+      </if>
+      <if test="fidiscountrate != null" >
+        fiDiscountRate,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fiitemcd != null" >
+        #{fiitemcd,jdbcType=INTEGER},
+      </if>
+      <if test="fiorderuintcd != null" >
+        #{fiorderuintcd,jdbcType=INTEGER},
+      </if>
+      <if test="fsbargainid != null" >
+        #{fsbargainid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fdbargainprice != null" >
+        #{fdbargainprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fdsaleqty != null" >
+        #{fdsaleqty,jdbcType=DECIMAL},
+      </if>
+      <if test="fdsaleqtyGift != null" >
+        #{fdsaleqtyGift,jdbcType=DECIMAL},
+      </if>
+      <if test="fidiscountrate != null" >
+        #{fidiscountrate,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.buygiftitem" >
+    update tbbuygiftitem
+    <set >
+      <if test="fdbargainprice != null" >
+        fdBargainPrice = #{fdbargainprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fdsaleqty != null" >
+        fdSaleQty = #{fdsaleqty,jdbcType=DECIMAL},
+      </if>
+      <if test="fdsaleqtyGift != null" >
+        fdSaleQty_gift = #{fdsaleqtyGift,jdbcType=DECIMAL},
+      </if>
+      <if test="fidiscountrate != null" >
+        fiDiscountRate = #{fidiscountrate,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where fiItemCd = #{fiitemcd,jdbcType=INTEGER}
+      and fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
+      and fsBargainId = #{fsbargainid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.buygiftitem" >
+    update tbbuygiftitem
+    set fdBargainPrice = #{fdbargainprice,jdbcType=DECIMAL},
+      fdSaleQty = #{fdsaleqty,jdbcType=DECIMAL},
+      fdSaleQty_gift = #{fdsaleqtyGift,jdbcType=DECIMAL},
+      fiDiscountRate = #{fidiscountrate,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fiStatus = #{fistatus,jdbcType=INTEGER}
+    where fiItemCd = #{fiitemcd,jdbcType=INTEGER}
+      and fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
+      and fsBargainId = #{fsbargainid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>

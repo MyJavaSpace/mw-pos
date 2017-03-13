@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.paymentMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.payment" >
+    <id column="fsPaymentId" property="fspaymentid" jdbcType="VARCHAR" />
+    <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
+    <result column="fsPaymentTypeId" property="fspaymenttypeid" jdbcType="VARCHAR" />
+    <result column="fsPaymentName" property="fspaymentname" jdbcType="VARCHAR" />
+    <result column="fdDefaultPrice" property="fddefaultprice" jdbcType="DECIMAL" />
+    <result column="fiIsForeign" property="fiisforeign" jdbcType="INTEGER" />
+    <result column="fdExchangeRate" property="fdexchangerate" jdbcType="DECIMAL" />
+    <result column="fiIsCalcPaid" property="fiiscalcpaid" jdbcType="INTEGER" />
+    <result column="fiIsCalcInvoice" property="fiiscalcinvoice" jdbcType="INTEGER" />
+    <result column="fiIsPremium" property="fiispremium" jdbcType="INTEGER" />
+    <result column="fsNote" property="fsnote" jdbcType="VARCHAR" />
+    <result column="fiSortOrder" property="fisortorder" jdbcType="INTEGER" />
+    <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
+    <result column="fiDataKind" property="fidatakind" jdbcType="INTEGER" />
+    <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
+    <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
+    <result column="fdDiscountRate" property="fddiscountrate" jdbcType="DECIMAL" />
+    <result column="fsColor" property="fscolor" jdbcType="VARCHAR" />
+    <result column="fsShortcutKey" property="fsshortcutkey" jdbcType="VARCHAR" />
+    <result column="fsHelpCode" property="fshelpcode" jdbcType="VARCHAR" />
+    <result column="fsDiscountPaymentId" property="fsdiscountpaymentid" jdbcType="VARCHAR" />
+    <result column="fiIsPartAmtDiscount" property="fiispartamtdiscount" jdbcType="INTEGER" />
+    <result column="fiIsEffectiveDate" property="fiiseffectivedate" jdbcType="INTEGER" />
+    <result column="fsStarDate" property="fsstardate" jdbcType="VARCHAR" />
+    <result column="fsEndDate" property="fsenddate" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsPaymentId, fsShopGUID, fsPaymentTypeId, fsPaymentName, fdDefaultPrice, fiIsForeign, 
+    fdExchangeRate, fiIsCalcPaid, fiIsCalcInvoice, fiIsPremium, fsNote, fiSortOrder, 
+    fiStatus, fiDataKind, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, fdDiscountRate, 
+    fsColor, fsShortcutKey, fsHelpCode, fsDiscountPaymentId, fiIsPartAmtDiscount, fiIsEffectiveDate, 
+    fsStarDate, fsEndDate
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.paymentKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbpayment
+    where fsPaymentId = #{fspaymentid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.paymentKey" >
+    delete from tbpayment
+    where fsPaymentId = #{fspaymentid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.pos.entity.payment" >
+    insert into tbpayment (fsPaymentId, fsShopGUID, fsPaymentTypeId, 
+      fsPaymentName, fdDefaultPrice, fiIsForeign, 
+      fdExchangeRate, fiIsCalcPaid, fiIsCalcInvoice, 
+      fiIsPremium, fsNote, fiSortOrder, 
+      fiStatus, fiDataKind, fsUpdateTime, 
+      fsUpdateUserId, fsUpdateUserName, fdDiscountRate, 
+      fsColor, fsShortcutKey, fsHelpCode, 
+      fsDiscountPaymentId, fiIsPartAmtDiscount, 
+      fiIsEffectiveDate, fsStarDate, fsEndDate
+      )
+    values (#{fspaymentid,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, #{fspaymenttypeid,jdbcType=VARCHAR}, 
+      #{fspaymentname,jdbcType=VARCHAR}, #{fddefaultprice,jdbcType=DECIMAL}, #{fiisforeign,jdbcType=INTEGER}, 
+      #{fdexchangerate,jdbcType=DECIMAL}, #{fiiscalcpaid,jdbcType=INTEGER}, #{fiiscalcinvoice,jdbcType=INTEGER}, 
+      #{fiispremium,jdbcType=INTEGER}, #{fsnote,jdbcType=VARCHAR}, #{fisortorder,jdbcType=INTEGER}, 
+      #{fistatus,jdbcType=INTEGER}, #{fidatakind,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, 
+      #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fddiscountrate,jdbcType=DECIMAL}, 
+      #{fscolor,jdbcType=VARCHAR}, #{fsshortcutkey,jdbcType=VARCHAR}, #{fshelpcode,jdbcType=VARCHAR}, 
+      #{fsdiscountpaymentid,jdbcType=VARCHAR}, #{fiispartamtdiscount,jdbcType=INTEGER}, 
+      #{fiiseffectivedate,jdbcType=INTEGER}, #{fsstardate,jdbcType=VARCHAR}, #{fsenddate,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.pos.entity.payment" >
+    insert into tbpayment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fspaymentid != null" >
+        fsPaymentId,
+      </if>
+      <if test="fsshopguid != null" >
+        fsShopGUID,
+      </if>
+      <if test="fspaymenttypeid != null" >
+        fsPaymentTypeId,
+      </if>
+      <if test="fspaymentname != null" >
+        fsPaymentName,
+      </if>
+      <if test="fddefaultprice != null" >
+        fdDefaultPrice,
+      </if>
+      <if test="fiisforeign != null" >
+        fiIsForeign,
+      </if>
+      <if test="fdexchangerate != null" >
+        fdExchangeRate,
+      </if>
+      <if test="fiiscalcpaid != null" >
+        fiIsCalcPaid,
+      </if>
+      <if test="fiiscalcinvoice != null" >
+        fiIsCalcInvoice,
+      </if>
+      <if test="fiispremium != null" >
+        fiIsPremium,
+      </if>
+      <if test="fsnote != null" >
+        fsNote,
+      </if>
+      <if test="fisortorder != null" >
+        fiSortOrder,
+      </if>
+      <if test="fistatus != null" >
+        fiStatus,
+      </if>
+      <if test="fidatakind != null" >
+        fiDataKind,
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime,
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId,
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName,
+      </if>
+      <if test="fddiscountrate != null" >
+        fdDiscountRate,
+      </if>
+      <if test="fscolor != null" >
+        fsColor,
+      </if>
+      <if test="fsshortcutkey != null" >
+        fsShortcutKey,
+      </if>
+      <if test="fshelpcode != null" >
+        fsHelpCode,
+      </if>
+      <if test="fsdiscountpaymentid != null" >
+        fsDiscountPaymentId,
+      </if>
+      <if test="fiispartamtdiscount != null" >
+        fiIsPartAmtDiscount,
+      </if>
+      <if test="fiiseffectivedate != null" >
+        fiIsEffectiveDate,
+      </if>
+      <if test="fsstardate != null" >
+        fsStarDate,
+      </if>
+      <if test="fsenddate != null" >
+        fsEndDate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fspaymentid != null" >
+        #{fspaymentid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshopguid != null" >
+        #{fsshopguid,jdbcType=VARCHAR},
+      </if>
+      <if test="fspaymenttypeid != null" >
+        #{fspaymenttypeid,jdbcType=VARCHAR},
+      </if>
+      <if test="fspaymentname != null" >
+        #{fspaymentname,jdbcType=VARCHAR},
+      </if>
+      <if test="fddefaultprice != null" >
+        #{fddefaultprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fiisforeign != null" >
+        #{fiisforeign,jdbcType=INTEGER},
+      </if>
+      <if test="fdexchangerate != null" >
+        #{fdexchangerate,jdbcType=DECIMAL},
+      </if>
+      <if test="fiiscalcpaid != null" >
+        #{fiiscalcpaid,jdbcType=INTEGER},
+      </if>
+      <if test="fiiscalcinvoice != null" >
+        #{fiiscalcinvoice,jdbcType=INTEGER},
+      </if>
+      <if test="fiispremium != null" >
+        #{fiispremium,jdbcType=INTEGER},
+      </if>
+      <if test="fsnote != null" >
+        #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fisortorder != null" >
+        #{fisortorder,jdbcType=INTEGER},
+      </if>
+      <if test="fistatus != null" >
+        #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fidatakind != null" >
+        #{fidatakind,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fddiscountrate != null" >
+        #{fddiscountrate,jdbcType=DECIMAL},
+      </if>
+      <if test="fscolor != null" >
+        #{fscolor,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshortcutkey != null" >
+        #{fsshortcutkey,jdbcType=VARCHAR},
+      </if>
+      <if test="fshelpcode != null" >
+        #{fshelpcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdiscountpaymentid != null" >
+        #{fsdiscountpaymentid,jdbcType=VARCHAR},
+      </if>
+      <if test="fiispartamtdiscount != null" >
+        #{fiispartamtdiscount,jdbcType=INTEGER},
+      </if>
+      <if test="fiiseffectivedate != null" >
+        #{fiiseffectivedate,jdbcType=INTEGER},
+      </if>
+      <if test="fsstardate != null" >
+        #{fsstardate,jdbcType=VARCHAR},
+      </if>
+      <if test="fsenddate != null" >
+        #{fsenddate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.payment" >
+    update tbpayment
+    <set >
+      <if test="fspaymenttypeid != null" >
+        fsPaymentTypeId = #{fspaymenttypeid,jdbcType=VARCHAR},
+      </if>
+      <if test="fspaymentname != null" >
+        fsPaymentName = #{fspaymentname,jdbcType=VARCHAR},
+      </if>
+      <if test="fddefaultprice != null" >
+        fdDefaultPrice = #{fddefaultprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fiisforeign != null" >
+        fiIsForeign = #{fiisforeign,jdbcType=INTEGER},
+      </if>
+      <if test="fdexchangerate != null" >
+        fdExchangeRate = #{fdexchangerate,jdbcType=DECIMAL},
+      </if>
+      <if test="fiiscalcpaid != null" >
+        fiIsCalcPaid = #{fiiscalcpaid,jdbcType=INTEGER},
+      </if>
+      <if test="fiiscalcinvoice != null" >
+        fiIsCalcInvoice = #{fiiscalcinvoice,jdbcType=INTEGER},
+      </if>
+      <if test="fiispremium != null" >
+        fiIsPremium = #{fiispremium,jdbcType=INTEGER},
+      </if>
+      <if test="fsnote != null" >
+        fsNote = #{fsnote,jdbcType=VARCHAR},
+      </if>
+      <if test="fisortorder != null" >
+        fiSortOrder = #{fisortorder,jdbcType=INTEGER},
+      </if>
+      <if test="fistatus != null" >
+        fiStatus = #{fistatus,jdbcType=INTEGER},
+      </if>
+      <if test="fidatakind != null" >
+        fiDataKind = #{fidatakind,jdbcType=INTEGER},
+      </if>
+      <if test="fsupdatetime != null" >
+        fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateuserid != null" >
+        fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsupdateusername != null" >
+        fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="fddiscountrate != null" >
+        fdDiscountRate = #{fddiscountrate,jdbcType=DECIMAL},
+      </if>
+      <if test="fscolor != null" >
+        fsColor = #{fscolor,jdbcType=VARCHAR},
+      </if>
+      <if test="fsshortcutkey != null" >
+        fsShortcutKey = #{fsshortcutkey,jdbcType=VARCHAR},
+      </if>
+      <if test="fshelpcode != null" >
+        fsHelpCode = #{fshelpcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdiscountpaymentid != null" >
+        fsDiscountPaymentId = #{fsdiscountpaymentid,jdbcType=VARCHAR},
+      </if>
+      <if test="fiispartamtdiscount != null" >
+        fiIsPartAmtDiscount = #{fiispartamtdiscount,jdbcType=INTEGER},
+      </if>
+      <if test="fiiseffectivedate != null" >
+        fiIsEffectiveDate = #{fiiseffectivedate,jdbcType=INTEGER},
+      </if>
+      <if test="fsstardate != null" >
+        fsStarDate = #{fsstardate,jdbcType=VARCHAR},
+      </if>
+      <if test="fsenddate != null" >
+        fsEndDate = #{fsenddate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fsPaymentId = #{fspaymentid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.payment" >
+    update tbpayment
+    set fsPaymentTypeId = #{fspaymenttypeid,jdbcType=VARCHAR},
+      fsPaymentName = #{fspaymentname,jdbcType=VARCHAR},
+      fdDefaultPrice = #{fddefaultprice,jdbcType=DECIMAL},
+      fiIsForeign = #{fiisforeign,jdbcType=INTEGER},
+      fdExchangeRate = #{fdexchangerate,jdbcType=DECIMAL},
+      fiIsCalcPaid = #{fiiscalcpaid,jdbcType=INTEGER},
+      fiIsCalcInvoice = #{fiiscalcinvoice,jdbcType=INTEGER},
+      fiIsPremium = #{fiispremium,jdbcType=INTEGER},
+      fsNote = #{fsnote,jdbcType=VARCHAR},
+      fiSortOrder = #{fisortorder,jdbcType=INTEGER},
+      fiStatus = #{fistatus,jdbcType=INTEGER},
+      fiDataKind = #{fidatakind,jdbcType=INTEGER},
+      fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
+      fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},
+      fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},
+      fdDiscountRate = #{fddiscountrate,jdbcType=DECIMAL},
+      fsColor = #{fscolor,jdbcType=VARCHAR},
+      fsShortcutKey = #{fsshortcutkey,jdbcType=VARCHAR},
+      fsHelpCode = #{fshelpcode,jdbcType=VARCHAR},
+      fsDiscountPaymentId = #{fsdiscountpaymentid,jdbcType=VARCHAR},
+      fiIsPartAmtDiscount = #{fiispartamtdiscount,jdbcType=INTEGER},
+      fiIsEffectiveDate = #{fiiseffectivedate,jdbcType=INTEGER},
+      fsStarDate = #{fsstardate,jdbcType=VARCHAR},
+      fsEndDate = #{fsenddate,jdbcType=VARCHAR}
+    where fsPaymentId = #{fspaymentid,jdbcType=VARCHAR}
+      and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
+  </update>
+</mapper>
