@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.alibaba.fastjson.JSON;
 import com.pos.entity.Tbuser;
-import com.pos.service.IUserService;  
+  
   
 @RunWith(SpringJUnit4ClassRunner.class)      
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})  
