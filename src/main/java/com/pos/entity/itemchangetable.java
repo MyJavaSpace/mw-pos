@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class itemchangetable {
+public class Itemchangetable {
     private String fssellno;
 
     private String fsmtableid;

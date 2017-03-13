@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class tableinfoKey {
+public class TableinfoKey {
     private String fskind;
 
     private String fstableid;

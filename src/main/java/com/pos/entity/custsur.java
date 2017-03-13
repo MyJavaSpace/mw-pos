@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class custsur extends custsurKey {
+public class Custsur extends CustsurKey {
     private String fscustsurname;
 
     private String fsnote;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.billsourceMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.billsource" >
+<mapper namespace="com.pos.dao.BillsourceMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Billsource" >
     <id column="fsBillSourceId" property="fsbillsourceid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsBillSourceName" property="fsbillsourcename" jdbcType="VARCHAR" />
@@ -18,19 +18,19 @@
     fsBillSourceId, fsShopGUID, fsBillSourceName, fiStatus, fiDataKind, fsUpdateTime, 
     fsUpdateUserId, fsUpdateUserName, fiBillSource, fiMessageNotice, fiVoiceNotice
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.billsourceKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.BillsourceKey" >
     select 
     <include refid="Base_Column_List" />
     from tbbillsource
     where fsBillSourceId = #{fsbillsourceid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.billsourceKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.BillsourceKey" >
     delete from tbbillsource
     where fsBillSourceId = #{fsbillsourceid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.billsource" >
+  <insert id="insert" parameterType="com.pos.entity.Billsource" >
     insert into tbbillsource (fsBillSourceId, fsShopGUID, fsBillSourceName, 
       fiStatus, fiDataKind, fsUpdateTime, 
       fsUpdateUserId, fsUpdateUserName, fiBillSource, 
@@ -40,7 +40,7 @@
       #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fibillsource,jdbcType=INTEGER}, 
       #{fimessagenotice,jdbcType=INTEGER}, #{fivoicenotice,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.billsource" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Billsource" >
     insert into tbbillsource
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsbillsourceid != null" >
@@ -113,7 +113,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.billsource" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Billsource" >
     update tbbillsource
     <set >
       <if test="fsbillsourcename != null" >
@@ -147,7 +147,7 @@
     where fsBillSourceId = #{fsbillsourceid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.billsource" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Billsource" >
     update tbbillsource
     set fsBillSourceName = #{fsbillsourcename,jdbcType=VARCHAR},
       fiStatus = #{fistatus,jdbcType=INTEGER},

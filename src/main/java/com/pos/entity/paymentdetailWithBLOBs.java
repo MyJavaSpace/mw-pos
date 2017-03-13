@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class paymentdetailWithBLOBs extends paymentdetail {
+public class PaymentdetailWithBLOBs extends Paymentdetail {
     private String fsshopname;
 
     private String fsmanageshopid;

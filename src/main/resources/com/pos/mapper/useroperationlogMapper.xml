@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.useroperationlogMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.useroperationlog" >
+<mapper namespace="com.pos.dao.UseroperationlogMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Useroperationlog" >
     <id column="Id" property="id" jdbcType="VARCHAR" />
     <result column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsTargetType" property="fstargettype" jdbcType="VARCHAR" />
@@ -24,7 +24,7 @@
     delete from tbuseroperationlog
     where Id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.useroperationlog" >
+  <insert id="insert" parameterType="com.pos.entity.Useroperationlog" >
     insert into tbuseroperationlog (Id, fsShopGUID, fsTargetType, 
       fsTargetName, fsType, fsContent, 
       fsCreateUser, fsCreateTime)
@@ -32,7 +32,7 @@
       #{fstargetname,jdbcType=VARCHAR}, #{fstype,jdbcType=VARCHAR}, #{fscontent,jdbcType=VARCHAR}, 
       #{fscreateuser,jdbcType=VARCHAR}, #{fscreatetime,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.useroperationlog" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Useroperationlog" >
     insert into tbuseroperationlog
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.useroperationlog" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Useroperationlog" >
     update tbuseroperationlog
     <set >
       <if test="fsshopguid != null" >
@@ -114,7 +114,7 @@
     </set>
     where Id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.useroperationlog" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Useroperationlog" >
     update tbuseroperationlog
     set fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
       fsTargetType = #{fstargettype,jdbcType=VARCHAR},

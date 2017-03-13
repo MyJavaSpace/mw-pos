@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.tradeMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.trade" >
+<mapper namespace="com.pos.dao.TradeMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Trade" >
     <id column="fsCompanyGUID" property="fscompanyguid" jdbcType="VARCHAR" />
     <id column="fsTradeId" property="fstradeid" jdbcType="VARCHAR" />
     <result column="fsTradeName" property="fstradename" jdbcType="VARCHAR" />
@@ -13,19 +13,19 @@
   <sql id="Base_Column_List" >
     fsCompanyGUID, fsTradeId, fsTradeName, fiStatus, fsUpdateTime, fsUpdateUserId, fsUpdateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.tradeKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.TradeKey" >
     select 
     <include refid="Base_Column_List" />
     from tbtrade
     where fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR}
       and fsTradeId = #{fstradeid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.tradeKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.TradeKey" >
     delete from tbtrade
     where fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR}
       and fsTradeId = #{fstradeid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.trade" >
+  <insert id="insert" parameterType="com.pos.entity.Trade" >
     insert into tbtrade (fsCompanyGUID, fsTradeId, fsTradeName, 
       fiStatus, fsUpdateTime, fsUpdateUserId, 
       fsUpdateUserName)
@@ -33,7 +33,7 @@
       #{fistatus,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
       #{fsupdateusername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.trade" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Trade" >
     insert into tbtrade
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fscompanyguid != null" >
@@ -82,7 +82,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.trade" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Trade" >
     update tbtrade
     <set >
       <if test="fstradename != null" >
@@ -104,7 +104,7 @@
     where fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR}
       and fsTradeId = #{fstradeid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.trade" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Trade" >
     update tbtrade
     set fsTradeName = #{fstradename,jdbcType=VARCHAR},
       fiStatus = #{fistatus,jdbcType=INTEGER},

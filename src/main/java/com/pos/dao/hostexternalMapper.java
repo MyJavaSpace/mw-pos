@@ -1,20 +1,20 @@
 package com.pos.dao;
 
-import com.pos.entity.hostexternal;
-import com.pos.entity.hostexternalKey;
+import com.pos.entity.Hostexternal;
+import com.pos.entity.HostexternalKey;
 
-public interface hostexternalMapper {
-    int deleteByPrimaryKey(hostexternalKey key);
+public interface HostexternalMapper {
+    int deleteByPrimaryKey(HostexternalKey key);
 
-    int insert(hostexternal record);
+    int insert(Hostexternal record);
 
-    int insertSelective(hostexternal record);
+    int insertSelective(Hostexternal record);
 
-    hostexternal selectByPrimaryKey(hostexternalKey key);
+    Hostexternal selectByPrimaryKey(HostexternalKey key);
 
-    int updateByPrimaryKeySelective(hostexternal record);
+    int updateByPrimaryKeySelective(Hostexternal record);
 
-    int updateByPrimaryKeyWithBLOBs(hostexternal record);
+    int updateByPrimaryKeyWithBLOBs(Hostexternal record);
 
-    int updateByPrimaryKey(hostexternal record);
+    int updateByPrimaryKey(Hostexternal record);
 }

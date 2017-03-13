@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.cookbookmenuMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.cookbookmenu" >
+<mapper namespace="com.pos.dao.CookbookmenuMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Cookbookmenu" >
     <id column="fiOrderUintCd" property="fiorderuintcd" jdbcType="INTEGER" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <id column="fscookid" property="fscookid" jdbcType="VARCHAR" />
@@ -13,7 +13,7 @@
   <sql id="Base_Column_List" >
     fiOrderUintCd, fsShopGUID, fscookid, fistatus, fsUpdateTime, fsUpdateUserId, fsUpdateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.cookbookmenuKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.CookbookmenuKey" >
     select 
     <include refid="Base_Column_List" />
     from tbcookbookmenu
@@ -21,13 +21,13 @@
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
       and fscookid = #{fscookid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.cookbookmenuKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.CookbookmenuKey" >
     delete from tbcookbookmenu
     where fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
       and fscookid = #{fscookid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.cookbookmenu" >
+  <insert id="insert" parameterType="com.pos.entity.Cookbookmenu" >
     insert into tbcookbookmenu (fiOrderUintCd, fsShopGUID, fscookid, 
       fistatus, fsUpdateTime, fsUpdateUserId, 
       fsUpdateUserName)
@@ -35,7 +35,7 @@
       #{fistatus,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
       #{fsupdateusername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.cookbookmenu" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Cookbookmenu" >
     insert into tbcookbookmenu
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fiorderuintcd != null" >
@@ -84,7 +84,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.cookbookmenu" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Cookbookmenu" >
     update tbcookbookmenu
     <set >
       <if test="fistatus != null" >
@@ -104,7 +104,7 @@
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
       and fscookid = #{fscookid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.cookbookmenu" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Cookbookmenu" >
     update tbcookbookmenu
     set fistatus = #{fistatus,jdbcType=INTEGER},
       fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},

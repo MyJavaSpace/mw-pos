@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.sellMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.sell" >
+<mapper namespace="com.pos.dao.SellMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Sell" >
     <id column="fsSellNo" property="fssellno" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsSellDate" property="fsselldate" jdbcType="VARCHAR" />
@@ -103,19 +103,19 @@
     fdDiscountRoundAmt, fdBackRoundAmt, fdServiceRoundAmt, fdSaleRoundAmt, fdGiftQty, 
     fdBackQty, lver
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.sellKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.SellKey" >
     select 
     <include refid="Base_Column_List" />
     from tbsell
     where fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.sellKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.SellKey" >
     delete from tbsell
     where fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.sell" >
+  <insert id="insert" parameterType="com.pos.entity.Sell" >
     insert into tbsell (fsSellNo, fsShopGUID, fsSellDate, 
       fsSellTime, fsMSectionId, fsMAreaId, 
       fsMTableId, fsMTableName, fsMealNumber, 
@@ -175,7 +175,7 @@
       #{fdsaleroundamt,jdbcType=DECIMAL}, #{fdgiftqty,jdbcType=DECIMAL}, #{fdbackqty,jdbcType=DECIMAL}, 
       #{lver,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.sell" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Sell" >
     insert into tbsell
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fssellno != null" >
@@ -686,7 +686,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.sell" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Sell" >
     update tbsell
     <set >
       <if test="fsselldate != null" >
@@ -939,7 +939,7 @@
     where fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.sell" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Sell" >
     update tbsell
     set fsSellDate = #{fsselldate,jdbcType=VARCHAR},
       fsSellTime = #{fsselltime,jdbcType=VARCHAR},

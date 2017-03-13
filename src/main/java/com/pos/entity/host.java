@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class host extends hostKey {
+public class Host extends HostKey {
     private String fshostdesc;
 
     private String fsencryption;

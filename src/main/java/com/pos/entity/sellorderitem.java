@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class sellorderitem extends sellorderitemKey {
+public class Sellorderitem extends SellorderitemKey {
     private String fssellno;
 
     private Integer fiorderseq;

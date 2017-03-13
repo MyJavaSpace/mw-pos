@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class usermenuitemroleKey {
+public class UsermenuitemroleKey {
     private Integer fiitemcd;
 
     private Integer fiorderuintcd;

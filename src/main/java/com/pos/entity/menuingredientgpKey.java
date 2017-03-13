@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class menuingredientgpKey {
+public class MenuingredientgpKey {
     private Integer fiitemgroupid;
 
     private String fsshopguid;

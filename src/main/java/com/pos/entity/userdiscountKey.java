@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class userdiscountKey {
+public class UserdiscountKey {
     private String fsdiscountid;
 
     private String fsshopguid;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.revenuetypeMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.revenuetype" >
+<mapper namespace="com.pos.dao.RevenuetypeMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Revenuetype" >
     <id column="fsRevenueTypeId" property="fsrevenuetypeid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsRevenueTypeName" property="fsrevenuetypename" jdbcType="VARCHAR" />
@@ -16,19 +16,19 @@
     fsRevenueTypeId, fsShopGUID, fsRevenueTypeName, fiStatus, fiDataKind, fsUpdateTime, 
     fsUpdateUserId, fsUpdateUserName, fiSortOrder
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.revenuetypeKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.RevenuetypeKey" >
     select 
     <include refid="Base_Column_List" />
     from tbrevenuetype
     where fsRevenueTypeId = #{fsrevenuetypeid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.revenuetypeKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.RevenuetypeKey" >
     delete from tbrevenuetype
     where fsRevenueTypeId = #{fsrevenuetypeid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.revenuetype" >
+  <insert id="insert" parameterType="com.pos.entity.Revenuetype" >
     insert into tbrevenuetype (fsRevenueTypeId, fsShopGUID, fsRevenueTypeName, 
       fiStatus, fiDataKind, fsUpdateTime, 
       fsUpdateUserId, fsUpdateUserName, fiSortOrder
@@ -38,7 +38,7 @@
       #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fisortorder,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.revenuetype" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Revenuetype" >
     insert into tbrevenuetype
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsrevenuetypeid != null" >
@@ -99,7 +99,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.revenuetype" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Revenuetype" >
     update tbrevenuetype
     <set >
       <if test="fsrevenuetypename != null" >
@@ -127,7 +127,7 @@
     where fsRevenueTypeId = #{fsrevenuetypeid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.revenuetype" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Revenuetype" >
     update tbrevenuetype
     set fsRevenueTypeName = #{fsrevenuetypename,jdbcType=VARCHAR},
       fiStatus = #{fistatus,jdbcType=INTEGER},

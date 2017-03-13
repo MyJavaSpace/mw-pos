@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class menuitemsetside extends menuitemsetsideKey {
+public class Menuitemsetside extends MenuitemsetsideKey {
     private String fssetfoodname;
 
     private String fssetfoodname2;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.setingsMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.setings" >
+<mapper namespace="com.pos.dao.SetingsMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Setings" >
     <id column="fskey" property="fskey" jdbcType="VARCHAR" />
     <result column="fsvalue" property="fsvalue" jdbcType="VARCHAR" />
     <result column="fsreamark" property="fsreamark" jdbcType="VARCHAR" />
@@ -23,7 +23,7 @@
     delete from tbsetings
     where fskey = #{fskey,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.setings" >
+  <insert id="insert" parameterType="com.pos.entity.Setings" >
     insert into tbsetings (fskey, fsvalue, fsreamark, 
       fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
       fsShopGUID)
@@ -31,7 +31,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
       #{fsshopguid,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.setings" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Setings" >
     insert into tbsetings
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fskey != null" >
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.setings" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Setings" >
     update tbsetings
     <set >
       <if test="fsvalue != null" >
@@ -104,7 +104,7 @@
     </set>
     where fskey = #{fskey,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.setings" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Setings" >
     update tbsetings
     set fsvalue = #{fsvalue,jdbcType=VARCHAR},
       fsreamark = #{fsreamark,jdbcType=VARCHAR},

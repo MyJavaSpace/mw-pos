@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.filever;
+import com.pos.entity.Filever;
 
-public interface fileverMapper {
+public interface FileverMapper {
     int deleteByPrimaryKey(String fsfilename);
 
-    int insert(filever record);
+    int insert(Filever record);
 
-    int insertSelective(filever record);
+    int insertSelective(Filever record);
 
-    filever selectByPrimaryKey(String fsfilename);
+    Filever selectByPrimaryKey(String fsfilename);
 
-    int updateByPrimaryKeySelective(filever record);
+    int updateByPrimaryKeySelective(Filever record);
 
-    int updateByPrimaryKey(filever record);
+    int updateByPrimaryKey(Filever record);
 }

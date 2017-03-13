@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class mtablesteKey {
+public class MtablesteKey {
     private String fsmtablesteid;
 
     private String fsshopguid;

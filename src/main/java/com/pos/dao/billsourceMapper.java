@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.billsource;
-import com.pos.entity.billsourceKey;
+import com.pos.entity.Billsource;
+import com.pos.entity.BillsourceKey;
 
-public interface billsourceMapper {
-    int deleteByPrimaryKey(billsourceKey key);
+public interface BillsourceMapper {
+    int deleteByPrimaryKey(BillsourceKey key);
 
-    int insert(billsource record);
+    int insert(Billsource record);
 
-    int insertSelective(billsource record);
+    int insertSelective(Billsource record);
 
-    billsource selectByPrimaryKey(billsourceKey key);
+    Billsource selectByPrimaryKey(BillsourceKey key);
 
-    int updateByPrimaryKeySelective(billsource record);
+    int updateByPrimaryKeySelective(Billsource record);
 
-    int updateByPrimaryKey(billsource record);
+    int updateByPrimaryKey(Billsource record);
 }

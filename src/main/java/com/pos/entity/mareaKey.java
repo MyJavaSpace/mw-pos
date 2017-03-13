@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class mareaKey {
+public class MareaKey {
     private String fsmareaid;
 
     private String fsshopguid;

@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.askgp;
-import com.pos.entity.askgpKey;
+import com.pos.entity.Askgp;
+import com.pos.entity.AskgpKey;
 
-public interface askgpMapper {
-    int deleteByPrimaryKey(askgpKey key);
+public interface AskgpMapper {
+    int deleteByPrimaryKey(AskgpKey key);
 
-    int insert(askgp record);
+    int insert(Askgp record);
 
-    int insertSelective(askgp record);
+    int insertSelective(Askgp record);
 
-    askgp selectByPrimaryKey(askgpKey key);
+    Askgp selectByPrimaryKey(AskgpKey key);
 
-    int updateByPrimaryKeySelective(askgp record);
+    int updateByPrimaryKeySelective(Askgp record);
 
-    int updateByPrimaryKey(askgp record);
+    int updateByPrimaryKey(Askgp record);
 }

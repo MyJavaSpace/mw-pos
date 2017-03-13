@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.creditaccountMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.creditaccount" >
+<mapper namespace="com.pos.dao.CreditaccountMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Creditaccount" >
     <id column="fsCreditAccountId" property="fscreditaccountid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsCreditAccountName" property="fscreditaccountname" jdbcType="VARCHAR" />
@@ -25,19 +25,19 @@
     fsCellphoneCt, fsTelCt, fiImgWidth, fiImgHeight, fsImageURL, fsImagePath, fsNote, 
     fiStatus, fsUpdateTime, fsUpdateUserId, fsUpdateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.creditaccountKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.CreditaccountKey" >
     select 
     <include refid="Base_Column_List" />
     from tbcreditaccount
     where fsCreditAccountId = #{fscreditaccountid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.creditaccountKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.CreditaccountKey" >
     delete from tbcreditaccount
     where fsCreditAccountId = #{fscreditaccountid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.creditaccount" >
+  <insert id="insert" parameterType="com.pos.entity.Creditaccount" >
     insert into tbcreditaccount (fsCreditAccountId, fsShopGUID, fsCreditAccountName, 
       fdCreditAmt, fdDebtAmt, fsContact, 
       fsCellphoneCt, fsTelCt, fiImgWidth, 
@@ -51,7 +51,7 @@
       #{fsnote,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, 
       #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.creditaccount" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Creditaccount" >
     insert into tbcreditaccount
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fscreditaccountid != null" >
@@ -160,7 +160,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.creditaccount" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Creditaccount" >
     update tbcreditaccount
     <set >
       <if test="fscreditaccountname != null" >
@@ -212,7 +212,7 @@
     where fsCreditAccountId = #{fscreditaccountid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.creditaccount" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Creditaccount" >
     update tbcreditaccount
     set fsCreditAccountName = #{fscreditaccountname,jdbcType=VARCHAR},
       fdCreditAmt = #{fdcreditamt,jdbcType=DECIMAL},

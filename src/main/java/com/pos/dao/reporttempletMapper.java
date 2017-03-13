@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.reporttemplet;
-import com.pos.entity.reporttempletKey;
+import com.pos.entity.Reporttemplet;
+import com.pos.entity.ReporttempletKey;
 
-public interface reporttempletMapper {
-    int deleteByPrimaryKey(reporttempletKey key);
+public interface ReporttempletMapper {
+    int deleteByPrimaryKey(ReporttempletKey key);
 
-    int insert(reporttemplet record);
+    int insert(Reporttemplet record);
 
-    int insertSelective(reporttemplet record);
+    int insertSelective(Reporttemplet record);
 
-    reporttemplet selectByPrimaryKey(reporttempletKey key);
+    Reporttemplet selectByPrimaryKey(ReporttempletKey key);
 
-    int updateByPrimaryKeySelective(reporttemplet record);
+    int updateByPrimaryKeySelective(Reporttemplet record);
 
-    int updateByPrimaryKey(reporttemplet record);
+    int updateByPrimaryKey(Reporttemplet record);
 }

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class authoritydtlKey {
+public class AuthoritydtlKey {
     private String fsprogdtlid;
 
     private String fsprogid;

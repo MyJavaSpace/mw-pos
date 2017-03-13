@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class authority extends authorityKey {
+public class Authority extends AuthorityKey {
     private String fsupdatetime;
 
     private Integer fistatus;

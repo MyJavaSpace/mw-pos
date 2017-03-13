@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class payment extends paymentKey {
+public class Payment extends PaymentKey {
     private String fspaymenttypeid;
 
     private String fspaymentname;

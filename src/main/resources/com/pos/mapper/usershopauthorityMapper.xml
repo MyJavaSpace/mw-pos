@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.usershopauthorityMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.usershopauthority" >
+<mapper namespace="com.pos.dao.UsershopauthorityMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Usershopauthority" >
     <id column="fsCompanyGUID" property="fscompanyguid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <id column="fsUserId" property="fsuserid" jdbcType="VARCHAR" />
@@ -13,7 +13,7 @@
   <sql id="Base_Column_List" >
     fsCompanyGUID, fsShopGUID, fsUserId, fsEnabled, fsUpdateTime, fsUpdateUserId, fsUpdateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.usershopauthorityKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.UsershopauthorityKey" >
     select 
     <include refid="Base_Column_List" />
     from tbusershopauthority
@@ -21,13 +21,13 @@
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
       and fsUserId = #{fsuserid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.usershopauthorityKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.UsershopauthorityKey" >
     delete from tbusershopauthority
     where fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
       and fsUserId = #{fsuserid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.usershopauthority" >
+  <insert id="insert" parameterType="com.pos.entity.Usershopauthority" >
     insert into tbusershopauthority (fsCompanyGUID, fsShopGUID, fsUserId, 
       fsEnabled, fsUpdateTime, fsUpdateUserId, 
       fsUpdateUserName)
@@ -35,7 +35,7 @@
       #{fsenabled,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
       #{fsupdateusername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.usershopauthority" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Usershopauthority" >
     insert into tbusershopauthority
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fscompanyguid != null" >
@@ -84,7 +84,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.usershopauthority" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Usershopauthority" >
     update tbusershopauthority
     <set >
       <if test="fsenabled != null" >
@@ -104,7 +104,7 @@
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
       and fsUserId = #{fsuserid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.usershopauthority" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Usershopauthority" >
     update tbusershopauthority
     set fsEnabled = #{fsenabled,jdbcType=INTEGER},
       fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},

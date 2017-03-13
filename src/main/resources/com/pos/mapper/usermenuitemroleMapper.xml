@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.usermenuitemroleMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.usermenuitemrole" >
+<mapper namespace="com.pos.dao.UsermenuitemroleMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Usermenuitemrole" >
     <id column="fiItemCd" property="fiitemcd" jdbcType="INTEGER" />
     <id column="fiOrderUintCd" property="fiorderuintcd" jdbcType="INTEGER" />
     <id column="fiType" property="fitype" jdbcType="INTEGER" />
@@ -19,7 +19,7 @@
     fiItemCd, fiOrderUintCd, fiType, fsShopGUID, fsUserId, fsCreateTime, fsCreateUserId, 
     fsCreateUserName, fsUpdateUserId, fsUpdateTime, fsUpdateUserName, fiStatus
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.usermenuitemroleKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.UsermenuitemroleKey" >
     select 
     <include refid="Base_Column_List" />
     from tbusermenuitemrole
@@ -29,7 +29,7 @@
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
       and fsUserId = #{fsuserid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.usermenuitemroleKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.UsermenuitemroleKey" >
     delete from tbusermenuitemrole
     where fiItemCd = #{fiitemcd,jdbcType=INTEGER}
       and fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
@@ -37,7 +37,7 @@
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
       and fsUserId = #{fsuserid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.usermenuitemrole" >
+  <insert id="insert" parameterType="com.pos.entity.Usermenuitemrole" >
     insert into tbusermenuitemrole (fiItemCd, fiOrderUintCd, fiType, 
       fsShopGUID, fsUserId, fsCreateTime, 
       fsCreateUserId, fsCreateUserName, fsUpdateUserId, 
@@ -49,7 +49,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.usermenuitemrole" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Usermenuitemrole" >
     insert into tbusermenuitemrole
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fiitemcd != null" >
@@ -128,7 +128,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.usermenuitemrole" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Usermenuitemrole" >
     update tbusermenuitemrole
     <set >
       <if test="fscreatetime != null" >
@@ -159,7 +159,7 @@
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
       and fsUserId = #{fsuserid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.usermenuitemrole" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Usermenuitemrole" >
     update tbusermenuitemrole
     set fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
       fsCreateUserId = #{fscreateuserid,jdbcType=VARCHAR},

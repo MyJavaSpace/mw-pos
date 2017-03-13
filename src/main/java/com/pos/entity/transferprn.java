@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class transferprn extends transferprnKey {
+public class Transferprn extends TransferprnKey {
     private String fsupdatetime;
 
     private String fsupdateuserid;

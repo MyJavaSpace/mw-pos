@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class bargain extends bargainKey {
+public class Bargain extends BargainKey {
     private String fsbargainname;
 
     private String fsbegintime;

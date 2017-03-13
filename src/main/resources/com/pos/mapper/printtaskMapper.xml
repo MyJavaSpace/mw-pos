@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.printtaskMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.printtask" >
+<mapper namespace="com.pos.dao.PrinttaskMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Printtask" >
     <id column="fiPrintNo" property="fiprintno" jdbcType="INTEGER" />
     <result column="fsCreateTime" property="fscreatetime" jdbcType="VARCHAR" />
     <result column="fsCreateUserName" property="fscreateusername" jdbcType="VARCHAR" />
@@ -23,7 +23,7 @@
     <result column="fsSeq" property="fsseq" jdbcType="VARCHAR" />
     <result column="fiRunTime" property="firuntime" jdbcType="INTEGER" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.pos.entity.printtaskWithBLOBs" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.pos.entity.PrinttaskWithBLOBs" extends="BaseResultMap" >
     <result column="fsPrnData" property="fsprndata" jdbcType="LONGVARCHAR" />
     <result column="fsPrnData2" property="fsprndata2" jdbcType="LONGVARCHAR" />
   </resultMap>
@@ -47,7 +47,7 @@
     delete from tbprinttask
     where fiPrintNo = #{fiprintno,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.printtaskWithBLOBs" >
+  <insert id="insert" parameterType="com.pos.entity.PrinttaskWithBLOBs" >
     insert into tbprinttask (fiPrintNo, fsCreateTime, fsCreateUserName, 
       fsHostId, fsDeptId, fsDeptName, 
       fiDeptCls, fsPrinterName, fsReportId, 
@@ -65,7 +65,7 @@
       #{fsseq,jdbcType=VARCHAR}, #{firuntime,jdbcType=INTEGER}, #{fsprndata,jdbcType=LONGVARCHAR}, 
       #{fsprndata2,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.printtaskWithBLOBs" >
+  <insert id="insertSelective" parameterType="com.pos.entity.PrinttaskWithBLOBs" >
     insert into tbprinttask
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fiprintno != null" >
@@ -204,7 +204,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.printtaskWithBLOBs" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.PrinttaskWithBLOBs" >
     update tbprinttask
     <set >
       <if test="fscreatetime != null" >
@@ -273,7 +273,7 @@
     </set>
     where fiPrintNo = #{fiprintno,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pos.entity.printtaskWithBLOBs" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pos.entity.PrinttaskWithBLOBs" >
     update tbprinttask
     set fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
       fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR},
@@ -298,7 +298,7 @@
       fsPrnData2 = #{fsprndata2,jdbcType=LONGVARCHAR}
     where fiPrintNo = #{fiprintno,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.printtask" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Printtask" >
     update tbprinttask
     set fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
       fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR},

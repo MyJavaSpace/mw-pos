@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class sellorderitemWithBLOBs extends sellorderitem {
+public class SellorderitemWithBLOBs extends Sellorderitem {
     private String fsdeptid;
 
     private String fsnote;

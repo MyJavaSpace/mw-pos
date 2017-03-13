@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.cust;
+import com.pos.entity.Cust;
 
-public interface custMapper {
+public interface CustMapper {
     int deleteByPrimaryKey(String fscustguid);
 
-    int insert(cust record);
+    int insert(Cust record);
 
-    int insertSelective(cust record);
+    int insertSelective(Cust record);
 
-    cust selectByPrimaryKey(String fscustguid);
+    Cust selectByPrimaryKey(String fscustguid);
 
-    int updateByPrimaryKeySelective(cust record);
+    int updateByPrimaryKeySelective(Cust record);
 
-    int updateByPrimaryKey(cust record);
+    int updateByPrimaryKey(Cust record);
 }

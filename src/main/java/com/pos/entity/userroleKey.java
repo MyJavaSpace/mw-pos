@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class userroleKey {
+public class UserroleKey {
     private String fsroleid;
 
     private String fsshopguid;

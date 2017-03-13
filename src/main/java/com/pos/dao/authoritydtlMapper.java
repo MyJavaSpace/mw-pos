@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.authoritydtl;
-import com.pos.entity.authoritydtlKey;
+import com.pos.entity.Authoritydtl;
+import com.pos.entity.AuthoritydtlKey;
 
-public interface authoritydtlMapper {
-    int deleteByPrimaryKey(authoritydtlKey key);
+public interface AuthoritydtlMapper {
+    int deleteByPrimaryKey(AuthoritydtlKey key);
 
-    int insert(authoritydtl record);
+    int insert(Authoritydtl record);
 
-    int insertSelective(authoritydtl record);
+    int insertSelective(Authoritydtl record);
 
-    authoritydtl selectByPrimaryKey(authoritydtlKey key);
+    Authoritydtl selectByPrimaryKey(AuthoritydtlKey key);
 
-    int updateByPrimaryKeySelective(authoritydtl record);
+    int updateByPrimaryKeySelective(Authoritydtl record);
 
-    int updateByPrimaryKey(authoritydtl record);
+    int updateByPrimaryKey(Authoritydtl record);
 }

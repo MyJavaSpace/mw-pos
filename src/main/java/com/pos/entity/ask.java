@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class ask extends askKey {
+public class Ask extends AskKey {
     private String fsaskgpid;
 
     private String fsaskname;

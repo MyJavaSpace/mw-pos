@@ -1,21 +1,21 @@
 package com.pos.dao;
 
-import com.pos.entity.paymentdetail;
-import com.pos.entity.paymentdetailKey;
-import com.pos.entity.paymentdetailWithBLOBs;
+import com.pos.entity.Paymentdetail;
+import com.pos.entity.PaymentdetailKey;
+import com.pos.entity.PaymentdetailWithBLOBs;
 
-public interface paymentdetailMapper {
-    int deleteByPrimaryKey(paymentdetailKey key);
+public interface PaymentdetailMapper {
+    int deleteByPrimaryKey(PaymentdetailKey key);
 
-    int insert(paymentdetailWithBLOBs record);
+    int insert(PaymentdetailWithBLOBs record);
 
-    int insertSelective(paymentdetailWithBLOBs record);
+    int insertSelective(PaymentdetailWithBLOBs record);
 
-    paymentdetailWithBLOBs selectByPrimaryKey(paymentdetailKey key);
+    PaymentdetailWithBLOBs selectByPrimaryKey(PaymentdetailKey key);
 
-    int updateByPrimaryKeySelective(paymentdetailWithBLOBs record);
+    int updateByPrimaryKeySelective(PaymentdetailWithBLOBs record);
 
-    int updateByPrimaryKeyWithBLOBs(paymentdetailWithBLOBs record);
+    int updateByPrimaryKeyWithBLOBs(PaymentdetailWithBLOBs record);
 
-    int updateByPrimaryKey(paymentdetail record);
+    int updateByPrimaryKey(Paymentdetail record);
 }

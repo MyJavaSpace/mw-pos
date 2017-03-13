@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class creditaccount extends creditaccountKey {
+public class Creditaccount extends CreditaccountKey {
     private String fscreditaccountname;
 
     private BigDecimal fdcreditamt;

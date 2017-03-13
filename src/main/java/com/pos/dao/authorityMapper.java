@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.authority;
-import com.pos.entity.authorityKey;
+import com.pos.entity.Authority;
+import com.pos.entity.AuthorityKey;
 
-public interface authorityMapper {
-    int deleteByPrimaryKey(authorityKey key);
+public interface AuthorityMapper {
+    int deleteByPrimaryKey(AuthorityKey key);
 
-    int insert(authority record);
+    int insert(Authority record);
 
-    int insertSelective(authority record);
+    int insertSelective(Authority record);
 
-    authority selectByPrimaryKey(authorityKey key);
+    Authority selectByPrimaryKey(AuthorityKey key);
 
-    int updateByPrimaryKeySelective(authority record);
+    int updateByPrimaryKeySelective(Authority record);
 
-    int updateByPrimaryKey(authority record);
+    int updateByPrimaryKey(Authority record);
 }

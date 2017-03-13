@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class menuitemuint {
+public class Menuitemuint {
     private Integer fiorderuintcd;
 
     private Integer fiitemcd;

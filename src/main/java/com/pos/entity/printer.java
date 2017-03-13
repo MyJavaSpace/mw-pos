@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class printer extends printerKey {
+public class Printer extends PrinterKey {
     private String fsprintername;
 
     private String fsip;

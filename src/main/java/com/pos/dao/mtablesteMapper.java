@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.mtableste;
-import com.pos.entity.mtablesteKey;
+import com.pos.entity.Mtableste;
+import com.pos.entity.MtablesteKey;
 
-public interface mtablesteMapper {
-    int deleteByPrimaryKey(mtablesteKey key);
+public interface MtablesteMapper {
+    int deleteByPrimaryKey(MtablesteKey key);
 
-    int insert(mtableste record);
+    int insert(Mtableste record);
 
-    int insertSelective(mtableste record);
+    int insertSelective(Mtableste record);
 
-    mtableste selectByPrimaryKey(mtablesteKey key);
+    Mtableste selectByPrimaryKey(MtablesteKey key);
 
-    int updateByPrimaryKeySelective(mtableste record);
+    int updateByPrimaryKeySelective(Mtableste record);
 
-    int updateByPrimaryKey(mtableste record);
+    int updateByPrimaryKey(Mtableste record);
 }

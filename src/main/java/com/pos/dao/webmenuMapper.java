@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.webmenu;
+import com.pos.entity.Webmenu;
 
-public interface webmenuMapper {
+public interface WebmenuMapper {
     int deleteByPrimaryKey(Integer fimenuid);
 
-    int insert(webmenu record);
+    int insert(Webmenu record);
 
-    int insertSelective(webmenu record);
+    int insertSelective(Webmenu record);
 
-    webmenu selectByPrimaryKey(Integer fimenuid);
+    Webmenu selectByPrimaryKey(Integer fimenuid);
 
-    int updateByPrimaryKeySelective(webmenu record);
+    int updateByPrimaryKeySelective(Webmenu record);
 
-    int updateByPrimaryKey(webmenu record);
+    int updateByPrimaryKey(Webmenu record);
 }

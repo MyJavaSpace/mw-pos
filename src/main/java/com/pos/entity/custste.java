@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class custste extends custsteKey {
+public class Custste extends CuststeKey {
     private String fscuststename;
 
     private Integer fistatus;

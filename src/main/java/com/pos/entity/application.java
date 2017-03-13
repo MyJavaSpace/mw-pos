@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class application extends applicationKey {
+public class Application extends ApplicationKey {
     private String fsupdatetime;
 
     private String fsupdateuserid;

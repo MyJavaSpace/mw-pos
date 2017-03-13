@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.bargainitem;
-import com.pos.entity.bargainitemKey;
+import com.pos.entity.Bargainitem;
+import com.pos.entity.BargainitemKey;
 
-public interface bargainitemMapper {
-    int deleteByPrimaryKey(bargainitemKey key);
+public interface BargainitemMapper {
+    int deleteByPrimaryKey(BargainitemKey key);
 
-    int insert(bargainitem record);
+    int insert(Bargainitem record);
 
-    int insertSelective(bargainitem record);
+    int insertSelective(Bargainitem record);
 
-    bargainitem selectByPrimaryKey(bargainitemKey key);
+    Bargainitem selectByPrimaryKey(BargainitemKey key);
 
-    int updateByPrimaryKeySelective(bargainitem record);
+    int updateByPrimaryKeySelective(Bargainitem record);
 
-    int updateByPrimaryKey(bargainitem record);
+    int updateByPrimaryKey(Bargainitem record);
 }

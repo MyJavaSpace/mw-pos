@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.hostexternalMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.hostexternal" >
+<mapper namespace="com.pos.dao.HostexternalMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Hostexternal" >
     <id column="fiCls" property="ficls" jdbcType="INTEGER" />
     <id column="fsHostId" property="fshostid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
@@ -21,7 +21,7 @@
     <result column="fsUpdateUserId" property="fsupdateuserid" jdbcType="VARCHAR" />
     <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.pos.entity.hostexternal" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.pos.entity.Hostexternal" extends="BaseResultMap" >
     <result column="fsStr2" property="fsstr2" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -31,7 +31,7 @@
   <sql id="Blob_Column_List" >
     fsStr2
   </sql>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="com.pos.entity.hostexternalKey" >
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="com.pos.entity.HostexternalKey" >
     select 
     <include refid="Base_Column_List" />
     ,
@@ -41,13 +41,13 @@
       and fsHostId = #{fshostid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.hostexternalKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.HostexternalKey" >
     delete from tbhostexternal
     where fiCls = #{ficls,jdbcType=INTEGER}
       and fsHostId = #{fshostid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.hostexternal" >
+  <insert id="insert" parameterType="com.pos.entity.Hostexternal" >
     insert into tbhostexternal (fiCls, fsHostId, fsShopGUID, 
       fsParamValue, fsStr1, fsStr3, 
       fsStr4, fsStr5, fiInt1, 
@@ -63,7 +63,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
       #{fsstr2,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.hostexternal" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Hostexternal" >
     insert into tbhostexternal
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="ficls != null" >
@@ -184,7 +184,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.hostexternal" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Hostexternal" >
     update tbhostexternal
     <set >
       <if test="fsparamvalue != null" >
@@ -240,7 +240,7 @@
       and fsHostId = #{fshostid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pos.entity.hostexternal" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pos.entity.Hostexternal" >
     update tbhostexternal
     set fsParamValue = #{fsparamvalue,jdbcType=VARCHAR},
       fsStr1 = #{fsstr1,jdbcType=VARCHAR},
@@ -262,7 +262,7 @@
       and fsHostId = #{fshostid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.hostexternal" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Hostexternal" >
     update tbhostexternal
     set fsParamValue = #{fsparamvalue,jdbcType=VARCHAR},
       fsStr1 = #{fsstr1,jdbcType=VARCHAR},

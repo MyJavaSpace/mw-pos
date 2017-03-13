@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class userauthdataKey {
+public class UserauthdataKey {
     private String fsdatakind;
 
     private String fsshopguid;

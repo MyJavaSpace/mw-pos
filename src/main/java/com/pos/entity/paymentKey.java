@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class paymentKey {
+public class PaymentKey {
     private String fspaymentid;
 
     private String fsshopguid;

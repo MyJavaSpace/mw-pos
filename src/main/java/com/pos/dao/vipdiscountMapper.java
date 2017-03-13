@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.vipdiscount;
-import com.pos.entity.vipdiscountKey;
+import com.pos.entity.Vipdiscount;
+import com.pos.entity.VipdiscountKey;
 
-public interface vipdiscountMapper {
-    int deleteByPrimaryKey(vipdiscountKey key);
+public interface VipdiscountMapper {
+    int deleteByPrimaryKey(VipdiscountKey key);
 
-    int insert(vipdiscount record);
+    int insert(Vipdiscount record);
 
-    int insertSelective(vipdiscount record);
+    int insertSelective(Vipdiscount record);
 
-    vipdiscount selectByPrimaryKey(vipdiscountKey key);
+    Vipdiscount selectByPrimaryKey(VipdiscountKey key);
 
-    int updateByPrimaryKeySelective(vipdiscount record);
+    int updateByPrimaryKeySelective(Vipdiscount record);
 
-    int updateByPrimaryKey(vipdiscount record);
+    int updateByPrimaryKey(Vipdiscount record);
 }

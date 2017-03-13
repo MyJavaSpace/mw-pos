@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.custsteMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.custste" >
+<mapper namespace="com.pos.dao.CuststeMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Custste" >
     <id column="fsCompanyGUID" property="fscompanyguid" jdbcType="VARCHAR" />
     <id column="fsCustSteId" property="fscuststeid" jdbcType="VARCHAR" />
     <result column="fsCustSteName" property="fscuststename" jdbcType="VARCHAR" />
@@ -14,19 +14,19 @@
     fsCompanyGUID, fsCustSteId, fsCustSteName, fiStatus, fsUpdateTime, fsUpdateUserId, 
     fsUpdateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.custsteKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.CuststeKey" >
     select 
     <include refid="Base_Column_List" />
     from tbcustste
     where fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR}
       and fsCustSteId = #{fscuststeid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.custsteKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.CuststeKey" >
     delete from tbcustste
     where fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR}
       and fsCustSteId = #{fscuststeid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.custste" >
+  <insert id="insert" parameterType="com.pos.entity.Custste" >
     insert into tbcustste (fsCompanyGUID, fsCustSteId, fsCustSteName, 
       fiStatus, fsUpdateTime, fsUpdateUserId, 
       fsUpdateUserName)
@@ -34,7 +34,7 @@
       #{fistatus,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
       #{fsupdateusername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.custste" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Custste" >
     insert into tbcustste
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fscompanyguid != null" >
@@ -83,7 +83,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.custste" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Custste" >
     update tbcustste
     <set >
       <if test="fscuststename != null" >
@@ -105,7 +105,7 @@
     where fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR}
       and fsCustSteId = #{fscuststeid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.custste" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Custste" >
     update tbcustste
     set fsCustSteName = #{fscuststename,jdbcType=VARCHAR},
       fiStatus = #{fistatus,jdbcType=INTEGER},

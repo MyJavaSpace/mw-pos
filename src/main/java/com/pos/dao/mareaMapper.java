@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.marea;
-import com.pos.entity.mareaKey;
+import com.pos.entity.Marea;
+import com.pos.entity.MareaKey;
 
-public interface mareaMapper {
-    int deleteByPrimaryKey(mareaKey key);
+public interface MareaMapper {
+    int deleteByPrimaryKey(MareaKey key);
 
-    int insert(marea record);
+    int insert(Marea record);
 
-    int insertSelective(marea record);
+    int insertSelective(Marea record);
 
-    marea selectByPrimaryKey(mareaKey key);
+    Marea selectByPrimaryKey(MareaKey key);
 
-    int updateByPrimaryKeySelective(marea record);
+    int updateByPrimaryKeySelective(Marea record);
 
-    int updateByPrimaryKey(marea record);
+    int updateByPrimaryKey(Marea record);
 }

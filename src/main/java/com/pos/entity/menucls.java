@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class menucls extends menuclsKey {
+public class Menucls extends MenuclsKey {
     private String fsmenuclsname;
 
     private String fsmenuclsfullname;

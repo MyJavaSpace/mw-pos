@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.askgpMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.askgp" >
+<mapper namespace="com.pos.dao.AskgpMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Askgp" >
     <id column="fsAskGpId" property="fsaskgpid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsAskGpName" property="fsaskgpname" jdbcType="VARCHAR" />
@@ -18,19 +18,19 @@
     fsAskGpId, fsShopGUID, fsAskGpName, fiStatus, fiSortOrder, fsUpdateTime, fsUpdateUserId, 
     fsUpdateUserName, fiDataKind, fiIsSelect, fiChooseType
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.askgpKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.AskgpKey" >
     select 
     <include refid="Base_Column_List" />
     from tbaskgp
     where fsAskGpId = #{fsaskgpid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.askgpKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.AskgpKey" >
     delete from tbaskgp
     where fsAskGpId = #{fsaskgpid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.askgp" >
+  <insert id="insert" parameterType="com.pos.entity.Askgp" >
     insert into tbaskgp (fsAskGpId, fsShopGUID, fsAskGpName, 
       fiStatus, fiSortOrder, fsUpdateTime, 
       fsUpdateUserId, fsUpdateUserName, fiDataKind, 
@@ -40,7 +40,7 @@
       #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fidatakind,jdbcType=INTEGER}, 
       #{fiisselect,jdbcType=INTEGER}, #{fichoosetype,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.askgp" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Askgp" >
     insert into tbaskgp
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsaskgpid != null" >
@@ -113,7 +113,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.askgp" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Askgp" >
     update tbaskgp
     <set >
       <if test="fsaskgpname != null" >
@@ -147,7 +147,7 @@
     where fsAskGpId = #{fsaskgpid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.askgp" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Askgp" >
     update tbaskgp
     set fsAskGpName = #{fsaskgpname,jdbcType=VARCHAR},
       fiStatus = #{fistatus,jdbcType=INTEGER},

@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class cookbook extends cookbookKey {
+public class Cookbook extends CookbookKey {
     private String fscookname;
 
     private BigDecimal fdpricerange;

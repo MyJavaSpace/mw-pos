@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class sellorderKey {
+public class SellorderKey {
     private Integer fiorderseq;
 
     private String fssellno;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.wordhouseMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.wordhouse" >
+<mapper namespace="com.pos.dao.WordhouseMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Wordhouse" >
     <id column="fiId" property="fiid" jdbcType="INTEGER" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsFieldItem" property="fsfielditem" jdbcType="VARCHAR" />
@@ -16,19 +16,19 @@
     fiId, fsShopGUID, fsFieldItem, fsWord, fiSortOrder, fsUpdateTime, fsUpdateUserId, 
     fsUpdateUserName, fiStatus
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.wordhouseKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.WordhouseKey" >
     select 
     <include refid="Base_Column_List" />
     from tbwordhouse
     where fiId = #{fiid,jdbcType=INTEGER}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.wordhouseKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.WordhouseKey" >
     delete from tbwordhouse
     where fiId = #{fiid,jdbcType=INTEGER}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.wordhouse" >
+  <insert id="insert" parameterType="com.pos.entity.Wordhouse" >
     insert into tbwordhouse (fiId, fsShopGUID, fsFieldItem, 
       fsWord, fiSortOrder, fsUpdateTime, 
       fsUpdateUserId, fsUpdateUserName, fiStatus
@@ -38,7 +38,7 @@
       #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.wordhouse" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Wordhouse" >
     insert into tbwordhouse
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fiid != null" >
@@ -99,7 +99,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.wordhouse" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Wordhouse" >
     update tbwordhouse
     <set >
       <if test="fsfielditem != null" >
@@ -127,7 +127,7 @@
     where fiId = #{fiid,jdbcType=INTEGER}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.wordhouse" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Wordhouse" >
     update tbwordhouse
     set fsFieldItem = #{fsfielditem,jdbcType=VARCHAR},
       fsWord = #{fsword,jdbcType=VARCHAR},

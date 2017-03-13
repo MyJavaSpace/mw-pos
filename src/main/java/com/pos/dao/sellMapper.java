@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.sell;
-import com.pos.entity.sellKey;
+import com.pos.entity.Sell;
+import com.pos.entity.SellKey;
 
-public interface sellMapper {
-    int deleteByPrimaryKey(sellKey key);
+public interface SellMapper {
+    int deleteByPrimaryKey(SellKey key);
 
-    int insert(sell record);
+    int insert(Sell record);
 
-    int insertSelective(sell record);
+    int insertSelective(Sell record);
 
-    sell selectByPrimaryKey(sellKey key);
+    Sell selectByPrimaryKey(SellKey key);
 
-    int updateByPrimaryKeySelective(sell record);
+    int updateByPrimaryKeySelective(Sell record);
 
-    int updateByPrimaryKey(sell record);
+    int updateByPrimaryKey(Sell record);
 }

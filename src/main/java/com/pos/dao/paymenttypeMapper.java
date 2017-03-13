@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.paymenttype;
-import com.pos.entity.paymenttypeKey;
+import com.pos.entity.Paymenttype;
+import com.pos.entity.PaymenttypeKey;
 
-public interface paymenttypeMapper {
-    int deleteByPrimaryKey(paymenttypeKey key);
+public interface PaymenttypeMapper {
+    int deleteByPrimaryKey(PaymenttypeKey key);
 
-    int insert(paymenttype record);
+    int insert(Paymenttype record);
 
-    int insertSelective(paymenttype record);
+    int insertSelective(Paymenttype record);
 
-    paymenttype selectByPrimaryKey(paymenttypeKey key);
+    Paymenttype selectByPrimaryKey(PaymenttypeKey key);
 
-    int updateByPrimaryKeySelective(paymenttype record);
+    int updateByPrimaryKeySelective(Paymenttype record);
 
-    int updateByPrimaryKey(paymenttype record);
+    int updateByPrimaryKey(Paymenttype record);
 }

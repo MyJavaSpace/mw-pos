@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.paymentfullcut;
-import com.pos.entity.paymentfullcutKey;
+import com.pos.entity.Paymentfullcut;
+import com.pos.entity.PaymentfullcutKey;
 
-public interface paymentfullcutMapper {
-    int deleteByPrimaryKey(paymentfullcutKey key);
+public interface PaymentfullcutMapper {
+    int deleteByPrimaryKey(PaymentfullcutKey key);
 
-    int insert(paymentfullcut record);
+    int insert(Paymentfullcut record);
 
-    int insertSelective(paymentfullcut record);
+    int insertSelective(Paymentfullcut record);
 
-    paymentfullcut selectByPrimaryKey(paymentfullcutKey key);
+    Paymentfullcut selectByPrimaryKey(PaymentfullcutKey key);
 
-    int updateByPrimaryKeySelective(paymentfullcut record);
+    int updateByPrimaryKeySelective(Paymentfullcut record);
 
-    int updateByPrimaryKey(paymentfullcut record);
+    int updateByPrimaryKey(Paymentfullcut record);
 }

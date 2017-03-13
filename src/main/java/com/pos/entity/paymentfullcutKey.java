@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class paymentfullcutKey {
+public class PaymentfullcutKey {
     private String fspaymentid;
 
     private String fsshopguid;

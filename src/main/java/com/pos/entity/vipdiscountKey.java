@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class vipdiscountKey {
+public class VipdiscountKey {
     private String fsshopguid;
 
     private String fsviplvlid;

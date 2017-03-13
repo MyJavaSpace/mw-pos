@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.sellhurryMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.sellhurry" >
+<mapper namespace="com.pos.dao.SellhurryMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Sellhurry" >
     <id column="fiHurrySeq" property="fihurryseq" jdbcType="INTEGER" />
     <id column="fsSellNo" property="fssellno" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
@@ -11,7 +11,7 @@
   <sql id="Base_Column_List" >
     fiHurrySeq, fsSellNo, fsShopGUID, fsCreateTime, fsCreateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.sellhurryKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.SellhurryKey" >
     select 
     <include refid="Base_Column_List" />
     from tbsellhurry
@@ -19,19 +19,19 @@
       and fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.sellhurryKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.SellhurryKey" >
     delete from tbsellhurry
     where fiHurrySeq = #{fihurryseq,jdbcType=INTEGER}
       and fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.sellhurry" >
+  <insert id="insert" parameterType="com.pos.entity.Sellhurry" >
     insert into tbsellhurry (fiHurrySeq, fsSellNo, fsShopGUID, 
       fsCreateTime, fsCreateUserName)
     values (#{fihurryseq,jdbcType=INTEGER}, #{fssellno,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, 
       #{fscreatetime,jdbcType=VARCHAR}, #{fscreateusername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.sellhurry" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Sellhurry" >
     insert into tbsellhurry
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fihurryseq != null" >
@@ -68,7 +68,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.sellhurry" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Sellhurry" >
     update tbsellhurry
     <set >
       <if test="fscreatetime != null" >
@@ -82,7 +82,7 @@
       and fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.sellhurry" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Sellhurry" >
     update tbsellhurry
     set fsCreateTime = #{fscreatetime,jdbcType=VARCHAR},
       fsCreateUserName = #{fscreateusername,jdbcType=VARCHAR}

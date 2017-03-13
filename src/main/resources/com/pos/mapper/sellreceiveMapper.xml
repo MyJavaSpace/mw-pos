@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.sellreceiveMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.sellreceive" >
+<mapper namespace="com.pos.dao.SellreceiveMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Sellreceive" >
     <id column="fiPaymentType" property="fipaymenttype" jdbcType="INTEGER" />
     <id column="fiSeq" property="fiseq" jdbcType="INTEGER" />
     <id column="fsCheckBillNo" property="fscheckbillno" jdbcType="VARCHAR" />
@@ -31,7 +31,7 @@
     <result column="fsbackup2" property="fsbackup2" jdbcType="VARCHAR" />
     <result column="lver" property="lver" jdbcType="INTEGER" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.pos.entity.sellreceive" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.pos.entity.Sellreceive" extends="BaseResultMap" >
     <result column="fsMiscno" property="fsmiscno" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -44,7 +44,7 @@
   <sql id="Blob_Column_List" >
     fsMiscno
   </sql>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="com.pos.entity.sellreceiveKey" >
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="com.pos.entity.SellreceiveKey" >
     select 
     <include refid="Base_Column_List" />
     ,
@@ -56,7 +56,7 @@
       and fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.sellreceiveKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.SellreceiveKey" >
     delete from tbsellreceive
     where fiPaymentType = #{fipaymenttype,jdbcType=INTEGER}
       and fiSeq = #{fiseq,jdbcType=INTEGER}
@@ -64,7 +64,7 @@
       and fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.sellreceive" >
+  <insert id="insert" parameterType="com.pos.entity.Sellreceive" >
     insert into tbsellreceive (fiPaymentType, fiSeq, fsCheckBillNo, 
       fsSellNo, fsShopGUID, fsPaymentId, 
       fdForeignMoney, fdExchangeRate, fdPayMoney, 
@@ -86,7 +86,7 @@
       #{fsbackup0,jdbcType=VARCHAR}, #{fsbackup1,jdbcType=VARCHAR}, #{fsbackup2,jdbcType=VARCHAR}, 
       #{lver,jdbcType=INTEGER}, #{fsmiscno,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.sellreceive" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Sellreceive" >
     insert into tbsellreceive
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fipaymenttype != null" >
@@ -267,7 +267,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.sellreceive" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Sellreceive" >
     update tbsellreceive
     <set >
       <if test="fspaymentid != null" >
@@ -349,7 +349,7 @@
       and fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pos.entity.sellreceive" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pos.entity.Sellreceive" >
     update tbsellreceive
     set fsPaymentId = #{fspaymentid,jdbcType=VARCHAR},
       fdForeignMoney = #{fdforeignmoney,jdbcType=DECIMAL},
@@ -381,7 +381,7 @@
       and fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.sellreceive" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Sellreceive" >
     update tbsellreceive
     set fsPaymentId = #{fspaymentid,jdbcType=VARCHAR},
       fdForeignMoney = #{fdforeignmoney,jdbcType=DECIMAL},

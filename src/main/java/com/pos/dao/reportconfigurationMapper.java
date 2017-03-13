@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.reportconfiguration;
-import com.pos.entity.reportconfigurationKey;
+import com.pos.entity.Reportconfiguration;
+import com.pos.entity.ReportconfigurationKey;
 
-public interface reportconfigurationMapper {
-    int deleteByPrimaryKey(reportconfigurationKey key);
+public interface ReportconfigurationMapper {
+    int deleteByPrimaryKey(ReportconfigurationKey key);
 
-    int insert(reportconfiguration record);
+    int insert(Reportconfiguration record);
 
-    int insertSelective(reportconfiguration record);
+    int insertSelective(Reportconfiguration record);
 
-    reportconfiguration selectByPrimaryKey(reportconfigurationKey key);
+    Reportconfiguration selectByPrimaryKey(ReportconfigurationKey key);
 
-    int updateByPrimaryKeySelective(reportconfiguration record);
+    int updateByPrimaryKeySelective(Reportconfiguration record);
 
-    int updateByPrimaryKey(reportconfiguration record);
+    int updateByPrimaryKey(Reportconfiguration record);
 }

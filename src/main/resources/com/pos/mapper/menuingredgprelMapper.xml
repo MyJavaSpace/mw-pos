@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.menuingredgprelMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.menuingredgprel" >
+<mapper namespace="com.pos.dao.MenuingredgprelMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Menuingredgprel" >
     <id column="fiItemCd" property="fiitemcd" jdbcType="INTEGER" />
     <id column="fiItemGroupId" property="fiitemgroupid" jdbcType="INTEGER" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
@@ -13,7 +13,7 @@
   <sql id="Base_Column_List" >
     fiItemCd, fiItemGroupId, fsShopGUID, fiStatus, fsUpdateTime, fsUpdateUserId, fsUpdateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.menuingredgprelKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.MenuingredgprelKey" >
     select 
     <include refid="Base_Column_List" />
     from tbmenuingredgprel
@@ -21,13 +21,13 @@
       and fiItemGroupId = #{fiitemgroupid,jdbcType=INTEGER}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.menuingredgprelKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.MenuingredgprelKey" >
     delete from tbmenuingredgprel
     where fiItemCd = #{fiitemcd,jdbcType=INTEGER}
       and fiItemGroupId = #{fiitemgroupid,jdbcType=INTEGER}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.menuingredgprel" >
+  <insert id="insert" parameterType="com.pos.entity.Menuingredgprel" >
     insert into tbmenuingredgprel (fiItemCd, fiItemGroupId, fsShopGUID, 
       fiStatus, fsUpdateTime, fsUpdateUserId, 
       fsUpdateUserName)
@@ -35,7 +35,7 @@
       #{fistatus,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
       #{fsupdateusername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.menuingredgprel" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Menuingredgprel" >
     insert into tbmenuingredgprel
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fiitemcd != null" >
@@ -84,7 +84,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.menuingredgprel" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Menuingredgprel" >
     update tbmenuingredgprel
     <set >
       <if test="fistatus != null" >
@@ -104,7 +104,7 @@
       and fiItemGroupId = #{fiitemgroupid,jdbcType=INTEGER}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.menuingredgprel" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Menuingredgprel" >
     update tbmenuingredgprel
     set fiStatus = #{fistatus,jdbcType=INTEGER},
       fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},

@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.expcls;
-import com.pos.entity.expclsKey;
+import com.pos.entity.Expcls;
+import com.pos.entity.ExpclsKey;
 
-public interface expclsMapper {
-    int deleteByPrimaryKey(expclsKey key);
+public interface ExpclsMapper {
+    int deleteByPrimaryKey(ExpclsKey key);
 
-    int insert(expcls record);
+    int insert(Expcls record);
 
-    int insertSelective(expcls record);
+    int insertSelective(Expcls record);
 
-    expcls selectByPrimaryKey(expclsKey key);
+    Expcls selectByPrimaryKey(ExpclsKey key);
 
-    int updateByPrimaryKeySelective(expcls record);
+    int updateByPrimaryKeySelective(Expcls record);
 
-    int updateByPrimaryKey(expcls record);
+    int updateByPrimaryKey(Expcls record);
 }

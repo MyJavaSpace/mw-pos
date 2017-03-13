@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class cookbookKey {
+public class CookbookKey {
     private String fsshopguid;
 
     private String fscookid;

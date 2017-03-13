@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.reportMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.report" >
+<mapper namespace="com.pos.dao.ReportMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Report" >
     <id column="fsReportId" property="fsreportid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsReportName" property="fsreportname" jdbcType="VARCHAR" />
@@ -18,19 +18,19 @@
     fsReportId, fsShopGUID, fsReportName, fsReportTempletId, fsNote, fsUpdateTime, fsUpdateUserId, 
     fsUpdateUserName, fiReportCls, fiStatus, fsFoodTradeList
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.reportKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.ReportKey" >
     select 
     <include refid="Base_Column_List" />
     from tbreport
     where fsReportId = #{fsreportid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.reportKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.ReportKey" >
     delete from tbreport
     where fsReportId = #{fsreportid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.report" >
+  <insert id="insert" parameterType="com.pos.entity.Report" >
     insert into tbreport (fsReportId, fsShopGUID, fsReportName, 
       fsReportTempletId, fsNote, fsUpdateTime, 
       fsUpdateUserId, fsUpdateUserName, fiReportCls, 
@@ -40,7 +40,7 @@
       #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fireportcls,jdbcType=INTEGER}, 
       #{fistatus,jdbcType=INTEGER}, #{fsfoodtradelist,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.report" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Report" >
     insert into tbreport
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsreportid != null" >
@@ -113,7 +113,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.report" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Report" >
     update tbreport
     <set >
       <if test="fsreportname != null" >
@@ -147,7 +147,7 @@
     where fsReportId = #{fsreportid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.report" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Report" >
     update tbreport
     set fsReportName = #{fsreportname,jdbcType=VARCHAR},
       fsReportTempletId = #{fsreporttempletid,jdbcType=VARCHAR},

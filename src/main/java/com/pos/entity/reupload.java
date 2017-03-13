@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class reupload {
+public class Reupload {
     private String fsguid;
 
     private String fscreattime;

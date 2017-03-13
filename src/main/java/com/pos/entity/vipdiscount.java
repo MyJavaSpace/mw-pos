@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class vipdiscount extends vipdiscountKey {
+public class Vipdiscount extends VipdiscountKey {
     private Integer fidiscounttype;
 
     private String fsdiscountid;

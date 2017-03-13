@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class hostver extends hostverKey {
+public class Hostver extends HostverKey {
     private String fsver;
 
     private String fsdatetime;

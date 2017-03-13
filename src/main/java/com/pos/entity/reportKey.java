@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class reportKey {
+public class ReportKey {
     private String fsreportid;
 
     private String fsshopguid;

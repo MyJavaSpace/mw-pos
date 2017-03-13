@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class sellreceiveKey {
+public class SellreceiveKey {
     private Integer fipaymenttype;
 
     private Integer fiseq;

@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.host;
-import com.pos.entity.hostKey;
+import com.pos.entity.Host;
+import com.pos.entity.HostKey;
 
-public interface hostMapper {
-    int deleteByPrimaryKey(hostKey key);
+public interface HostMapper {
+    int deleteByPrimaryKey(HostKey key);
 
-    int insert(host record);
+    int insert(Host record);
 
-    int insertSelective(host record);
+    int insertSelective(Host record);
 
-    host selectByPrimaryKey(hostKey key);
+    Host selectByPrimaryKey(HostKey key);
 
-    int updateByPrimaryKeySelective(host record);
+    int updateByPrimaryKeySelective(Host record);
 
-    int updateByPrimaryKey(host record);
+    int updateByPrimaryKey(Host record);
 }

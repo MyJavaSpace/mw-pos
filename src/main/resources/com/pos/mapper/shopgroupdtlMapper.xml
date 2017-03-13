@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.shopgroupdtlMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.shopgroupdtl" >
+<mapper namespace="com.pos.dao.ShopgroupdtlMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Shopgroupdtl" >
     <id column="fiShopGroupId" property="fishopgroupid" jdbcType="INTEGER" />
     <id column="fsCompanyGUID" property="fscompanyguid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
@@ -14,7 +14,7 @@
     fiShopGroupId, fsCompanyGUID, fsShopGUID, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
     fiStatus
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.shopgroupdtlKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.ShopgroupdtlKey" >
     select 
     <include refid="Base_Column_List" />
     from tbshopgroupdtl
@@ -22,13 +22,13 @@
       and fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.shopgroupdtlKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.ShopgroupdtlKey" >
     delete from tbshopgroupdtl
     where fiShopGroupId = #{fishopgroupid,jdbcType=INTEGER}
       and fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.shopgroupdtl" >
+  <insert id="insert" parameterType="com.pos.entity.Shopgroupdtl" >
     insert into tbshopgroupdtl (fiShopGroupId, fsCompanyGUID, fsShopGUID, 
       fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
       fiStatus)
@@ -36,7 +36,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
       #{fistatus,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.shopgroupdtl" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Shopgroupdtl" >
     insert into tbshopgroupdtl
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fishopgroupid != null" >
@@ -85,7 +85,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.shopgroupdtl" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Shopgroupdtl" >
     update tbshopgroupdtl
     <set >
       <if test="fsupdatetime != null" >
@@ -105,7 +105,7 @@
       and fsCompanyGUID = #{fscompanyguid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.shopgroupdtl" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Shopgroupdtl" >
     update tbshopgroupdtl
     set fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
       fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},

@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.menuitemmuldept;
-import com.pos.entity.menuitemmuldeptKey;
+import com.pos.entity.Menuitemmuldept;
+import com.pos.entity.MenuitemmuldeptKey;
 
-public interface menuitemmuldeptMapper {
-    int deleteByPrimaryKey(menuitemmuldeptKey key);
+public interface MenuitemmuldeptMapper {
+    int deleteByPrimaryKey(MenuitemmuldeptKey key);
 
-    int insert(menuitemmuldept record);
+    int insert(Menuitemmuldept record);
 
-    int insertSelective(menuitemmuldept record);
+    int insertSelective(Menuitemmuldept record);
 
-    menuitemmuldept selectByPrimaryKey(menuitemmuldeptKey key);
+    Menuitemmuldept selectByPrimaryKey(MenuitemmuldeptKey key);
 
-    int updateByPrimaryKeySelective(menuitemmuldept record);
+    int updateByPrimaryKeySelective(Menuitemmuldept record);
 
-    int updateByPrimaryKey(menuitemmuldept record);
+    int updateByPrimaryKey(Menuitemmuldept record);
 }

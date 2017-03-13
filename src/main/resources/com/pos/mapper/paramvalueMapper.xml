@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.paramvalueMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.paramvalue" >
+<mapper namespace="com.pos.dao.ParamvalueMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Paramvalue" >
     <id column="fsParamId" property="fsparamid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsParamValue" property="fsparamvalue" jdbcType="VARCHAR" />
@@ -24,19 +24,19 @@
     fsParamId, fsShopGUID, fsParamValue, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
     fsStr1, fsStr2, fsStr3, fsStr4, fsStr5, fiInt1, fiInt2, fiInt4, fiInt5, fiInt3, lver
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.paramvalueKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.ParamvalueKey" >
     select 
     <include refid="Base_Column_List" />
     from tbparamvalue
     where fsParamId = #{fsparamid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.paramvalueKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.ParamvalueKey" >
     delete from tbparamvalue
     where fsParamId = #{fsparamid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.paramvalue" >
+  <insert id="insert" parameterType="com.pos.entity.Paramvalue" >
     insert into tbparamvalue (fsParamId, fsShopGUID, fsParamValue, 
       fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
       fsStr1, fsStr2, fsStr3, 
@@ -50,7 +50,7 @@
       #{fiint2,jdbcType=INTEGER}, #{fiint4,jdbcType=INTEGER}, #{fiint5,jdbcType=INTEGER}, 
       #{fiint3,jdbcType=INTEGER}, #{lver,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.paramvalue" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Paramvalue" >
     insert into tbparamvalue
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsparamid != null" >
@@ -159,7 +159,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.paramvalue" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Paramvalue" >
     update tbparamvalue
     <set >
       <if test="fsparamvalue != null" >
@@ -211,7 +211,7 @@
     where fsParamId = #{fsparamid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.paramvalue" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Paramvalue" >
     update tbparamvalue
     set fsParamValue = #{fsparamvalue,jdbcType=VARCHAR},
       fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class printprojectgpKey {
+public class PrintprojectgpKey {
     private Integer figroupid;
 
     private String fsshopguid;

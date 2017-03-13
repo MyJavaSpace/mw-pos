@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.addrMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.addr" >
+<mapper namespace="com.pos.dao.AddrMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Addr" >
     <id column="fsCityId" property="fscityid" jdbcType="VARCHAR" />
     <id column="fsDistrictId" property="fsdistrictid" jdbcType="VARCHAR" />
     <id column="fsProvinceId" property="fsprovinceid" jdbcType="VARCHAR" />
@@ -14,7 +14,7 @@
     fsCityId, fsDistrictId, fsProvinceId, fsProvinceName, fsCityName, fsDistrictName, 
     fsPostal
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.addrKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.AddrKey" >
     select 
     <include refid="Base_Column_List" />
     from tbaddr
@@ -22,13 +22,13 @@
       and fsDistrictId = #{fsdistrictid,jdbcType=VARCHAR}
       and fsProvinceId = #{fsprovinceid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.addrKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.AddrKey" >
     delete from tbaddr
     where fsCityId = #{fscityid,jdbcType=VARCHAR}
       and fsDistrictId = #{fsdistrictid,jdbcType=VARCHAR}
       and fsProvinceId = #{fsprovinceid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.addr" >
+  <insert id="insert" parameterType="com.pos.entity.Addr" >
     insert into tbaddr (fsCityId, fsDistrictId, fsProvinceId, 
       fsProvinceName, fsCityName, fsDistrictName, 
       fsPostal)
@@ -36,7 +36,7 @@
       #{fsprovincename,jdbcType=VARCHAR}, #{fscityname,jdbcType=VARCHAR}, #{fsdistrictname,jdbcType=VARCHAR}, 
       #{fspostal,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.addr" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Addr" >
     insert into tbaddr
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fscityid != null" >
@@ -85,7 +85,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.addr" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Addr" >
     update tbaddr
     <set >
       <if test="fsprovincename != null" >
@@ -105,7 +105,7 @@
       and fsDistrictId = #{fsdistrictid,jdbcType=VARCHAR}
       and fsProvinceId = #{fsprovinceid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.addr" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Addr" >
     update tbaddr
     set fsProvinceName = #{fsprovincename,jdbcType=VARCHAR},
       fsCityName = #{fscityname,jdbcType=VARCHAR},

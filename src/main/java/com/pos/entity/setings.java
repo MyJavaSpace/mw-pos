@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class setings {
+public class Setings {
     private String fskey;
 
     private String fsvalue;

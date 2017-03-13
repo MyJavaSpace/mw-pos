@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class reportconfigurationKey {
+public class ReportconfigurationKey {
     private String fsconfigurationid;
 
     private String fsshopguid;

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class authoritydtl extends authoritydtlKey {
+public class Authoritydtl extends AuthoritydtlKey {
     private Integer fiusable;
 
     private String fsupdatetime;

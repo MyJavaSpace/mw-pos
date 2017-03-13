@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class bargainitemKey {
+public class BargainitemKey {
     private Integer fiitemcd;
 
     private Integer fiorderuintcd;

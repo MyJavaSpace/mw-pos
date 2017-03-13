@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.addr;
-import com.pos.entity.addrKey;
+import com.pos.entity.Addr;
+import com.pos.entity.AddrKey;
 
-public interface addrMapper {
-    int deleteByPrimaryKey(addrKey key);
+public interface AddrMapper {
+    int deleteByPrimaryKey(AddrKey key);
 
-    int insert(addr record);
+    int insert(Addr record);
 
-    int insertSelective(addr record);
+    int insertSelective(Addr record);
 
-    addr selectByPrimaryKey(addrKey key);
+    Addr selectByPrimaryKey(AddrKey key);
 
-    int updateByPrimaryKeySelective(addr record);
+    int updateByPrimaryKeySelective(Addr record);
 
-    int updateByPrimaryKey(addr record);
+    int updateByPrimaryKey(Addr record);
 }

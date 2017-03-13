@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.msection;
-import com.pos.entity.msectionKey;
+import com.pos.entity.Msection;
+import com.pos.entity.MsectionKey;
 
-public interface msectionMapper {
-    int deleteByPrimaryKey(msectionKey key);
+public interface MsectionMapper {
+    int deleteByPrimaryKey(MsectionKey key);
 
-    int insert(msection record);
+    int insert(Msection record);
 
-    int insertSelective(msection record);
+    int insertSelective(Msection record);
 
-    msection selectByPrimaryKey(msectionKey key);
+    Msection selectByPrimaryKey(MsectionKey key);
 
-    int updateByPrimaryKeySelective(msection record);
+    int updateByPrimaryKeySelective(Msection record);
 
-    int updateByPrimaryKey(msection record);
+    int updateByPrimaryKey(Msection record);
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.reporttempletMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.reporttemplet" >
+<mapper namespace="com.pos.dao.ReporttempletMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Reporttemplet" >
     <id column="fsReportId" property="fsreportid" jdbcType="VARCHAR" />
     <id column="fsReportTempletId" property="fsreporttempletid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
@@ -20,7 +20,7 @@
     fiPaperSize, fsRptFile, fiStatus, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
     fsFoodTradeId
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.reporttempletKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.ReporttempletKey" >
     select 
     <include refid="Base_Column_List" />
     from tbreporttemplet
@@ -28,13 +28,13 @@
       and fsReportTempletId = #{fsreporttempletid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.reporttempletKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.ReporttempletKey" >
     delete from tbreporttemplet
     where fsReportId = #{fsreportid,jdbcType=VARCHAR}
       and fsReportTempletId = #{fsreporttempletid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.reporttemplet" >
+  <insert id="insert" parameterType="com.pos.entity.Reporttemplet" >
     insert into tbreporttemplet (fsReportId, fsReportTempletId, fsShopGUID, 
       fsReportTempletName, fsReportTempletDesc, 
       fiPaperSize, fsRptFile, fiStatus, 
@@ -46,7 +46,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
       #{fsfoodtradeid,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.reporttemplet" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Reporttemplet" >
     insert into tbreporttemplet
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsreportid != null" >
@@ -125,7 +125,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.reporttemplet" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Reporttemplet" >
     update tbreporttemplet
     <set >
       <if test="fsreporttempletname != null" >
@@ -160,7 +160,7 @@
       and fsReportTempletId = #{fsreporttempletid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.reporttemplet" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Reporttemplet" >
     update tbreporttemplet
     set fsReportTempletName = #{fsreporttempletname,jdbcType=VARCHAR},
       fsReportTempletDesc = #{fsreporttempletdesc,jdbcType=VARCHAR},

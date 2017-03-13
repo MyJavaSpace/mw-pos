@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class menuingredgprelKey {
+public class MenuingredgprelKey {
     private Integer fiitemcd;
 
     private Integer fiitemgroupid;

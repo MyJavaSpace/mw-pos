@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.userrole;
-import com.pos.entity.userroleKey;
+import com.pos.entity.Userrole;
+import com.pos.entity.UserroleKey;
 
-public interface userroleMapper {
-    int deleteByPrimaryKey(userroleKey key);
+public interface UserroleMapper {
+    int deleteByPrimaryKey(UserroleKey key);
 
-    int insert(userrole record);
+    int insert(Userrole record);
 
-    int insertSelective(userrole record);
+    int insertSelective(Userrole record);
 
-    userrole selectByPrimaryKey(userroleKey key);
+    Userrole selectByPrimaryKey(UserroleKey key);
 
-    int updateByPrimaryKeySelective(userrole record);
+    int updateByPrimaryKeySelective(Userrole record);
 
-    int updateByPrimaryKey(userrole record);
+    int updateByPrimaryKey(Userrole record);
 }

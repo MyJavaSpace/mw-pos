@@ -1,9 +1,9 @@
 package com.pos.dao;
 
-import com.pos.entity.changetable;
+import com.pos.entity.Changetable;
 
-public interface changetableMapper {
-    int insert(changetable record);
+public interface ChangetableMapper {
+    int insert(Changetable record);
 
-    int insertSelective(changetable record);
+    int insertSelective(Changetable record);
 }

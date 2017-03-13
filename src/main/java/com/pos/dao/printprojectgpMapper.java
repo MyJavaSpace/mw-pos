@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.printprojectgp;
-import com.pos.entity.printprojectgpKey;
+import com.pos.entity.Printprojectgp;
+import com.pos.entity.PrintprojectgpKey;
 
-public interface printprojectgpMapper {
-    int deleteByPrimaryKey(printprojectgpKey key);
+public interface PrintprojectgpMapper {
+    int deleteByPrimaryKey(PrintprojectgpKey key);
 
-    int insert(printprojectgp record);
+    int insert(Printprojectgp record);
 
-    int insertSelective(printprojectgp record);
+    int insertSelective(Printprojectgp record);
 
-    printprojectgp selectByPrimaryKey(printprojectgpKey key);
+    Printprojectgp selectByPrimaryKey(PrintprojectgpKey key);
 
-    int updateByPrimaryKeySelective(printprojectgp record);
+    int updateByPrimaryKeySelective(Printprojectgp record);
 
-    int updateByPrimaryKey(printprojectgp record);
+    int updateByPrimaryKey(Printprojectgp record);
 }

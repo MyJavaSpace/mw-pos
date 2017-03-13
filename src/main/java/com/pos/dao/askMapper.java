@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.ask;
-import com.pos.entity.askKey;
+import com.pos.entity.Ask;
+import com.pos.entity.AskKey;
 
-public interface askMapper {
-    int deleteByPrimaryKey(askKey key);
+public interface AskMapper {
+    int deleteByPrimaryKey(AskKey key);
 
-    int insert(ask record);
+    int insert(Ask record);
 
-    int insertSelective(ask record);
+    int insertSelective(Ask record);
 
-    ask selectByPrimaryKey(askKey key);
+    Ask selectByPrimaryKey(AskKey key);
 
-    int updateByPrimaryKeySelective(ask record);
+    int updateByPrimaryKeySelective(Ask record);
 
-    int updateByPrimaryKey(ask record);
+    int updateByPrimaryKey(Ask record);
 }

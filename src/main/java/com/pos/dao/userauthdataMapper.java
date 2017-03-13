@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.userauthdata;
-import com.pos.entity.userauthdataKey;
+import com.pos.entity.Userauthdata;
+import com.pos.entity.UserauthdataKey;
 
-public interface userauthdataMapper {
-    int deleteByPrimaryKey(userauthdataKey key);
+public interface UserauthdataMapper {
+    int deleteByPrimaryKey(UserauthdataKey key);
 
-    int insert(userauthdata record);
+    int insert(Userauthdata record);
 
-    int insertSelective(userauthdata record);
+    int insertSelective(Userauthdata record);
 
-    userauthdata selectByPrimaryKey(userauthdataKey key);
+    Userauthdata selectByPrimaryKey(UserauthdataKey key);
 
-    int updateByPrimaryKeySelective(userauthdata record);
+    int updateByPrimaryKeySelective(Userauthdata record);
 
-    int updateByPrimaryKey(userauthdata record);
+    int updateByPrimaryKey(Userauthdata record);
 }

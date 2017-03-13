@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.shift;
-import com.pos.entity.shiftKey;
+import com.pos.entity.Shift;
+import com.pos.entity.ShiftKey;
 
-public interface shiftMapper {
-    int deleteByPrimaryKey(shiftKey key);
+public interface ShiftMapper {
+    int deleteByPrimaryKey(ShiftKey key);
 
-    int insert(shift record);
+    int insert(Shift record);
 
-    int insertSelective(shift record);
+    int insertSelective(Shift record);
 
-    shift selectByPrimaryKey(shiftKey key);
+    Shift selectByPrimaryKey(ShiftKey key);
 
-    int updateByPrimaryKeySelective(shift record);
+    int updateByPrimaryKeySelective(Shift record);
 
-    int updateByPrimaryKey(shift record);
+    int updateByPrimaryKey(Shift record);
 }

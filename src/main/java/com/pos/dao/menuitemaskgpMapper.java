@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.menuitemaskgp;
-import com.pos.entity.menuitemaskgpKey;
+import com.pos.entity.Menuitemaskgp;
+import com.pos.entity.MenuitemaskgpKey;
 
-public interface menuitemaskgpMapper {
-    int deleteByPrimaryKey(menuitemaskgpKey key);
+public interface MenuitemaskgpMapper {
+    int deleteByPrimaryKey(MenuitemaskgpKey key);
 
-    int insert(menuitemaskgp record);
+    int insert(Menuitemaskgp record);
 
-    int insertSelective(menuitemaskgp record);
+    int insertSelective(Menuitemaskgp record);
 
-    menuitemaskgp selectByPrimaryKey(menuitemaskgpKey key);
+    Menuitemaskgp selectByPrimaryKey(MenuitemaskgpKey key);
 
-    int updateByPrimaryKeySelective(menuitemaskgp record);
+    int updateByPrimaryKeySelective(Menuitemaskgp record);
 
-    int updateByPrimaryKey(menuitemaskgp record);
+    int updateByPrimaryKey(Menuitemaskgp record);
 }

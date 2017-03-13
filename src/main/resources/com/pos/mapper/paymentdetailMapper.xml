@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.paymentdetailMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.paymentdetail" >
+<mapper namespace="com.pos.dao.PaymentdetailMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Paymentdetail" >
     <id column="fsorderid" property="fsorderid" jdbcType="VARCHAR" />
     <id column="fsshopid" property="fsshopid" jdbcType="VARCHAR" />
     <result column="fisourceid" property="fisourceid" jdbcType="INTEGER" />
@@ -20,7 +20,7 @@
     <result column="fscreatetime" property="fscreatetime" jdbcType="VARCHAR" />
     <result column="fsupdatetime" property="fsupdatetime" jdbcType="VARCHAR" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.pos.entity.paymentdetailWithBLOBs" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.pos.entity.PaymentdetailWithBLOBs" extends="BaseResultMap" >
     <result column="fsshopname" property="fsshopname" jdbcType="LONGVARCHAR" />
     <result column="fsmanageshopid" property="fsmanageshopid" jdbcType="LONGVARCHAR" />
     <result column="fssourcename" property="fssourcename" jdbcType="LONGVARCHAR" />
@@ -35,7 +35,7 @@
   <sql id="Blob_Column_List" >
     fsshopname, fsmanageshopid, fssourcename, fsdesc, fsbanktype
   </sql>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="com.pos.entity.paymentdetailKey" >
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="com.pos.entity.PaymentdetailKey" >
     select 
     <include refid="Base_Column_List" />
     ,
@@ -44,12 +44,12 @@
     where fsorderid = #{fsorderid,jdbcType=VARCHAR}
       and fsshopid = #{fsshopid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.paymentdetailKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.PaymentdetailKey" >
     delete from tbpaymentdetail
     where fsorderid = #{fsorderid,jdbcType=VARCHAR}
       and fsshopid = #{fsshopid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.paymentdetailWithBLOBs" >
+  <insert id="insert" parameterType="com.pos.entity.PaymentdetailWithBLOBs" >
     insert into tbpaymentdetail (fsorderid, fsshopid, fisourceid, 
       fipaymenttypeid, fisettlementmerchant, 
       fitradetype, fipayee, fdamount, 
@@ -67,7 +67,7 @@
       #{fsshopname,jdbcType=LONGVARCHAR}, #{fsmanageshopid,jdbcType=LONGVARCHAR}, #{fssourcename,jdbcType=LONGVARCHAR}, 
       #{fsdesc,jdbcType=LONGVARCHAR}, #{fsbanktype,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.paymentdetailWithBLOBs" >
+  <insert id="insertSelective" parameterType="com.pos.entity.PaymentdetailWithBLOBs" >
     insert into tbpaymentdetail
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsorderid != null" >
@@ -206,7 +206,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.paymentdetailWithBLOBs" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.PaymentdetailWithBLOBs" >
     update tbpaymentdetail
     <set >
       <if test="fisourceid != null" >
@@ -273,7 +273,7 @@
     where fsorderid = #{fsorderid,jdbcType=VARCHAR}
       and fsshopid = #{fsshopid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pos.entity.paymentdetailWithBLOBs" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pos.entity.PaymentdetailWithBLOBs" >
     update tbpaymentdetail
     set fisourceid = #{fisourceid,jdbcType=INTEGER},
       fipaymenttypeid = #{fipaymenttypeid,jdbcType=INTEGER},
@@ -298,7 +298,7 @@
     where fsorderid = #{fsorderid,jdbcType=VARCHAR}
       and fsshopid = #{fsshopid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.paymentdetail" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Paymentdetail" >
     update tbpaymentdetail
     set fisourceid = #{fisourceid,jdbcType=INTEGER},
       fipaymenttypeid = #{fipaymenttypeid,jdbcType=INTEGER},

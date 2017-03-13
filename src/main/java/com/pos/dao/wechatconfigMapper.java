@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.wechatconfig;
+import com.pos.entity.Wechatconfig;
 
-public interface wechatconfigMapper {
+public interface WechatconfigMapper {
     int deleteByPrimaryKey(String fsid);
 
-    int insert(wechatconfig record);
+    int insert(Wechatconfig record);
 
-    int insertSelective(wechatconfig record);
+    int insertSelective(Wechatconfig record);
 
-    wechatconfig selectByPrimaryKey(String fsid);
+    Wechatconfig selectByPrimaryKey(String fsid);
 
-    int updateByPrimaryKeySelective(wechatconfig record);
+    int updateByPrimaryKeySelective(Wechatconfig record);
 
-    int updateByPrimaryKey(wechatconfig record);
+    int updateByPrimaryKey(Wechatconfig record);
 }

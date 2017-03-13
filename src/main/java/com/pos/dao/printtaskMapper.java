@@ -1,20 +1,20 @@
 package com.pos.dao;
 
-import com.pos.entity.printtask;
-import com.pos.entity.printtaskWithBLOBs;
+import com.pos.entity.Printtask;
+import com.pos.entity.PrinttaskWithBLOBs;
 
-public interface printtaskMapper {
+public interface PrinttaskMapper {
     int deleteByPrimaryKey(Integer fiprintno);
 
-    int insert(printtaskWithBLOBs record);
+    int insert(PrinttaskWithBLOBs record);
 
-    int insertSelective(printtaskWithBLOBs record);
+    int insertSelective(PrinttaskWithBLOBs record);
 
-    printtaskWithBLOBs selectByPrimaryKey(Integer fiprintno);
+    PrinttaskWithBLOBs selectByPrimaryKey(Integer fiprintno);
 
-    int updateByPrimaryKeySelective(printtaskWithBLOBs record);
+    int updateByPrimaryKeySelective(PrinttaskWithBLOBs record);
 
-    int updateByPrimaryKeyWithBLOBs(printtaskWithBLOBs record);
+    int updateByPrimaryKeyWithBLOBs(PrinttaskWithBLOBs record);
 
-    int updateByPrimaryKey(printtask record);
+    int updateByPrimaryKey(Printtask record);
 }

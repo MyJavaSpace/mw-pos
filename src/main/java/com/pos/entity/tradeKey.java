@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class tradeKey {
+public class TradeKey {
     private String fscompanyguid;
 
     private String fstradeid;

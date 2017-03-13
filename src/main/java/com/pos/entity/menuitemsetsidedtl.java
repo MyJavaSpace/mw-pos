@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class menuitemsetsidedtl extends menuitemsetsidedtlKey {
+public class Menuitemsetsidedtl extends MenuitemsetsidedtlKey {
     private BigDecimal fdbargainprice;
 
     private BigDecimal fdsaleqty;

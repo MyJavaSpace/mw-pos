@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class bargainitem extends bargainitemKey {
+public class Bargainitem extends BargainitemKey {
     private BigDecimal fdbargainprice;
 
     private String fsupdatetime;

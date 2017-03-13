@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.printer;
-import com.pos.entity.printerKey;
+import com.pos.entity.Printer;
+import com.pos.entity.PrinterKey;
 
-public interface printerMapper {
-    int deleteByPrimaryKey(printerKey key);
+public interface PrinterMapper {
+    int deleteByPrimaryKey(PrinterKey key);
 
-    int insert(printer record);
+    int insert(Printer record);
 
-    int insertSelective(printer record);
+    int insertSelective(Printer record);
 
-    printer selectByPrimaryKey(printerKey key);
+    Printer selectByPrimaryKey(PrinterKey key);
 
-    int updateByPrimaryKeySelective(printer record);
+    int updateByPrimaryKeySelective(Printer record);
 
-    int updateByPrimaryKey(printer record);
+    int updateByPrimaryKey(Printer record);
 }

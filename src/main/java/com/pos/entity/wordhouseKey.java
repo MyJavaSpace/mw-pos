@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class wordhouseKey {
+public class WordhouseKey {
     private Integer fiid;
 
     private String fsshopguid;

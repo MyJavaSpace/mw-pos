@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class askgpKey {
+public class AskgpKey {
     private String fsaskgpid;
 
     private String fsshopguid;

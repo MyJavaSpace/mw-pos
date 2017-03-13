@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class usershopauthority extends usershopauthorityKey {
+public class Usershopauthority extends UsershopauthorityKey {
     private Integer fsenabled;
 
     private String fsupdatetime;

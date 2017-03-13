@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class softtype extends softtypeKey {
+public class Softtype extends SofttypeKey {
     private Integer fistatus;
 
     private String fsnote;

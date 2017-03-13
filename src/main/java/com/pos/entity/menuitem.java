@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class menuitem extends menuitemKey {
+public class Menuitem extends MenuitemKey {
     private String fsitemid;
 
     private String fsitemname;

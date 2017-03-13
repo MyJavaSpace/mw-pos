@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.prog;
+import com.pos.entity.Prog;
 
-public interface progMapper {
+public interface ProgMapper {
     int deleteByPrimaryKey(String fsprogid);
 
-    int insert(prog record);
+    int insert(Prog record);
 
-    int insertSelective(prog record);
+    int insertSelective(Prog record);
 
-    prog selectByPrimaryKey(String fsprogid);
+    Prog selectByPrimaryKey(String fsprogid);
 
-    int updateByPrimaryKeySelective(prog record);
+    int updateByPrimaryKeySelective(Prog record);
 
-    int updateByPrimaryKey(prog record);
+    int updateByPrimaryKey(Prog record);
 }

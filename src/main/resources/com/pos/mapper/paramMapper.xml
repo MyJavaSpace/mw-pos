@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.paramMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.param" >
+<mapper namespace="com.pos.dao.ParamMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Param" >
     <id column="fsParamId" property="fsparamid" jdbcType="VARCHAR" />
     <result column="fsParamName" property="fsparamname" jdbcType="VARCHAR" />
     <result column="fsNote" property="fsnote" jdbcType="VARCHAR" />
@@ -22,7 +22,7 @@
     delete from tbparam
     where fsParamId = #{fsparamid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.param" >
+  <insert id="insert" parameterType="com.pos.entity.Param" >
     insert into tbparam (fsParamId, fsParamName, fsNote, 
       fsUpdateTime, fiParamCls, fsFoodTradeList
       )
@@ -30,7 +30,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fiparamcls,jdbcType=INTEGER}, #{fsfoodtradelist,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.param" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Param" >
     insert into tbparam
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsparamid != null" >
@@ -73,7 +73,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.param" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Param" >
     update tbparam
     <set >
       <if test="fsparamname != null" >
@@ -94,7 +94,7 @@
     </set>
     where fsParamId = #{fsparamid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.param" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Param" >
     update tbparam
     set fsParamName = #{fsparamname,jdbcType=VARCHAR},
       fsNote = #{fsnote,jdbcType=VARCHAR},

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class askKey {
+public class AskKey {
     private Integer fiid;
 
     private String fsshopguid;

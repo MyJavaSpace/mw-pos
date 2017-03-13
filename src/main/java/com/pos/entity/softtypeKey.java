@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class softtypeKey {
+public class SofttypeKey {
     private Long fiid;
 
     private String fsname;

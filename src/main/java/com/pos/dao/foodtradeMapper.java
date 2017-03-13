@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.foodtrade;
+import com.pos.entity.Foodtrade;
 
-public interface foodtradeMapper {
+public interface FoodtradeMapper {
     int deleteByPrimaryKey(String fsfoodtradeid);
 
-    int insert(foodtrade record);
+    int insert(Foodtrade record);
 
-    int insertSelective(foodtrade record);
+    int insertSelective(Foodtrade record);
 
-    foodtrade selectByPrimaryKey(String fsfoodtradeid);
+    Foodtrade selectByPrimaryKey(String fsfoodtradeid);
 
-    int updateByPrimaryKeySelective(foodtrade record);
+    int updateByPrimaryKeySelective(Foodtrade record);
 
-    int updateByPrimaryKey(foodtrade record);
+    int updateByPrimaryKey(Foodtrade record);
 }

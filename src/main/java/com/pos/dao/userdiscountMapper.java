@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.userdiscount;
-import com.pos.entity.userdiscountKey;
+import com.pos.entity.Userdiscount;
+import com.pos.entity.UserdiscountKey;
 
-public interface userdiscountMapper {
-    int deleteByPrimaryKey(userdiscountKey key);
+public interface UserdiscountMapper {
+    int deleteByPrimaryKey(UserdiscountKey key);
 
-    int insert(userdiscount record);
+    int insert(Userdiscount record);
 
-    int insertSelective(userdiscount record);
+    int insertSelective(Userdiscount record);
 
-    userdiscount selectByPrimaryKey(userdiscountKey key);
+    Userdiscount selectByPrimaryKey(UserdiscountKey key);
 
-    int updateByPrimaryKeySelective(userdiscount record);
+    int updateByPrimaryKeySelective(Userdiscount record);
 
-    int updateByPrimaryKey(userdiscount record);
+    int updateByPrimaryKey(Userdiscount record);
 }

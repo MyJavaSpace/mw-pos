@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class expcls extends expclsKey {
+public class Expcls extends ExpclsKey {
     private String fsexpclsname;
 
     private Integer fistatus;

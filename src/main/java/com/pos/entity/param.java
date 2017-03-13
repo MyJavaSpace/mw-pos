@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class param {
+public class Param {
     private String fsparamid;
 
     private String fsparamname;

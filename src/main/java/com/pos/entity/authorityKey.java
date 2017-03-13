@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class authorityKey {
+public class AuthorityKey {
     private String fsprogid;
 
     private String fsprojid;

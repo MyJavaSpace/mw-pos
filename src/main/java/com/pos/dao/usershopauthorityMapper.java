@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.usershopauthority;
-import com.pos.entity.usershopauthorityKey;
+import com.pos.entity.Usershopauthority;
+import com.pos.entity.UsershopauthorityKey;
 
-public interface usershopauthorityMapper {
-    int deleteByPrimaryKey(usershopauthorityKey key);
+public interface UsershopauthorityMapper {
+    int deleteByPrimaryKey(UsershopauthorityKey key);
 
-    int insert(usershopauthority record);
+    int insert(Usershopauthority record);
 
-    int insertSelective(usershopauthority record);
+    int insertSelective(Usershopauthority record);
 
-    usershopauthority selectByPrimaryKey(usershopauthorityKey key);
+    Usershopauthority selectByPrimaryKey(UsershopauthorityKey key);
 
-    int updateByPrimaryKeySelective(usershopauthority record);
+    int updateByPrimaryKeySelective(Usershopauthority record);
 
-    int updateByPrimaryKey(usershopauthority record);
+    int updateByPrimaryKey(Usershopauthority record);
 }

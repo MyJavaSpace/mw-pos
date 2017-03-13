@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class dept extends deptKey {
+public class Dept extends DeptKey {
     private String fsdeptname;
 
     private Integer fideptcls;

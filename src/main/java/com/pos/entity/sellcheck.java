@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class sellcheck extends sellcheckKey {
+public class Sellcheck extends SellcheckKey {
     private String fschecktime;
 
     private String fsshiftid;

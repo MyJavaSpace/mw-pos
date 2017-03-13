@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class sellhurry extends sellhurryKey {
+public class Sellhurry extends SellhurryKey {
     private String fscreatetime;
 
     private String fscreateusername;

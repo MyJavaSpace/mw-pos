@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class menuitemmuldept extends menuitemmuldeptKey {
+public class Menuitemmuldept extends MenuitemmuldeptKey {
     private Integer fiitemcd;
 
     private String fsdeptid;

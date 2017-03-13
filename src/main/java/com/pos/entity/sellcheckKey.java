@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class sellcheckKey {
+public class SellcheckKey {
     private String fscheckbillno;
 
     private String fssellno;

@@ -1,20 +1,20 @@
 package com.pos.dao;
 
-import com.pos.entity.shopgroup;
-import com.pos.entity.shopgroupWithBLOBs;
+import com.pos.entity.Shopgroup;
+import com.pos.entity.ShopgroupWithBLOBs;
 
-public interface shopgroupMapper {
+public interface ShopgroupMapper {
     int deleteByPrimaryKey(Integer fishopgroupid);
 
-    int insert(shopgroupWithBLOBs record);
+    int insert(ShopgroupWithBLOBs record);
 
-    int insertSelective(shopgroupWithBLOBs record);
+    int insertSelective(ShopgroupWithBLOBs record);
 
-    shopgroupWithBLOBs selectByPrimaryKey(Integer fishopgroupid);
+    ShopgroupWithBLOBs selectByPrimaryKey(Integer fishopgroupid);
 
-    int updateByPrimaryKeySelective(shopgroupWithBLOBs record);
+    int updateByPrimaryKeySelective(ShopgroupWithBLOBs record);
 
-    int updateByPrimaryKeyWithBLOBs(shopgroupWithBLOBs record);
+    int updateByPrimaryKeyWithBLOBs(ShopgroupWithBLOBs record);
 
-    int updateByPrimaryKey(shopgroup record);
+    int updateByPrimaryKey(Shopgroup record);
 }

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class applicationKey {
+public class ApplicationKey {
     private String fsprogid;
 
     private String fsprojid;

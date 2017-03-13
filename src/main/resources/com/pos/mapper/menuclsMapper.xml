@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.menuclsMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.menucls" >
+<mapper namespace="com.pos.dao.MenuclsMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Menucls" >
     <id column="fsMenuClsId" property="fsmenuclsid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsMenuClsName" property="fsmenuclsname" jdbcType="VARCHAR" />
@@ -24,19 +24,19 @@
     fiMenuClsKind, fiSortOrder, fiStatus, fiDataKind, fiLevel, fiDtlLvl, fsMenuClsId_P, 
     fsUpdateTime, fsUpdateUserId, fsUpdateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.menuclsKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.MenuclsKey" >
     select 
     <include refid="Base_Column_List" />
     from tbmenucls
     where fsMenuClsId = #{fsmenuclsid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.menuclsKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.MenuclsKey" >
     delete from tbmenucls
     where fsMenuClsId = #{fsmenuclsid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.menucls" >
+  <insert id="insert" parameterType="com.pos.entity.Menucls" >
     insert into tbmenucls (fsMenuClsId, fsShopGUID, fsMenuClsName, 
       fsMenuClsFullName, fsExpClsId, fsRevenueTypeId, 
       fiMenuClsKind, fiSortOrder, fiStatus, 
@@ -50,7 +50,7 @@
       #{fsmenuclsidP,jdbcType=VARCHAR}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
       #{fsupdateusername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.menucls" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Menucls" >
     insert into tbmenucls
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsmenuclsid != null" >
@@ -153,7 +153,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.menucls" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Menucls" >
     update tbmenucls
     <set >
       <if test="fsmenuclsname != null" >
@@ -202,7 +202,7 @@
     where fsMenuClsId = #{fsmenuclsid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.menucls" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Menucls" >
     update tbmenucls
     set fsMenuClsName = #{fsmenuclsname,jdbcType=VARCHAR},
       fsMenuClsFullName = #{fsmenuclsfullname,jdbcType=VARCHAR},

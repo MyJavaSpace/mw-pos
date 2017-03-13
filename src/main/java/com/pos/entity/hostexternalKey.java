@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class hostexternalKey {
+public class HostexternalKey {
     private Integer ficls;
 
     private String fshostid;

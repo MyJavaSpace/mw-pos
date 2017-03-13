@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.useroperationlog;
+import com.pos.entity.Useroperationlog;
 
-public interface useroperationlogMapper {
+public interface UseroperationlogMapper {
     int deleteByPrimaryKey(String id);
 
-    int insert(useroperationlog record);
+    int insert(Useroperationlog record);
 
-    int insertSelective(useroperationlog record);
+    int insertSelective(Useroperationlog record);
 
-    useroperationlog selectByPrimaryKey(String id);
+    Useroperationlog selectByPrimaryKey(String id);
 
-    int updateByPrimaryKeySelective(useroperationlog record);
+    int updateByPrimaryKeySelective(Useroperationlog record);
 
-    int updateByPrimaryKey(useroperationlog record);
+    int updateByPrimaryKey(Useroperationlog record);
 }

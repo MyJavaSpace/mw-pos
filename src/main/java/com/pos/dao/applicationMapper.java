@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.application;
-import com.pos.entity.applicationKey;
+import com.pos.entity.Application;
+import com.pos.entity.ApplicationKey;
 
-public interface applicationMapper {
-    int deleteByPrimaryKey(applicationKey key);
+public interface ApplicationMapper {
+    int deleteByPrimaryKey(ApplicationKey key);
 
-    int insert(application record);
+    int insert(Application record);
 
-    int insertSelective(application record);
+    int insertSelective(Application record);
 
-    application selectByPrimaryKey(applicationKey key);
+    Application selectByPrimaryKey(ApplicationKey key);
 
-    int updateByPrimaryKeySelective(application record);
+    int updateByPrimaryKeySelective(Application record);
 
-    int updateByPrimaryKey(application record);
+    int updateByPrimaryKey(Application record);
 }

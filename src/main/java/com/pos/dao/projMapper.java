@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.proj;
+import com.pos.entity.Proj;
 
-public interface projMapper {
+public interface ProjMapper {
     int deleteByPrimaryKey(String fsprojid);
 
-    int insert(proj record);
+    int insert(Proj record);
 
-    int insertSelective(proj record);
+    int insertSelective(Proj record);
 
-    proj selectByPrimaryKey(String fsprojid);
+    Proj selectByPrimaryKey(String fsprojid);
 
-    int updateByPrimaryKeySelective(proj record);
+    int updateByPrimaryKeySelective(Proj record);
 
-    int updateByPrimaryKey(proj record);
+    int updateByPrimaryKey(Proj record);
 }

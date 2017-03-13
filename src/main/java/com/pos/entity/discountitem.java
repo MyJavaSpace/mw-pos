@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class discountitem extends discountitemKey {
+public class Discountitem extends DiscountitemKey {
     private Integer fidiscountrate;
 
     private String fsupdatetime;

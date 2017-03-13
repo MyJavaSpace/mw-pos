@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class tableinfo extends tableinfoKey {
+public class Tableinfo extends TableinfoKey {
     private Integer fisortorder;
 
     private String fsfoodtradelist;

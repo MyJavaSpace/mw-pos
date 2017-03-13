@@ -1,21 +1,21 @@
 package com.pos.dao;
 
-import com.pos.entity.sellorderitem;
-import com.pos.entity.sellorderitemKey;
-import com.pos.entity.sellorderitemWithBLOBs;
+import com.pos.entity.Sellorderitem;
+import com.pos.entity.SellorderitemKey;
+import com.pos.entity.SellorderitemWithBLOBs;
 
-public interface sellorderitemMapper {
-    int deleteByPrimaryKey(sellorderitemKey key);
+public interface SellorderitemMapper {
+    int deleteByPrimaryKey(SellorderitemKey key);
 
-    int insert(sellorderitemWithBLOBs record);
+    int insert(SellorderitemWithBLOBs record);
 
-    int insertSelective(sellorderitemWithBLOBs record);
+    int insertSelective(SellorderitemWithBLOBs record);
 
-    sellorderitemWithBLOBs selectByPrimaryKey(sellorderitemKey key);
+    SellorderitemWithBLOBs selectByPrimaryKey(SellorderitemKey key);
 
-    int updateByPrimaryKeySelective(sellorderitemWithBLOBs record);
+    int updateByPrimaryKeySelective(SellorderitemWithBLOBs record);
 
-    int updateByPrimaryKeyWithBLOBs(sellorderitemWithBLOBs record);
+    int updateByPrimaryKeyWithBLOBs(SellorderitemWithBLOBs record);
 
-    int updateByPrimaryKey(sellorderitem record);
+    int updateByPrimaryKey(Sellorderitem record);
 }

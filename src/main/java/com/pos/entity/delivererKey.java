@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class delivererKey {
+public class DelivererKey {
     private String fsdelivererid;
 
     private String fsshopguid;

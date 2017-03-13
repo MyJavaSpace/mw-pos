@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.openparamMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.openparam" >
+<mapper namespace="com.pos.dao.OpenparamMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Openparam" >
     <id column="fiId" property="fiid" jdbcType="INTEGER" />
     <result column="fsMAreaId" property="fsmareaid" jdbcType="VARCHAR" />
     <result column="fiOrderUintCd" property="fiorderuintcd" jdbcType="INTEGER" />
@@ -29,7 +29,7 @@
     delete from tbopenparam
     where fiId = #{fiid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.openparam" >
+  <insert id="insert" parameterType="com.pos.entity.Openparam" >
     insert into tbopenparam (fiId, fsMAreaId, fiOrderUintCd, 
       fiItemCd, fiNumberType, fiSaleQty, 
       fiIsGift, fiStatus, fsShopGUID, 
@@ -41,7 +41,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.openparam" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Openparam" >
     insert into tbopenparam
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fiid != null" >
@@ -120,7 +120,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.openparam" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Openparam" >
     update tbopenparam
     <set >
       <if test="fsmareaid != null" >
@@ -159,7 +159,7 @@
     </set>
     where fiId = #{fiid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.openparam" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Openparam" >
     update tbopenparam
     set fsMAreaId = #{fsmareaid,jdbcType=VARCHAR},
       fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER},

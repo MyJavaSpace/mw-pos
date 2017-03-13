@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class progdtl extends progdtlKey {
+public class Progdtl extends ProgdtlKey {
     private String fsproglname;
 
     private Integer fisortorder;

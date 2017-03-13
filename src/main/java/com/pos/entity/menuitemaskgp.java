@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class menuitemaskgp extends menuitemaskgpKey {
+public class Menuitemaskgp extends MenuitemaskgpKey {
     private String fsupdatetime;
 
     private String fsupdateuserid;

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class mtableste extends mtablesteKey {
+public class Mtableste extends MtablesteKey {
     private String fsmtablestename;
 
     private String fscolor;

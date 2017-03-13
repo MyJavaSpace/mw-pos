@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class billsource extends billsourceKey {
+public class Billsource extends BillsourceKey {
     private String fsbillsourcename;
 
     private Integer fistatus;

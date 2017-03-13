@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class mtable extends mtableKey {
+public class Mtable extends MtableKey {
     private String fsmtablename;
 
     private String fsmtableclsid;

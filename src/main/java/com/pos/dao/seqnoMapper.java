@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.seqno;
-import com.pos.entity.seqnoKey;
+import com.pos.entity.Seqno;
+import com.pos.entity.SeqnoKey;
 
-public interface seqnoMapper {
-    int deleteByPrimaryKey(seqnoKey key);
+public interface SeqnoMapper {
+    int deleteByPrimaryKey(SeqnoKey key);
 
-    int insert(seqno record);
+    int insert(Seqno record);
 
-    int insertSelective(seqno record);
+    int insertSelective(Seqno record);
 
-    seqno selectByPrimaryKey(seqnoKey key);
+    Seqno selectByPrimaryKey(SeqnoKey key);
 
-    int updateByPrimaryKeySelective(seqno record);
+    int updateByPrimaryKeySelective(Seqno record);
 
-    int updateByPrimaryKey(seqno record);
+    int updateByPrimaryKey(Seqno record);
 }

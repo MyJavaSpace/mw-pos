@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.shop;
+import com.pos.entity.Shop;
 
-public interface shopMapper {
+public interface ShopMapper {
     int deleteByPrimaryKey(String fsshopguid);
 
-    int insert(shop record);
+    int insert(Shop record);
 
-    int insertSelective(shop record);
+    int insertSelective(Shop record);
 
-    shop selectByPrimaryKey(String fsshopguid);
+    Shop selectByPrimaryKey(String fsshopguid);
 
-    int updateByPrimaryKeySelective(shop record);
+    int updateByPrimaryKeySelective(Shop record);
 
-    int updateByPrimaryKey(shop record);
+    int updateByPrimaryKey(Shop record);
 }

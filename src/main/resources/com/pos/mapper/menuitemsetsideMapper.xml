@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.menuitemsetsideMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.menuitemsetside" >
+<mapper namespace="com.pos.dao.MenuitemsetsideMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Menuitemsetside" >
     <id column="fiItemCd_M" property="fiitemcdM" jdbcType="INTEGER" />
     <id column="fiSetFoodCd" property="fisetfoodcd" jdbcType="INTEGER" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
@@ -21,7 +21,7 @@
     fiIsRequired, fiSortOrder, fiStatus, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
     fiSetFoodType
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.menuitemsetsideKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.MenuitemsetsideKey" >
     select 
     <include refid="Base_Column_List" />
     from tbmenuitemsetside
@@ -29,13 +29,13 @@
       and fiSetFoodCd = #{fisetfoodcd,jdbcType=INTEGER}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.menuitemsetsideKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.MenuitemsetsideKey" >
     delete from tbmenuitemsetside
     where fiItemCd_M = #{fiitemcdM,jdbcType=INTEGER}
       and fiSetFoodCd = #{fisetfoodcd,jdbcType=INTEGER}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.menuitemsetside" >
+  <insert id="insert" parameterType="com.pos.entity.Menuitemsetside" >
     insert into tbmenuitemsetside (fiItemCd_M, fiSetFoodCd, fsShopGUID, 
       fsSetFoodName, fsSetFoodName2, fiSetFoodQty, 
       fiIsRequired, fiSortOrder, fiStatus, 
@@ -47,7 +47,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
       #{fisetfoodtype,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.menuitemsetside" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Menuitemsetside" >
     insert into tbmenuitemsetside
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fiitemcdM != null" >
@@ -132,7 +132,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.menuitemsetside" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Menuitemsetside" >
     update tbmenuitemsetside
     <set >
       <if test="fssetfoodname != null" >
@@ -170,7 +170,7 @@
       and fiSetFoodCd = #{fisetfoodcd,jdbcType=INTEGER}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.menuitemsetside" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Menuitemsetside" >
     update tbmenuitemsetside
     set fsSetFoodName = #{fssetfoodname,jdbcType=VARCHAR},
       fsSetFoodName2 = #{fssetfoodname2,jdbcType=VARCHAR},

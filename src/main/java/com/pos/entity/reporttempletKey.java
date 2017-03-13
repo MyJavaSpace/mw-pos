@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class reporttempletKey {
+public class ReporttempletKey {
     private String fsreportid;
 
     private String fsreporttempletid;

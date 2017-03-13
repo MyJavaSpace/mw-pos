@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class discount extends discountKey {
+public class Discount extends DiscountKey {
     private String fsdiscountname;
 
     private Integer fidiscountrate;

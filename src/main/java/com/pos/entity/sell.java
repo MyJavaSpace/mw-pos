@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class sell extends sellKey {
+public class Sell extends SellKey {
     private String fsselldate;
 
     private String fsselltime;

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class useroperationlog {
+public class Useroperationlog {
     private String id;
 
     private String fsshopguid;

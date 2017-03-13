@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class paramvalue extends paramvalueKey {
+public class Paramvalue extends ParamvalueKey {
     private String fsparamvalue;
 
     private String fsupdatetime;

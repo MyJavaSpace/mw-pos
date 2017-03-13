@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.openparam;
+import com.pos.entity.Openparam;
 
-public interface openparamMapper {
+public interface OpenparamMapper {
     int deleteByPrimaryKey(Integer fiid);
 
-    int insert(openparam record);
+    int insert(Openparam record);
 
-    int insertSelective(openparam record);
+    int insertSelective(Openparam record);
 
-    openparam selectByPrimaryKey(Integer fiid);
+    Openparam selectByPrimaryKey(Integer fiid);
 
-    int updateByPrimaryKeySelective(openparam record);
+    int updateByPrimaryKeySelective(Openparam record);
 
-    int updateByPrimaryKey(openparam record);
+    int updateByPrimaryKey(Openparam record);
 }

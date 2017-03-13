@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.role;
-import com.pos.entity.roleKey;
+import com.pos.entity.Role;
+import com.pos.entity.RoleKey;
 
-public interface roleMapper {
-    int deleteByPrimaryKey(roleKey key);
+public interface RoleMapper {
+    int deleteByPrimaryKey(RoleKey key);
 
-    int insert(role record);
+    int insert(Role record);
 
-    int insertSelective(role record);
+    int insertSelective(Role record);
 
-    role selectByPrimaryKey(roleKey key);
+    Role selectByPrimaryKey(RoleKey key);
 
-    int updateByPrimaryKeySelective(role record);
+    int updateByPrimaryKeySelective(Role record);
 
-    int updateByPrimaryKey(role record);
+    int updateByPrimaryKey(Role record);
 }

@@ -1,20 +1,20 @@
 package com.pos.dao;
 
-import com.pos.entity.sellreceive;
-import com.pos.entity.sellreceiveKey;
+import com.pos.entity.Sellreceive;
+import com.pos.entity.SellreceiveKey;
 
-public interface sellreceiveMapper {
-    int deleteByPrimaryKey(sellreceiveKey key);
+public interface SellreceiveMapper {
+    int deleteByPrimaryKey(SellreceiveKey key);
 
-    int insert(sellreceive record);
+    int insert(Sellreceive record);
 
-    int insertSelective(sellreceive record);
+    int insertSelective(Sellreceive record);
 
-    sellreceive selectByPrimaryKey(sellreceiveKey key);
+    Sellreceive selectByPrimaryKey(SellreceiveKey key);
 
-    int updateByPrimaryKeySelective(sellreceive record);
+    int updateByPrimaryKeySelective(Sellreceive record);
 
-    int updateByPrimaryKeyWithBLOBs(sellreceive record);
+    int updateByPrimaryKeyWithBLOBs(Sellreceive record);
 
-    int updateByPrimaryKey(sellreceive record);
+    int updateByPrimaryKey(Sellreceive record);
 }

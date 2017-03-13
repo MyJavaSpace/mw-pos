@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class cookbookmenu extends cookbookmenuKey {
+public class Cookbookmenu extends CookbookmenuKey {
     private Integer fistatus;
 
     private String fsupdatetime;

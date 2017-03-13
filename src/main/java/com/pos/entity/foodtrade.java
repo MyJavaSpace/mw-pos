@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class foodtrade {
+public class Foodtrade {
     private String fsfoodtradeid;
 
     private String fsfoodtradename;

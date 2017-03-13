@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.bargainitemMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.bargainitem" >
+<mapper namespace="com.pos.dao.BargainitemMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Bargainitem" >
     <id column="fiItemCd" property="fiitemcd" jdbcType="INTEGER" />
     <id column="fiOrderUintCd" property="fiorderuintcd" jdbcType="INTEGER" />
     <id column="fsBargainId" property="fsbargainid" jdbcType="VARCHAR" />
@@ -16,7 +16,7 @@
     fiItemCd, fiOrderUintCd, fsBargainId, fsShopGUID, fdBargainPrice, fsUpdateTime, fsUpdateUserId, 
     fsUpdateUserName, fiStatus
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.bargainitemKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.BargainitemKey" >
     select 
     <include refid="Base_Column_List" />
     from tbbargainitem
@@ -25,14 +25,14 @@
       and fsBargainId = #{fsbargainid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.bargainitemKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.BargainitemKey" >
     delete from tbbargainitem
     where fiItemCd = #{fiitemcd,jdbcType=INTEGER}
       and fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
       and fsBargainId = #{fsbargainid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.bargainitem" >
+  <insert id="insert" parameterType="com.pos.entity.Bargainitem" >
     insert into tbbargainitem (fiItemCd, fiOrderUintCd, fsBargainId, 
       fsShopGUID, fdBargainPrice, fsUpdateTime, 
       fsUpdateUserId, fsUpdateUserName, fiStatus
@@ -42,7 +42,7 @@
       #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.bargainitem" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Bargainitem" >
     insert into tbbargainitem
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fiitemcd != null" >
@@ -103,7 +103,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.bargainitem" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Bargainitem" >
     update tbbargainitem
     <set >
       <if test="fdbargainprice != null" >
@@ -127,7 +127,7 @@
       and fsBargainId = #{fsbargainid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.bargainitem" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Bargainitem" >
     update tbbargainitem
     set fdBargainPrice = #{fdbargainprice,jdbcType=DECIMAL},
       fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},

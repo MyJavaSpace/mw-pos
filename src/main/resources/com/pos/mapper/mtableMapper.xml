@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.mtableMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.mtable" >
+<mapper namespace="com.pos.dao.MtableMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Mtable" >
     <id column="fsMTableId" property="fsmtableid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsMTableName" property="fsmtablename" jdbcType="VARCHAR" />
@@ -46,19 +46,19 @@
     fsCheckHsTime, fiChangeJob, fsChangeUserName, fsChangeHsTime, fsUpdateTime, fsUpdateUserId, 
     fsUpdateUserName, fiSortOrder
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.mtableKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.MtableKey" >
     select 
     <include refid="Base_Column_List" />
     from tbmtable
     where fsMTableId = #{fsmtableid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.mtableKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.MtableKey" >
     delete from tbmtable
     where fsMTableId = #{fsmtableid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.mtable" >
+  <insert id="insert" parameterType="com.pos.entity.Mtable" >
     insert into tbmtable (fsMTableId, fsShopGUID, fsMTableName, 
       fsMTableClsId, fdMTablePrice, fsMAreaId, 
       fiSeats, fsSellNo, fsMTableSteId, 
@@ -84,7 +84,7 @@
       #{fschangehstime,jdbcType=VARCHAR}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
       #{fsupdateusername,jdbcType=VARCHAR}, #{fisortorder,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.mtable" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Mtable" >
     insert into tbmtable
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsmtableid != null" >
@@ -301,7 +301,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.mtable" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Mtable" >
     update tbmtable
     <set >
       <if test="fsmtablename != null" >
@@ -407,7 +407,7 @@
     where fsMTableId = #{fsmtableid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.mtable" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Mtable" >
     update tbmtable
     set fsMTableName = #{fsmtablename,jdbcType=VARCHAR},
       fsMTableClsId = #{fsmtableclsid,jdbcType=VARCHAR},

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class custtypeKey {
+public class CusttypeKey {
     private String fscompanyguid;
 
     private String fscusttypeid;

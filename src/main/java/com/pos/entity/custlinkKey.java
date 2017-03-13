@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class custlinkKey {
+public class CustlinkKey {
     private String fscustguid;
 
     private String fslinkcustguid;

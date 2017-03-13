@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class filever {
+public class Filever {
     private String fsfilename;
 
     private String fsver;

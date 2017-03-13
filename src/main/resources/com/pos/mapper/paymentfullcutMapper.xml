@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.paymentfullcutMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.paymentfullcut" >
+<mapper namespace="com.pos.dao.PaymentfullcutMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Paymentfullcut" >
     <id column="fsPaymentId" property="fspaymentid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fdFullmoney" property="fdfullmoney" jdbcType="DECIMAL" />
@@ -13,19 +13,19 @@
   <sql id="Base_Column_List" >
     fsPaymentId, fsShopGUID, fdFullmoney, fdCutmoney, fsUpdateTime, fsUpdateUserId, fsUpdateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.paymentfullcutKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.PaymentfullcutKey" >
     select 
     <include refid="Base_Column_List" />
     from tbpaymentfullcut
     where fsPaymentId = #{fspaymentid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.paymentfullcutKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.PaymentfullcutKey" >
     delete from tbpaymentfullcut
     where fsPaymentId = #{fspaymentid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.paymentfullcut" >
+  <insert id="insert" parameterType="com.pos.entity.Paymentfullcut" >
     insert into tbpaymentfullcut (fsPaymentId, fsShopGUID, fdFullmoney, 
       fdCutmoney, fsUpdateTime, fsUpdateUserId, 
       fsUpdateUserName)
@@ -33,7 +33,7 @@
       #{fdcutmoney,jdbcType=DECIMAL}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
       #{fsupdateusername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.paymentfullcut" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Paymentfullcut" >
     insert into tbpaymentfullcut
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fspaymentid != null" >
@@ -82,7 +82,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.paymentfullcut" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Paymentfullcut" >
     update tbpaymentfullcut
     <set >
       <if test="fdfullmoney != null" >
@@ -104,7 +104,7 @@
     where fsPaymentId = #{fspaymentid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.paymentfullcut" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Paymentfullcut" >
     update tbpaymentfullcut
     set fdFullmoney = #{fdfullmoney,jdbcType=DECIMAL},
       fdCutmoney = #{fdcutmoney,jdbcType=DECIMAL},

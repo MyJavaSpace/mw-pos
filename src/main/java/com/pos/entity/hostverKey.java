@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class hostverKey {
+public class HostverKey {
     private String fsfilename;
 
     private String fshost;

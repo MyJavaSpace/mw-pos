@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class printprojectgp extends printprojectgpKey {
+public class Printprojectgp extends PrintprojectgpKey {
     private String fsprintname;
 
     private Integer fistatus;

@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.progdtl;
-import com.pos.entity.progdtlKey;
+import com.pos.entity.Progdtl;
+import com.pos.entity.ProgdtlKey;
 
-public interface progdtlMapper {
-    int deleteByPrimaryKey(progdtlKey key);
+public interface ProgdtlMapper {
+    int deleteByPrimaryKey(ProgdtlKey key);
 
-    int insert(progdtl record);
+    int insert(Progdtl record);
 
-    int insertSelective(progdtl record);
+    int insertSelective(Progdtl record);
 
-    progdtl selectByPrimaryKey(progdtlKey key);
+    Progdtl selectByPrimaryKey(ProgdtlKey key);
 
-    int updateByPrimaryKeySelective(progdtl record);
+    int updateByPrimaryKeySelective(Progdtl record);
 
-    int updateByPrimaryKey(progdtl record);
+    int updateByPrimaryKey(Progdtl record);
 }

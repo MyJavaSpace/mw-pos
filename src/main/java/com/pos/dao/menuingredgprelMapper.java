@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.menuingredgprel;
-import com.pos.entity.menuingredgprelKey;
+import com.pos.entity.Menuingredgprel;
+import com.pos.entity.MenuingredgprelKey;
 
-public interface menuingredgprelMapper {
-    int deleteByPrimaryKey(menuingredgprelKey key);
+public interface MenuingredgprelMapper {
+    int deleteByPrimaryKey(MenuingredgprelKey key);
 
-    int insert(menuingredgprel record);
+    int insert(Menuingredgprel record);
 
-    int insertSelective(menuingredgprel record);
+    int insertSelective(Menuingredgprel record);
 
-    menuingredgprel selectByPrimaryKey(menuingredgprelKey key);
+    Menuingredgprel selectByPrimaryKey(MenuingredgprelKey key);
 
-    int updateByPrimaryKeySelective(menuingredgprel record);
+    int updateByPrimaryKeySelective(Menuingredgprel record);
 
-    int updateByPrimaryKey(menuingredgprel record);
+    int updateByPrimaryKey(Menuingredgprel record);
 }

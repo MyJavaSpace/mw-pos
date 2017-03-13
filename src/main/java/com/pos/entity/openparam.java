@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class openparam {
+public class Openparam {
     private Integer fiid;
 
     private String fsmareaid;

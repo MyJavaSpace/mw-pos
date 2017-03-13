@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.shopMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.shop" >
+<mapper namespace="com.pos.dao.ShopMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Shop" >
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsShopId" property="fsshopid" jdbcType="VARCHAR" />
     <result column="fsShopName" property="fsshopname" jdbcType="VARCHAR" />
@@ -52,7 +52,7 @@
     delete from tbshop
     where fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.shop" >
+  <insert id="insert" parameterType="com.pos.entity.Shop" >
     insert into tbshop (fsShopGUID, fsShopId, fsShopName, 
       fsShopAlias, fsEmail, fsTel, 
       fsFax, fsAddr, fsPostal, 
@@ -76,7 +76,7 @@
       #{fsdistrictid,jdbcType=VARCHAR}, #{fslogourl,jdbcType=VARCHAR}, #{fssoftversion,jdbcType=VARCHAR}, 
       #{ficlienttype,jdbcType=INTEGER}, #{fipattern,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.shop" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Shop" >
     insert into tbshop
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsshopguid != null" >
@@ -275,7 +275,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.shop" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Shop" >
     update tbshop
     <set >
       <if test="fsshopid != null" >
@@ -374,7 +374,7 @@
     </set>
     where fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.shop" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Shop" >
     update tbshop
     set fsShopId = #{fsshopid,jdbcType=VARCHAR},
       fsShopName = #{fsshopname,jdbcType=VARCHAR},

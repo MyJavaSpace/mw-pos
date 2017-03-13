@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class deptKey {
+public class DeptKey {
     private String fsdeptid;
 
     private String fsshopguid;

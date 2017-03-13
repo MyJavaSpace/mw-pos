@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class seqno extends seqnoKey {
+public class Seqno extends SeqnoKey {
     private Integer fiseqno;
 
     private String fsupdatetime;

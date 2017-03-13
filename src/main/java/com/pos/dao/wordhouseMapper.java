@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.wordhouse;
-import com.pos.entity.wordhouseKey;
+import com.pos.entity.Wordhouse;
+import com.pos.entity.WordhouseKey;
 
-public interface wordhouseMapper {
-    int deleteByPrimaryKey(wordhouseKey key);
+public interface WordhouseMapper {
+    int deleteByPrimaryKey(WordhouseKey key);
 
-    int insert(wordhouse record);
+    int insert(Wordhouse record);
 
-    int insertSelective(wordhouse record);
+    int insertSelective(Wordhouse record);
 
-    wordhouse selectByPrimaryKey(wordhouseKey key);
+    Wordhouse selectByPrimaryKey(WordhouseKey key);
 
-    int updateByPrimaryKeySelective(wordhouse record);
+    int updateByPrimaryKeySelective(Wordhouse record);
 
-    int updateByPrimaryKey(wordhouse record);
+    int updateByPrimaryKey(Wordhouse record);
 }

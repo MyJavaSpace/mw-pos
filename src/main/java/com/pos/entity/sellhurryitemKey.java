@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class sellhurryitemKey {
+public class SellhurryitemKey {
     private Integer fihurryseq;
 
     private String fssellno;

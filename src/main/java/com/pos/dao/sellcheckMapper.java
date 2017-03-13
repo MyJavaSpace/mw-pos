@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.sellcheck;
-import com.pos.entity.sellcheckKey;
+import com.pos.entity.Sellcheck;
+import com.pos.entity.SellcheckKey;
 
-public interface sellcheckMapper {
-    int deleteByPrimaryKey(sellcheckKey key);
+public interface SellcheckMapper {
+    int deleteByPrimaryKey(SellcheckKey key);
 
-    int insert(sellcheck record);
+    int insert(Sellcheck record);
 
-    int insertSelective(sellcheck record);
+    int insertSelective(Sellcheck record);
 
-    sellcheck selectByPrimaryKey(sellcheckKey key);
+    Sellcheck selectByPrimaryKey(SellcheckKey key);
 
-    int updateByPrimaryKeySelective(sellcheck record);
+    int updateByPrimaryKeySelective(Sellcheck record);
 
-    int updateByPrimaryKey(sellcheck record);
+    int updateByPrimaryKey(Sellcheck record);
 }

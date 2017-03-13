@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class wechatconfig {
+public class Wechatconfig {
     private String fsid;
 
     private BigDecimal fddeliverfee;

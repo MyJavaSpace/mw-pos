@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class billsourceKey {
+public class BillsourceKey {
     private String fsbillsourceid;
 
     private String fsshopguid;

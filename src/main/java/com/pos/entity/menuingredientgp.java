@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class menuingredientgp extends menuingredientgpKey {
+public class Menuingredientgp extends MenuingredientgpKey {
     private String fsgroupname;
 
     private Integer fistatus;

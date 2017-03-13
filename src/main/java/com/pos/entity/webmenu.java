@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class webmenu {
+public class Webmenu {
     private Integer fimenuid;
 
     private String fsmenuname;

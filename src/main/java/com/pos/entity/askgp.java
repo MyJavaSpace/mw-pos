@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class askgp extends askgpKey {
+public class Askgp extends AskgpKey {
     private String fsaskgpname;
 
     private Integer fistatus;

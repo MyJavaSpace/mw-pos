@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.feedbackMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.feedback" >
+<mapper namespace="com.pos.dao.FeedbackMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Feedback" >
     <id column="fiId" property="fiid" jdbcType="INTEGER" />
     <result column="fsTheme" property="fstheme" jdbcType="VARCHAR" />
     <result column="fiType" property="fitype" jdbcType="INTEGER" />
@@ -33,7 +33,7 @@
     delete from tbfeedback
     where fiId = #{fiid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.feedback" >
+  <insert id="insert" parameterType="com.pos.entity.Feedback" >
     insert into tbfeedback (fiId, fsTheme, fiType, 
       fsContact, fsCellphoneCt, fsEmail, 
       fsContent, fsCreateTime, fsCreateUserId, 
@@ -47,7 +47,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.feedback" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Feedback" >
     insert into tbfeedback
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fiid != null" >
@@ -144,7 +144,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.feedback" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Feedback" >
     update tbfeedback
     <set >
       <if test="fstheme != null" >
@@ -192,7 +192,7 @@
     </set>
     where fiId = #{fiid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.feedback" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Feedback" >
     update tbfeedback
     set fsTheme = #{fstheme,jdbcType=VARCHAR},
       fiType = #{fitype,jdbcType=INTEGER},

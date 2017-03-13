@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class changetable {
+public class Changetable {
     private String fssellno;
 
     private Integer fitimes;

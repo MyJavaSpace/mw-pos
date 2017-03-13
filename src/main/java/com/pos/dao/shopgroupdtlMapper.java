@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.shopgroupdtl;
-import com.pos.entity.shopgroupdtlKey;
+import com.pos.entity.Shopgroupdtl;
+import com.pos.entity.ShopgroupdtlKey;
 
-public interface shopgroupdtlMapper {
-    int deleteByPrimaryKey(shopgroupdtlKey key);
+public interface ShopgroupdtlMapper {
+    int deleteByPrimaryKey(ShopgroupdtlKey key);
 
-    int insert(shopgroupdtl record);
+    int insert(Shopgroupdtl record);
 
-    int insertSelective(shopgroupdtl record);
+    int insertSelective(Shopgroupdtl record);
 
-    shopgroupdtl selectByPrimaryKey(shopgroupdtlKey key);
+    Shopgroupdtl selectByPrimaryKey(ShopgroupdtlKey key);
 
-    int updateByPrimaryKeySelective(shopgroupdtl record);
+    int updateByPrimaryKeySelective(Shopgroupdtl record);
 
-    int updateByPrimaryKey(shopgroupdtl record);
+    int updateByPrimaryKey(Shopgroupdtl record);
 }

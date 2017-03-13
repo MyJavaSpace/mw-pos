@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.reupload;
+import com.pos.entity.Reupload;
 
-public interface reuploadMapper {
+public interface ReuploadMapper {
     int deleteByPrimaryKey(String fsguid);
 
-    int insert(reupload record);
+    int insert(Reupload record);
 
-    int insertSelective(reupload record);
+    int insertSelective(Reupload record);
 
-    reupload selectByPrimaryKey(String fsguid);
+    Reupload selectByPrimaryKey(String fsguid);
 
-    int updateByPrimaryKeySelective(reupload record);
+    int updateByPrimaryKeySelective(Reupload record);
 
-    int updateByPrimaryKey(reupload record);
+    int updateByPrimaryKey(Reupload record);
 }

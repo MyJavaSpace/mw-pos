@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.applicationMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.application" >
+<mapper namespace="com.pos.dao.ApplicationMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Application" >
     <id column="fsProgId" property="fsprogid" jdbcType="VARCHAR" />
     <id column="fsProjId" property="fsprojid" jdbcType="VARCHAR" />
     <result column="fsUpdateTime" property="fsupdatetime" jdbcType="VARCHAR" />
@@ -11,25 +11,25 @@
   <sql id="Base_Column_List" >
     fsProgId, fsProjId, fsUpdateTime, fsUpdateUserId, fsUpdateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.applicationKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.ApplicationKey" >
     select 
     <include refid="Base_Column_List" />
     from tbapplication
     where fsProgId = #{fsprogid,jdbcType=VARCHAR}
       and fsProjId = #{fsprojid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.applicationKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.ApplicationKey" >
     delete from tbapplication
     where fsProgId = #{fsprogid,jdbcType=VARCHAR}
       and fsProjId = #{fsprojid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.application" >
+  <insert id="insert" parameterType="com.pos.entity.Application" >
     insert into tbapplication (fsProgId, fsProjId, fsUpdateTime, 
       fsUpdateUserId, fsUpdateUserName)
     values (#{fsprogid,jdbcType=VARCHAR}, #{fsprojid,jdbcType=VARCHAR}, #{fsupdatetime,jdbcType=VARCHAR}, 
       #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.application" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Application" >
     insert into tbapplication
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsprogid != null" >
@@ -66,7 +66,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.application" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Application" >
     update tbapplication
     <set >
       <if test="fsupdatetime != null" >
@@ -82,7 +82,7 @@
     where fsProgId = #{fsprogid,jdbcType=VARCHAR}
       and fsProjId = #{fsprojid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.application" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Application" >
     update tbapplication
     set fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
       fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},

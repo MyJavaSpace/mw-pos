@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class revenuetype extends revenuetypeKey {
+public class Revenuetype extends RevenuetypeKey {
     private String fsrevenuetypename;
 
     private Integer fistatus;

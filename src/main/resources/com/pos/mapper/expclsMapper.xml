@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.expclsMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.expcls" >
+<mapper namespace="com.pos.dao.ExpclsMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Expcls" >
     <id column="fsExpClsId" property="fsexpclsid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsExpClsName" property="fsexpclsname" jdbcType="VARCHAR" />
@@ -16,19 +16,19 @@
     fsExpClsId, fsShopGUID, fsExpClsName, fiStatus, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
     fiDataKind, fiSortOrder
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.expclsKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.ExpclsKey" >
     select 
     <include refid="Base_Column_List" />
     from tbexpcls
     where fsExpClsId = #{fsexpclsid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.expclsKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.ExpclsKey" >
     delete from tbexpcls
     where fsExpClsId = #{fsexpclsid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.expcls" >
+  <insert id="insert" parameterType="com.pos.entity.Expcls" >
     insert into tbexpcls (fsExpClsId, fsShopGUID, fsExpClsName, 
       fiStatus, fsUpdateTime, fsUpdateUserId, 
       fsUpdateUserName, fiDataKind, fiSortOrder
@@ -38,7 +38,7 @@
       #{fsupdateusername,jdbcType=VARCHAR}, #{fidatakind,jdbcType=INTEGER}, #{fisortorder,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.expcls" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Expcls" >
     insert into tbexpcls
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsexpclsid != null" >
@@ -99,7 +99,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.expcls" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Expcls" >
     update tbexpcls
     <set >
       <if test="fsexpclsname != null" >
@@ -127,7 +127,7 @@
     where fsExpClsId = #{fsexpclsid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.expcls" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Expcls" >
     update tbexpcls
     set fsExpClsName = #{fsexpclsname,jdbcType=VARCHAR},
       fiStatus = #{fistatus,jdbcType=INTEGER},

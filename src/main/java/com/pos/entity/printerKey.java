@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class printerKey {
+public class PrinterKey {
     private Integer fiid;
 
     private String fsshopguid;

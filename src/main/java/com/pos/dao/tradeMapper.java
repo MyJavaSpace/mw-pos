@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.trade;
-import com.pos.entity.tradeKey;
+import com.pos.entity.Trade;
+import com.pos.entity.TradeKey;
 
-public interface tradeMapper {
-    int deleteByPrimaryKey(tradeKey key);
+public interface TradeMapper {
+    int deleteByPrimaryKey(TradeKey key);
 
-    int insert(trade record);
+    int insert(Trade record);
 
-    int insertSelective(trade record);
+    int insertSelective(Trade record);
 
-    trade selectByPrimaryKey(tradeKey key);
+    Trade selectByPrimaryKey(TradeKey key);
 
-    int updateByPrimaryKeySelective(trade record);
+    int updateByPrimaryKeySelective(Trade record);
 
-    int updateByPrimaryKey(trade record);
+    int updateByPrimaryKey(Trade record);
 }

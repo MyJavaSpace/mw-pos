@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class paramvalueKey {
+public class ParamvalueKey {
     private String fsparamid;
 
     private String fsshopguid;

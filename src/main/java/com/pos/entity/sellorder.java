@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class sellorder extends sellorderKey {
+public class Sellorder extends SellorderKey {
     private Integer fiordercls;
 
     private Integer fiorderste;

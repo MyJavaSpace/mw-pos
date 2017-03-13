@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class interfacemanage {
+public class Interfacemanage {
     private Integer fiid;
 
     private String fsshopguid;

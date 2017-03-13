@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.tableinfoMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.tableinfo" >
+<mapper namespace="com.pos.dao.TableinfoMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Tableinfo" >
     <id column="fsKind" property="fskind" jdbcType="VARCHAR" />
     <id column="fsTableId" property="fstableid" jdbcType="VARCHAR" />
     <id column="fsTableName" property="fstablename" jdbcType="VARCHAR" />
@@ -11,7 +11,7 @@
   <sql id="Base_Column_List" >
     fsKind, fsTableId, fsTableName, fiSortOrder, fsFoodTradeList
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.tableinfoKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.TableinfoKey" >
     select 
     <include refid="Base_Column_List" />
     from tbtableinfo
@@ -19,19 +19,19 @@
       and fsTableId = #{fstableid,jdbcType=VARCHAR}
       and fsTableName = #{fstablename,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.tableinfoKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.TableinfoKey" >
     delete from tbtableinfo
     where fsKind = #{fskind,jdbcType=VARCHAR}
       and fsTableId = #{fstableid,jdbcType=VARCHAR}
       and fsTableName = #{fstablename,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.tableinfo" >
+  <insert id="insert" parameterType="com.pos.entity.Tableinfo" >
     insert into tbtableinfo (fsKind, fsTableId, fsTableName, 
       fiSortOrder, fsFoodTradeList)
     values (#{fskind,jdbcType=VARCHAR}, #{fstableid,jdbcType=VARCHAR}, #{fstablename,jdbcType=VARCHAR}, 
       #{fisortorder,jdbcType=INTEGER}, #{fsfoodtradelist,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.tableinfo" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Tableinfo" >
     insert into tbtableinfo
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fskind != null" >
@@ -68,7 +68,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.tableinfo" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Tableinfo" >
     update tbtableinfo
     <set >
       <if test="fisortorder != null" >
@@ -82,7 +82,7 @@
       and fsTableId = #{fstableid,jdbcType=VARCHAR}
       and fsTableName = #{fstablename,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.tableinfo" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Tableinfo" >
     update tbtableinfo
     set fiSortOrder = #{fisortorder,jdbcType=INTEGER},
       fsFoodTradeList = #{fsfoodtradelist,jdbcType=VARCHAR}

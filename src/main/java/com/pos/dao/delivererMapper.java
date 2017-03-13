@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.deliverer;
-import com.pos.entity.delivererKey;
+import com.pos.entity.Deliverer;
+import com.pos.entity.DelivererKey;
 
-public interface delivererMapper {
-    int deleteByPrimaryKey(delivererKey key);
+public interface DelivererMapper {
+    int deleteByPrimaryKey(DelivererKey key);
 
-    int insert(deliverer record);
+    int insert(Deliverer record);
 
-    int insertSelective(deliverer record);
+    int insertSelective(Deliverer record);
 
-    deliverer selectByPrimaryKey(delivererKey key);
+    Deliverer selectByPrimaryKey(DelivererKey key);
 
-    int updateByPrimaryKeySelective(deliverer record);
+    int updateByPrimaryKeySelective(Deliverer record);
 
-    int updateByPrimaryKey(deliverer record);
+    int updateByPrimaryKey(Deliverer record);
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.sellorderMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.sellorder" >
+<mapper namespace="com.pos.dao.SellorderMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Sellorder" >
     <id column="fiOrderSeq" property="fiorderseq" jdbcType="INTEGER" />
     <id column="fsSellNo" property="fssellno" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
@@ -20,7 +20,7 @@
     fiOrderSeq, fsSellNo, fsShopGUID, fiOrderCls, fiOrderSte, fsNote, fsUpdateTime, fsCreateTime, 
     fsCreateUserId, fsCreateUserName, fsDataSrckind, fsSrcVerno, lver
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.sellorderKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.SellorderKey" >
     select 
     <include refid="Base_Column_List" />
     from tbsellorder
@@ -28,13 +28,13 @@
       and fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.sellorderKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.SellorderKey" >
     delete from tbsellorder
     where fiOrderSeq = #{fiorderseq,jdbcType=INTEGER}
       and fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.sellorder" >
+  <insert id="insert" parameterType="com.pos.entity.Sellorder" >
     insert into tbsellorder (fiOrderSeq, fsSellNo, fsShopGUID, 
       fiOrderCls, fiOrderSte, fsNote, 
       fsUpdateTime, fsCreateTime, fsCreateUserId, 
@@ -46,7 +46,7 @@
       #{fscreateusername,jdbcType=VARCHAR}, #{fsdatasrckind,jdbcType=VARCHAR}, #{fssrcverno,jdbcType=VARCHAR}, 
       #{lver,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.sellorder" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Sellorder" >
     insert into tbsellorder
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fiorderseq != null" >
@@ -131,7 +131,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.sellorder" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Sellorder" >
     update tbsellorder
     <set >
       <if test="fiordercls != null" >
@@ -169,7 +169,7 @@
       and fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.sellorder" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Sellorder" >
     update tbsellorder
     set fiOrderCls = #{fiordercls,jdbcType=INTEGER},
       fiOrderSte = #{fiorderste,jdbcType=INTEGER},

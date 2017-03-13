@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class userrole extends userroleKey {
+public class Userrole extends UserroleKey {
     private String fsupdatetime;
 
     private Integer fistatus;

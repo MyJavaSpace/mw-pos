@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.shopgroupMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.shopgroup" >
+<mapper namespace="com.pos.dao.ShopgroupMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Shopgroup" >
     <id column="fiShopGroupId" property="fishopgroupid" jdbcType="INTEGER" />
     <result column="fsShopGroupName" property="fsshopgroupname" jdbcType="VARCHAR" />
     <result column="fsShopGroupKind" property="fsshopgroupkind" jdbcType="VARCHAR" />
@@ -11,7 +11,7 @@
     <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
     <result column="fiSortOrder" property="fisortorder" jdbcType="INTEGER" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.pos.entity.shopgroupWithBLOBs" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.pos.entity.ShopgroupWithBLOBs" extends="BaseResultMap" >
     <result column="fsNote" property="fsnote" jdbcType="LONGVARCHAR" />
     <result column="fsCompanyGUID" property="fscompanyguid" jdbcType="LONGVARCHAR" />
   </resultMap>
@@ -34,7 +34,7 @@
     delete from tbshopgroup
     where fiShopGroupId = #{fishopgroupid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.shopgroupWithBLOBs" >
+  <insert id="insert" parameterType="com.pos.entity.ShopgroupWithBLOBs" >
     insert into tbshopgroup (fiShopGroupId, fsShopGroupName, fsShopGroupKind, 
       fiStatus, fsUpdateTime, fsUpdateUserId, 
       fsUpdateUserName, fiSortOrder, fsNote, 
@@ -44,7 +44,7 @@
       #{fsupdateusername,jdbcType=VARCHAR}, #{fisortorder,jdbcType=INTEGER}, #{fsnote,jdbcType=LONGVARCHAR}, 
       #{fscompanyguid,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.shopgroupWithBLOBs" >
+  <insert id="insertSelective" parameterType="com.pos.entity.ShopgroupWithBLOBs" >
     insert into tbshopgroup
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fishopgroupid != null" >
@@ -111,7 +111,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.shopgroupWithBLOBs" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.ShopgroupWithBLOBs" >
     update tbshopgroup
     <set >
       <if test="fsshopgroupname != null" >
@@ -144,7 +144,7 @@
     </set>
     where fiShopGroupId = #{fishopgroupid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pos.entity.shopgroupWithBLOBs" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pos.entity.ShopgroupWithBLOBs" >
     update tbshopgroup
     set fsShopGroupName = #{fsshopgroupname,jdbcType=VARCHAR},
       fsShopGroupKind = #{fsshopgroupkind,jdbcType=VARCHAR},
@@ -157,7 +157,7 @@
       fsCompanyGUID = #{fscompanyguid,jdbcType=LONGVARCHAR}
     where fiShopGroupId = #{fishopgroupid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.shopgroup" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Shopgroup" >
     update tbshopgroup
     set fsShopGroupName = #{fsshopgroupname,jdbcType=VARCHAR},
       fsShopGroupKind = #{fsshopgroupkind,jdbcType=VARCHAR},

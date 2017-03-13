@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class mtablecls extends mtableclsKey {
+public class Mtablecls extends MtableclsKey {
     private String fsmtableclsname;
 
     private Integer fistatus;

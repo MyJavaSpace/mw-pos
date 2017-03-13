@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class msectionKey {
+public class MsectionKey {
     private String fsmsectionid;
 
     private String fsshopguid;

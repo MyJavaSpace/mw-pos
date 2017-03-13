@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class hostexternal extends hostexternalKey {
+public class Hostexternal extends HostexternalKey {
     private String fsparamvalue;
 
     private String fsstr1;

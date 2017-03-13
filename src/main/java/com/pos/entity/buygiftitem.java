@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class buygiftitem extends buygiftitemKey {
+public class Buygiftitem extends BuygiftitemKey {
     private BigDecimal fdbargainprice;
 
     private BigDecimal fdsaleqty;

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class marea extends mareaKey {
+public class Marea extends MareaKey {
     private String fsmareaname;
 
     private Integer fistatus;

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class printproject {
+public class Printproject {
     private Integer fiid;
 
     private Integer figroupid;

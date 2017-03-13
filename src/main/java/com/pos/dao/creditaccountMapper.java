@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.creditaccount;
-import com.pos.entity.creditaccountKey;
+import com.pos.entity.Creditaccount;
+import com.pos.entity.CreditaccountKey;
 
-public interface creditaccountMapper {
-    int deleteByPrimaryKey(creditaccountKey key);
+public interface CreditaccountMapper {
+    int deleteByPrimaryKey(CreditaccountKey key);
 
-    int insert(creditaccount record);
+    int insert(Creditaccount record);
 
-    int insertSelective(creditaccount record);
+    int insertSelective(Creditaccount record);
 
-    creditaccount selectByPrimaryKey(creditaccountKey key);
+    Creditaccount selectByPrimaryKey(CreditaccountKey key);
 
-    int updateByPrimaryKeySelective(creditaccount record);
+    int updateByPrimaryKeySelective(Creditaccount record);
 
-    int updateByPrimaryKey(creditaccount record);
+    int updateByPrimaryKey(Creditaccount record);
 }

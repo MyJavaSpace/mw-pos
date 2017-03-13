@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.publishMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.publish" >
+<mapper namespace="com.pos.dao.PublishMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Publish" >
     <id column="fiId" property="fiid" jdbcType="BIGINT" />
     <id column="fiSoftId" property="fisoftid" jdbcType="BIGINT" />
     <id column="fsVersion" property="fsversion" jdbcType="VARCHAR" />
@@ -27,7 +27,7 @@
     fiStatus, fsCheckCode, fsNote, fiPublishType, fsShopJosn, fsCreateUserId, fsCreateUserName, 
     fsCreateTime, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, fiUpdateType
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.publishKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.PublishKey" >
     select 
     <include refid="Base_Column_List" />
     from tbpublish
@@ -35,13 +35,13 @@
       and fiSoftId = #{fisoftid,jdbcType=BIGINT}
       and fsVersion = #{fsversion,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.publishKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.PublishKey" >
     delete from tbpublish
     where fiId = #{fiid,jdbcType=BIGINT}
       and fiSoftId = #{fisoftid,jdbcType=BIGINT}
       and fsVersion = #{fsversion,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.publish" >
+  <insert id="insert" parameterType="com.pos.entity.Publish" >
     insert into tbpublish (fiId, fiSoftId, fsVersion, 
       fsUpContent, fiPublishChannel, fsFileName, 
       fsFileUrl, fiStatus, fsCheckCode, 
@@ -57,7 +57,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
       #{fiupdatetype,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.publish" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Publish" >
     insert into tbpublish
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fiid != null" >
@@ -178,7 +178,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.publish" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Publish" >
     update tbpublish
     <set >
       <if test="fsupcontent != null" >
@@ -234,7 +234,7 @@
       and fiSoftId = #{fisoftid,jdbcType=BIGINT}
       and fsVersion = #{fsversion,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.publish" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Publish" >
     update tbpublish
     set fsUpContent = #{fsupcontent,jdbcType=VARCHAR},
       fiPublishChannel = #{fipublishchannel,jdbcType=INTEGER},

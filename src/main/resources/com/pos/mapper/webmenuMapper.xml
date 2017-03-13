@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.webmenuMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.webmenu" >
+<mapper namespace="com.pos.dao.WebmenuMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Webmenu" >
     <id column="fiMenuID" property="fimenuid" jdbcType="INTEGER" />
     <result column="fsMenuName" property="fsmenuname" jdbcType="VARCHAR" />
     <result column="fiParentId" property="fiparentid" jdbcType="INTEGER" />
@@ -34,7 +34,7 @@
     delete from tbwebmenu
     where fiMenuID = #{fimenuid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.webmenu" >
+  <insert id="insert" parameterType="com.pos.entity.Webmenu" >
     insert into tbwebmenu (fiMenuID, fsMenuName, fiParentId, 
       fsMenuUrl, fsMpath, fiGroupID, 
       fiSort, fsFoodTradeId, fiShopKind, 
@@ -48,7 +48,7 @@
       #{fistatus,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
       #{fsupdateusername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.webmenu" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Webmenu" >
     insert into tbwebmenu
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fimenuid != null" >
@@ -151,7 +151,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.webmenu" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Webmenu" >
     update tbwebmenu
     <set >
       <if test="fsmenuname != null" >
@@ -202,7 +202,7 @@
     </set>
     where fiMenuID = #{fimenuid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.webmenu" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Webmenu" >
     update tbwebmenu
     set fsMenuName = #{fsmenuname,jdbcType=VARCHAR},
       fiParentId = #{fiparentid,jdbcType=INTEGER},

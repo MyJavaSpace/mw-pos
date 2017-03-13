@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.softtypeMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.softtype" >
+<mapper namespace="com.pos.dao.SofttypeMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Softtype" >
     <id column="fiId" property="fiid" jdbcType="BIGINT" />
     <id column="fsName" property="fsname" jdbcType="VARCHAR" />
     <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
@@ -17,19 +17,19 @@
     fiId, fsName, fiStatus, fsNote, fsCreateUserName, fsCreateUserId, fsCreateTime, fsUpdateTime, 
     fsUpdateUserId, fsUpdateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.softtypeKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.SofttypeKey" >
     select 
     <include refid="Base_Column_List" />
     from tbsofttype
     where fiId = #{fiid,jdbcType=BIGINT}
       and fsName = #{fsname,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.softtypeKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.SofttypeKey" >
     delete from tbsofttype
     where fiId = #{fiid,jdbcType=BIGINT}
       and fsName = #{fsname,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.softtype" >
+  <insert id="insert" parameterType="com.pos.entity.Softtype" >
     insert into tbsofttype (fiId, fsName, fiStatus, 
       fsNote, fsCreateUserName, fsCreateUserId, 
       fsCreateTime, fsUpdateTime, fsUpdateUserId, 
@@ -39,7 +39,7 @@
       #{fscreatetime,jdbcType=VARCHAR}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
       #{fsupdateusername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.softtype" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Softtype" >
     insert into tbsofttype
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fiid != null" >
@@ -106,7 +106,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.softtype" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Softtype" >
     update tbsofttype
     <set >
       <if test="fistatus != null" >
@@ -137,7 +137,7 @@
     where fiId = #{fiid,jdbcType=BIGINT}
       and fsName = #{fsname,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.softtype" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Softtype" >
     update tbsofttype
     set fiStatus = #{fistatus,jdbcType=INTEGER},
       fsNote = #{fsnote,jdbcType=VARCHAR},

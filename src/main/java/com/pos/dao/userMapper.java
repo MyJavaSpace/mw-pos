@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.user;
-import com.pos.entity.userKey;
+import com.pos.entity.User;
+import com.pos.entity.UserKey;
 
-public interface userMapper {
-    int deleteByPrimaryKey(userKey key);
+public interface UserMapper {
+    int deleteByPrimaryKey(UserKey key);
 
-    int insert(user record);
+    int insert(User record);
 
-    int insertSelective(user record);
+    int insertSelective(User record);
 
-    user selectByPrimaryKey(userKey key);
+    User selectByPrimaryKey(UserKey key);
 
-    int updateByPrimaryKeySelective(user record);
+    int updateByPrimaryKeySelective(User record);
 
-    int updateByPrimaryKey(user record);
+    int updateByPrimaryKey(User record);
 }

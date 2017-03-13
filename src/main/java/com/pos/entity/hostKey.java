@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class hostKey {
+public class HostKey {
     private String fshostid;
 
     private String fsshopguid;

@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.interfacemanage;
+import com.pos.entity.Interfacemanage;
 
-public interface interfacemanageMapper {
+public interface InterfacemanageMapper {
     int deleteByPrimaryKey(Integer fiid);
 
-    int insert(interfacemanage record);
+    int insert(Interfacemanage record);
 
-    int insertSelective(interfacemanage record);
+    int insertSelective(Interfacemanage record);
 
-    interfacemanage selectByPrimaryKey(Integer fiid);
+    Interfacemanage selectByPrimaryKey(Integer fiid);
 
-    int updateByPrimaryKeySelective(interfacemanage record);
+    int updateByPrimaryKeySelective(Interfacemanage record);
 
-    int updateByPrimaryKey(interfacemanage record);
+    int updateByPrimaryKey(Interfacemanage record);
 }

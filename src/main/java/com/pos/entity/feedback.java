@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class feedback {
+public class Feedback {
     private Integer fiid;
 
     private String fstheme;

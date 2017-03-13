@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.publish;
-import com.pos.entity.publishKey;
+import com.pos.entity.Publish;
+import com.pos.entity.PublishKey;
 
-public interface publishMapper {
-    int deleteByPrimaryKey(publishKey key);
+public interface PublishMapper {
+    int deleteByPrimaryKey(PublishKey key);
 
-    int insert(publish record);
+    int insert(Publish record);
 
-    int insertSelective(publish record);
+    int insertSelective(Publish record);
 
-    publish selectByPrimaryKey(publishKey key);
+    Publish selectByPrimaryKey(PublishKey key);
 
-    int updateByPrimaryKeySelective(publish record);
+    int updateByPrimaryKeySelective(Publish record);
 
-    int updateByPrimaryKey(publish record);
+    int updateByPrimaryKey(Publish record);
 }

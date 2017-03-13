@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.setings;
+import com.pos.entity.Setings;
 
-public interface setingsMapper {
+public interface SetingsMapper {
     int deleteByPrimaryKey(String fskey);
 
-    int insert(setings record);
+    int insert(Setings record);
 
-    int insertSelective(setings record);
+    int insertSelective(Setings record);
 
-    setings selectByPrimaryKey(String fskey);
+    Setings selectByPrimaryKey(String fskey);
 
-    int updateByPrimaryKeySelective(setings record);
+    int updateByPrimaryKeySelective(Setings record);
 
-    int updateByPrimaryKey(setings record);
+    int updateByPrimaryKey(Setings record);
 }

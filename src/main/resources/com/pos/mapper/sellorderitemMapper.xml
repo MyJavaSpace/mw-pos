@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.sellorderitemMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.sellorderitem" >
+<mapper namespace="com.pos.dao.SellorderitemMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Sellorderitem" >
     <id column="fsSeq" property="fsseq" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsSellNo" property="fssellno" jdbcType="VARCHAR" />
@@ -85,7 +85,7 @@
     <result column="fsmenuclsname" property="fsmenuclsname" jdbcType="VARCHAR" />
     <result column="lver" property="lver" jdbcType="INTEGER" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.pos.entity.sellorderitemWithBLOBs" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.pos.entity.SellorderitemWithBLOBs" extends="BaseResultMap" >
     <result column="fsDeptId" property="fsdeptid" jdbcType="LONGVARCHAR" />
     <result column="fsNote" property="fsnote" jdbcType="LONGVARCHAR" />
   </resultMap>
@@ -107,7 +107,7 @@
   <sql id="Blob_Column_List" >
     fsDeptId, fsNote
   </sql>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="com.pos.entity.sellorderitemKey" >
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="com.pos.entity.SellorderitemKey" >
     select 
     <include refid="Base_Column_List" />
     ,
@@ -116,12 +116,12 @@
     where fsSeq = #{fsseq,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.sellorderitemKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.SellorderitemKey" >
     delete from tbsellorderitem
     where fsSeq = #{fsseq,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.sellorderitemWithBLOBs" >
+  <insert id="insert" parameterType="com.pos.entity.SellorderitemWithBLOBs" >
     insert into tbsellorderitem (fsSeq, fsShopGUID, fsSellNo, 
       fiOrderSeq, fsMSectionId, fiOrderMode, 
       fiItemCd, fsItemId, fsItemName, 
@@ -181,7 +181,7 @@
       #{lver,jdbcType=INTEGER}, #{fsdeptid,jdbcType=LONGVARCHAR}, #{fsnote,jdbcType=LONGVARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.sellorderitemWithBLOBs" >
+  <insert id="insertSelective" parameterType="com.pos.entity.SellorderitemWithBLOBs" >
     insert into tbsellorderitem
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsseq != null" >
@@ -692,7 +692,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.sellorderitemWithBLOBs" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.SellorderitemWithBLOBs" >
     update tbsellorderitem
     <set >
       <if test="fssellno != null" >
@@ -945,7 +945,7 @@
     where fsSeq = #{fsseq,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pos.entity.sellorderitemWithBLOBs" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pos.entity.SellorderitemWithBLOBs" >
     update tbsellorderitem
     set fsSellNo = #{fssellno,jdbcType=VARCHAR},
       fiOrderSeq = #{fiorderseq,jdbcType=INTEGER},
@@ -1032,7 +1032,7 @@
     where fsSeq = #{fsseq,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.sellorderitem" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Sellorderitem" >
     update tbsellorderitem
     set fsSellNo = #{fssellno,jdbcType=VARCHAR},
       fiOrderSeq = #{fiorderseq,jdbcType=INTEGER},

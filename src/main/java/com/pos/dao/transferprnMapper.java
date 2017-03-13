@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.transferprn;
-import com.pos.entity.transferprnKey;
+import com.pos.entity.Transferprn;
+import com.pos.entity.TransferprnKey;
 
-public interface transferprnMapper {
-    int deleteByPrimaryKey(transferprnKey key);
+public interface TransferprnMapper {
+    int deleteByPrimaryKey(TransferprnKey key);
 
-    int insert(transferprn record);
+    int insert(Transferprn record);
 
-    int insertSelective(transferprn record);
+    int insertSelective(Transferprn record);
 
-    transferprn selectByPrimaryKey(transferprnKey key);
+    Transferprn selectByPrimaryKey(TransferprnKey key);
 
-    int updateByPrimaryKeySelective(transferprn record);
+    int updateByPrimaryKeySelective(Transferprn record);
 
-    int updateByPrimaryKey(transferprn record);
+    int updateByPrimaryKey(Transferprn record);
 }

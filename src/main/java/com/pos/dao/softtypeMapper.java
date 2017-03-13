@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.softtype;
-import com.pos.entity.softtypeKey;
+import com.pos.entity.Softtype;
+import com.pos.entity.SofttypeKey;
 
-public interface softtypeMapper {
-    int deleteByPrimaryKey(softtypeKey key);
+public interface SofttypeMapper {
+    int deleteByPrimaryKey(SofttypeKey key);
 
-    int insert(softtype record);
+    int insert(Softtype record);
 
-    int insertSelective(softtype record);
+    int insertSelective(Softtype record);
 
-    softtype selectByPrimaryKey(softtypeKey key);
+    Softtype selectByPrimaryKey(SofttypeKey key);
 
-    int updateByPrimaryKeySelective(softtype record);
+    int updateByPrimaryKeySelective(Softtype record);
 
-    int updateByPrimaryKey(softtype record);
+    int updateByPrimaryKey(Softtype record);
 }

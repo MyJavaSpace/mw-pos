@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class shopgroupdtlKey {
+public class ShopgroupdtlKey {
     private Integer fishopgroupid;
 
     private String fscompanyguid;

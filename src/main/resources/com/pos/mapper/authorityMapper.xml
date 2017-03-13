@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.authorityMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.authority" >
+<mapper namespace="com.pos.dao.AuthorityMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Authority" >
     <id column="fsProgId" property="fsprogid" jdbcType="VARCHAR" />
     <id column="fsProjId" property="fsprojid" jdbcType="VARCHAR" />
     <id column="fsRoleId" property="fsroleid" jdbcType="VARCHAR" />
@@ -12,7 +12,7 @@
   <sql id="Base_Column_List" >
     fsProgId, fsProjId, fsRoleId, fsShopGUID, fsUpdateTime, fiStatus
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.authorityKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.AuthorityKey" >
     select 
     <include refid="Base_Column_List" />
     from tbauthority
@@ -21,14 +21,14 @@
       and fsRoleId = #{fsroleid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.authorityKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.AuthorityKey" >
     delete from tbauthority
     where fsProgId = #{fsprogid,jdbcType=VARCHAR}
       and fsProjId = #{fsprojid,jdbcType=VARCHAR}
       and fsRoleId = #{fsroleid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.authority" >
+  <insert id="insert" parameterType="com.pos.entity.Authority" >
     insert into tbauthority (fsProgId, fsProjId, fsRoleId, 
       fsShopGUID, fsUpdateTime, fiStatus
       )
@@ -36,7 +36,7 @@
       #{fsshopguid,jdbcType=VARCHAR}, #{fsupdatetime,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.authority" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Authority" >
     insert into tbauthority
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsprogid != null" >
@@ -79,7 +79,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.authority" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Authority" >
     update tbauthority
     <set >
       <if test="fsupdatetime != null" >
@@ -94,7 +94,7 @@
       and fsRoleId = #{fsroleid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.authority" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Authority" >
     update tbauthority
     set fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
       fiStatus = #{fistatus,jdbcType=INTEGER}

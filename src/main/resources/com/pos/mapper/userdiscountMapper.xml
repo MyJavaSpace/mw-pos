@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.userdiscountMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.userdiscount" >
+<mapper namespace="com.pos.dao.UserdiscountMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Userdiscount" >
     <id column="fsDiscountId" property="fsdiscountid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <id column="fsUserId" property="fsuserid" jdbcType="VARCHAR" />
@@ -11,7 +11,7 @@
   <sql id="Base_Column_List" >
     fsDiscountId, fsShopGUID, fsUserId, fsUpdateTime, fiStatus
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.userdiscountKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.UserdiscountKey" >
     select 
     <include refid="Base_Column_List" />
     from tbuserdiscount
@@ -19,19 +19,19 @@
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
       and fsUserId = #{fsuserid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.userdiscountKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.UserdiscountKey" >
     delete from tbuserdiscount
     where fsDiscountId = #{fsdiscountid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
       and fsUserId = #{fsuserid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.userdiscount" >
+  <insert id="insert" parameterType="com.pos.entity.Userdiscount" >
     insert into tbuserdiscount (fsDiscountId, fsShopGUID, fsUserId, 
       fsUpdateTime, fiStatus)
     values (#{fsdiscountid,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, #{fsuserid,jdbcType=VARCHAR}, 
       #{fsupdatetime,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.userdiscount" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Userdiscount" >
     insert into tbuserdiscount
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsdiscountid != null" >
@@ -68,7 +68,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.userdiscount" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Userdiscount" >
     update tbuserdiscount
     <set >
       <if test="fsupdatetime != null" >
@@ -82,7 +82,7 @@
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
       and fsUserId = #{fsuserid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.userdiscount" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Userdiscount" >
     update tbuserdiscount
     set fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
       fiStatus = #{fistatus,jdbcType=INTEGER}

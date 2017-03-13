@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class msection extends msectionKey {
+public class Msection extends MsectionKey {
     private String fsmsectionname;
 
     private String fsbegintime;

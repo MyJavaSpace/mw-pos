@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class mtableclsKey {
+public class MtableclsKey {
     private String fsmtableclsid;
 
     private String fsshopguid;

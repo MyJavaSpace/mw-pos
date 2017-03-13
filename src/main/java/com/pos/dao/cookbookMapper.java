@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.cookbook;
-import com.pos.entity.cookbookKey;
+import com.pos.entity.Cookbook;
+import com.pos.entity.CookbookKey;
 
-public interface cookbookMapper {
-    int deleteByPrimaryKey(cookbookKey key);
+public interface CookbookMapper {
+    int deleteByPrimaryKey(CookbookKey key);
 
-    int insert(cookbook record);
+    int insert(Cookbook record);
 
-    int insertSelective(cookbook record);
+    int insertSelective(Cookbook record);
 
-    cookbook selectByPrimaryKey(cookbookKey key);
+    Cookbook selectByPrimaryKey(CookbookKey key);
 
-    int updateByPrimaryKeySelective(cookbook record);
+    int updateByPrimaryKeySelective(Cookbook record);
 
-    int updateByPrimaryKey(cookbook record);
+    int updateByPrimaryKey(Cookbook record);
 }

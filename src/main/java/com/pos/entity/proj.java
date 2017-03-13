@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class proj {
+public class Proj {
     private String fsprojid;
 
     private String fsprojname;

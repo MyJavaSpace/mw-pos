@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class viplvl extends viplvlKey {
+public class Viplvl extends ViplvlKey {
     private String fsviplvlname;
 
     private String fsnote;

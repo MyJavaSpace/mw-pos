@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.tableinfo;
-import com.pos.entity.tableinfoKey;
+import com.pos.entity.Tableinfo;
+import com.pos.entity.TableinfoKey;
 
-public interface tableinfoMapper {
-    int deleteByPrimaryKey(tableinfoKey key);
+public interface TableinfoMapper {
+    int deleteByPrimaryKey(TableinfoKey key);
 
-    int insert(tableinfo record);
+    int insert(Tableinfo record);
 
-    int insertSelective(tableinfo record);
+    int insertSelective(Tableinfo record);
 
-    tableinfo selectByPrimaryKey(tableinfoKey key);
+    Tableinfo selectByPrimaryKey(TableinfoKey key);
 
-    int updateByPrimaryKeySelective(tableinfo record);
+    int updateByPrimaryKeySelective(Tableinfo record);
 
-    int updateByPrimaryKey(tableinfo record);
+    int updateByPrimaryKey(Tableinfo record);
 }

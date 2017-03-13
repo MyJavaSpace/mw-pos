@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.menuitemmuldeptMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.menuitemmuldept" >
+<mapper namespace="com.pos.dao.MenuitemmuldeptMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Menuitemmuldept" >
     <id column="fiMulDeptCd" property="fimuldeptcd" jdbcType="INTEGER" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fiItemCd" property="fiitemcd" jdbcType="INTEGER" />
@@ -16,19 +16,19 @@
     fiMulDeptCd, fsShopGUID, fiItemCd, fsDeptId, fsMAreaId, fiStatus, fsUpdateTime, fsUpdateUserId, 
     fsUpdateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.menuitemmuldeptKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.MenuitemmuldeptKey" >
     select 
     <include refid="Base_Column_List" />
     from tbmenuitemmuldept
     where fiMulDeptCd = #{fimuldeptcd,jdbcType=INTEGER}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.menuitemmuldeptKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.MenuitemmuldeptKey" >
     delete from tbmenuitemmuldept
     where fiMulDeptCd = #{fimuldeptcd,jdbcType=INTEGER}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.menuitemmuldept" >
+  <insert id="insert" parameterType="com.pos.entity.Menuitemmuldept" >
     insert into tbmenuitemmuldept (fiMulDeptCd, fsShopGUID, fiItemCd, 
       fsDeptId, fsMAreaId, fiStatus, 
       fsUpdateTime, fsUpdateUserId, fsUpdateUserName
@@ -38,7 +38,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.menuitemmuldept" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Menuitemmuldept" >
     insert into tbmenuitemmuldept
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fimuldeptcd != null" >
@@ -99,7 +99,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.menuitemmuldept" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Menuitemmuldept" >
     update tbmenuitemmuldept
     <set >
       <if test="fiitemcd != null" >
@@ -127,7 +127,7 @@
     where fiMulDeptCd = #{fimuldeptcd,jdbcType=INTEGER}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.menuitemmuldept" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Menuitemmuldept" >
     update tbmenuitemmuldept
     set fiItemCd = #{fiitemcd,jdbcType=INTEGER},
       fsDeptId = #{fsdeptid,jdbcType=VARCHAR},

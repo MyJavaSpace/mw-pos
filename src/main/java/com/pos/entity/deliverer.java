@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class deliverer extends delivererKey {
+public class Deliverer extends DelivererKey {
     private String fsdeliverername;
 
     private Integer fideliverertype;

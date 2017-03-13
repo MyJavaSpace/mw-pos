@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class sellorderitemKey {
+public class SellorderitemKey {
     private String fsseq;
 
     private String fsshopguid;

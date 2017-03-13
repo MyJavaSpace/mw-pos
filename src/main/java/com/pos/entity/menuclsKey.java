@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class menuclsKey {
+public class MenuclsKey {
     private String fsmenuclsid;
 
     private String fsshopguid;

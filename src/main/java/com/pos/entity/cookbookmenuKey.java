@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class cookbookmenuKey {
+public class CookbookmenuKey {
     private Integer fiorderuintcd;
 
     private String fsshopguid;

@@ -41,412 +41,413 @@
 			targetPackage="com.pos.dao" targetProject="mw-pos/src/main/java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
-
-		<table tableName="tbaddr" domainObjectName="addr"
+		<!-- SELECT CONCAT('<table tableName="',tab.TABLE_NAME,'" domainObjectName="', 
+			UPPER(left(REPLACE(tab.TABLE_NAME,'tb',''),1)),SUBSTRING((REPLACE(tab.TABLE_NAME,'tb','')),2,(length(REPLACE(tab.TABLE_NAME,'tb',''))-1)),'" 
+			enableCountByExample="false" enableSelectByExample="false" enableUpdateByExample="false" 
+			enableDeleteByExample="false"> </table>') as a from information_schema.`TABLES` 
+			as tab where TABLE_SCHEMA='winpos' and tab.TABLE_NAME not IN ('__migrationhistory','temptotal1') 
+			and tab.TABLE_NAME REGEXP '^tb'; -->
+		<table tableName="tbaddr" domainObjectName="Addr"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbapplication" domainObjectName="application"
+		<table tableName="tbapplication" domainObjectName="Application"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbask" domainObjectName="ask"
+		<table tableName="tbask" domainObjectName="Ask"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbaskgp" domainObjectName="askgp"
+		<table tableName="tbaskgp" domainObjectName="Askgp"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbauthority" domainObjectName="authority"
+		<table tableName="tbauthority" domainObjectName="Authority"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbauthoritydtl" domainObjectName="authoritydtl"
+		<table tableName="tbauthoritydtl" domainObjectName="Authoritydtl"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbbargain" domainObjectName="bargain"
+		<table tableName="tbbargain" domainObjectName="Bargain"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbbargainitem" domainObjectName="bargainitem"
+		<table tableName="tbbargainitem" domainObjectName="Bargainitem"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbbillsource" domainObjectName="billsource"
+		<table tableName="tbbillsource" domainObjectName="Billsource"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbbuygiftitem" domainObjectName="buygiftitem"
+		<table tableName="tbbuygiftitem" domainObjectName="Buygiftitem"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbchangetable" domainObjectName="changetable"
+		<table tableName="tbchangetable" domainObjectName="Changetable"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbcookbook" domainObjectName="cookbook"
+		<table tableName="tbcookbook" domainObjectName="Cookbook"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbcookbookmenu" domainObjectName="cookbookmenu"
+		<table tableName="tbcookbookmenu" domainObjectName="Cookbookmenu"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbcreditaccount" domainObjectName="creditaccount"
+		<table tableName="tbcreditaccount" domainObjectName="Creditaccount"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbcust" domainObjectName="cust"
+		<table tableName="tbcust" domainObjectName="Cust"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbcustlink" domainObjectName="custlink"
+		<table tableName="tbcustlink" domainObjectName="Custlink"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbcustste" domainObjectName="custste"
+		<table tableName="tbcustste" domainObjectName="Custste"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbcustsur" domainObjectName="custsur"
+		<table tableName="tbcustsur" domainObjectName="Custsur"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbcusttype" domainObjectName="custtype"
+		<table tableName="tbcusttype" domainObjectName="Custtype"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbcutmoney" domainObjectName="cutmoney"
+		<table tableName="tbcutmoney" domainObjectName="Cutmoney"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbdeliverer" domainObjectName="deliverer"
+		<table tableName="tbdeliverer" domainObjectName="Deliverer"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbdept" domainObjectName="dept"
+		<table tableName="tbdept" domainObjectName="Dept"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbdiscount" domainObjectName="discount"
+		<table tableName="tbdiscount" domainObjectName="Discount"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbdiscountitem" domainObjectName="discountitem"
+		<table tableName="tbdiscountitem" domainObjectName="Discountitem"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbexpcls" domainObjectName="expcls"
+		<table tableName="tbexpcls" domainObjectName="Expcls"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbfeedback" domainObjectName="feedback"
+		<table tableName="tbfeedback" domainObjectName="Feedback"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbfilever" domainObjectName="filever"
+		<table tableName="tbfilever" domainObjectName="Filever"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbfoodtrade" domainObjectName="foodtrade"
+		<table tableName="tbfoodtrade" domainObjectName="Foodtrade"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbhost" domainObjectName="host"
+		<table tableName="tbhost" domainObjectName="Host"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbhostexternal" domainObjectName="hostexternal"
+		<table tableName="tbhostexternal" domainObjectName="Hostexternal"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbhostver" domainObjectName="hostver"
+		<table tableName="tbhostver" domainObjectName="Hostver"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbinterfacemanage" domainObjectName="interfacemanage"
+		<table tableName="tbinterfacemanage" domainObjectName="Interfacemanage"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbitemchangetable" domainObjectName="itemchangetable"
+		<table tableName="tbitemchangetable" domainObjectName="Itemchangetable"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmarea" domainObjectName="marea"
+		<table tableName="tbmarea" domainObjectName="Marea"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmenucls" domainObjectName="menucls"
+		<table tableName="tbmenucls" domainObjectName="Menucls"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmenuingredgprel" domainObjectName="menuingredgprel"
+		<table tableName="tbmenuingredgprel" domainObjectName="Menuingredgprel"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmenuingredient" domainObjectName="menuingredient"
+		<table tableName="tbmenuingredientgp" domainObjectName="Menuingredientgp"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmenuingredientgp" domainObjectName="menuingredientgp"
+		<table tableName="tbmenuitem" domainObjectName="Menuitem"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmenuitem" domainObjectName="menuitem"
+		<table tableName="tbmenuitemaskgp" domainObjectName="Menuitemaskgp"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmenuitemaskgp" domainObjectName="menuitemaskgp"
+		<table tableName="tbmenuitemmuldept" domainObjectName="Menuitemmuldept"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmenuitemmuldept" domainObjectName="menuitemmuldept"
+		<table tableName="tbmenuitemsetside" domainObjectName="Menuitemsetside"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmenuitemsetside" domainObjectName="menuitemsetside"
+		<table tableName="tbmenuitemsetsidedtl" domainObjectName="Menuitemsetsidedtl"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmenuitemsetsidedtl" domainObjectName="menuitemsetsidedtl"
+		<table tableName="tbmenuitemuint" domainObjectName="Menuitemuint"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmenuitemuint" domainObjectName="menuitemuint"
+		<table tableName="tbmsection" domainObjectName="Msection"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmsection" domainObjectName="msection"
+		<table tableName="tbmsg" domainObjectName="Msg"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmsg" domainObjectName="msg"
+		<table tableName="tbmtable" domainObjectName="Mtable"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmtable" domainObjectName="mtable"
+		<table tableName="tbmtablecls" domainObjectName="Mtablecls"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmtablecls" domainObjectName="mtablecls"
+		<table tableName="tbmtableste" domainObjectName="Mtableste"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbmtableste" domainObjectName="mtableste"
+		<table tableName="tbnotice" domainObjectName="Notice"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbnotice" domainObjectName="notice"
+		<table tableName="tbopenparam" domainObjectName="Openparam"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbopenparam" domainObjectName="openparam"
+		<table tableName="tbparam" domainObjectName="Param"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbparam" domainObjectName="param"
+		<table tableName="tbparamvalue" domainObjectName="Paramvalue"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbparamvalue" domainObjectName="paramvalue"
+		<table tableName="tbpayment" domainObjectName="Payment"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbpayment" domainObjectName="payment"
+		<table tableName="tbpaymentdetail" domainObjectName="Paymentdetail"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbpaymentdetail" domainObjectName="paymentdetail"
+		<table tableName="tbpaymentfullcut" domainObjectName="Paymentfullcut"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbpaymentfullcut" domainObjectName="paymentfullcut"
+		<table tableName="tbpaymenttype" domainObjectName="Paymenttype"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbpaymenttype" domainObjectName="paymenttype"
+		<table tableName="tbprinter" domainObjectName="Printer"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbprinter" domainObjectName="printer"
+		<table tableName="tbprintproject" domainObjectName="Printproject"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbprintproject" domainObjectName="printproject"
+		<table tableName="tbprintprojectgp" domainObjectName="Printprojectgp"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbprintprojectgp" domainObjectName="printprojectgp"
+		<table tableName="tbprinttask" domainObjectName="Printtask"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbprinttask" domainObjectName="printtask"
+		<table tableName="tbprog" domainObjectName="Prog"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbprog" domainObjectName="prog"
+		<table tableName="tbprogdtl" domainObjectName="Progdtl"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbprogdtl" domainObjectName="progdtl"
+		<table tableName="tbproj" domainObjectName="Proj"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbproj" domainObjectName="proj"
+		<table tableName="tbpublish" domainObjectName="Publish"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbpublish" domainObjectName="publish"
+		<table tableName="tbreport" domainObjectName="Report"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbreport" domainObjectName="report"
+		<table tableName="tbreportconfiguration" domainObjectName="Reportconfiguration"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbreportconfiguration" domainObjectName="reportconfiguration"
+		<table tableName="tbreporttemplet" domainObjectName="Reporttemplet"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbreporttemplet" domainObjectName="reporttemplet"
+		<table tableName="tbreupload" domainObjectName="Reupload"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbreupload" domainObjectName="reupload"
+		<table tableName="tbrevenuetype" domainObjectName="Revenuetype"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbrevenuetype" domainObjectName="revenuetype"
+		<table tableName="tbrole" domainObjectName="Role"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbrole" domainObjectName="role"
+		<table tableName="tbsell" domainObjectName="Sell"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbsell" domainObjectName="sell"
+		<table tableName="tbsellcheck" domainObjectName="Sellcheck"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbsellcheck" domainObjectName="sellcheck"
+		<table tableName="tbsellhurry" domainObjectName="Sellhurry"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbsellhurry" domainObjectName="sellhurry"
+		<table tableName="tbsellhurryitem" domainObjectName="Sellhurryitem"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbsellhurryitem" domainObjectName="sellhurryitem"
+		<table tableName="tbsellorder" domainObjectName="Sellorder"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbsellorder" domainObjectName="sellorder"
+		<table tableName="tbsellorderitem" domainObjectName="Sellorderitem"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbsellorderitem" domainObjectName="sellorderitem"
+		<table tableName="tbsellreceive" domainObjectName="Sellreceive"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbsellreceive" domainObjectName="sellreceive"
+		<table tableName="tbseqno" domainObjectName="Seqno"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbseqno" domainObjectName="seqno"
+		<table tableName="tbsetings" domainObjectName="Setings"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbsetings" domainObjectName="setings"
+		<table tableName="tbshift" domainObjectName="Shift"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbshift" domainObjectName="shift"
+		<table tableName="tbshop" domainObjectName="Shop"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbshop" domainObjectName="shop"
+		<table tableName="tbshopgroup" domainObjectName="Shopgroup"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbshopgroup" domainObjectName="shopgroup"
+		<table tableName="tbshopgroupdtl" domainObjectName="Shopgroupdtl"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbshopgroupdtl" domainObjectName="shopgroupdtl"
+		<table tableName="tbsofttype" domainObjectName="Softtype"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbsofttype" domainObjectName="softtype"
+		<table tableName="tbtableinfo" domainObjectName="Tableinfo"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbtableinfo" domainObjectName="tableinfo"
+		<table tableName="tbtesttime" domainObjectName="Testtime"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbtesttime" domainObjectName="testtime"
+		<table tableName="tbtrade" domainObjectName="Trade"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbtrade" domainObjectName="trade"
+		<table tableName="tbtransferprn" domainObjectName="Transferprn"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbtransferprn" domainObjectName="transferprn"
+		<table tableName="tbuser" domainObjectName="User"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbuser" domainObjectName="user"
+		<table tableName="tbuserauthdata" domainObjectName="Userauthdata"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbuserauthdata" domainObjectName="userauthdata"
+		<table tableName="tbuserdiscount" domainObjectName="Userdiscount"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbuserdiscount" domainObjectName="userdiscount"
+		<table tableName="tbusermenuitemrole" domainObjectName="Usermenuitemrole"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbusermenuitemrole" domainObjectName="usermenuitemrole"
+		<table tableName="tbuseroperationlog" domainObjectName="Useroperationlog"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbuseroperationlog" domainObjectName="useroperationlog"
+		<table tableName="tbuserrole" domainObjectName="Userrole"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbuserrole" domainObjectName="userrole"
+		<table tableName="tbusershopauthority" domainObjectName="Usershopauthority"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbusershopauthority" domainObjectName="usershopauthority"
+		<table tableName="tbvipdiscount" domainObjectName="Vipdiscount"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbvipdiscount" domainObjectName="vipdiscount"
+		<table tableName="tbviplvl" domainObjectName="Viplvl"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbviplvl" domainObjectName="viplvl"
+		<table tableName="tbwebmenu" domainObjectName="Webmenu"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbwebmenu" domainObjectName="webmenu"
+		<table tableName="tbwebmenugroup" domainObjectName="Webmenugroup"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbwebmenugroup" domainObjectName="webmenugroup"
+		<table tableName="tbwechatconfig" domainObjectName="Wechatconfig"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>
-		<table tableName="tbwechatconfig" domainObjectName="wechatconfig"
-			enableCountByExample="false" enableSelectByExample="false"
-			enableUpdateByExample="false" enableDeleteByExample="false">
-		</table>
-		<table tableName="tbwordhouse" domainObjectName="wordhouse"
+		<table tableName="tbwordhouse" domainObjectName="Wordhouse"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 		</table>

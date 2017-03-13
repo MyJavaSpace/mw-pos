@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class webmenugroup {
+public class Webmenugroup {
     private Integer fiid;
 
     private Integer figroupid;

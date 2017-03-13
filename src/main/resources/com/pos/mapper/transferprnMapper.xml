@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.transferprnMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.transferprn" >
+<mapper namespace="com.pos.dao.TransferprnMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Transferprn" >
     <id column="fsDeptId_Make" property="fsdeptidMake" jdbcType="VARCHAR" />
     <id column="fsDeptId_Transfer" property="fsdeptidTransfer" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
@@ -14,7 +14,7 @@
     fsDeptId_Make, fsDeptId_Transfer, fsShopGUID, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
     fiStatus
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.transferprnKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.TransferprnKey" >
     select 
     <include refid="Base_Column_List" />
     from tbtransferprn
@@ -22,13 +22,13 @@
       and fsDeptId_Transfer = #{fsdeptidTransfer,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.transferprnKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.TransferprnKey" >
     delete from tbtransferprn
     where fsDeptId_Make = #{fsdeptidMake,jdbcType=VARCHAR}
       and fsDeptId_Transfer = #{fsdeptidTransfer,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.transferprn" >
+  <insert id="insert" parameterType="com.pos.entity.Transferprn" >
     insert into tbtransferprn (fsDeptId_Make, fsDeptId_Transfer, fsShopGUID, 
       fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
       fiStatus)
@@ -36,7 +36,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
       #{fistatus,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.transferprn" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Transferprn" >
     insert into tbtransferprn
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsdeptidMake != null" >
@@ -85,7 +85,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.transferprn" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Transferprn" >
     update tbtransferprn
     <set >
       <if test="fsupdatetime != null" >
@@ -105,7 +105,7 @@
       and fsDeptId_Transfer = #{fsdeptidTransfer,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.transferprn" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Transferprn" >
     update tbtransferprn
     set fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
       fsUpdateUserId = #{fsupdateuserid,jdbcType=VARCHAR},

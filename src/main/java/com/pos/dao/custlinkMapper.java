@@ -1,11 +1,11 @@
 package com.pos.dao;
 
-import com.pos.entity.custlinkKey;
+import com.pos.entity.CustlinkKey;
 
-public interface custlinkMapper {
-    int deleteByPrimaryKey(custlinkKey key);
+public interface CustlinkMapper {
+    int deleteByPrimaryKey(CustlinkKey key);
 
-    int insert(custlinkKey record);
+    int insert(CustlinkKey record);
 
-    int insertSelective(custlinkKey record);
+    int insertSelective(CustlinkKey record);
 }

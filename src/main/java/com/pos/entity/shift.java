@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class shift extends shiftKey {
+public class Shift extends ShiftKey {
     private String fsshiftname;
 
     private String fsnote;

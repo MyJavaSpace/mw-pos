@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.paymenttypeMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.paymenttype" >
+<mapper namespace="com.pos.dao.PaymenttypeMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Paymenttype" >
     <id column="fsPaymentTypeId" property="fspaymenttypeid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsPaymentTypeName" property="fspaymenttypename" jdbcType="VARCHAR" />
@@ -16,19 +16,19 @@
     fsPaymentTypeId, fsShopGUID, fsPaymentTypeName, fsNote, fiStatus, fiDataKind, fsUpdateTime, 
     fsUpdateUserId, fsUpdateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.paymenttypeKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.PaymenttypeKey" >
     select 
     <include refid="Base_Column_List" />
     from tbpaymenttype
     where fsPaymentTypeId = #{fspaymenttypeid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.paymenttypeKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.PaymenttypeKey" >
     delete from tbpaymenttype
     where fsPaymentTypeId = #{fspaymenttypeid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.paymenttype" >
+  <insert id="insert" parameterType="com.pos.entity.Paymenttype" >
     insert into tbpaymenttype (fsPaymentTypeId, fsShopGUID, fsPaymentTypeName, 
       fsNote, fiStatus, fiDataKind, 
       fsUpdateTime, fsUpdateUserId, fsUpdateUserName
@@ -38,7 +38,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.paymenttype" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Paymenttype" >
     insert into tbpaymenttype
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fspaymenttypeid != null" >
@@ -99,7 +99,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.paymenttype" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Paymenttype" >
     update tbpaymenttype
     <set >
       <if test="fspaymenttypename != null" >
@@ -127,7 +127,7 @@
     where fsPaymentTypeId = #{fspaymenttypeid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.paymenttype" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Paymenttype" >
     update tbpaymenttype
     set fsPaymentTypeName = #{fspaymenttypename,jdbcType=VARCHAR},
       fsNote = #{fsnote,jdbcType=VARCHAR},

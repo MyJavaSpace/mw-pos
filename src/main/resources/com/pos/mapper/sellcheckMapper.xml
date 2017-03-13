@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.sellcheckMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.sellcheck" >
+<mapper namespace="com.pos.dao.SellcheckMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Sellcheck" >
     <id column="fsCheckBillNo" property="fscheckbillno" jdbcType="VARCHAR" />
     <id column="fsSellNo" property="fssellno" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
@@ -35,7 +35,7 @@
     fsHostId, fsCreateTime, fsCreateUserId, fsCreateUserName, fsUpdateTime, fsUpdateUserId, 
     fsUpdateUserName, fsVerifyUserName, fsDataSrckind, fsSrcVerno, fsshiftname, lver
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.sellcheckKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.SellcheckKey" >
     select 
     <include refid="Base_Column_List" />
     from tbsellcheck
@@ -43,13 +43,13 @@
       and fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.sellcheckKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.SellcheckKey" >
     delete from tbsellcheck
     where fsCheckBillNo = #{fscheckbillno,jdbcType=VARCHAR}
       and fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.sellcheck" >
+  <insert id="insert" parameterType="com.pos.entity.Sellcheck" >
     insert into tbsellcheck (fsCheckBillNo, fsSellNo, fsShopGUID, 
       fsCheckTime, fsShiftId, fdReceAmt, 
       fdRealAmt, fdInvoiceAmt, fiStatus, 
@@ -69,7 +69,7 @@
       #{fsverifyusername,jdbcType=VARCHAR}, #{fsdatasrckind,jdbcType=VARCHAR}, #{fssrcverno,jdbcType=VARCHAR}, 
       #{fsshiftname,jdbcType=VARCHAR}, #{lver,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.sellcheck" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Sellcheck" >
     insert into tbsellcheck
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fscheckbillno != null" >
@@ -232,7 +232,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.sellcheck" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Sellcheck" >
     update tbsellcheck
     <set >
       <if test="fschecktime != null" >
@@ -309,7 +309,7 @@
       and fsSellNo = #{fssellno,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.sellcheck" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Sellcheck" >
     update tbsellcheck
     set fsCheckTime = #{fschecktime,jdbcType=VARCHAR},
       fsShiftId = #{fsshiftid,jdbcType=VARCHAR},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.projMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.proj" >
+<mapper namespace="com.pos.dao.ProjMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Proj" >
     <id column="fsProjId" property="fsprojid" jdbcType="VARCHAR" />
     <result column="fsProjName" property="fsprojname" jdbcType="VARCHAR" />
     <result column="fsUpdateUserName" property="fsupdateusername" jdbcType="VARCHAR" />
@@ -21,13 +21,13 @@
     delete from tbproj
     where fsProjId = #{fsprojid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.proj" >
+  <insert id="insert" parameterType="com.pos.entity.Proj" >
     insert into tbproj (fsProjId, fsProjName, fsUpdateUserName, 
       fsUpdateTime, fsUpdateUserId)
     values (#{fsprojid,jdbcType=VARCHAR}, #{fsprojname,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, 
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.proj" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Proj" >
     insert into tbproj
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsprojid != null" >
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.proj" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Proj" >
     update tbproj
     <set >
       <if test="fsprojname != null" >
@@ -82,7 +82,7 @@
     </set>
     where fsProjId = #{fsprojid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.proj" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Proj" >
     update tbproj
     set fsProjName = #{fsprojname,jdbcType=VARCHAR},
       fsUpdateUserName = #{fsupdateusername,jdbcType=VARCHAR},

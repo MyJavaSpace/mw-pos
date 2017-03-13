@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.menuitemsetside;
-import com.pos.entity.menuitemsetsideKey;
+import com.pos.entity.Menuitemsetside;
+import com.pos.entity.MenuitemsetsideKey;
 
-public interface menuitemsetsideMapper {
-    int deleteByPrimaryKey(menuitemsetsideKey key);
+public interface MenuitemsetsideMapper {
+    int deleteByPrimaryKey(MenuitemsetsideKey key);
 
-    int insert(menuitemsetside record);
+    int insert(Menuitemsetside record);
 
-    int insertSelective(menuitemsetside record);
+    int insertSelective(Menuitemsetside record);
 
-    menuitemsetside selectByPrimaryKey(menuitemsetsideKey key);
+    Menuitemsetside selectByPrimaryKey(MenuitemsetsideKey key);
 
-    int updateByPrimaryKeySelective(menuitemsetside record);
+    int updateByPrimaryKeySelective(Menuitemsetside record);
 
-    int updateByPrimaryKey(menuitemsetside record);
+    int updateByPrimaryKey(Menuitemsetside record);
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.menuitemuintMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.menuitemuint" >
+<mapper namespace="com.pos.dao.MenuitemuintMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Menuitemuint" >
     <id column="fiOrderUintCd" property="fiorderuintcd" jdbcType="INTEGER" />
     <result column="fiItemCd" property="fiitemcd" jdbcType="INTEGER" />
     <result column="fsOrderUint" property="fsorderuint" jdbcType="VARCHAR" />
@@ -30,7 +30,7 @@
     delete from tbmenuitemuint
     where fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.menuitemuint" >
+  <insert id="insert" parameterType="com.pos.entity.Menuitemuint" >
     insert into tbmenuitemuint (fiOrderUintCd, fiItemCd, fsOrderUint, 
       fdSalePrice, fdVIPPrice, fdInvQty, 
       fiStatus, fiDefault, fsUpdateTime, 
@@ -42,7 +42,7 @@
       #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, 
       #{fdcostprice,jdbcType=DECIMAL})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.menuitemuint" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Menuitemuint" >
     insert into tbmenuitemuint
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fiorderuintcd != null" >
@@ -127,7 +127,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.menuitemuint" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Menuitemuint" >
     update tbmenuitemuint
     <set >
       <if test="fiitemcd != null" >
@@ -169,7 +169,7 @@
     </set>
     where fiOrderUintCd = #{fiorderuintcd,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.menuitemuint" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Menuitemuint" >
     update tbmenuitemuint
     set fiItemCd = #{fiitemcd,jdbcType=INTEGER},
       fsOrderUint = #{fsorderuint,jdbcType=VARCHAR},

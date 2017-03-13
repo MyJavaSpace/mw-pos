@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.menuitem;
-import com.pos.entity.menuitemKey;
+import com.pos.entity.Menuitem;
+import com.pos.entity.MenuitemKey;
 
-public interface menuitemMapper {
-    int deleteByPrimaryKey(menuitemKey key);
+public interface MenuitemMapper {
+    int deleteByPrimaryKey(MenuitemKey key);
 
-    int insert(menuitem record);
+    int insert(Menuitem record);
 
-    int insertSelective(menuitem record);
+    int insertSelective(Menuitem record);
 
-    menuitem selectByPrimaryKey(menuitemKey key);
+    Menuitem selectByPrimaryKey(MenuitemKey key);
 
-    int updateByPrimaryKeySelective(menuitem record);
+    int updateByPrimaryKeySelective(Menuitem record);
 
-    int updateByPrimaryKey(menuitem record);
+    int updateByPrimaryKey(Menuitem record);
 }

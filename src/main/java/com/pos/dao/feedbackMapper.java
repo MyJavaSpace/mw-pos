@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.feedback;
+import com.pos.entity.Feedback;
 
-public interface feedbackMapper {
+public interface FeedbackMapper {
     int deleteByPrimaryKey(Integer fiid);
 
-    int insert(feedback record);
+    int insert(Feedback record);
 
-    int insertSelective(feedback record);
+    int insertSelective(Feedback record);
 
-    feedback selectByPrimaryKey(Integer fiid);
+    Feedback selectByPrimaryKey(Integer fiid);
 
-    int updateByPrimaryKeySelective(feedback record);
+    int updateByPrimaryKeySelective(Feedback record);
 
-    int updateByPrimaryKey(feedback record);
+    int updateByPrimaryKey(Feedback record);
 }

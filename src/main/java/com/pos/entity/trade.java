@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class trade extends tradeKey {
+public class Trade extends TradeKey {
     private String fstradename;
 
     private Integer fistatus;

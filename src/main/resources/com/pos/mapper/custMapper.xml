@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.custMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.cust" >
+<mapper namespace="com.pos.dao.CustMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Cust" >
     <id column="fsCustGUID" property="fscustguid" jdbcType="VARCHAR" />
     <result column="fsCustCls" property="fscustcls" jdbcType="VARCHAR" />
     <result column="fsCustId" property="fscustid" jdbcType="VARCHAR" />
@@ -85,7 +85,7 @@
     delete from tbcust
     where fsCustGUID = #{fscustguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.cust" >
+  <insert id="insert" parameterType="com.pos.entity.Cust" >
     insert into tbcust (fsCustGUID, fsCustCls, fsCustId, 
       fsCustSurId, fsCustSteId, fsCustTypeId, 
       fsCustName, fsCustEngName, fsPid, 
@@ -129,7 +129,7 @@
       #{fsshopguid,jdbcType=VARCHAR}, #{fscompanyguid,jdbcType=VARCHAR}, #{fsviplvlid,jdbcType=VARCHAR}, 
       #{fiexptag,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.cust" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Cust" >
     insert into tbcust
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fscustguid != null" >
@@ -502,7 +502,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.cust" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Cust" >
     update tbcust
     <set >
       <if test="fscustcls != null" >
@@ -688,7 +688,7 @@
     </set>
     where fsCustGUID = #{fscustguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.cust" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Cust" >
     update tbcust
     set fsCustCls = #{fscustcls,jdbcType=VARCHAR},
       fsCustId = #{fscustid,jdbcType=VARCHAR},

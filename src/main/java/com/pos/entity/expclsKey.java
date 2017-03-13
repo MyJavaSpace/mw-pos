@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class expclsKey {
+public class ExpclsKey {
     private String fsexpclsid;
 
     private String fsshopguid;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.wechatconfigMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.wechatconfig" >
+<mapper namespace="com.pos.dao.WechatconfigMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Wechatconfig" >
     <id column="fsId" property="fsid" jdbcType="VARCHAR" />
     <result column="fdDeliverFee" property="fddeliverfee" jdbcType="DECIMAL" />
     <result column="fdOrderMoney" property="fdordermoney" jdbcType="DECIMAL" />
@@ -25,7 +25,7 @@
     delete from tbwechatconfig
     where fsId = #{fsid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.wechatconfig" >
+  <insert id="insert" parameterType="com.pos.entity.Wechatconfig" >
     insert into tbwechatconfig (fsId, fdDeliverFee, fdOrderMoney, 
       fsShopGUID, fiStatus, fsUpdateTime, 
       fsUpdateUserId, fsUpdateUserName)
@@ -33,7 +33,7 @@
       #{fsshopguid,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, 
       #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.wechatconfig" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Wechatconfig" >
     insert into tbwechatconfig
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsid != null" >
@@ -88,7 +88,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.wechatconfig" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Wechatconfig" >
     update tbwechatconfig
     <set >
       <if test="fddeliverfee != null" >
@@ -115,7 +115,7 @@
     </set>
     where fsId = #{fsid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.wechatconfig" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Wechatconfig" >
     update tbwechatconfig
     set fdDeliverFee = #{fddeliverfee,jdbcType=DECIMAL},
       fdOrderMoney = #{fdordermoney,jdbcType=DECIMAL},

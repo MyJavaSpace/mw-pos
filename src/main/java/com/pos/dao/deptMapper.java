@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.dept;
-import com.pos.entity.deptKey;
+import com.pos.entity.Dept;
+import com.pos.entity.DeptKey;
 
-public interface deptMapper {
-    int deleteByPrimaryKey(deptKey key);
+public interface DeptMapper {
+    int deleteByPrimaryKey(DeptKey key);
 
-    int insert(dept record);
+    int insert(Dept record);
 
-    int insertSelective(dept record);
+    int insertSelective(Dept record);
 
-    dept selectByPrimaryKey(deptKey key);
+    Dept selectByPrimaryKey(DeptKey key);
 
-    int updateByPrimaryKeySelective(dept record);
+    int updateByPrimaryKeySelective(Dept record);
 
-    int updateByPrimaryKey(dept record);
+    int updateByPrimaryKey(Dept record);
 }

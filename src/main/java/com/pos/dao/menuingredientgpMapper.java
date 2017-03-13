@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.menuingredientgp;
-import com.pos.entity.menuingredientgpKey;
+import com.pos.entity.Menuingredientgp;
+import com.pos.entity.MenuingredientgpKey;
 
-public interface menuingredientgpMapper {
-    int deleteByPrimaryKey(menuingredientgpKey key);
+public interface MenuingredientgpMapper {
+    int deleteByPrimaryKey(MenuingredientgpKey key);
 
-    int insert(menuingredientgp record);
+    int insert(Menuingredientgp record);
 
-    int insertSelective(menuingredientgp record);
+    int insertSelective(Menuingredientgp record);
 
-    menuingredientgp selectByPrimaryKey(menuingredientgpKey key);
+    Menuingredientgp selectByPrimaryKey(MenuingredientgpKey key);
 
-    int updateByPrimaryKeySelective(menuingredientgp record);
+    int updateByPrimaryKeySelective(Menuingredientgp record);
 
-    int updateByPrimaryKey(menuingredientgp record);
+    int updateByPrimaryKey(Menuingredientgp record);
 }

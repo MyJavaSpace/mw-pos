@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class printtaskWithBLOBs extends printtask {
+public class PrinttaskWithBLOBs extends Printtask {
     private String fsprndata;
 
     private String fsprndata2;

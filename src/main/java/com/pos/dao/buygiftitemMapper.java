@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.buygiftitem;
-import com.pos.entity.buygiftitemKey;
+import com.pos.entity.Buygiftitem;
+import com.pos.entity.BuygiftitemKey;
 
-public interface buygiftitemMapper {
-    int deleteByPrimaryKey(buygiftitemKey key);
+public interface BuygiftitemMapper {
+    int deleteByPrimaryKey(BuygiftitemKey key);
 
-    int insert(buygiftitem record);
+    int insert(Buygiftitem record);
 
-    int insertSelective(buygiftitem record);
+    int insertSelective(Buygiftitem record);
 
-    buygiftitem selectByPrimaryKey(buygiftitemKey key);
+    Buygiftitem selectByPrimaryKey(BuygiftitemKey key);
 
-    int updateByPrimaryKeySelective(buygiftitem record);
+    int updateByPrimaryKeySelective(Buygiftitem record);
 
-    int updateByPrimaryKey(buygiftitem record);
+    int updateByPrimaryKey(Buygiftitem record);
 }

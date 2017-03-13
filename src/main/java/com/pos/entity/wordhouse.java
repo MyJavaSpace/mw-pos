@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class wordhouse extends wordhouseKey {
+public class Wordhouse extends WordhouseKey {
     private String fsfielditem;
 
     private String fsword;

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class progdtlKey {
+public class ProgdtlKey {
     private String fsprogdtlid;
 
     private String fsprogid;

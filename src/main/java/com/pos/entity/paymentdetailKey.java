@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class paymentdetailKey {
+public class PaymentdetailKey {
     private String fsorderid;
 
     private String fsshopid;

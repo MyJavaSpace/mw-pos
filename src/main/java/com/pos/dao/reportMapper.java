@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.report;
-import com.pos.entity.reportKey;
+import com.pos.entity.Report;
+import com.pos.entity.ReportKey;
 
-public interface reportMapper {
-    int deleteByPrimaryKey(reportKey key);
+public interface ReportMapper {
+    int deleteByPrimaryKey(ReportKey key);
 
-    int insert(report record);
+    int insert(Report record);
 
-    int insertSelective(report record);
+    int insertSelective(Report record);
 
-    report selectByPrimaryKey(reportKey key);
+    Report selectByPrimaryKey(ReportKey key);
 
-    int updateByPrimaryKeySelective(report record);
+    int updateByPrimaryKeySelective(Report record);
 
-    int updateByPrimaryKey(report record);
+    int updateByPrimaryKey(Report record);
 }

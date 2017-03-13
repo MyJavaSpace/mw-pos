@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.usermenuitemrole;
-import com.pos.entity.usermenuitemroleKey;
+import com.pos.entity.Usermenuitemrole;
+import com.pos.entity.UsermenuitemroleKey;
 
-public interface usermenuitemroleMapper {
-    int deleteByPrimaryKey(usermenuitemroleKey key);
+public interface UsermenuitemroleMapper {
+    int deleteByPrimaryKey(UsermenuitemroleKey key);
 
-    int insert(usermenuitemrole record);
+    int insert(Usermenuitemrole record);
 
-    int insertSelective(usermenuitemrole record);
+    int insertSelective(Usermenuitemrole record);
 
-    usermenuitemrole selectByPrimaryKey(usermenuitemroleKey key);
+    Usermenuitemrole selectByPrimaryKey(UsermenuitemroleKey key);
 
-    int updateByPrimaryKeySelective(usermenuitemrole record);
+    int updateByPrimaryKeySelective(Usermenuitemrole record);
 
-    int updateByPrimaryKey(usermenuitemrole record);
+    int updateByPrimaryKey(Usermenuitemrole record);
 }

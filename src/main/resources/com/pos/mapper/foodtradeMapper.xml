@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.foodtradeMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.foodtrade" >
+<mapper namespace="com.pos.dao.FoodtradeMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Foodtrade" >
     <id column="fsFoodTradeId" property="fsfoodtradeid" jdbcType="VARCHAR" />
     <result column="fsFoodTradeName" property="fsfoodtradename" jdbcType="VARCHAR" />
     <result column="fiStatus" property="fistatus" jdbcType="INTEGER" />
@@ -22,7 +22,7 @@
     delete from tbfoodtrade
     where fsFoodTradeId = #{fsfoodtradeid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.foodtrade" >
+  <insert id="insert" parameterType="com.pos.entity.Foodtrade" >
     insert into tbfoodtrade (fsFoodTradeId, fsFoodTradeName, fiStatus, 
       fsUpdateTime, fsUpdateUserId, fsUpdateUserName
       )
@@ -30,7 +30,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.foodtrade" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Foodtrade" >
     insert into tbfoodtrade
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsfoodtradeid != null" >
@@ -73,7 +73,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.foodtrade" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Foodtrade" >
     update tbfoodtrade
     <set >
       <if test="fsfoodtradename != null" >
@@ -94,7 +94,7 @@
     </set>
     where fsFoodTradeId = #{fsfoodtradeid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.foodtrade" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Foodtrade" >
     update tbfoodtrade
     set fsFoodTradeName = #{fsfoodtradename,jdbcType=VARCHAR},
       fiStatus = #{fistatus,jdbcType=INTEGER},

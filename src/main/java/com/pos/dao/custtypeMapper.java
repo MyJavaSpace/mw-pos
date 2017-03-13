@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.custtype;
-import com.pos.entity.custtypeKey;
+import com.pos.entity.Custtype;
+import com.pos.entity.CusttypeKey;
 
-public interface custtypeMapper {
-    int deleteByPrimaryKey(custtypeKey key);
+public interface CusttypeMapper {
+    int deleteByPrimaryKey(CusttypeKey key);
 
-    int insert(custtype record);
+    int insert(Custtype record);
 
-    int insertSelective(custtype record);
+    int insertSelective(Custtype record);
 
-    custtype selectByPrimaryKey(custtypeKey key);
+    Custtype selectByPrimaryKey(CusttypeKey key);
 
-    int updateByPrimaryKeySelective(custtype record);
+    int updateByPrimaryKeySelective(Custtype record);
 
-    int updateByPrimaryKey(custtype record);
+    int updateByPrimaryKey(Custtype record);
 }

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class custtype extends custtypeKey {
+public class Custtype extends CusttypeKey {
     private String fscusttypename;
 
     private Integer fistatus;

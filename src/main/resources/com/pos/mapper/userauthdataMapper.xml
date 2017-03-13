@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.userauthdataMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.userauthdata" >
+<mapper namespace="com.pos.dao.UserauthdataMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Userauthdata" >
     <id column="fsDataKind" property="fsdatakind" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <id column="fsUserId" property="fsuserid" jdbcType="VARCHAR" />
@@ -12,7 +12,7 @@
   <sql id="Base_Column_List" >
     fsDataKind, fsShopGUID, fsUserId, fsValue, fsUpdateTime, fiStatus
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.userauthdataKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.UserauthdataKey" >
     select 
     <include refid="Base_Column_List" />
     from tbuserauthdata
@@ -21,14 +21,14 @@
       and fsUserId = #{fsuserid,jdbcType=VARCHAR}
       and fsValue = #{fsvalue,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.userauthdataKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.UserauthdataKey" >
     delete from tbuserauthdata
     where fsDataKind = #{fsdatakind,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
       and fsUserId = #{fsuserid,jdbcType=VARCHAR}
       and fsValue = #{fsvalue,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.userauthdata" >
+  <insert id="insert" parameterType="com.pos.entity.Userauthdata" >
     insert into tbuserauthdata (fsDataKind, fsShopGUID, fsUserId, 
       fsValue, fsUpdateTime, fiStatus
       )
@@ -36,7 +36,7 @@
       #{fsvalue,jdbcType=VARCHAR}, #{fsupdatetime,jdbcType=VARCHAR}, #{fistatus,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.userauthdata" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Userauthdata" >
     insert into tbuserauthdata
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsdatakind != null" >
@@ -79,7 +79,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.userauthdata" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Userauthdata" >
     update tbuserauthdata
     <set >
       <if test="fsupdatetime != null" >
@@ -94,7 +94,7 @@
       and fsUserId = #{fsuserid,jdbcType=VARCHAR}
       and fsValue = #{fsvalue,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.userauthdata" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Userauthdata" >
     update tbuserauthdata
     set fsUpdateTime = #{fsupdatetime,jdbcType=VARCHAR},
       fiStatus = #{fistatus,jdbcType=INTEGER}

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class menuingredgprel extends menuingredgprelKey {
+public class Menuingredgprel extends MenuingredgprelKey {
     private Integer fistatus;
 
     private String fsupdatetime;

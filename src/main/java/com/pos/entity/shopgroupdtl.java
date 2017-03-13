@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class shopgroupdtl extends shopgroupdtlKey {
+public class Shopgroupdtl extends ShopgroupdtlKey {
     private String fsupdatetime;
 
     private String fsupdateuserid;

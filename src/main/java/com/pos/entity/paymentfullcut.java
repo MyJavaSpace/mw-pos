@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.math.BigDecimal;
 
-public class paymentfullcut extends paymentfullcutKey {
+public class Paymentfullcut extends PaymentfullcutKey {
     private BigDecimal fdfullmoney;
 
     private BigDecimal fdcutmoney;

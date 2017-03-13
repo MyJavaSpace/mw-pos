@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class menuitemaskgpKey {
+public class MenuitemaskgpKey {
     private Integer fiitemcd;
 
     private String fsaskgpid;

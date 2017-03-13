@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class shopgroupWithBLOBs extends shopgroup {
+public class ShopgroupWithBLOBs extends Shopgroup {
     private String fsnote;
 
     private String fscompanyguid;

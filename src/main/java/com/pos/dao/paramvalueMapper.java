@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.paramvalue;
-import com.pos.entity.paramvalueKey;
+import com.pos.entity.Paramvalue;
+import com.pos.entity.ParamvalueKey;
 
-public interface paramvalueMapper {
-    int deleteByPrimaryKey(paramvalueKey key);
+public interface ParamvalueMapper {
+    int deleteByPrimaryKey(ParamvalueKey key);
 
-    int insert(paramvalue record);
+    int insert(Paramvalue record);
 
-    int insertSelective(paramvalue record);
+    int insertSelective(Paramvalue record);
 
-    paramvalue selectByPrimaryKey(paramvalueKey key);
+    Paramvalue selectByPrimaryKey(ParamvalueKey key);
 
-    int updateByPrimaryKeySelective(paramvalue record);
+    int updateByPrimaryKeySelective(Paramvalue record);
 
-    int updateByPrimaryKey(paramvalue record);
+    int updateByPrimaryKey(Paramvalue record);
 }

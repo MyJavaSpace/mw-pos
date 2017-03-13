@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.msg;
+import com.pos.entity.Msg;
 
-public interface msgMapper {
+public interface MsgMapper {
     int deleteByPrimaryKey(Integer fimsgno);
 
-    int insert(msg record);
+    int insert(Msg record);
 
-    int insertSelective(msg record);
+    int insertSelective(Msg record);
 
-    msg selectByPrimaryKey(Integer fimsgno);
+    Msg selectByPrimaryKey(Integer fimsgno);
 
-    int updateByPrimaryKeySelective(msg record);
+    int updateByPrimaryKeySelective(Msg record);
 
-    int updateByPrimaryKey(msg record);
+    int updateByPrimaryKey(Msg record);
 }

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class shiftKey {
+public class ShiftKey {
     private String fsshiftid;
 
     private String fsshopguid;

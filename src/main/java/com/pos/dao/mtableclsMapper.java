@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.mtablecls;
-import com.pos.entity.mtableclsKey;
+import com.pos.entity.Mtablecls;
+import com.pos.entity.MtableclsKey;
 
-public interface mtableclsMapper {
-    int deleteByPrimaryKey(mtableclsKey key);
+public interface MtableclsMapper {
+    int deleteByPrimaryKey(MtableclsKey key);
 
-    int insert(mtablecls record);
+    int insert(Mtablecls record);
 
-    int insertSelective(mtablecls record);
+    int insertSelective(Mtablecls record);
 
-    mtablecls selectByPrimaryKey(mtableclsKey key);
+    Mtablecls selectByPrimaryKey(MtableclsKey key);
 
-    int updateByPrimaryKeySelective(mtablecls record);
+    int updateByPrimaryKeySelective(Mtablecls record);
 
-    int updateByPrimaryKey(mtablecls record);
+    int updateByPrimaryKey(Mtablecls record);
 }

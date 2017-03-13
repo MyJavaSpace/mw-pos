@@ -2,7 +2,7 @@ package com.pos.entity;
 
 import java.util.Date;
 
-public class testtime {
+public class Testtime {
     private Date fstime;
 
     private Integer fitime;

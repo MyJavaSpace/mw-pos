@@ -1,9 +1,9 @@
 package com.pos.dao;
 
-import com.pos.entity.testtime;
+import com.pos.entity.Testtime;
 
-public interface testtimeMapper {
-    int insert(testtime record);
+public interface TesttimeMapper {
+    int insert(Testtime record);
 
-    int insertSelective(testtime record);
+    int insertSelective(Testtime record);
 }

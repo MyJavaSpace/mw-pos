@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.mareaMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.marea" >
+<mapper namespace="com.pos.dao.MareaMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Marea" >
     <id column="fsMAreaId" property="fsmareaid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsMAreaName" property="fsmareaname" jdbcType="VARCHAR" />
@@ -16,19 +16,19 @@
     fsMAreaId, fsShopGUID, fsMAreaName, fiStatus, fsUpdateTime, fsUpdateUserId, fsUpdateUserName, 
     fsPrinterName, fiSortOrder
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.mareaKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.MareaKey" >
     select 
     <include refid="Base_Column_List" />
     from tbmarea
     where fsMAreaId = #{fsmareaid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.mareaKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.MareaKey" >
     delete from tbmarea
     where fsMAreaId = #{fsmareaid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.marea" >
+  <insert id="insert" parameterType="com.pos.entity.Marea" >
     insert into tbmarea (fsMAreaId, fsShopGUID, fsMAreaName, 
       fiStatus, fsUpdateTime, fsUpdateUserId, 
       fsUpdateUserName, fsPrinterName, fiSortOrder
@@ -38,7 +38,7 @@
       #{fsupdateusername,jdbcType=VARCHAR}, #{fsprintername,jdbcType=VARCHAR}, #{fisortorder,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.marea" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Marea" >
     insert into tbmarea
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsmareaid != null" >
@@ -99,7 +99,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.marea" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Marea" >
     update tbmarea
     <set >
       <if test="fsmareaname != null" >
@@ -127,7 +127,7 @@
     where fsMAreaId = #{fsmareaid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.marea" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Marea" >
     update tbmarea
     set fsMAreaName = #{fsmareaname,jdbcType=VARCHAR},
       fiStatus = #{fistatus,jdbcType=INTEGER},

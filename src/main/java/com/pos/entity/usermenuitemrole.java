@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class usermenuitemrole extends usermenuitemroleKey {
+public class Usermenuitemrole extends UsermenuitemroleKey {
     private String fscreatetime;
 
     private String fscreateuserid;

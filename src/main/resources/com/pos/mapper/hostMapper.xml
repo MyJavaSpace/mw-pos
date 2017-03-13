@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.hostMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.host" >
+<mapper namespace="com.pos.dao.HostMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Host" >
     <id column="fsHostId" property="fshostid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsHostDesc" property="fshostdesc" jdbcType="VARCHAR" />
@@ -20,19 +20,19 @@
     fsHostId, fsShopGUID, fsHostDesc, fsEncryption, fsPrinterName, fiHostCls, fiLanguage, 
     fsNote, fiStatus, fiDataKind, fsUpdateTime, fsUpdateUserId, fsUpdateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.hostKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.HostKey" >
     select 
     <include refid="Base_Column_List" />
     from tbhost
     where fsHostId = #{fshostid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.hostKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.HostKey" >
     delete from tbhost
     where fsHostId = #{fshostid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.host" >
+  <insert id="insert" parameterType="com.pos.entity.Host" >
     insert into tbhost (fsHostId, fsShopGUID, fsHostDesc, 
       fsEncryption, fsPrinterName, fiHostCls, 
       fiLanguage, fsNote, fiStatus, 
@@ -44,7 +44,7 @@
       #{fidatakind,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
       #{fsupdateusername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.host" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Host" >
     insert into tbhost
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fshostid != null" >
@@ -129,7 +129,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.host" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Host" >
     update tbhost
     <set >
       <if test="fshostdesc != null" >
@@ -169,7 +169,7 @@
     where fsHostId = #{fshostid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.host" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Host" >
     update tbhost
     set fsHostDesc = #{fshostdesc,jdbcType=VARCHAR},
       fsEncryption = #{fsencryption,jdbcType=VARCHAR},

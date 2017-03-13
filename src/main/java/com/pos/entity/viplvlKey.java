@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class viplvlKey {
+public class ViplvlKey {
     private String fscompanyguid;
 
     private String fsviplvlid;

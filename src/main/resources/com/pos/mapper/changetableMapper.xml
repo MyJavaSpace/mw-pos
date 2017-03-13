@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.changetableMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.changetable" >
+<mapper namespace="com.pos.dao.ChangetableMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Changetable" >
     <result column="fsSellNo" property="fssellno" jdbcType="VARCHAR" />
     <result column="fiTimes" property="fitimes" jdbcType="INTEGER" />
     <result column="fsMTableId" property="fsmtableid" jdbcType="VARCHAR" />
@@ -11,7 +11,7 @@
     <result column="fsCreateUserName" property="fscreateusername" jdbcType="VARCHAR" />
     <result column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
   </resultMap>
-  <insert id="insert" parameterType="com.pos.entity.changetable" >
+  <insert id="insert" parameterType="com.pos.entity.Changetable" >
     insert into tbchangetable (fsSellNo, fiTimes, fsMTableId, 
       fsMTableId_new, fsChangeReason, fsCreateTime, 
       fsCreateUserName, fsShopGUID)
@@ -19,7 +19,7 @@
       #{fsmtableidNew,jdbcType=VARCHAR}, #{fschangereason,jdbcType=VARCHAR}, #{fscreatetime,jdbcType=VARCHAR}, 
       #{fscreateusername,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.changetable" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Changetable" >
     insert into tbchangetable
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fssellno != null" >

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.delivererMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.deliverer" >
+<mapper namespace="com.pos.dao.DelivererMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Deliverer" >
     <id column="fsDelivererId" property="fsdelivererid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsDelivererName" property="fsdeliverername" jdbcType="VARCHAR" />
@@ -19,19 +19,19 @@
     fsDelivererId, fsShopGUID, fsDelivererName, fiDeliverertype, fsDeliverer, fsCellphone, 
     fdChange, fsNote, fiStatus, fsUpdateTime, fsUpdateUserId, fsUpdateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.delivererKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.DelivererKey" >
     select 
     <include refid="Base_Column_List" />
     from tbdeliverer
     where fsDelivererId = #{fsdelivererid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.delivererKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.DelivererKey" >
     delete from tbdeliverer
     where fsDelivererId = #{fsdelivererid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.deliverer" >
+  <insert id="insert" parameterType="com.pos.entity.Deliverer" >
     insert into tbdeliverer (fsDelivererId, fsShopGUID, fsDelivererName, 
       fiDeliverertype, fsDeliverer, fsCellphone, 
       fdChange, fsNote, fiStatus, 
@@ -43,7 +43,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.deliverer" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Deliverer" >
     insert into tbdeliverer
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsdelivererid != null" >
@@ -122,7 +122,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.deliverer" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Deliverer" >
     update tbdeliverer
     <set >
       <if test="fsdeliverername != null" >
@@ -159,7 +159,7 @@
     where fsDelivererId = #{fsdelivererid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.deliverer" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Deliverer" >
     update tbdeliverer
     set fsDelivererName = #{fsdeliverername,jdbcType=VARCHAR},
       fiDeliverertype = #{fideliverertype,jdbcType=INTEGER},

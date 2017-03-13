@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.menuitemuint;
+import com.pos.entity.Menuitemuint;
 
-public interface menuitemuintMapper {
+public interface MenuitemuintMapper {
     int deleteByPrimaryKey(Integer fiorderuintcd);
 
-    int insert(menuitemuint record);
+    int insert(Menuitemuint record);
 
-    int insertSelective(menuitemuint record);
+    int insertSelective(Menuitemuint record);
 
-    menuitemuint selectByPrimaryKey(Integer fiorderuintcd);
+    Menuitemuint selectByPrimaryKey(Integer fiorderuintcd);
 
-    int updateByPrimaryKeySelective(menuitemuint record);
+    int updateByPrimaryKeySelective(Menuitemuint record);
 
-    int updateByPrimaryKey(menuitemuint record);
+    int updateByPrimaryKey(Menuitemuint record);
 }

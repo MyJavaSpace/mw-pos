@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.progdtlMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.progdtl" >
+<mapper namespace="com.pos.dao.ProgdtlMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Progdtl" >
     <id column="fsProgDtlId" property="fsprogdtlid" jdbcType="VARCHAR" />
     <id column="fsProgId" property="fsprogid" jdbcType="VARCHAR" />
     <result column="fsProglName" property="fsproglname" jdbcType="VARCHAR" />
@@ -13,19 +13,19 @@
   <sql id="Base_Column_List" >
     fsProgDtlId, fsProgId, fsProglName, fiSortOrder, fsUpdateTime, fsUpdateUserId, fsUpdateUserName
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.progdtlKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.ProgdtlKey" >
     select 
     <include refid="Base_Column_List" />
     from tbprogdtl
     where fsProgDtlId = #{fsprogdtlid,jdbcType=VARCHAR}
       and fsProgId = #{fsprogid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.progdtlKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.ProgdtlKey" >
     delete from tbprogdtl
     where fsProgDtlId = #{fsprogdtlid,jdbcType=VARCHAR}
       and fsProgId = #{fsprogid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.progdtl" >
+  <insert id="insert" parameterType="com.pos.entity.Progdtl" >
     insert into tbprogdtl (fsProgDtlId, fsProgId, fsProglName, 
       fiSortOrder, fsUpdateTime, fsUpdateUserId, 
       fsUpdateUserName)
@@ -33,7 +33,7 @@
       #{fisortorder,jdbcType=INTEGER}, #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, 
       #{fsupdateusername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.progdtl" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Progdtl" >
     insert into tbprogdtl
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsprogdtlid != null" >
@@ -82,7 +82,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.progdtl" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Progdtl" >
     update tbprogdtl
     <set >
       <if test="fsproglname != null" >
@@ -104,7 +104,7 @@
     where fsProgDtlId = #{fsprogdtlid,jdbcType=VARCHAR}
       and fsProgId = #{fsprogid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.progdtl" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Progdtl" >
     update tbprogdtl
     set fsProglName = #{fsproglname,jdbcType=VARCHAR},
       fiSortOrder = #{fisortorder,jdbcType=INTEGER},

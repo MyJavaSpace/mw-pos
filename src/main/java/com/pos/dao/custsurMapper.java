@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.custsur;
-import com.pos.entity.custsurKey;
+import com.pos.entity.Custsur;
+import com.pos.entity.CustsurKey;
 
-public interface custsurMapper {
-    int deleteByPrimaryKey(custsurKey key);
+public interface CustsurMapper {
+    int deleteByPrimaryKey(CustsurKey key);
 
-    int insert(custsur record);
+    int insert(Custsur record);
 
-    int insertSelective(custsur record);
+    int insertSelective(Custsur record);
 
-    custsur selectByPrimaryKey(custsurKey key);
+    Custsur selectByPrimaryKey(CustsurKey key);
 
-    int updateByPrimaryKeySelective(custsur record);
+    int updateByPrimaryKeySelective(Custsur record);
 
-    int updateByPrimaryKey(custsur record);
+    int updateByPrimaryKey(Custsur record);
 }

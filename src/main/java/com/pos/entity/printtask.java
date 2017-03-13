@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class printtask {
+public class Printtask {
     private Integer fiprintno;
 
     private String fscreatetime;

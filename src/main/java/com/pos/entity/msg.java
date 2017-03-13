@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class msg {
+public class Msg {
     private Integer fimsgno;
 
     private Integer fimsgkind;

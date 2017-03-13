@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.custste;
-import com.pos.entity.custsteKey;
+import com.pos.entity.Custste;
+import com.pos.entity.CuststeKey;
 
-public interface custsteMapper {
-    int deleteByPrimaryKey(custsteKey key);
+public interface CuststeMapper {
+    int deleteByPrimaryKey(CuststeKey key);
 
-    int insert(custste record);
+    int insert(Custste record);
 
-    int insertSelective(custste record);
+    int insertSelective(Custste record);
 
-    custste selectByPrimaryKey(custsteKey key);
+    Custste selectByPrimaryKey(CuststeKey key);
 
-    int updateByPrimaryKeySelective(custste record);
+    int updateByPrimaryKeySelective(Custste record);
 
-    int updateByPrimaryKey(custste record);
+    int updateByPrimaryKey(Custste record);
 }

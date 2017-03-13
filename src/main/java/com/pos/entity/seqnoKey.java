@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class seqnoKey {
+public class SeqnoKey {
     private String fscls;
 
     private String fsshopguid;

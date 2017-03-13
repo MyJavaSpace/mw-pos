@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.param;
+import com.pos.entity.Param;
 
-public interface paramMapper {
+public interface ParamMapper {
     int deleteByPrimaryKey(String fsparamid);
 
-    int insert(param record);
+    int insert(Param record);
 
-    int insertSelective(param record);
+    int insertSelective(Param record);
 
-    param selectByPrimaryKey(String fsparamid);
+    Param selectByPrimaryKey(String fsparamid);
 
-    int updateByPrimaryKeySelective(param record);
+    int updateByPrimaryKeySelective(Param record);
 
-    int updateByPrimaryKey(param record);
+    int updateByPrimaryKey(Param record);
 }

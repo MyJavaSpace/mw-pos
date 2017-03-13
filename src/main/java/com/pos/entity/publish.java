@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class publish extends publishKey {
+public class Publish extends PublishKey {
     private String fsupcontent;
 
     private Integer fipublishchannel;

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class cust {
+public class Cust {
     private String fscustguid;
 
     private String fscustcls;

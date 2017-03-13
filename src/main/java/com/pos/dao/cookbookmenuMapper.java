@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.cookbookmenu;
-import com.pos.entity.cookbookmenuKey;
+import com.pos.entity.Cookbookmenu;
+import com.pos.entity.CookbookmenuKey;
 
-public interface cookbookmenuMapper {
-    int deleteByPrimaryKey(cookbookmenuKey key);
+public interface CookbookmenuMapper {
+    int deleteByPrimaryKey(CookbookmenuKey key);
 
-    int insert(cookbookmenu record);
+    int insert(Cookbookmenu record);
 
-    int insertSelective(cookbookmenu record);
+    int insertSelective(Cookbookmenu record);
 
-    cookbookmenu selectByPrimaryKey(cookbookmenuKey key);
+    Cookbookmenu selectByPrimaryKey(CookbookmenuKey key);
 
-    int updateByPrimaryKeySelective(cookbookmenu record);
+    int updateByPrimaryKeySelective(Cookbookmenu record);
 
-    int updateByPrimaryKey(cookbookmenu record);
+    int updateByPrimaryKey(Cookbookmenu record);
 }

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class transferprnKey {
+public class TransferprnKey {
     private String fsdeptidMake;
 
     private String fsdeptidTransfer;

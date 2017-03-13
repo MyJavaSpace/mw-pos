@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.cutmoney;
-import com.pos.entity.cutmoneyKey;
+import com.pos.entity.Cutmoney;
+import com.pos.entity.CutmoneyKey;
 
-public interface cutmoneyMapper {
-    int deleteByPrimaryKey(cutmoneyKey key);
+public interface CutmoneyMapper {
+    int deleteByPrimaryKey(CutmoneyKey key);
 
-    int insert(cutmoney record);
+    int insert(Cutmoney record);
 
-    int insertSelective(cutmoney record);
+    int insertSelective(Cutmoney record);
 
-    cutmoney selectByPrimaryKey(cutmoneyKey key);
+    Cutmoney selectByPrimaryKey(CutmoneyKey key);
 
-    int updateByPrimaryKeySelective(cutmoney record);
+    int updateByPrimaryKeySelective(Cutmoney record);
 
-    int updateByPrimaryKey(cutmoney record);
+    int updateByPrimaryKey(Cutmoney record);
 }

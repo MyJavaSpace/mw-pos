@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class userauthdata extends userauthdataKey {
+public class Userauthdata extends UserauthdataKey {
     private String fsupdatetime;
 
     private Integer fistatus;

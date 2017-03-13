@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.printprojectMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.printproject" >
+<mapper namespace="com.pos.dao.PrintprojectMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Printproject" >
     <id column="fiId" property="fiid" jdbcType="INTEGER" />
     <result column="figroupId" property="figroupid" jdbcType="INTEGER" />
     <result column="fsDeptId" property="fsdeptid" jdbcType="VARCHAR" />
@@ -26,7 +26,7 @@
     delete from tbprintproject
     where fiId = #{fiid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.printproject" >
+  <insert id="insert" parameterType="com.pos.entity.Printproject" >
     insert into tbprintproject (fiId, figroupId, fsDeptId, 
       fsMAreaId, fiStatus, fsShopGUID, 
       fsUpdateTime, fsUpdateUserId, fsUpdateUserName
@@ -36,7 +36,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.printproject" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Printproject" >
     insert into tbprintproject
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fiid != null" >
@@ -97,7 +97,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.printproject" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Printproject" >
     update tbprintproject
     <set >
       <if test="figroupid != null" >
@@ -127,7 +127,7 @@
     </set>
     where fiId = #{fiid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.printproject" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Printproject" >
     update tbprintproject
     set figroupId = #{figroupid,jdbcType=INTEGER},
       fsDeptId = #{fsdeptid,jdbcType=VARCHAR},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.reuploadMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.reupload" >
+<mapper namespace="com.pos.dao.ReuploadMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Reupload" >
     <id column="fsGuid" property="fsguid" jdbcType="VARCHAR" />
     <result column="fsCreatTime" property="fscreattime" jdbcType="VARCHAR" />
     <result column="fsShopGuid" property="fsshopguid" jdbcType="VARCHAR" />
@@ -22,7 +22,7 @@
     delete from tbreupload
     where fsGuid = #{fsguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.reupload" >
+  <insert id="insert" parameterType="com.pos.entity.Reupload" >
     insert into tbreupload (fsGuid, fsCreatTime, fsShopGuid, 
       fiStatus, fsBeginTime, fsEndTime
       )
@@ -30,7 +30,7 @@
       #{fistatus,jdbcType=INTEGER}, #{fsbegintime,jdbcType=VARCHAR}, #{fsendtime,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.reupload" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Reupload" >
     insert into tbreupload
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsguid != null" >
@@ -73,7 +73,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.reupload" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Reupload" >
     update tbreupload
     <set >
       <if test="fscreattime != null" >
@@ -94,7 +94,7 @@
     </set>
     where fsGuid = #{fsguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.reupload" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Reupload" >
     update tbreupload
     set fsCreatTime = #{fscreattime,jdbcType=VARCHAR},
       fsShopGuid = #{fsshopguid,jdbcType=VARCHAR},

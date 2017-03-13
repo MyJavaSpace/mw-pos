@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.viplvl;
-import com.pos.entity.viplvlKey;
+import com.pos.entity.Viplvl;
+import com.pos.entity.ViplvlKey;
 
-public interface viplvlMapper {
-    int deleteByPrimaryKey(viplvlKey key);
+public interface ViplvlMapper {
+    int deleteByPrimaryKey(ViplvlKey key);
 
-    int insert(viplvl record);
+    int insert(Viplvl record);
 
-    int insertSelective(viplvl record);
+    int insertSelective(Viplvl record);
 
-    viplvl selectByPrimaryKey(viplvlKey key);
+    Viplvl selectByPrimaryKey(ViplvlKey key);
 
-    int updateByPrimaryKeySelective(viplvl record);
+    int updateByPrimaryKeySelective(Viplvl record);
 
-    int updateByPrimaryKey(viplvl record);
+    int updateByPrimaryKey(Viplvl record);
 }

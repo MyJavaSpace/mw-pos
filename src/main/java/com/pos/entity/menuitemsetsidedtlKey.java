@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class menuitemsetsidedtlKey {
+public class MenuitemsetsidedtlKey {
     private Integer fiitemcd;
 
     private Integer fiitemcdM;

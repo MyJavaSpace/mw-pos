@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.cutmoneyMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.cutmoney" >
+<mapper namespace="com.pos.dao.CutmoneyMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Cutmoney" >
     <id column="fsBargainId" property="fsbargainid" jdbcType="VARCHAR" />
     <id column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fdFullmoney" property="fdfullmoney" jdbcType="DECIMAL" />
@@ -17,19 +17,19 @@
     fsBargainId, fsShopGUID, fdFullmoney, fdCutmoney, fiDiscountRate, fsUpdateTime, fsUpdateUserId, 
     fsUpdateUserName, fsPaymentId, fiStatus
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.cutmoneyKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.CutmoneyKey" >
     select 
     <include refid="Base_Column_List" />
     from tbcutmoney
     where fsBargainId = #{fsbargainid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.cutmoneyKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.CutmoneyKey" >
     delete from tbcutmoney
     where fsBargainId = #{fsbargainid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.cutmoney" >
+  <insert id="insert" parameterType="com.pos.entity.Cutmoney" >
     insert into tbcutmoney (fsBargainId, fsShopGUID, fdFullmoney, 
       fdCutmoney, fiDiscountRate, fsUpdateTime, 
       fsUpdateUserId, fsUpdateUserName, fsPaymentId, 
@@ -39,7 +39,7 @@
       #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}, #{fspaymentid,jdbcType=VARCHAR}, 
       #{fistatus,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.cutmoney" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Cutmoney" >
     insert into tbcutmoney
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsbargainid != null" >
@@ -106,7 +106,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.cutmoney" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Cutmoney" >
     update tbcutmoney
     <set >
       <if test="fdfullmoney != null" >
@@ -137,7 +137,7 @@
     where fsBargainId = #{fsbargainid,jdbcType=VARCHAR}
       and fsShopGUID = #{fsshopguid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.cutmoney" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Cutmoney" >
     update tbcutmoney
     set fdFullmoney = #{fdfullmoney,jdbcType=DECIMAL},
       fdCutmoney = #{fdcutmoney,jdbcType=DECIMAL},

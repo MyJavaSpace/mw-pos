@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.notice;
+import com.pos.entity.Notice;
 
-public interface noticeMapper {
+public interface NoticeMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(notice record);
+    int insert(Notice record);
 
-    int insertSelective(notice record);
+    int insertSelective(Notice record);
 
-    notice selectByPrimaryKey(Integer id);
+    Notice selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(notice record);
+    int updateByPrimaryKeySelective(Notice record);
 
-    int updateByPrimaryKey(notice record);
+    int updateByPrimaryKey(Notice record);
 }

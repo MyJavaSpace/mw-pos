@@ -1,17 +1,17 @@
 package com.pos.dao;
 
-import com.pos.entity.printproject;
+import com.pos.entity.Printproject;
 
-public interface printprojectMapper {
+public interface PrintprojectMapper {
     int deleteByPrimaryKey(Integer fiid);
 
-    int insert(printproject record);
+    int insert(Printproject record);
 
-    int insertSelective(printproject record);
+    int insertSelective(Printproject record);
 
-    printproject selectByPrimaryKey(Integer fiid);
+    Printproject selectByPrimaryKey(Integer fiid);
 
-    int updateByPrimaryKeySelective(printproject record);
+    int updateByPrimaryKeySelective(Printproject record);
 
-    int updateByPrimaryKey(printproject record);
+    int updateByPrimaryKey(Printproject record);
 }

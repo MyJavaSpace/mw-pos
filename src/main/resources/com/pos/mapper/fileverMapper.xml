@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.fileverMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.filever" >
+<mapper namespace="com.pos.dao.FileverMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Filever" >
     <id column="fsFileName" property="fsfilename" jdbcType="VARCHAR" />
     <result column="fsVer" property="fsver" jdbcType="VARCHAR" />
     <result column="fsDir" property="fsdir" jdbcType="VARCHAR" />
@@ -20,13 +20,13 @@
     delete from tbfilever
     where fsFileName = #{fsfilename,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.filever" >
+  <insert id="insert" parameterType="com.pos.entity.Filever" >
     insert into tbfilever (fsFileName, fsVer, fsDir, 
       fsNote)
     values (#{fsfilename,jdbcType=VARCHAR}, #{fsver,jdbcType=VARCHAR}, #{fsdir,jdbcType=VARCHAR}, 
       #{fsnote,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.filever" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Filever" >
     insert into tbfilever
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fsfilename != null" >
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.filever" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Filever" >
     update tbfilever
     <set >
       <if test="fsver != null" >
@@ -72,7 +72,7 @@
     </set>
     where fsFileName = #{fsfilename,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.filever" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Filever" >
     update tbfilever
     set fsVer = #{fsver,jdbcType=VARCHAR},
       fsDir = #{fsdir,jdbcType=VARCHAR},

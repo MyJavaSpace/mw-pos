@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.interfacemanageMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.interfacemanage" >
+<mapper namespace="com.pos.dao.InterfacemanageMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Interfacemanage" >
     <id column="fiId" property="fiid" jdbcType="INTEGER" />
     <result column="fsShopGUID" property="fsshopguid" jdbcType="VARCHAR" />
     <result column="fsAPIName" property="fsapiname" jdbcType="VARCHAR" />
@@ -39,7 +39,7 @@
     delete from tbinterfacemanage
     where fiId = #{fiid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.interfacemanage" >
+  <insert id="insert" parameterType="com.pos.entity.Interfacemanage" >
     insert into tbinterfacemanage (fiId, fsShopGUID, fsAPIName, 
       fiAPIType, fiAPILanguage, fiEncryption, 
       fsSecretKey, fsAppID, fsAppIDkey, 
@@ -57,7 +57,7 @@
       #{fsupdatetime,jdbcType=VARCHAR}, #{fsupdateuserid,jdbcType=VARCHAR}, #{fsupdateusername,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.interfacemanage" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Interfacemanage" >
     insert into tbinterfacemanage
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fiid != null" >
@@ -190,7 +190,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.interfacemanage" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Interfacemanage" >
     update tbinterfacemanage
     <set >
       <if test="fsshopguid != null" >
@@ -256,7 +256,7 @@
     </set>
     where fiId = #{fiid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.interfacemanage" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Interfacemanage" >
     update tbinterfacemanage
     set fsShopGUID = #{fsshopguid,jdbcType=VARCHAR},
       fsAPIName = #{fsapiname,jdbcType=VARCHAR},

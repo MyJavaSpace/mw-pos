@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.pos.dao.msgMapper" >
-  <resultMap id="BaseResultMap" type="com.pos.entity.msg" >
+<mapper namespace="com.pos.dao.MsgMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Msg" >
     <id column="fiMsgNo" property="fimsgno" jdbcType="INTEGER" />
     <result column="fiMsgKind" property="fimsgkind" jdbcType="INTEGER" />
     <result column="fsMsg" property="fsmsg" jdbcType="VARCHAR" />
@@ -30,7 +30,7 @@
     delete from tbmsg
     where fiMsgNo = #{fimsgno,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.pos.entity.msg" >
+  <insert id="insert" parameterType="com.pos.entity.Msg" >
     insert into tbmsg (fiMsgNo, fiMsgKind, fsMsg, 
       fsSender, fsMTableId, fsMTableName, 
       fsSellNo, fsReceiver, fiStatus, 
@@ -42,7 +42,7 @@
       #{fsreadtime,jdbcType=VARCHAR}, #{fsreadusername,jdbcType=VARCHAR}, #{fsshopguid,jdbcType=VARCHAR}, 
       #{fscreatetime,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pos.entity.msg" >
+  <insert id="insertSelective" parameterType="com.pos.entity.Msg" >
     insert into tbmsg
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="fimsgno != null" >
@@ -127,7 +127,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.msg" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Msg" >
     update tbmsg
     <set >
       <if test="fimsgkind != null" >
@@ -169,7 +169,7 @@
     </set>
     where fiMsgNo = #{fimsgno,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pos.entity.msg" >
+  <update id="updateByPrimaryKey" parameterType="com.pos.entity.Msg" >
     update tbmsg
     set fiMsgKind = #{fimsgkind,jdbcType=INTEGER},
       fsMsg = #{fsmsg,jdbcType=VARCHAR},

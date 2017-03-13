@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class user extends userKey {
+public class User extends UserKey {
     private String fsusername;
 
     private String fsdeptid;

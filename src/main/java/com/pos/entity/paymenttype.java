@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class paymenttype extends paymenttypeKey {
+public class Paymenttype extends PaymenttypeKey {
     private String fspaymenttypename;
 
     private String fsnote;

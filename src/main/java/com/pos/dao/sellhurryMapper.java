@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.sellhurry;
-import com.pos.entity.sellhurryKey;
+import com.pos.entity.Sellhurry;
+import com.pos.entity.SellhurryKey;
 
-public interface sellhurryMapper {
-    int deleteByPrimaryKey(sellhurryKey key);
+public interface SellhurryMapper {
+    int deleteByPrimaryKey(SellhurryKey key);
 
-    int insert(sellhurry record);
+    int insert(Sellhurry record);
 
-    int insertSelective(sellhurry record);
+    int insertSelective(Sellhurry record);
 
-    sellhurry selectByPrimaryKey(sellhurryKey key);
+    Sellhurry selectByPrimaryKey(SellhurryKey key);
 
-    int updateByPrimaryKeySelective(sellhurry record);
+    int updateByPrimaryKeySelective(Sellhurry record);
 
-    int updateByPrimaryKey(sellhurry record);
+    int updateByPrimaryKey(Sellhurry record);
 }

@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class notice {
+public class Notice {
     private Integer id;
 
     private String fstitle;

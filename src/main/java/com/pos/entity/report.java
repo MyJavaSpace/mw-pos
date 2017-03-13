@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class report extends reportKey {
+public class Report extends ReportKey {
     private String fsreportname;
 
     private String fsreporttempletid;

@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.revenuetype;
-import com.pos.entity.revenuetypeKey;
+import com.pos.entity.Revenuetype;
+import com.pos.entity.RevenuetypeKey;
 
-public interface revenuetypeMapper {
-    int deleteByPrimaryKey(revenuetypeKey key);
+public interface RevenuetypeMapper {
+    int deleteByPrimaryKey(RevenuetypeKey key);
 
-    int insert(revenuetype record);
+    int insert(Revenuetype record);
 
-    int insertSelective(revenuetype record);
+    int insertSelective(Revenuetype record);
 
-    revenuetype selectByPrimaryKey(revenuetypeKey key);
+    Revenuetype selectByPrimaryKey(RevenuetypeKey key);
 
-    int updateByPrimaryKeySelective(revenuetype record);
+    int updateByPrimaryKeySelective(Revenuetype record);
 
-    int updateByPrimaryKey(revenuetype record);
+    int updateByPrimaryKey(Revenuetype record);
 }

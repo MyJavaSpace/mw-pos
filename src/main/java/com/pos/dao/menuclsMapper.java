@@ -1,18 +1,18 @@
 package com.pos.dao;
 
-import com.pos.entity.menucls;
-import com.pos.entity.menuclsKey;
+import com.pos.entity.Menucls;
+import com.pos.entity.MenuclsKey;
 
-public interface menuclsMapper {
-    int deleteByPrimaryKey(menuclsKey key);
+public interface MenuclsMapper {
+    int deleteByPrimaryKey(MenuclsKey key);
 
-    int insert(menucls record);
+    int insert(Menucls record);
 
-    int insertSelective(menucls record);
+    int insertSelective(Menucls record);
 
-    menucls selectByPrimaryKey(menuclsKey key);
+    Menucls selectByPrimaryKey(MenuclsKey key);
 
-    int updateByPrimaryKeySelective(menucls record);
+    int updateByPrimaryKeySelective(Menucls record);
 
-    int updateByPrimaryKey(menucls record);
+    int updateByPrimaryKey(Menucls record);
 }
