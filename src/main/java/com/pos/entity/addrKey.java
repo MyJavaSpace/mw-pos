@@ -1,5 +1,6 @@
 package com.pos.entity;
 
+ 
 public class AddrKey {
     private String fscityid;
 

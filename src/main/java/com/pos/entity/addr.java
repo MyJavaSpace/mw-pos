@@ -1,6 +1,6 @@
 package com.pos.entity;
 
-public class Addr extends AddrKey {
+public class Addr extends AddrKey  {
     private String fsprovincename;
 
     private String fscityname;
