@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pos.dao.AddrMapper" >
+  <resultMap id="BaseResultMap" type="com.pos.entity.Addr" >
+    <id column="fsCityId" property="fscityid" jdbcType="VARCHAR" />
+    <id column="fsDistrictId" property="fsdistrictid" jdbcType="VARCHAR" />
+    <id column="fsProvinceId" property="fsprovinceid" jdbcType="VARCHAR" />
+    <result column="fsProvinceName" property="fsprovincename" jdbcType="VARCHAR" />
+    <result column="fsCityName" property="fscityname" jdbcType="VARCHAR" />
+    <result column="fsDistrictName" property="fsdistrictname" jdbcType="VARCHAR" />
+    <result column="fsPostal" property="fspostal" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fsCityId, fsDistrictId, fsProvinceId, fsProvinceName, fsCityName, fsDistrictName, 
+    fsPostal
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.pos.entity.AddrKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbaddr
+    where fsCityId = #{fscityid,jdbcType=VARCHAR}
+      and fsDistrictId = #{fsdistrictid,jdbcType=VARCHAR}
+      and fsProvinceId = #{fsprovinceid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.pos.entity.AddrKey" >
+    delete from tbaddr
+    where fsCityId = #{fscityid,jdbcType=VARCHAR}
+      and fsDistrictId = #{fsdistrictid,jdbcType=VARCHAR}
+      and fsProvinceId = #{fsprovinceid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.pos.entity.Addr" >
+    insert into tbaddr
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fscityid != null" >
+        fsCityId,
+      </if>
+      <if test="fsdistrictid != null" >
+        fsDistrictId,
+      </if>
+      <if test="fsprovinceid != null" >
+        fsProvinceId,
+      </if>
+      <if test="fsprovincename != null" >
+        fsProvinceName,
+      </if>
+      <if test="fscityname != null" >
+        fsCityName,
+      </if>
+      <if test="fsdistrictname != null" >
+        fsDistrictName,
+      </if>
+      <if test="fspostal != null" >
+        fsPostal,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fscityid != null" >
+        #{fscityid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdistrictid != null" >
+        #{fsdistrictid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsprovinceid != null" >
+        #{fsprovinceid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsprovincename != null" >
+        #{fsprovincename,jdbcType=VARCHAR},
+      </if>
+      <if test="fscityname != null" >
+        #{fscityname,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdistrictname != null" >
+        #{fsdistrictname,jdbcType=VARCHAR},
+      </if>
+      <if test="fspostal != null" >
+        #{fspostal,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pos.entity.Addr" >
+    update tbaddr
+    <set >
+      <if test="fsprovincename != null" >
+        fsProvinceName = #{fsprovincename,jdbcType=VARCHAR},
+      </if>
+      <if test="fscityname != null" >
+        fsCityName = #{fscityname,jdbcType=VARCHAR},
+      </if>
+      <if test="fsdistrictname != null" >
+        fsDistrictName = #{fsdistrictname,jdbcType=VARCHAR},
+      </if>
+      <if test="fspostal != null" >
+        fsPostal = #{fspostal,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fsCityId = #{fscityid,jdbcType=VARCHAR}
+      and fsDistrictId = #{fsdistrictid,jdbcType=VARCHAR}
+      and fsProvinceId = #{fsprovinceid,jdbcType=VARCHAR}
+  </update>
+  <sql id="sql_where" >
+    <where >
+      <if test="fsprovincename != null" >
+         and fsProvinceName = #{fsprovincename,jdbcType=VARCHAR}
+      </if>
+      <if test="fscityname != null" >
+         and fsCityName = #{fscityname,jdbcType=VARCHAR}
+      </if>
+      <if test="fsdistrictname != null" >
+         and fsDistrictName = #{fsdistrictname,jdbcType=VARCHAR}
+      </if>
+      <if test="fspostal != null" >
+         and fsPostal = #{fspostal,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" resultMap="BaseResultMap" parameterType="com.pos.entity.Addr" >
+     select * from tbaddr
+    <include refid="sql_where" />
+  </select>
+</mapper>

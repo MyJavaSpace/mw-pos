@@ -8,7 +8,8 @@
 	<classPathEntry
 		location="C:\Users\lijy\.m2\repository\mysql\mysql-connector-java\5.1.26\mysql-connector-java-5.1.26.jar" />
 	<context id="mysqlTables" targetRuntime="MyBatis3">
-
+  		<!-- 实现自定义的代码生成器plugin -->  
+        <plugin type="com.pos.plugin.PaginationPlugin" />  
 		<commentGenerator>
 			<property name="suppressAllComments" value="true" />
 			<property name="suppressDate" value="true" />
@@ -50,407 +51,519 @@
 		<table tableName="tbaddr" domainObjectName="Addr"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseEntity" />
 		</table>
-		<table tableName="tbapplication" domainObjectName="Application"
+		<!-- <table tableName="tbapplication" domainObjectName="Application"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbask" domainObjectName="Ask"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbaskgp" domainObjectName="Askgp"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbauthority" domainObjectName="Authority"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbauthoritydtl" domainObjectName="Authoritydtl"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbbargain" domainObjectName="Bargain"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbbargainitem" domainObjectName="Bargainitem"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbbillsource" domainObjectName="Billsource"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbbuygiftitem" domainObjectName="Buygiftitem"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbchangetable" domainObjectName="Changetable"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbcookbook" domainObjectName="Cookbook"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbcookbookmenu" domainObjectName="Cookbookmenu"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
+		</table>
+		<table tableName="tbcookbookshop" domainObjectName="Cookbookshop"
+			enableCountByExample="false" enableSelectByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbcreditaccount" domainObjectName="Creditaccount"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbcust" domainObjectName="Cust"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbcustlink" domainObjectName="Custlink"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbcustste" domainObjectName="Custste"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbcustsur" domainObjectName="Custsur"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbcusttype" domainObjectName="Custtype"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbcutmoney" domainObjectName="Cutmoney"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbdeliverer" domainObjectName="Deliverer"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbdept" domainObjectName="Dept"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbdiscount" domainObjectName="Discount"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbdiscountitem" domainObjectName="Discountitem"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbexpcls" domainObjectName="Expcls"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbfeedback" domainObjectName="Feedback"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbfilever" domainObjectName="Filever"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbfoodtrade" domainObjectName="Foodtrade"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbhost" domainObjectName="Host"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbhostexternal" domainObjectName="Hostexternal"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbhostver" domainObjectName="Hostver"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbinterfacemanage" domainObjectName="Interfacemanage"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbitemchangetable" domainObjectName="Itemchangetable"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
+		</table>
+		<table tableName="tbl_test_measure" domainObjectName="L_test_measure"
+			enableCountByExample="false" enableSelectByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbmarea" domainObjectName="Marea"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbmenucls" domainObjectName="Menucls"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbmenuingredgprel" domainObjectName="Menuingredgprel"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbmenuingredientgp" domainObjectName="Menuingredientgp"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbmenuitem" domainObjectName="Menuitem"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbmenuitemaskgp" domainObjectName="Menuitemaskgp"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbmenuitemmuldept" domainObjectName="Menuitemmuldept"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbmenuitemsetside" domainObjectName="Menuitemsetside"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbmenuitemsetsidedtl" domainObjectName="Menuitemsetsidedtl"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbmenuitemuint" domainObjectName="Menuitemuint"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbmsection" domainObjectName="Msection"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbmsg" domainObjectName="Msg"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbmtable" domainObjectName="Mtable"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbmtablecls" domainObjectName="Mtablecls"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbmtableste" domainObjectName="Mtableste"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbnotice" domainObjectName="Notice"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbopenparam" domainObjectName="Openparam"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbparam" domainObjectName="Param"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbparamvalue" domainObjectName="Paramvalue"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbpayment" domainObjectName="Payment"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbpaymentdetail" domainObjectName="Paymentdetail"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbpaymentfullcut" domainObjectName="Paymentfullcut"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbpaymenttype" domainObjectName="Paymenttype"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbprinter" domainObjectName="Printer"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbprintproject" domainObjectName="Printproject"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbprintprojectgp" domainObjectName="Printprojectgp"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbprinttask" domainObjectName="Printtask"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbprog" domainObjectName="Prog"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbprogdtl" domainObjectName="Progdtl"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbproj" domainObjectName="Proj"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbpublish" domainObjectName="Publish"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbreport" domainObjectName="Report"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbreportconfiguration" domainObjectName="Reportconfiguration"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbreporttemplet" domainObjectName="Reporttemplet"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbreupload" domainObjectName="Reupload"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbrevenuetype" domainObjectName="Revenuetype"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbrole" domainObjectName="Role"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbsell" domainObjectName="Sell"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbsellcheck" domainObjectName="Sellcheck"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbsellhurry" domainObjectName="Sellhurry"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbsellhurryitem" domainObjectName="Sellhurryitem"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbsellorder" domainObjectName="Sellorder"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbsellorderitem" domainObjectName="Sellorderitem"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbsellreceive" domainObjectName="Sellreceive"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbseqno" domainObjectName="Seqno"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbsetings" domainObjectName="Setings"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbshift" domainObjectName="Shift"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbshop" domainObjectName="Shop"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbshopgroup" domainObjectName="Shopgroup"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbshopgroupdtl" domainObjectName="Shopgroupdtl"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbsofttype" domainObjectName="Softtype"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbtableinfo" domainObjectName="Tableinfo"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbtesttime" domainObjectName="Testtime"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbtrade" domainObjectName="Trade"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbtransferprn" domainObjectName="Transferprn"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbuser" domainObjectName="User"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbuserauthdata" domainObjectName="Userauthdata"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbuserdiscount" domainObjectName="Userdiscount"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbusermenuitemrole" domainObjectName="Usermenuitemrole"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbuseroperationlog" domainObjectName="Useroperationlog"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbuserrole" domainObjectName="Userrole"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbusershopauthority" domainObjectName="Usershopauthority"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbvipdiscount" domainObjectName="Vipdiscount"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbviplvl" domainObjectName="Viplvl"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbwebmenu" domainObjectName="Webmenu"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbwebmenugroup" domainObjectName="Webmenugroup"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbwechatconfig" domainObjectName="Wechatconfig"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseDao" />
 		</table>
 		<table tableName="tbwordhouse" domainObjectName="Wordhouse"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
-		</table>
+			<property name="rootClass" value="com.pos.base.BaseDao" />
+		</table> -->
+
 
 
 	</context>
