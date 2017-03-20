@@ -48,20 +48,20 @@
 			enableDeleteByExample="false"> </table>') as a from information_schema.`TABLES` 
 			as tab where TABLE_SCHEMA='winpos' and tab.TABLE_NAME not IN ('__migrationhistory','temptotal1') 
 			and tab.TABLE_NAME REGEXP '^tb'; -->
-		<table tableName="tbaddr" domainObjectName="Addr"
+		<!-- <table tableName="tbaddr" domainObjectName="Addr"
+			enableCountByExample="false" enableSelectByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false">
+			<property name="rootClass" value="com.pos.base.BaseEntity" />
+		</table> -->
+		 <table tableName="tbapplication" domainObjectName="Application"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
 			<property name="rootClass" value="com.pos.base.BaseEntity" />
 		</table>
-		<!-- <table tableName="tbapplication" domainObjectName="Application"
+		<!--<table tableName="tbask" domainObjectName="Ask"
 			enableCountByExample="false" enableSelectByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false">
-			<property name="rootClass" value="com.pos.base.BaseDao" />
-		</table>
-		<table tableName="tbask" domainObjectName="Ask"
-			enableCountByExample="false" enableSelectByExample="false"
-			enableUpdateByExample="false" enableDeleteByExample="false">
-			<property name="rootClass" value="com.pos.base.BaseDao" />
+			<property name="rootClass" value="com.pos.base.BaseEntity" />
 		</table>
 		<table tableName="tbaskgp" domainObjectName="Askgp"
 			enableCountByExample="false" enableSelectByExample="false"
