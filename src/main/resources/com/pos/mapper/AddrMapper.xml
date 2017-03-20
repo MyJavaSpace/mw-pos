@@ -114,7 +114,7 @@
     </where>
   </sql>
   <select id="getList" resultMap="BaseResultMap" parameterType="com.pos.entity.Addr" >
-     select * from tbaddr
+     select * from tbaddr  
     <include refid="sql_where" />
   </select>
 </mapper>
